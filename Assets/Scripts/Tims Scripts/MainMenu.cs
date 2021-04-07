@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void StartButton()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Williams Scene");
     }
 
     public void OptionsButton()
