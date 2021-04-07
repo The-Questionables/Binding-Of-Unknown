@@ -12,7 +12,7 @@ public class Arrow : MonoBehaviour
    // public GameObject player;
     //private Rigidbody2D rb;
     public int damage = 30;
-    private float speed = 10f;
+   // private float speed = 10f;
    // private Vector2 target;
    // private Vector2 position;
 
