@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3551,7 +3551,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1511878927}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: LoadMenu
+        m_MethodName: LoadMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4933,10 +4933,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1511878926}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c259961f2ca93d4a9d6c37c67b4407c, type: 3}
+  m_Script: {fileID: 11500000, guid: e35d166e908ec0d468b9228157536392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenuUI: {fileID: 1289175723}
+  PauseMenuUI: {fileID: 1289175723}
 --- !u!114 &1511878928
 MonoBehaviour:
   m_ObjectHideFlags: 0

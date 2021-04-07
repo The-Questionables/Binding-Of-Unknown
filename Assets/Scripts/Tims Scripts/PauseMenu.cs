@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseMenu2 : MonoBehaviour
+public class PauseMenu : MonoBehaviour
 {
 
     //lege dieses Script in das entsprechende Canvas wo auch das Menü sich befindet, 
@@ -20,14 +20,15 @@ public class PauseMenu2 : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Pause))
         {
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Credits")) { SceneManager.LoadScene("Main Menu"); }
-            else {
+            else
+            {
 
-            if (GameIsPaused)
+                if (GameIsPaused)
                 {
                     Resume();                   //rufe die Funktion Resume auf
                 }
 
-            else
+                else
                 {
                     Pause();                    //rufe die Funktion Pause auf
                 }
@@ -56,17 +57,22 @@ public class PauseMenu2 : MonoBehaviour
     }
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("Main Menu");
         Time.timeScale = 1f;
         GameIsPaused = false;
         PauseMenuUI.SetActive(false);
     }
     public void RestartLevel()
     {
-        
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
-    
+
+    public void QuitGame()
+    {
+        Application.Quit();
+        Debug.Break();
+    }
 }
