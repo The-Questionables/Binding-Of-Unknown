@@ -3711,7 +3711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crosshairs: {fileID: 213281963}
   player: {fileID: 1485473445}
-  bulletPrefab: {fileID: 4435520523245032972, guid: 6c7814582eeb9da46adf08e5446b9976,
+  bulletPrefab: {fileID: 6198436871338525066, guid: 6eb9c582df6cab3438e95eab4794418b,
     type: 3}
   bulletStart: {fileID: 1485473445}
   bulletSpeed: 30
@@ -3728,7 +3728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 231404817}
-  smoothing: 0
+  smoothing: 0.2
   maxPosition: {x: 0, y: 0}
   minPosition: {x: 0, y: 0}
 --- !u!81 &1318042563
@@ -4098,7 +4098,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1485473445}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.7083333, y: -0.25, z: 0}
+  m_LocalPosition: {x: -0.70833325, y: -0.25, z: 0}
   m_LocalScale: {x: 0.16666667, y: 0.16666667, z: 0.16666667}
   m_Children: []
   m_Father: {fileID: 231404817}
