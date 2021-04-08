@@ -8,10 +8,22 @@ public class Enemy : MonoBehaviour
     public int currentHealth;
     public HealthBar healthBar;
 
+    [Header("Enemy Movement")]
+    bool canMove = true;
+    float freezeMovementTime = 1f;
+    float freezeEnemyTime = 1f;
+    private Color nativeColor;
+    private Color freezeColor;
+    private bool arrowFrozen;
+
+     AudioClip damageSound;
+     [Range(0, 1)] float damageSoundVolume = 1f;
+     float enemyHealth = 1f;
+
     public Transform target;
     public float chaseRadius;
     public float attackRadius;
-    public Transform homePosition;
+ // public Transform homePosition;
 
     public float detonationTimer = 0f;
     public GameObject Explosion;
@@ -19,11 +31,18 @@ public class Enemy : MonoBehaviour
     public string Name;
     public int baseAttack;
     public float moveSpeed;
+    // General Cached References
+    LootDrop lootDrop;
 
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.FindWithTag("Player").transform;
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+
+        lootDrop = GetComponent<LootDrop>();
+        nativeColor = GetComponentInChildren<SpriteRenderer>().color;
+        freezeColor = Color.blue;
+
         currentHealth = maxHealth;          // verändet Wert der Healtbar
         healthBar.SetMaxHealth(maxHealth);
     }
@@ -43,6 +62,10 @@ public class Enemy : MonoBehaviour
     }
     public void TakeDamage(int amount)
     {
+        if (damageSound != null)
+        {
+            AudioSource.PlayClipAtPoint(damageSound, Camera.main.transform.position, damageSoundVolume);
+        }
         currentHealth -= amount;
 
         healthBar.SetHealth(currentHealth);
@@ -75,4 +98,61 @@ public class Enemy : MonoBehaviour
 
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player") && !arrowFrozen)
+        {
+            target.GetComponent<Player>().TakeDamage(baseAttack);
+            StartCoroutine(FreezeMovement());
+        }
+        else if (collision.CompareTag("Player"))
+        {
+            target.GetComponent<Player>().TakeDamage(baseAttack);
+        }
+    }
+
+    IEnumerator FreezeMovement()
+    {
+        canMove = false;
+
+        yield return new WaitForSeconds(freezeMovementTime);
+
+        canMove = true;
+    }
+
+    public void FreezeEnemy()
+    {
+        StartCoroutine(FreezeEnemyCoroutine());
+    }
+
+    IEnumerator FreezeEnemyCoroutine()
+    {
+        this.arrowFrozen = true;
+        if (GetComponent<Animator>())
+        {
+            GetComponent<Animator>().enabled = false;
+        }
+        GetComponent<SpriteRenderer>().color = freezeColor;
+        this.canMove = false;
+        yield return new WaitForSeconds(freezeEnemyTime);
+        if (GetComponent<Animator>())
+        {
+            GetComponent<Animator>().enabled = true;
+        }
+        this.canMove = true;
+        GetComponent<SpriteRenderer>().color = nativeColor;
+        this.arrowFrozen = false;
+    }
+
+    public bool CanEnemyMove()
+    {
+        return canMove;
+    }
+
+    public float GetEnemyHealth()
+    {
+        return enemyHealth;
+    }
+
 }
