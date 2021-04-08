@@ -7,7 +7,7 @@ public class Shoot : MonoBehaviour
     public GameManager gm;
     public Transform spawnPosition1;
     public Transform spawnPosition2;
-    public GameObject template;
+    public GameObject ProjectilePrefab;
     public KeyCode shoot = KeyCode.Space;
     public float Cooldown = 0.75f;
     public float Firerate;
@@ -68,22 +68,29 @@ public class Shoot : MonoBehaviour
 
 
     void shooting()
-    { if (gm.PlayerHitpoints > 0)
+    {
+        if (gm.PlayerHitpoints > 0)
         {
             shootanimation = true;
             if (shoot1 == true)
-        { 
-            Instantiate(template, spawnPosition1.position, spawnPosition1.rotation);
-            shoot1 = false;
-        }
-        else if (shoot1 == false)
-        { 
-            Instantiate(template, spawnPosition2.position, spawnPosition2.rotation);
-            shoot1 = true;
-        }
+            { 
+                Instantiate(ProjectilePrefab, spawnPosition1.position, spawnPosition1.rotation);
+                shoot1 = false;
+            }
+            else if (shoot1 == false)
+            { 
+                Instantiate(ProjectilePrefab, spawnPosition2.position, spawnPosition2.rotation);
+                shoot1 = true;
+            }
         }
     }
-
+    //void fireBullet(Vector2 direction, float rotationZ)
+    //{
+    //    GameObject b = Instantiate(ProjectilePrefab) as GameObject;
+    //    b.transform.position = bulletStart.transform.position;
+    //    b.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
+    //    b.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
+    //}
 
 
 }

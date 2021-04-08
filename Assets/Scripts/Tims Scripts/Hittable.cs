@@ -18,7 +18,7 @@ public class Hittable : MonoBehaviour {
 
     void Start()
     {
-        GameObject gmObj = GameObject.FindGameObjectWithTag("GameController");
+        GameObject gmObj = GameObject.FindGameObjectWithTag("Game Controller");
         if (gmObj)
             gm = gmObj.GetComponent<GameManager>();
         else
@@ -46,7 +46,7 @@ public class Hittable : MonoBehaviour {
             {
                 Hitpoints--;
                 Destroy(other.gameObject);
-                gm.Live.maxValue += 1;
+               // gm.Live.maxValue += 1;
 
             }
 
