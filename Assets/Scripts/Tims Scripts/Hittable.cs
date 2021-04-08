@@ -33,7 +33,7 @@ public class Hittable : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other)
     {
 
-        if (tag == "Enemy" && other.tag != "" && other.tag != "Item" )
+        if (tag == "Enemy" && (other.tag == SpaceShip_Const.Tag_Player || other.tag == "Player Projectile"))
         {
 
             if (other.tag == SpaceShip_Const.Tag_Player)
@@ -42,165 +42,44 @@ public class Hittable : MonoBehaviour {
                 gm.PlayerHitpoints--;
                 // gm.required_kills--;
             }
-            else if (other.tag == "Bullet")
+            else if (other.tag == "Player Projectile")
             {
                 Hitpoints--;
                 Destroy(other.gameObject);
-            }
+                gm.Live.maxValue += 1;
 
-            else if (other.tag == "Shield")
-            {
-                Hitpoints = 0;
-                // gm.required_kills--;
-            }
-
-            else if (other.tag == "Explosion") { Hitpoints -= 10; }
-
-            else if (other.tag == "Enemy Bullet")
-            {
-                Destroy(other.gameObject);
-                Hitpoints--;
-            }
-
-            else if (other.tag != "Border")
-            {
-                Destroy(other.gameObject);
-            }
-            else if (other.tag == "Border")
-            {
-                Destroy(this.gameObject);
-                //// gm.required_kills--;
-            }
-            if (Hitpoints <= 0 && other.tag != "Border")
-            {
-                gm.score += points;
-                // gm.required_kills--;
-            }
-            else if (Hitpoints <= 0 && other.tag == "Border")
-            {
-                Destroy(this.gameObject);
-            }
-        }
-
-        else if (tag == "Rocket")
-        {
-            if (other.tag != "Rocket" &&other.tag != "Explosion" && other.tag != SpaceShip_Const.Tag_Player && other.tag != "Minigun" && other.tag != "Life Up" && other.tag != "Speed Up" && other.tag != "Rocket Up" && other.tag != "Shield Up")
-            {
-                Hitpoints = 0;
-            }
-
-            if (Hitpoints == 0)
-            {
-                Destroy(this.gameObject);
-            }
-        }
-
-
-        else if (tag == "Enemy" && other.tag != "Enemy Bullet" && other.tag != "Minigun" && other.tag != "Life Up" && other.tag != "Speed Up" && other.tag != "Rocket Up" && other.tag != "Shield Up")
-        {
-
-            if (other.tag == SpaceShip_Const.Tag_Player || tag == "Pig")
-            {
-                Drops = 0;
-                gm.PlayerHitpoints--;
-                Hitpoints = 0;
-                // gm.required_kills--;
-            }
-
-            else if (other.tag == "Shield")
-            {
-                Hitpoints = 0;
-                // gm.required_kills--;
-            }
-
-            else if (other.tag == "Border")
-            {
-                Destroy(this.gameObject);
-                // gm.required_kills--;
-            }
-            else if (other.tag != "Obstacle" && other.tag != "Border" && other.tag != "Bullet" && other.tag != "Shield")
-            {
-                Destroy(this.gameObject);
-                // gm.required_kills--;
-            }
-
-            else if (other.tag == "Explosion") { Hitpoints -= 10; }
-
-            if (other.tag == "Bullet")
-            {
-                Hitpoints--;
-            }
-
-            if (Hitpoints <= 0)
-            {
-                gm.score += points;
-                // gm.required_kills--;
             }
 
 
         }
 
-        else if (tag == "Pig" && other.tag != "Pig" && other.tag != "Minigun" && other.tag != "Life Up" && other.tag != "Speed Up" && other.tag != "Rocket Up" && other.tag != "Shield Up")
-        {
+        //else if (tag == "Rocket")
+        //{
+        //    if (other.tag != "Rocket" &&other.tag != "Explosion" && other.tag != SpaceShip_Const.Tag_Player && other.tag != "Minigun" && other.tag != "Life Up" && other.tag != "Speed Up" && other.tag != "Rocket Up" && other.tag != "Shield Up")
+        //    {
+        //        Hitpoints = 0;
+        //    }
 
-            if (other.tag == SpaceShip_Const.Tag_Player || tag == "Enemy")
-            {
-                Drops = 0;
-                gm.PlayerHitpoints--;
-                Hitpoints = 0;
-                // gm.required_kills--;
-            }
-
-            else if (other.tag == "Shield")
-            {
-                Hitpoints = 0;
-                // gm.required_kills--;
-            }
-
-            else if (other.tag == "Border")
-            {
-                Destroy(this.gameObject);
-                // gm.required_kills--;
-            }
-
-            else if (other.tag == "Explosion") { Hitpoints -= 10; }
-
-            else if (Hitpoints <= 0)
-            {
-                gm.score += points;
-                // gm.required_kills--;
-            }
-
-            else if (other.tag == "Bullet" || other.tag == "Enemy Bullet")
-            {
-                Hitpoints--;
-                Destroy(other.gameObject);
-            }
+        //    if (Hitpoints == 0)
+        //    {
+        //        Destroy(this.gameObject);
+        //    }
+        //}
 
 
-            else if (other.tag != "Obstacle" && other.tag != "Border" && other.tag != "Bullet" && other.tag != "Shield" && other.tag != "Enemy")
-            {
-                Destroy(this.gameObject);
-                // gm.required_kills--;
-            }
-        }
-
-
+ 
 
         else if (tag == SpaceShip_Const.Tag_Player && other.tag != "Shield Up" && other.tag != "Explosion" && other.tag != "Rocket")
         {
-            if (other.tag == "Life Up")
+            if (other.tag == "Heart")
             {
                 gm.PlayerHitpoints++;
             }
 
-            else if (other.tag == "Minigun") { }
-
-            else if (other.tag == "Speed Up") { }
-           
-            else if (other.tag == "Shield Up") { }
-
-            else if (other.tag == "Rocket Up") { }
+            if (other.tag == "Heart Container")
+            {
+                gm.PlayerHitpoints++;
+            }
 
             else if (other.tag != "Obstacle" && other.tag != "Bullet" && other.tag != "Shield")
             {

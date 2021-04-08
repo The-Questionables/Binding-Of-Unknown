@@ -66,8 +66,6 @@ public class Shoot : MonoBehaviour
         */
         
     }
-    void Minigun()
-    { Cooldown /= Minigunspeed; }
 
 
     void shooting()
@@ -87,16 +85,6 @@ public class Shoot : MonoBehaviour
         }
     }
 
-    public IEnumerator Countdown()
-        {
-        counter = dauer;
-        Minigun();
-        while (counter > 0)
-            {
-                yield return new WaitForSeconds(1);
-                counter--;
-            }
-        if (counter <= 0.0f) { Cooldown *= Minigunspeed; } 
-        }
+
 
 }
