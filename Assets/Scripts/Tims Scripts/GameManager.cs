@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour {
     //public int required_kills = 100;
     //public float reqired_time = 120;
     public Text Score;
-    public Text Live;
+    public Slider Live;
     public int score = 0;
     public string Next_Stage = "";
     public int PlayerHitpoints = 3;
@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour {
         //if (reqired_time >= 0)
         //{ reqired_time -= Time.deltaTime; }
         if (Live)
-            Live.text = " X " + PlayerHitpoints;
+            Live.value = PlayerHitpoints;
         if (Score)
             Score.text = "Score: " + score;
         /*

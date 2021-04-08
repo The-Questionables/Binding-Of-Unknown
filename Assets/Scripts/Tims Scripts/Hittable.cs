@@ -10,7 +10,7 @@ public class Hittable : MonoBehaviour {
     public Transform spawnPosition;
     public GameObject template;
     public int Drops = 0;
-    public int Hitpoints = 3;
+    public int Hitpoints = 10;
     public int Damage = 0;
     public GameManager gm;
     public Game_Shaker CameraShake;
@@ -33,19 +33,14 @@ public class Hittable : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other)
     {
 
-        if (tag == "Border" && other.tag != SpaceShip_Const.Tag_Player)
-        {
-            Destroy(other.gameObject);
-        }
-
-        else if (tag == "Obstacle" && other.tag != "Obstacle" && other.tag != "Minigun" && other.tag != "Life Up" && other.tag != "Speed Up" && other.tag != "Rocket Up" && other.tag != "Shield Up")
+        if (tag == "Enemy" && other.tag != "" && other.tag != "Item" )
         {
 
             if (other.tag == SpaceShip_Const.Tag_Player)
             {
                 Destroy(this.gameObject);
                 gm.PlayerHitpoints--;
-                gm.required_kills--;
+                // gm.required_kills--;
             }
             else if (other.tag == "Bullet")
             {
@@ -56,7 +51,7 @@ public class Hittable : MonoBehaviour {
             else if (other.tag == "Shield")
             {
                 Hitpoints = 0;
-                gm.required_kills--;
+                // gm.required_kills--;
             }
 
             else if (other.tag == "Explosion") { Hitpoints -= 10; }
@@ -74,12 +69,12 @@ public class Hittable : MonoBehaviour {
             else if (other.tag == "Border")
             {
                 Destroy(this.gameObject);
-                //gm.required_kills--;
+                //// gm.required_kills--;
             }
             if (Hitpoints <= 0 && other.tag != "Border")
             {
                 gm.score += points;
-                gm.required_kills--;
+                // gm.required_kills--;
             }
             else if (Hitpoints <= 0 && other.tag == "Border")
             {
@@ -109,24 +104,24 @@ public class Hittable : MonoBehaviour {
                 Drops = 0;
                 gm.PlayerHitpoints--;
                 Hitpoints = 0;
-                gm.required_kills--;
+                // gm.required_kills--;
             }
 
             else if (other.tag == "Shield")
             {
                 Hitpoints = 0;
-                gm.required_kills--;
+                // gm.required_kills--;
             }
 
             else if (other.tag == "Border")
             {
                 Destroy(this.gameObject);
-                gm.required_kills--;
+                // gm.required_kills--;
             }
             else if (other.tag != "Obstacle" && other.tag != "Border" && other.tag != "Bullet" && other.tag != "Shield")
             {
                 Destroy(this.gameObject);
-                gm.required_kills--;
+                // gm.required_kills--;
             }
 
             else if (other.tag == "Explosion") { Hitpoints -= 10; }
@@ -139,7 +134,7 @@ public class Hittable : MonoBehaviour {
             if (Hitpoints <= 0)
             {
                 gm.score += points;
-                gm.required_kills--;
+                // gm.required_kills--;
             }
 
 
@@ -153,19 +148,19 @@ public class Hittable : MonoBehaviour {
                 Drops = 0;
                 gm.PlayerHitpoints--;
                 Hitpoints = 0;
-                gm.required_kills--;
+                // gm.required_kills--;
             }
 
             else if (other.tag == "Shield")
             {
                 Hitpoints = 0;
-                gm.required_kills--;
+                // gm.required_kills--;
             }
 
             else if (other.tag == "Border")
             {
                 Destroy(this.gameObject);
-                gm.required_kills--;
+                // gm.required_kills--;
             }
 
             else if (other.tag == "Explosion") { Hitpoints -= 10; }
@@ -173,7 +168,7 @@ public class Hittable : MonoBehaviour {
             else if (Hitpoints <= 0)
             {
                 gm.score += points;
-                gm.required_kills--;
+                // gm.required_kills--;
             }
 
             else if (other.tag == "Bullet" || other.tag == "Enemy Bullet")
@@ -186,7 +181,7 @@ public class Hittable : MonoBehaviour {
             else if (other.tag != "Obstacle" && other.tag != "Border" && other.tag != "Bullet" && other.tag != "Shield" && other.tag != "Enemy")
             {
                 Destroy(this.gameObject);
-                gm.required_kills--;
+                // gm.required_kills--;
             }
         }
 
@@ -256,7 +251,7 @@ public class Hittable : MonoBehaviour {
                 Drops = 0;
                 gm.PlayerHitpoints--;
                 Hitpoints = 0;
-                gm.required_kills--;
+                // gm.required_kills--;
             }
 
             else if (other.tag == "Shield")
@@ -270,12 +265,12 @@ public class Hittable : MonoBehaviour {
             else if (other.tag == "Border")
             {
                 Destroy(this.gameObject);
-                gm.required_kills--;
+                // gm.required_kills--;
             }
             else if (other.tag != "Obstacle" && other.tag != "Border" && other.tag != "Bullet" && other.tag != "Shield")
             {
                 Destroy(this.gameObject);
-                gm.required_kills--;
+                // gm.required_kills--;
             }
             if (other.tag == "Bullet")
             {
@@ -286,7 +281,7 @@ public class Hittable : MonoBehaviour {
             {
                 Destroy(this.gameObject);
                 gm.score += points;
-                gm.required_kills--;
+                // gm.required_kills--;
             }
 
 
@@ -300,7 +295,7 @@ public class Hittable : MonoBehaviour {
                 Drops = 0;
                 gm.PlayerHitpoints--;
                 Hitpoints = 0;
-                gm.required_kills--;
+                // gm.required_kills--;
             }
 
             else if (other.tag == "Explosion") { Hitpoints -= 10; }
@@ -308,18 +303,18 @@ public class Hittable : MonoBehaviour {
             else if (other.tag == "Shield")
             {
                 Hitpoints = 0;
-                gm.required_kills--;
+                // gm.required_kills--;
             }
 
             else if (other.tag == "Border")
             {
                 Destroy(this.gameObject);
-                gm.required_kills--;
+                // gm.required_kills--;
             }
             else if (other.tag != "Obstacle" && other.tag != "Border" && other.tag != "Bullet" && other.tag != "Shield")
             {
                 Destroy(this.gameObject);
-                gm.required_kills--;
+                // gm.required_kills--;
             }
 
 
@@ -331,7 +326,7 @@ public class Hittable : MonoBehaviour {
             if (Hitpoints <= 0)
             {    
                 gm.score += points;
-                gm.required_kills--;
+                // gm.required_kills--;
             }
 
 
