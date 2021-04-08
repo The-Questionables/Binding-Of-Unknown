@@ -11,7 +11,6 @@ public class Shoot : MonoBehaviour
     public KeyCode shoot = KeyCode.Space;
     public float Cooldown = 0.75f;
     public float Firerate;
-    public float Minigunspeed = 1.5f;
     public float dauer = 10f;
     private float counter;
     public bool shoot1 = true;

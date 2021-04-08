@@ -33,7 +33,7 @@ public class Hittable : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other)
     {
 
-        if (tag == "Enemy" && (other.tag == SpaceShip_Const.Tag_Player || other.tag == "Player Projectile"))
+        if (tag == SpaceShip_Const.Tag_Enemy && (other.tag == SpaceShip_Const.Tag_Player || other.tag == "Player Projectile"))
         {
 
             if (other.tag == SpaceShip_Const.Tag_Player)
