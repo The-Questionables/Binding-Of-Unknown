@@ -13,10 +13,12 @@ public class RoomSpawner : MonoBehaviour
     private RoomTemplates templates; // ermöglicht zugriff zu allen Arrays die Räume enthalten 
     private int random; // speichert zufälligen Wert aus dem Array
     private bool spawned = false; // sorgt dafür das Räume nicht gleichzeitig spawnen
+    public float waitTime = 1f;
 
     // Start is called before the first frame update
     void Start()
     {
+        Destroy(gameObject, waitTime); // Zerstört Spawner nach einer bestimmten Zeit
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
         Invoke("Spawn", 0.2f); // aktiviert Methode mit einen Time delay
     }
@@ -59,7 +61,13 @@ public class RoomSpawner : MonoBehaviour
     {
         if(other.CompareTag("SpawnPoint")) // wenn der Spawn point mit was zusammenstößt und bereits ein Raum gespawnt ist
         {
-            Destroy(gameObject); // zerstöre den Spawner damit nichts mehr nachspawnt
+            if (other.GetComponent<RoomSpawner>().spawned == false && spawned == false)
+            {
+                // spawn walls blocking off any openings!
+                Instantiate(templates.closedRoom, transform.position, Quaternion.identity);
+                Destroy(gameObject); // zerstöre den Spawner damit nichts mehr nachspawnt
+            }
+            spawned = true; // verhindert weiteres nachspawnen
         }
     }
 }
