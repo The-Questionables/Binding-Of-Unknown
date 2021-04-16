@@ -9,6 +9,7 @@ public class BulletInput : MonoBehaviour
     void Update() 
     {
             SendMessage("MoveBullet", SendMessageOptions.DontRequireReceiver);
+
     }
 
 

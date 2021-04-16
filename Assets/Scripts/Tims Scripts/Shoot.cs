@@ -7,10 +7,11 @@ public class Shoot : MonoBehaviour
     public GameManager gm;
     public Transform spawnPosition1;
     public Transform spawnPosition2;
-    public GameObject ProjectilePrefab;
+    public GameObject template;
     public KeyCode shoot = KeyCode.Space;
     public float Cooldown = 0.75f;
     public float Firerate;
+    public float Minigunspeed = 1.5f;
     public float dauer = 10f;
     private float counter;
     public bool shoot1 = true;
@@ -65,32 +66,37 @@ public class Shoot : MonoBehaviour
         */
         
     }
+    void Minigun()
+    { Cooldown /= Minigunspeed; }
 
 
     void shooting()
-    {
-        if (gm.PlayerHitpoints > 0)
+    { if (gm.PlayerHitpoints > 0)
         {
             shootanimation = true;
             if (shoot1 == true)
-            { 
-                Instantiate(ProjectilePrefab, spawnPosition1.position, spawnPosition1.rotation);
-                shoot1 = false;
-            }
-            else if (shoot1 == false)
-            { 
-                Instantiate(ProjectilePrefab, spawnPosition2.position, spawnPosition2.rotation);
-                shoot1 = true;
-            }
+        { 
+            Instantiate(template, spawnPosition1.position, spawnPosition1.rotation);
+            shoot1 = false;
+        }
+        else if (shoot1 == false)
+        { 
+            Instantiate(template, spawnPosition2.position, spawnPosition2.rotation);
+            shoot1 = true;
+        }
         }
     }
-    //void fireBullet(Vector2 direction, float rotationZ)
-    //{
-    //    GameObject b = Instantiate(ProjectilePrefab) as GameObject;
-    //    b.transform.position = bulletStart.transform.position;
-    //    b.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
-    //    b.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
-    //}
 
+    public IEnumerator Countdown()
+        {
+        counter = dauer;
+        Minigun();
+        while (counter > 0)
+            {
+                yield return new WaitForSeconds(1);
+                counter--;
+            }
+        if (counter <= 0.0f) { Cooldown *= Minigunspeed; } 
+        }
 
 }
