@@ -7,13 +7,13 @@ using UnityEngine.UI;
 public class Hittable : MonoBehaviour {
     private Text Live;
     public int points = 5;
-    public Transform spawnPosition;
-    public GameObject template;
     public int Drops = 0;
     public int Hitpoints = 10;
     public int Damage = 0;
     public GameManager gm;
     public Game_Shaker CameraShake;
+    public Transform spawnPosition;
+    public GameObject Drop;
   
 
     void Start()
@@ -38,7 +38,7 @@ public class Hittable : MonoBehaviour {
 
             if (other.tag == SpaceShip_Const.Tag_Player)
             {
-                Destroy(this.gameObject);
+
                 gm.PlayerHitpoints--;
                 // gm.required_kills--;
             }
@@ -53,31 +53,19 @@ public class Hittable : MonoBehaviour {
 
         }
 
-        //else if (tag == "Rocket")
-        //{
-        //    if (other.tag != "Rocket" &&other.tag != "Explosion" && other.tag != SpaceShip_Const.Tag_Player && other.tag != "Minigun" && other.tag != "Life Up" && other.tag != "Speed Up" && other.tag != "Rocket Up" && other.tag != "Shield Up")
-        //    {
-        //        Hitpoints = 0;
-        //    }
-
-        //    if (Hitpoints == 0)
-        //    {
-        //        Destroy(this.gameObject);
-        //    }
-        //}
-
-
  
 
-        else if (tag == SpaceShip_Const.Tag_Player && other.tag != "Shield Up" && other.tag != "Explosion" && other.tag != "Rocket")
+        else if (tag == SpaceShip_Const.Tag_Player && other.tag != "Item" && other.tag != "Explosion" && other.tag !=SpaceShip_Const.Tag_Enemy)
         {
             if (other.tag == "Heart")
             {
+                Destroy(other.gameObject);
                 gm.PlayerHitpoints++;
             }
 
             if (other.tag == "Heart Container")
             {
+                Destroy(other.gameObject);
                 gm.PlayerHitpoints++;
             }
 
@@ -86,13 +74,6 @@ public class Hittable : MonoBehaviour {
                 Destroy(other.gameObject);
 
                 StartCoroutine(CameraShake.Shake(1.15f, 1.15f));
-            }
-
-            else if (other.tag == "Obstacle")
-            {
-                Destroy(other.gameObject);
-
-                StartCoroutine(CameraShake.Shake(0.5f, 1.15f));
             }
 
             else if (gm.PlayerHitpoints <= 0)
@@ -115,7 +96,7 @@ public class Hittable : MonoBehaviour {
                 gm.PlayerHitpoints--;
                 Destroy(this.gameObject);
             }
-            else if (other.tag == "Obstacle" || other.tag == "Shield")
+            else if (other.tag == "Wall" )
             {
                 Destroy(this.gameObject);
             }
@@ -141,16 +122,6 @@ public class Hittable : MonoBehaviour {
 
             else if (other.tag == "Explosion") { Hitpoints -= 10; }
 
-            else if (other.tag == "Border")
-            {
-                Destroy(this.gameObject);
-                // gm.required_kills--;
-            }
-            else if (other.tag != "Obstacle" && other.tag != "Border" && other.tag != "Bullet" && other.tag != "Shield")
-            {
-                Destroy(this.gameObject);
-                // gm.required_kills--;
-            }
             if (other.tag == "Bullet")
             {
                 Hitpoints--;
@@ -166,54 +137,9 @@ public class Hittable : MonoBehaviour {
 
         }
 
-        else if (tag == "Cow" && other.tag != "Enemy Bullet" && other.tag != "Minigun" && other.tag != "Life Up" && other.tag != "Speed Up" && other.tag != "Rocket Up" && other.tag != "Shield Up")
-        {
-
-            if (other.tag == SpaceShip_Const.Tag_Player)
-            {
-                Drops = 0;
-                gm.PlayerHitpoints--;
-                Hitpoints = 0;
-                // gm.required_kills--;
-            }
-
-            else if (other.tag == "Explosion") { Hitpoints -= 10; }
-
-            else if (other.tag == "Shield")
-            {
-                Hitpoints = 0;
-                // gm.required_kills--;
-            }
-
-            else if (other.tag == "Border")
-            {
-                Destroy(this.gameObject);
-                // gm.required_kills--;
-            }
-            else if (other.tag != "Obstacle" && other.tag != "Border" && other.tag != "Bullet" && other.tag != "Shield")
-            {
-                Destroy(this.gameObject);
-                // gm.required_kills--;
-            }
-
-
-            if (other.tag == "Bullet")
-            {
-                Hitpoints--;
-            }
-
-            if (Hitpoints <= 0)
-            {    
-                gm.score += points;
-                // gm.required_kills--;
-            }
-
-
-        }
 
         else if (tag == "Untagged")
         {
-            Destroy(this.gameObject);
         }
 
 
@@ -228,8 +154,8 @@ public class Hittable : MonoBehaviour {
 
     void PowerupSpawn()
     {
-        if(template)
-            Instantiate(template, spawnPosition.position, spawnPosition.rotation);
+        if(Drop)
+            Instantiate(Drop, spawnPosition.position, spawnPosition.rotation);
     }
 
 
