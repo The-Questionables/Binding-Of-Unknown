@@ -11,7 +11,7 @@ public class Hittable : MonoBehaviour {
     public int Hitpoints = 10;
     public int Damage = 0;
     public GameManager gm;
-    public Game_Shaker CameraShake;
+   // public Game_Shaker CameraShake;
     public Transform spawnPosition;
     public GameObject Drop;
   
@@ -69,12 +69,12 @@ public class Hittable : MonoBehaviour {
                 gm.PlayerHitpoints++;
             }
 
-            else if (other.tag != "Obstacle" && other.tag != "Bullet" && other.tag != "Shield")
+            /*else if (other.tag != "Obstacle" && other.tag != "Bullet" && other.tag != "Shield")
             {
                 Destroy(other.gameObject);
 
                 StartCoroutine(CameraShake.Shake(1.15f, 1.15f));
-            }
+            }*/
 
             else if (gm.PlayerHitpoints <= 0)
             {
