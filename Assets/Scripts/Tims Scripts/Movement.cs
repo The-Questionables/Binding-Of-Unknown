@@ -66,16 +66,4 @@ public class Movement : MonoBehaviour
         transform.position = position;
     }
 
-
-    public IEnumerator SpeedPowerup()
-    {
-        dauer = SpeedUpTimer;
-        SpeedUp();
-        while (dauer > 0)
-        {
-            yield return new WaitForSeconds(SlowDownValue);
-            dauer--;
-        }
-        if (dauer <= 0.0f) { SpeedDown(); }
-    }
 }
