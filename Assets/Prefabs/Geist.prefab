@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -10, y: 0}
   m_SizeDelta: {x: 256.1092, y: 37.174133}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &947327878112655459
@@ -296,6 +296,7 @@ GameObject:
   - component: {fileID: 947327879237028918}
   - component: {fileID: 947327879237028919}
   - component: {fileID: 947327879237028920}
+  - component: {fileID: 1795537050}
   m_Layer: 0
   m_Name: Geist
   m_TagString: Enemy
@@ -384,12 +385,26 @@ MonoBehaviour:
   target: {fileID: 0}
   chaseRadius: 5
   attackRadius: 1
-  homePosition: {fileID: 0}
   detonationTimer: 0
   Explosion: {fileID: 0}
   Name: Mino
   baseAttack: 20
   moveSpeed: 3
+--- !u!114 &1795537050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947327879237028921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5606dfbf645ea44458cbae5383a7ce68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemsInDrop:
+  - {fileID: 4142850972197064908, guid: 12a071860b8b71544b6b5cd8e931c87a, type: 3}
+  dropChance: 64000000
 --- !u!1 &947327879267183916
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,7 +463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -605,7 +620,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: -1188827837
+  m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &947327879355511140

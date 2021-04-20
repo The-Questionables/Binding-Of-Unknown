@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class LootDrop : MonoBehaviour
 {
-    List<GameObject> itemsInDrop;
-    int[] dropChance;
+    [Header("Loot")]
+
+    [SerializeField] List<GameObject> itemsInDrop;
+    [SerializeField] int[] dropChance;
 
     private int totalDropChance;
     private int randomChance;

@@ -31,15 +31,17 @@ public class Enemy : MonoBehaviour
     public string Name;
     public int baseAttack;
     public float moveSpeed;
-    // General Cached References
+    // loot
     LootDrop lootDrop;
+    // General Cached References
+
 
     // Start is called before the first frame update
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
-
         lootDrop = GetComponent<LootDrop>();
+
         nativeColor = GetComponentInChildren<SpriteRenderer>().color;
         freezeColor = Color.blue;
 
@@ -71,27 +73,17 @@ public class Enemy : MonoBehaviour
         healthBar.SetHealth(currentHealth);
         if (currentHealth <= 0)
         {
-            // Verliere Leben
 
             // Spiele Sound ab passiert in der explosion
 
             // Spiele Effect ab
-           // if (Explosion != null)
-           // {
-           //     Instantiate(Explosion, transform.position, Quaternion.identity);
-           // }
+             if (Explosion != null)
+             {
+                 Instantiate(Explosion, transform.position, Quaternion.identity);
+             }
 
-            /*
-            // Erhöhe Punltzahl
-            if (enemyState == EnemyStates.IDLE) //bedeutet in der Formation 
-            {
-                GameManager.instance.AddScore(Score);
-            }
-            else
-            {
-                GameManager.instance.AddScore(Score);
-            }
-            */
+            // Dropt loot
+            lootDrop.GetLootDrop(); // Führt GetLootDrop Methode vom LootDrop Script aus
 
             // Zerstöre Gegner
             Destroy(gameObject, detonationTimer);
@@ -154,5 +146,4 @@ public class Enemy : MonoBehaviour
     {
         return enemyHealth;
     }
-
 }
