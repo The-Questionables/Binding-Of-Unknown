@@ -21,7 +21,7 @@ public class LoadNextScene : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             //AudioSource.PlayClipAtPoint(NextLevelSound, Camera.main.transform.position, heartSoundVolume);
-            SceneManager.LoadScene("Main Menu");
+            SceneManager.LoadScene("Upper World");
         }
         else
         {
