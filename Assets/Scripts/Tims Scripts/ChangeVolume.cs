@@ -20,10 +20,10 @@ using UnityEngine.UI;
          //   p_mixer.GetFloat("Master Volume", out tmp);
          //   s_master.value = Mathf.InverseLerp(-30, 20, tmp) * 10;
 
-            p_mixer.GetFloat(SpaceShip_Const.Volume_Music, out tmp);
+            p_mixer.GetFloat(Slime_Const.Volume_Music, out tmp);
             s_music.value = Mathf.InverseLerp(-30, 20, tmp) * 10;
 
-            p_mixer.GetFloat(SpaceShip_Const.Volume_Sfx, out tmp);
+            p_mixer.GetFloat(Slime_Const.Volume_Sfx, out tmp);
             s_effects.value = Mathf.InverseLerp(-30, 20, tmp) * 10;
         }
         /*
@@ -34,11 +34,11 @@ using UnityEngine.UI;
         */
         public void ChangeMusicVolume(float value)
         {
-            p_mixer.SetFloat(SpaceShip_Const.Volume_Music, Mathf.Lerp(-30, 20, value / 10));
+            p_mixer.SetFloat(Slime_Const.Volume_Music, Mathf.Lerp(-30, 20, value / 10));
         }
 
         public void ChangeEffectsVolume(float value)
         {
-            p_mixer.SetFloat(SpaceShip_Const.Volume_Sfx, Mathf.Lerp(-30, 20, value / 10));
+            p_mixer.SetFloat(Slime_Const.Volume_Sfx, Mathf.Lerp(-30, 20, value / 10));
         }
     }

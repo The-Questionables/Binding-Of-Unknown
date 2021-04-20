@@ -33,10 +33,10 @@ public class Hittable : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other)
     {
 
-        if (tag == SpaceShip_Const.Tag_Enemy && (other.tag == SpaceShip_Const.Tag_Player || other.tag == "Player Projectile"))
+        if (tag == Slime_Const.Tag_Enemy && (other.tag == Slime_Const.Tag_Player || other.tag == "Player Projectile"))
         {
 
-            if (other.tag == SpaceShip_Const.Tag_Player)
+            if (other.tag == Slime_Const.Tag_Player)
             {
 
                 gm.PlayerHitpoints--;
@@ -55,7 +55,7 @@ public class Hittable : MonoBehaviour {
 
  
 
-        else if (tag == SpaceShip_Const.Tag_Player && other.tag != "Item" && other.tag != "Explosion" && other.tag !=SpaceShip_Const.Tag_Enemy)
+        else if (tag == Slime_Const.Tag_Player && other.tag != "Item" && other.tag != "Explosion" && other.tag !=Slime_Const.Tag_Enemy)
         {
             if (other.tag == "Heart")
             {
@@ -84,14 +84,14 @@ public class Hittable : MonoBehaviour {
         }
 
 
-        else if (tag == "Bullet" && other.tag != SpaceShip_Const.Tag_Player && other.tag != "Shield")
+        else if (tag == "Bullet" && other.tag != Slime_Const.Tag_Player && other.tag != "Shield")
         {
             Destroy(this.gameObject);
         }
 
         else if (tag == "Enemy Bullet")
         {
-            if (other.tag == SpaceShip_Const.Tag_Player)
+            if (other.tag == Slime_Const.Tag_Player)
             {
                 gm.PlayerHitpoints--;
                 Destroy(this.gameObject);
@@ -106,7 +106,7 @@ public class Hittable : MonoBehaviour {
         else if (tag == "Endboss" && other.tag != "Enemy Bullet" && other.tag != "Minigun" && other.tag != "Life Up" && other.tag != "Speed Up" && other.tag != "Rocket Up" && other.tag != "Shield Up")
         {
 
-            if (other.tag == SpaceShip_Const.Tag_Player)
+            if (other.tag == Slime_Const.Tag_Player)
             {
                 Drops = 0;
                 gm.PlayerHitpoints--;

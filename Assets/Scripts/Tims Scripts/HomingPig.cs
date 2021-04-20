@@ -18,7 +18,7 @@ public class HomingPig : MonoBehaviour
     
     void Start()
     {
-        playerTransform = GameObject.FindGameObjectWithTag(SpaceShip_Const.Tag_Player).transform;
+        playerTransform = GameObject.FindGameObjectWithTag(Slime_Const.Tag_Player).transform;
         old = mov.Speed ;
     }
 

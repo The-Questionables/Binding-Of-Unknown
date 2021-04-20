@@ -322,7 +322,7 @@ Animator:
   m_GameObject: {fileID: 79431110}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7a4d100b3ec0e4a499d1ff59990eb2f8, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -450,7 +450,7 @@ Transform:
   - {fileID: 1540701295}
   - {fileID: 1485473447}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1 &259227052
 GameObject:
@@ -662,9 +662,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySpawnInterval: 1
   waveSpawnInterval: 1
-  Gegner1Prefab: {fileID: 0}
-  Gegner2Prefab: {fileID: 0}
-  Gegner3Prefab: {fileID: 0}
+  Gegner1Prefab: {fileID: 5956940161480451939, guid: 61d86296ee368564c8b7d801ec600469,
+    type: 3}
+  Gegner2Prefab: {fileID: 5956940161480451939, guid: 61d86296ee368564c8b7d801ec600469,
+    type: 3}
+  Gegner3Prefab: {fileID: 5956940161480451939, guid: 61d86296ee368564c8b7d801ec600469,
+    type: 3}
   waveList:
   - Gegner1Amount: 3
     Gegner2Amount: 0
@@ -2724,7 +2727,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 618528009
+  m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 84fe73c23134af847ac54ca0899ad20f,
@@ -3136,7 +3139,7 @@ PrefabInstance:
     - target: {fileID: 947327879237028917, guid: ae0101c4e4e002347b40ac79a741ee6b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 947327879237028917, guid: ae0101c4e4e002347b40ac79a741ee6b,
         type: 3}
@@ -3308,21 +3311,20 @@ MonoBehaviour:
   currentMana: 0
   healthBar: {fileID: 1520498168}
   manaBar: {fileID: 664241423}
-  speed: 6
+  speed: 0
   rb: {fileID: 5413781975651653309}
   animator: {fileID: 5413781975651653305}
   detonationTimer: 0
   Explosion: {fileID: 0}
   FireballSpawns:
   - {fileID: 0}
-  Fireball: {fileID: 9103733735765061434, guid: e176b6690eda85041b65e925d096e85b,
-    type: 3}
+  Fireball: {fileID: 0}
   fireRateFireball: 1
   nextFireFireBall: 1
   crossHair: {fileID: 0}
   ArrowSpawns:
   - {fileID: 1485473447}
-  Arrow: {fileID: 4435520523245032972, guid: 6c7814582eeb9da46adf08e5446b9976, type: 3}
+  Arrow: {fileID: 0}
   fireRateArrow: 1
   nextFireArrow: 1
 --- !u!1 &1289175723
@@ -3546,7 +3548,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1318042565}
   - component: {fileID: 1318042564}
-  - component: {fileID: 1318042567}
   - component: {fileID: 1318042563}
   - component: {fileID: 1318042562}
   - component: {fileID: 1318042561}
@@ -3650,18 +3651,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1318042567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1318042560}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9ce1a41ae305784dacb625331b04ae6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1342647324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4060,7 +4049,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1485473445}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.41, y: -0.029, z: 0}
+  m_LocalPosition: {x: 0.41000006, y: -0.028999995, z: 0}
   m_LocalScale: {x: 0.16666667, y: 0.16666667, z: 0.16666667}
   m_Children:
   - {fileID: 208550178}
@@ -4082,7 +4071,7 @@ MonoBehaviour:
   gm: {fileID: 1086568635}
   spawnPosition1: {fileID: 208550178}
   spawnPosition2: {fileID: 208550178}
-  ProjectilePrefab: {fileID: 1133762169987533107, guid: 62ff018a76d0faf458d655164583706d,
+  ProjectilePrefab: {fileID: 1133762169987533107, guid: b5299a662be54854e983367e8ea07b21,
     type: 3}
   shoot: 324
   Cooldown: 0.75
@@ -4103,7 +4092,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bbac67af61b3a94488ec7460e176aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  offset: 0
+  projectile: {fileID: 0}
+  shotEffect: {fileID: 0}
+  shotPoint: {fileID: 0}
+  camAnim: {fileID: 0}
+  startTimeBtwShots: 0
 --- !u!1 &1486363437
 GameObject:
   m_ObjectHideFlags: 0
@@ -5444,7 +5438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1486363439}
   dialogText: {fileID: 540774882}
-  animator: {fileID: 79431114}
+  animator: {fileID: 0}
 --- !u!4 &1734694603
 Transform:
   m_ObjectHideFlags: 0
@@ -6416,9 +6410,11 @@ GameObject:
   - component: {fileID: 231404817}
   - component: {fileID: 5413781975651653308}
   - component: {fileID: 5413781975651653305}
+  - component: {fileID: 5413781975651653311}
+  - component: {fileID: 5413781975651653310}
   - component: {fileID: 5413781975651653309}
   - component: {fileID: 5413781975651653307}
-  - component: {fileID: 5413781975651653311}
+  - component: {fileID: 5413781975651653306}
   - component: {fileID: 1260274130}
   - component: {fileID: 5413781975651653304}
   m_Layer: 0
@@ -6440,8 +6436,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba8f970d4178689478c0a13b199644cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 1
-  RotationSpeed: 1
+  Speed: 10
+  RotationSpeed: 2000
   SpeedUpTimer: 0
   SpeedUpValue: 0
   SlowDownValue: 0
@@ -6466,6 +6462,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5413781975651653306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5413781975651653303}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 792ff7d515decca43a32ed136076b9d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
 --- !u!61 &5413781975651653307
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6565,100 +6574,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!82 &5413781975651653311
-AudioSource:
+--- !u!114 &5413781975651653310
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5413781975651653303}
   m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: bc4c87ef3b2a55c4d8ed90f38460ab83,
-    type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1.000001
-  MaxDistance: 1.0000019
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5309eb08096e39f498c371fcd5ab742c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5413781975651653311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5413781975651653303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef37387f8d6c969499af348470a960b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  left: 97
+  right: 100
+  up: 119
+  down: 115
+  shoot: 32
+  turnleft: 113
+  turnright: 101

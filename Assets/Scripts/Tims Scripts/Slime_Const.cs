@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpaceShip_Const
+public class Slime_Const
 {
     public const string Volume_Master = "Master Volume";
     public const string Volume_Sfx = "SFX Volume";
