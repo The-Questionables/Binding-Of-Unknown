@@ -69,7 +69,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            TakeDamage(8);
+            TakeDamage(20);
         }
 
         if (Input.GetKeyDown(KeyCode.E))
@@ -141,7 +141,7 @@ public class Player : MonoBehaviour
         currentHealth -= damage;
 
         healthBar.SetHealth(currentHealth);
-        if (currentHealth <= 0)
+      if (currentHealth <= 0)
         {
             // Verliere Leben
 
@@ -167,7 +167,7 @@ public class Player : MonoBehaviour
 
             // Zerstöre Gegner
             Destroy(gameObject, detonationTimer);
-        }
+      }
         }
 
     void Fireballcost(int cost)
@@ -175,6 +175,27 @@ public class Player : MonoBehaviour
         currentMana -= cost;
 
         manaBar.SetMana(currentMana);
+    }
+
+    /*
+    public void RecoverHealth(int healthRecover) // wird aktiviert beim einsammeln von einen Heiltrank
+    {
+        currentHealth += healthRecover;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+        currentHealth = maxHealth;          // verändet Wert der Healtbar
+        healthBar.SetMaxHealth(maxHealth);
+        UpdateHealthUI(playerCurrentHealth);
+        //UpdateHealthUI();
+    }
+    */
+
+    public void HealDamage(int healthRecover)
+    {
+        currentHealth += healthRecover;
+
+        healthBar.SetHealth(currentHealth);
+       
     }
 
     /*

@@ -30,7 +30,7 @@ public class Crosshair : MonoBehaviour
         player.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
 
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButton(0)) // wird aktiviert wenn angegebene Maustaste gedrückt gehalten wird //if (Input.GetMouseButtonDown(1))
         {
             float distance = difference.magnitude;
             Vector2 direction = difference / distance;
