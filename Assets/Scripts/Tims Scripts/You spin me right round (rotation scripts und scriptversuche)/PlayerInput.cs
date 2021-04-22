@@ -17,28 +17,28 @@ public class PlayerInput : MonoBehaviour
 
         bool left2 = Input.GetKey(left);
 
-        if (left2 == true && transform.position.x >= -7.5f)
+        if (left2 == true )
         {
             SendMessage("MoveLeft", SendMessageOptions.DontRequireReceiver);
         }
 
         bool right2 = Input.GetKey(right);
 
-        if (right2 == true && transform.position.x <= 7.5f)
+        if (right2 == true)
         {
             SendMessage("MoveRight", SendMessageOptions.DontRequireReceiver);
         }
 
         bool up2 = Input.GetKey(up);
 
-        if (up2 == true && transform.position.y <= 8.75f)
+        if (up2 == true)
         {
             SendMessage("MoveUp", SendMessageOptions.DontRequireReceiver);
         }
 
         bool down2 = Input.GetKey(down);
 
-        if (down2 == true && transform.position.y >= 0f)
+        if (down2 == true)
         {
             SendMessage("MoveDown", SendMessageOptions.DontRequireReceiver);
         }

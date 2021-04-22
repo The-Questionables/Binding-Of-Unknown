@@ -10,28 +10,23 @@ public class Shoot : MonoBehaviour
     public GameObject ProjectilePrefab;
     public KeyCode shoot = KeyCode.Space;
     public float Cooldown = 0.75f;
-    public float Firerate;
-    public float dauer = 10f;
-    private float counter;
+    private float TimeTillReadyToShoot;
+
+
     public bool shoot1 = true;
     public bool shoot2 = false;
     public bool shootanimation = false;
 
-    void Start()
-    {
-        counter = dauer;
-    } 
-
     void Shoot3()
     {
-        if (Firerate <= Cooldown)
+        if (TimeTillReadyToShoot <= Cooldown)
         {
-            Firerate = Firerate + Time.deltaTime;
+            TimeTillReadyToShoot = TimeTillReadyToShoot + Time.deltaTime;
         }
-        if (Firerate >= Cooldown)
+        if (TimeTillReadyToShoot >= Cooldown)
         {
             shooting();
-            Firerate = Firerate - Cooldown;
+            TimeTillReadyToShoot = TimeTillReadyToShoot - Cooldown;
         }
     }
 
@@ -44,23 +39,23 @@ public class Shoot : MonoBehaviour
         {
             shooting();
         }= schuss ohne cooldown */
-        if (Firerate <= Cooldown)
+        if (TimeTillReadyToShoot <= Cooldown)
         {
-            Firerate = Firerate + Time.deltaTime;
+            TimeTillReadyToShoot = TimeTillReadyToShoot + Time.deltaTime;
         }
 
-        if (Firerate >= Cooldown && shoot2 == true)
+        if (TimeTillReadyToShoot >= Cooldown && shoot2 == true)
         {
             shooting();
-            Firerate = Firerate - Cooldown;
+            TimeTillReadyToShoot = TimeTillReadyToShoot - Cooldown;
         }
 
-        /*Firerate2 = Firerate2 + Time.deltaTime;
+        /*TimeTillReadyToShoot2 = TimeTillReadyToShoot2 + Time.deltaTime;
 
-        if (Firerate2 >= Firerate && shoot2 == true)
+        if (TimeTillReadyToShoot2 >= TimeTillReadyToShoot && shoot2 == true)
         {
             shooting();
-            Firerate2 = Firerate2 - Firerate;
+            TimeTillReadyToShoot2 = TimeTillReadyToShoot2 - TimeTillReadyToShoot;
         } = aufladender schuss
         */
         
