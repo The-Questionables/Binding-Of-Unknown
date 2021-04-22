@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public static Enemy instance;
+
     public int maxHealth = 100;
     public int currentHealth;
     public HealthBar healthBar;
@@ -23,8 +25,8 @@ public class Enemy : MonoBehaviour
     public Transform target;
     public float chaseRadius;
     public float attackRadius;
- // public Transform homePosition;
-
+    // public Transform homePosition;
+    public Rigidbody2D rb;
     public float detonationTimer = 0f;
     public GameObject Explosion;
    // public int health;
@@ -33,12 +35,19 @@ public class Enemy : MonoBehaviour
     public float moveSpeed;
     // loot
     LootDrop lootDrop;
+
+    public float knockbackPower = 25;
+    public float knockbackDuration = 1;
     // General Cached References
 
 
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
+
+        this.rb = this.GetComponent<Rigidbody2D>();
+
         target = GameObject.FindGameObjectWithTag("Player").transform;
         lootDrop = GetComponent<LootDrop>();
 
@@ -98,9 +107,16 @@ public class Enemy : MonoBehaviour
             target.GetComponent<Player>().TakeDamage(baseAttack);
             StartCoroutine(FreezeMovement());
         }
-        else if (collision.CompareTag("Player"))
+        else if (collision.CompareTag("Player")) //  (collision.gameObject.CompareTag("Player"))
         {
             target.GetComponent<Player>().TakeDamage(baseAttack);
+          //  StartCoroutine(Player.instance.Knockback(knockbackDuration, knockbackPower, this.transform)); //Startet Coroutine Knockback für den Player buggy
+        }
+        else if (collision.CompareTag("MyWeapon")) //  
+        {
+            Vector2 difference = transform.position - collision.transform.position;
+            transform.position = new Vector2(transform.position.x + difference.x, transform.position.y + difference.y);
+            //  StartCoroutine(Player.instance.Knockback(knockbackDuration, knockbackPower, this.transform)); //Startet Coroutine Knockback für den Player buggy
         }
     }
 
@@ -146,4 +162,31 @@ public class Enemy : MonoBehaviour
     {
         return enemyHealth;
     }
+
+    // Buggy Knockback ***********************************************************************************
+    
+    public IEnumerator Knockback(float knockbackDuration, float knockbackPower, Transform obj)
+    {
+        float timer = 0;
+
+        while (knockbackDuration > timer)
+        {
+            timer += Time.deltaTime;
+            Vector2 direction = (obj.transform.position - this.transform.position).normalized;
+            rb.AddForce(-direction * knockbackPower);
+        }
+        yield return 0; // soll sofort passieren
+    }
+
+    
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            StartCoroutine(Player.instance.Knockback(knockbackDuration, knockbackPower, this.transform)); //Startet Coroutine Knockback für den Player
+        }
+
+    }
+    
+
 }

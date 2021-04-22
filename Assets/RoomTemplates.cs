@@ -16,7 +16,7 @@ public class RoomTemplates : MonoBehaviour
 
     public float waitTime;
     private bool spawnedBoss;
-    public GameObject boss;
+    public GameObject boss; // boss oder Treppe
 
 
     // Update is called once per frame
