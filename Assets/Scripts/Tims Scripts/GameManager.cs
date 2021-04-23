@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
     //public int required_kills = 100;
     //public float reqired_time = 120;
-    //public int coins;
+    public int coins;
     public Text coinsText;
 
     public Slider Live;
@@ -30,12 +30,12 @@ public class GameManager : MonoBehaviour {
 
     public void AddCoin(int getCoins)
     {
-        //coins += getCoins;
-        UpdateCoinsText(getCoins);
+        coins += getCoins;
+        UpdateCoinsText(coins);
     }
-    public void UpdateCoinsText(int getCoins)
+    public void UpdateCoinsText(int coins)
     {
-        coinsText.text = "x" + getCoins.ToString();
+        coinsText.text = "x" + coins.ToString();
         Debug.Log("UpdateCoinsText wurde ausgeführt");
     }
 }
