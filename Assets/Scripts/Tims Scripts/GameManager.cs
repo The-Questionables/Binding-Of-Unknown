@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour {
     public int coins;
     public Text coinsText;
 
+    public int healpotions;
+    public Text healpotionsText;
+
     public Slider Live;
     public Text HealthText;
 
@@ -27,7 +30,7 @@ public class GameManager : MonoBehaviour {
             coins.text = "Score: " + score;   
         */
     }
-
+    //*********************************** Coins
     public void AddCoin(int getCoins)
     {
         coins += getCoins;
@@ -38,50 +41,27 @@ public class GameManager : MonoBehaviour {
         coinsText.text = "x" + coins.ToString();
         Debug.Log("UpdateCoinsText wurde ausgeführt");
     }
+
+    //********************************** Healpotions
+    public void AddHealpotions(int getHealpotions)
+    {
+        healpotions += getHealpotions;
+        UpdateHealpotionsText(healpotions);
+    }
+    public void UpdateHealpotionsText(int healpotions)
+    {
+        healpotionsText.text = "x" + healpotions.ToString();
+        Debug.Log("UpdateCoinsText wurde ausgeführt");
+    }
+    public void UseHealpotions(int useHealpotions)
+    {
+        healpotions += useHealpotions; // benutzt - Wert um Healpotion zu nutzen
+        UpdateHealpotionsText(healpotions);
+    }
 }
 
+
 /*
-public class UiScript : MonoBehaviour
-{
-
-    public static UiScript instance; // wird gebraucht zum kommunizierung der daten von den anderen Scripts
-
-    public Text coinText;
-    public Text lifeText;
-    public Text stageText;
-    public Text RocketText;
-    public Text Healthtext;
-
-    void Awake()
-    {
-        instance = this;
-    }
-
-    public void UpdateHealthText(int amount)
-    {
-
-        Healthtext.text = "x" + amount.ToString("D1");
-    }
-
-    public void UpdateRocketText(int amount)
-    {
-
-        RocketText.text = "x" + amount.ToString("D2");
-    }
-
-    // Text verändert sich je nach dem was passiert
-
-    public void UpdateScoreText(int amount)
-    {
-
-        scoreText.text = amount.ToString("D8"); //steht für 9 Dezimalstellen
-    }
-
-    public void UpdateLifeText(int amount)
-    {
-        lifeText.text = "x" + amount.ToString("D1"); //steht für 2 Dezimalstellen
-    }
-
     public void ShowStageText(int amount)
     {
         // stageText.gameObject.SetActive(true);
@@ -95,6 +75,4 @@ public class UiScript : MonoBehaviour
     //     stageText.gameObject.SetActive(false);
     //      CancelInvoke("DeactivateStagetext");
     //  }
-
-}
 */

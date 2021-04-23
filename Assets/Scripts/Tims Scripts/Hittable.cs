@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿/*
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -75,7 +76,7 @@ public class Hittable : MonoBehaviour {
 
                 StartCoroutine(CameraShake.Shake(1.15f, 1.15f));
             }*/
-
+/*
             else if (gm.PlayerHitpoints <= 0)
             {
 //                Destroy(this.gameObject);
@@ -162,4 +163,4 @@ public class Hittable : MonoBehaviour {
 
     
 }
-
+*/

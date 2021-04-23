@@ -10,7 +10,7 @@ public class DoorScript : MonoBehaviour
 
     void Start()
     {
-
+        KillsRequired++;
     }
 
     private void Update()
@@ -31,11 +31,12 @@ public class DoorScript : MonoBehaviour
     }
 
     // Update is called once per frame
+    /*
     void OnTriggerExit2D()
     {
         DoorLock();
     }
-
+    */
 
     private void DoorOpener()
     {
@@ -53,6 +54,14 @@ public class DoorScript : MonoBehaviour
         {
             Door[x].SetActive(true);
             x++;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("Enemy"))
+        {
+            KillsRequired++;
         }
     }
 }

@@ -9,7 +9,6 @@ public class Player : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
 
-    public int coins;
     public int healpots;
 
     public HealthBar healthBar;
@@ -31,13 +30,14 @@ public class Player : MonoBehaviour
    // private bool inRecovery;
    // private float recoveryCounter = 0f;
     public float playerRecoveryTime = 1f;
-
-    private BowController bowController; /// TEST
+    public int healthRecover = 10;
+    public int useHealpotions = 1;
+    GameManager gamemanager;
 
     void Start()
     {
+        gamemanager = FindObjectOfType<GameManager>();
         instance = this;
-        bowController = FindObjectOfType<BowController>(); //////////////////////////////// TEst
         // drehen des Projektile des Charakters in Blickrichtung 
         this.rb = this.GetComponent<Rigidbody2D>();
         this.rb.velocity = transform.right * speed * 10;
@@ -46,14 +46,6 @@ public class Player : MonoBehaviour
         currentHealth = maxHealth;          // verändet Wert der Healtbar
         healthBar.SetMaxHealth(maxHealth);
 
-    }
-    //********************************************************************** Neuer Bogen Test
-    private void FireDetection()
-    {
-        if (Input.GetButton("Fire1"))
-        {
-            bowController.ShotProjectile();
-        }
     }
 
     // Update is called once per frame
@@ -71,7 +63,12 @@ public class Player : MonoBehaviour
             {
                 TakeDamage(20);
             }
-        }
+
+            if (Input.GetKeyDown(KeyCode.Q) && gamemanager.healpotions > 0 && currentHealth != maxHealth) // Gamemanager fragen wie viele heiltränke wir haben, wemm über 1 = true, wenn Leben Voll = false
+            {
+                HealDamage(healthRecover);
+            }
+    }
 
     /*
     private void SetRecoveryTime()
@@ -121,7 +118,13 @@ public class Player : MonoBehaviour
     {
         currentHealth += healthRecover;
 
+        if(currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth; 
+        }
+
         healthBar.SetHealth(currentHealth);
-       
+        gamemanager.UseHealpotions(useHealpotions);
+        
     }
 }

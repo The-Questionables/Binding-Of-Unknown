@@ -22,11 +22,11 @@ public class Crosshair : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         target = transform.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z));
 
-        crosshairs.transform.position = new Vector2(target.x, target.y);
+        crosshairs.transform.position = new Vector2(-target.x, -target.y);
 
         Vector3 difference = target - player.transform.position;
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
@@ -41,6 +41,10 @@ public class Crosshair : MonoBehaviour
             direction.Normalize();
             FireBullet(direction, rotationZ);
         }
+    }
+    void Update()
+    {
+
     }
     void FireBullet(Vector2 direction, float rotationZ)
     {
