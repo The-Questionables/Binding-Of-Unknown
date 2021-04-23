@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMouseShooter : MonoBehaviour
-{/// <summary>
-/// bewegt sich in richtung des Fadenkreuzes
-/// </summary>
+{
     public float speed = 5f;
     void Update()
     {

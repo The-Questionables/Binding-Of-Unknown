@@ -9,6 +9,9 @@ public class Player : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
 
+    public int coins;
+    public int healpots;
+
     public HealthBar healthBar;
 
     public float speed = 5f;
@@ -120,5 +123,13 @@ public class Player : MonoBehaviour
 
         healthBar.SetHealth(currentHealth);
        
+    }
+
+    public void AddCoin(int getCoins)
+    {
+        coins += getCoins;
+
+      //  healthBar.SetHealth(currentHealth);
+
     }
 }

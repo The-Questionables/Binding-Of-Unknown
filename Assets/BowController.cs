@@ -64,8 +64,8 @@ public class BowController : MonoBehaviour
 
     public void ShotProjectile()
     {
-      //  if (canShoot)
-       // {
+        if (canShoot)
+        {
            // AudioSource.PlayClipAtPoint(projectileSound, Camera.main.transform.position, projectileSoundVolume);
 
                 GameObject arrow = Instantiate(projectilePrefab, arrowTrigger.position, arrowTrigger.rotation) as GameObject;
@@ -73,7 +73,7 @@ public class BowController : MonoBehaviour
 
                 StartCoroutine(ApplyCooldown());
             
-       // }
+        }
     }
 
     IEnumerator ApplyCooldown()
