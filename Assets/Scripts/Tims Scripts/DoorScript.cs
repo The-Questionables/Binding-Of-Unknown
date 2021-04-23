@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DoorScript : MonoBehaviour
 {
-    public GameObject DoorAnchor;
+    public GameObject[] Door;
     public bool StartRoom;
     public int KillsRequired;
 
@@ -39,10 +39,16 @@ public class DoorScript : MonoBehaviour
 
     private void DoorOpener()
     {
-        DoorAnchor.SetActive(false);
+        Door[1].SetActive(false);
+        Door[2].SetActive(false);
+        Door[3].SetActive(false);
+        Door[4].SetActive(false);
     }
     private void DoorLock()
     {
-        DoorAnchor.SetActive(true);
+        Door[1].SetActive(true);
+        Door[2].SetActive(true);
+        Door[3].SetActive(true);
+        Door[4].SetActive(true);
     }
 }
