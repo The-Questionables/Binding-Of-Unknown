@@ -15,18 +15,18 @@ public class DoorScript : MonoBehaviour
 
     private void Update()
     {
+        if (KillsRequired <= 0 && StartRoom == false) 
+        { 
+            DoorOpener();
+            KillsRequired = 0;
+        }
         if (StartRoom == true)
         { 
             DoorOpener();
         }
-        else if (StartRoom == false)
+        else if (KillsRequired > 0 && StartRoom == false)
         {
             DoorLock();
-        }
-        else if (KillsRequired <= 0) 
-        { 
-            KillsRequired = 0;
-            DoorOpener();
         }
     }
 
@@ -39,16 +39,20 @@ public class DoorScript : MonoBehaviour
 
     private void DoorOpener()
     {
-        Door[1].SetActive(false);
-        Door[2].SetActive(false);
-        Door[3].SetActive(false);
-        Door[4].SetActive(false);
+        int x = 0;
+        while (x < Door.Length)
+        {
+            Door[x].SetActive(false);
+            x++;
+        }
     }
     private void DoorLock()
     {
-        Door[1].SetActive(true);
-        Door[2].SetActive(true);
-        Door[3].SetActive(true);
-        Door[4].SetActive(true);
+        int x = 0;
+        while (x < Door.Length)
+        {
+            Door[x].SetActive(true);
+            x++;
+        }
     }
 }
