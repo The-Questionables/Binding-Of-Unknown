@@ -28,10 +28,13 @@ public class Player : MonoBehaviour
    // private bool inRecovery;
    // private float recoveryCounter = 0f;
     public float playerRecoveryTime = 1f;
+
+    private BowController bowController; /// TEST
+
     void Start()
     {
         instance = this;
-
+        bowController = FindObjectOfType<BowController>(); //////////////////////////////// TEst
         // drehen des Projektile des Charakters in Blickrichtung 
         this.rb = this.GetComponent<Rigidbody2D>();
         this.rb.velocity = transform.right * speed * 10;
@@ -41,10 +44,17 @@ public class Player : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
 
     }
+    //********************************************************************** Neuer Bogen Test
+    private void FireDetection()
+    {
+        if (Input.GetButton("Fire1"))
+        {
+            bowController.ShotProjectile();
+        }
+    }
 
-        
-        // Update is called once per frame
-        void Update()
+    // Update is called once per frame
+    void Update()
         {
             //Char Movement
             movement.x = Input.GetAxis("Horizontal");
@@ -110,27 +120,5 @@ public class Player : MonoBehaviour
 
         healthBar.SetHealth(currentHealth);
        
-    }
-
-    public IEnumerator Knockback(float knockbackDuration, float knockbackPower, Transform obj)
-    {
-        float timer = 0;
-
-        while (knockbackDuration > timer)
-        {
-            timer += Time.deltaTime;
-            Vector2 direction = (obj.transform.position - this.transform.position).normalized;
-            rb.AddForce(-direction * knockbackPower);
-        }
-        yield return 0; // soll sofort passieren
-    }
-    
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.tag == "Enemy")
-        {
-            StartCoroutine(Enemy.instance.Knockback(knockbackDuration, knockbackPower, this.transform)); //Startet Coroutine Knockback für den Gegner
-        }
-
     }
 }

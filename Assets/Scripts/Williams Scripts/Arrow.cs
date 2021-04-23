@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-//[RequireComponent(typeof(SphereCollider))]
 [RequireComponent(typeof(Rigidbody2D))]
 
 public class Arrow : MonoBehaviour
@@ -12,7 +11,9 @@ public class Arrow : MonoBehaviour
     public float destroyTimer = 1.5f; // hier einstellen nach wie vielen Sekunden der Pfeil verschwinden soll
 
     bool hit = false;
-    bool hitButNotEnemy = false;
+    public float knockbackPower = 25;
+    public float knockbackDuration = 1;
+    // bool hitButNotEnemy = false;
 
     void Start()
     {
@@ -30,23 +31,30 @@ public class Arrow : MonoBehaviour
     {
         if (!hit)
         {
-            if (other.gameObject.tag == "Enemy")
+            if (other.gameObject.CompareTag("Enemy"))
             {
                 other.gameObject.GetComponent<Enemy>().TakeDamage(damage);
                 Destroy(gameObject);
                 hit = true;
             }
 
-            else if (other.gameObject.tag == "Wall")
+            else if (other.gameObject.CompareTag("Wall"))
             {
                 Destroy(gameObject);
                 hit = true;
+                // hitButNotEnemy = true;
             }
 
             else
             {
-               // hitButNotEnemy = true;
-                GetComponent<Collider>().enabled = false;
+                // hitButNotEnemy = true;
+                // GetComponent<Collider>().enabled = false;
+                // StartCoroutine(waitForSec(0.4f));
+
+                // if (GetComponent<Collider>() != null)
+                // {
+                //     Debug.Log("Collider wurde nicht gefunden");
+                // }
             }
         }
     }

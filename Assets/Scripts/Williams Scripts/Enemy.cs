@@ -34,10 +34,9 @@ public class Enemy : MonoBehaviour
     public int baseAttack;
     public float moveSpeed;
     // loot
-    LootDrop lootDrop;
+    // LootDrop lootDrop;
+    RandomLoot randomLoot;
 
-    public float knockbackPower = 25;
-    public float knockbackDuration = 1;
     // General Cached References
 
 
@@ -49,7 +48,8 @@ public class Enemy : MonoBehaviour
         this.rb = this.GetComponent<Rigidbody2D>();
 
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        lootDrop = GetComponent<LootDrop>();
+    //  lootDrop = GetComponent<LootDrop>();
+        randomLoot = GetComponent<RandomLoot>();
 
         nativeColor = GetComponentInChildren<SpriteRenderer>().color;
         freezeColor = Color.blue;
@@ -77,9 +77,10 @@ public class Enemy : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(damageSound, Camera.main.transform.position, damageSoundVolume);
         }
-        currentHealth -= amount;
 
+        currentHealth -= amount;
         healthBar.SetHealth(currentHealth);
+
         if (currentHealth <= 0)
         {
 
@@ -91,8 +92,10 @@ public class Enemy : MonoBehaviour
                  Instantiate(Explosion, transform.position, Quaternion.identity);
              }
 
-            // Dropt loot
-            lootDrop.GetLootDrop(); // Führt GetLootDrop Methode vom LootDrop Script aus
+         // Dropt loot
+        //  lootDrop.GetLootDrop(); // Führt GetLootDrop Methode vom LootDrop Script aus
+            randomLoot.LootSpawn(); // Führt LootSpawn Methode vom RandomLoot Script aus
+
 
             // Zerstöre Gegner
             Destroy(gameObject, detonationTimer);
@@ -110,13 +113,11 @@ public class Enemy : MonoBehaviour
         else if (collision.CompareTag("Player")) //  (collision.gameObject.CompareTag("Player"))
         {
             target.GetComponent<Player>().TakeDamage(baseAttack);
-          //  StartCoroutine(Player.instance.Knockback(knockbackDuration, knockbackPower, this.transform)); //Startet Coroutine Knockback für den Player buggy
         }
-        else if (collision.CompareTag("MyWeapon")) //  
+        else if (collision.CompareTag("MyWeapon")) //  Knockback für den Gegner wird hier aktiviert **************************************************
         {
             Vector2 difference = transform.position - collision.transform.position;
             transform.position = new Vector2(transform.position.x + difference.x, transform.position.y + difference.y);
-            //  StartCoroutine(Player.instance.Knockback(knockbackDuration, knockbackPower, this.transform)); //Startet Coroutine Knockback für den Player buggy
         }
     }
 
@@ -161,30 +162,5 @@ public class Enemy : MonoBehaviour
     public float GetEnemyHealth()
     {
         return enemyHealth;
-    }
-
-    // Buggy Knockback ***********************************************************************************
-    
-    public IEnumerator Knockback(float knockbackDuration, float knockbackPower, Transform obj)
-    {
-        float timer = 0;
-
-        while (knockbackDuration > timer)
-        {
-            timer += Time.deltaTime;
-            Vector2 direction = (obj.transform.position - this.transform.position).normalized;
-            rb.AddForce(-direction * knockbackPower);
-        }
-        yield return 0; // soll sofort passieren
-    }
-
-    
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            StartCoroutine(Player.instance.Knockback(knockbackDuration, knockbackPower, this.transform)); //Startet Coroutine Knockback für den Player
-        }
-
     }
 }

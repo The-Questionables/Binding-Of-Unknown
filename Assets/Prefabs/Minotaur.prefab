@@ -296,7 +296,7 @@ GameObject:
   - component: {fileID: 355419351028693043}
   - component: {fileID: 355419351028693042}
   - component: {fileID: 355419351028693053}
-  - component: {fileID: 2015810107775144512}
+  - component: {fileID: -549325421402919591}
   m_Layer: 0
   m_Name: Minotaur
   m_TagString: Enemy
@@ -393,7 +393,7 @@ MonoBehaviour:
   moveSpeed: 3
   knockbackPower: 25
   knockbackDuration: 1
---- !u!114 &2015810107775144512
+--- !u!114 &-549325421402919591
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -402,13 +402,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 355419351028693052}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5606dfbf645ea44458cbae5383a7ce68, type: 3}
+  m_Script: {fileID: 11500000, guid: 79520cd4a4413fb42a138c04031f36e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemsInDrop:
+  LootList:
   - {fileID: 542567591913939100, guid: d09c578d53c78c04bbb802f457244285, type: 3}
   - {fileID: 4142850972197064908, guid: 12a071860b8b71544b6b5cd8e931c87a, type: 3}
-  dropChance: 3200000032000000
 --- !u!1 &355419351906152888
 GameObject:
   m_ObjectHideFlags: 0

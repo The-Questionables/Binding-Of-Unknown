@@ -1,57 +1,110 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BowController : MonoBehaviour
 {
-    //This is Main Camera in the Scene
-  //  Camera playerCamera;
-    public GameObject crosshairs;
-    public GameObject player;
-    public GameObject bulletPrefab;
-    public GameObject bulletStart;
-    public float fireRate = 0.5F;
-    private float nextFire = 0.0F;
+    [Header("Weapon Movement and Rotation.")]
+    [SerializeField] Transform player;
+    [SerializeField] float offset = 1f; // transform the offset into the x offset the child has from the parent (bow from player).
 
-    public float bulletSpeed = 30f;
+    [Header("Fire projectile.")]
+    //[SerializeField] AudioClip projectileSound;
+    //[SerializeField] [Range(0, 1)] float projectileSoundVolume = 1f;
+    [SerializeField] GameObject projectilePrefab;
+    [SerializeField] Transform arrowTrigger;
+    [SerializeField] float cooldownDuration = 1f;
 
-    private Vector3 target;
+    private bool canShoot = true;
+    private GameObject projectileParent;
+    private const string PROJECTILE_PARENT_NAME = "Projectiles";
 
-    private void Start()
+    [Header("Ammunition.")]
+    [SerializeField] GameObject regularProjectilePrefab;
+    [SerializeField] Sprite regularArrow;
+
+    private Sprite currentProjectile;
+    private GameObject testProjectilePrefab;
+
+    // Start is called before the first frame update
+    void Start()
     {
-        //This gets the Main Camera from the Scene
-        //playerCamera = GameObject.Find("MainCamera").GetComponent<Camera>();
-        Cursor.visible = true;
+        CreateProjectileParent();
+        GetCurrentProjectile();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //    target = transform.playerCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z));
-        target = GameObject.Find("Main Camera").transform.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z));
-        //  target = transform.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z));
+        BowRotationAndMovement();
+    }
 
-        crosshairs.transform.position = new Vector2(target.x, target.y);
+    private void BowRotationAndMovement()
+    {
+        // Bow Rotation around its own pivot point.
+        var dir = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
+        var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-        Vector3 difference = target - player.transform.position;
-        float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        player.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
+        // Bow Rotation around the player's pivot point.
+        Vector3 playerToMouseDir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - player.position;
+        playerToMouseDir.z = 0;
+        transform.position = player.position + (offset * playerToMouseDir.normalized);
+    }
 
-
-        if (Input.GetMouseButton(0) && Time.time > nextFire) // wird aktiviert wenn angegebene Maustaste gedrückt gehalten wird //if (Input.GetMouseButtonDown(1))
+    private void CreateProjectileParent()
+    {
+        projectileParent = GameObject.Find(PROJECTILE_PARENT_NAME);
+        if (!projectileParent)
         {
-            nextFire = Time.time + fireRate;
-            float distance = difference.magnitude;
-            Vector2 direction = difference / distance;
-            direction.Normalize();
-            FireBullet(direction, rotationZ);
+            projectileParent = new GameObject(PROJECTILE_PARENT_NAME);
         }
     }
-    void FireBullet(Vector2 direction, float rotationZ)
+
+    public void ShotProjectile()
     {
-        GameObject b = Instantiate(bulletPrefab) as GameObject;
-        b.transform.position = bulletStart.transform.position;
-        b.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
-        b.GetComponent<Rigidbody2D>().velocity = -direction * bulletSpeed;
+      //  if (canShoot)
+       // {
+           // AudioSource.PlayClipAtPoint(projectileSound, Camera.main.transform.position, projectileSoundVolume);
+
+                GameObject arrow = Instantiate(projectilePrefab, arrowTrigger.position, arrowTrigger.rotation) as GameObject;
+                arrow.transform.parent = projectileParent.transform;
+
+                StartCoroutine(ApplyCooldown());
+            
+       // }
+    }
+
+    IEnumerator ApplyCooldown()
+    {
+        canShoot = false;
+
+        yield return new WaitForSeconds(cooldownDuration);
+
+        canShoot = true;
+    }
+
+    public void UpdateCooldownDuration(float newCooldownDuration)
+    {
+        cooldownDuration = newCooldownDuration;
+    }
+
+    public Sprite GetCurrentProjectile()
+    {
+        string currentProjectileName = projectilePrefab.name;
+
+        if (currentProjectileName == "Regular Arrow")
+        {
+            currentProjectile = regularArrow;
+        }
+        return currentProjectile;
+    }
+
+    public void SwapProjectilePrefab(GameObject newProjectilePrefab)
+    {
+        projectilePrefab = newProjectilePrefab;
+        GetCurrentProjectile();
+
     }
 }
