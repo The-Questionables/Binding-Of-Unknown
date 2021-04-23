@@ -6,6 +6,7 @@ public class DoorScript : MonoBehaviour
 {
     public GameObject DoorAnchor;
     public bool StartRoom;
+    public int KillsRequired;
 
     void Start()
     {
@@ -14,15 +15,23 @@ public class DoorScript : MonoBehaviour
 
     private void Update()
     {
-        if (StartRoom==true)
-            DoorAnchor.SetActive(false);
-        else if (StartRoom==false) {
-            DoorAnchor.SetActive(true);
+        if (StartRoom == true)
+        { 
+            DoorOpener();
+        }
+        else if (StartRoom == false)
+        {
+            DoorLock();
+        }
+        else if (KillsRequired <= 0) 
+        { 
+            KillsRequired = 0;
+            DoorOpener();
         }
     }
 
     // Update is called once per frame
-    void OnTriggerExit()
+    void OnTriggerExit2D()
     {
         DoorLock();
     }

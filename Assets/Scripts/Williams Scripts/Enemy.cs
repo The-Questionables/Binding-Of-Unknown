@@ -29,7 +29,9 @@ public class Enemy : MonoBehaviour
     public Rigidbody2D rb;
     public float detonationTimer = 0f;
     public GameObject Explosion;
-   // public int health;
+    public DoorScript doorscript;
+
+    // public int health;
     public string Name;
     public int baseAttack;
     public float moveSpeed;
@@ -99,7 +101,7 @@ public class Enemy : MonoBehaviour
 
             // Zerstöre Gegner
             Destroy(gameObject, detonationTimer);
-
+            doorscript.KillsRequired--;
         }
     }
 
