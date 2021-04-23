@@ -124,12 +124,4 @@ public class Player : MonoBehaviour
         healthBar.SetHealth(currentHealth);
        
     }
-
-    public void AddCoin(int getCoins)
-    {
-        coins += getCoins;
-
-      //  healthBar.SetHealth(currentHealth);
-
-    }
 }

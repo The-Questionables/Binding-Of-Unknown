@@ -49,7 +49,7 @@ public class Enemy : MonoBehaviour
 
         this.rb = this.GetComponent<Rigidbody2D>();
 
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        target = GameObject.FindGameObjectWithTag(Slime_Const.Tag_Player).transform;
     //  lootDrop = GetComponent<LootDrop>();
         randomLoot = GetComponent<RandomLoot>();
 
@@ -107,12 +107,12 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && !arrowFrozen)
+        if (collision.CompareTag(Slime_Const.Tag_Player) && !arrowFrozen) // Slime_Const.Tag_Player = Tag Player wird immer geändert
         {
             target.GetComponent<Player>().TakeDamage(baseAttack);
             StartCoroutine(FreezeMovement());
         }
-        else if (collision.CompareTag("Player")) //  (collision.gameObject.CompareTag("Player"))
+        else if (collision.CompareTag(Slime_Const.Tag_Player)) //  (collision.gameObject.CompareTag(Slime_Const.Tag_Player))
         {
             target.GetComponent<Player>().TakeDamage(baseAttack);
         }

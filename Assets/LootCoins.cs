@@ -10,11 +10,13 @@ public class LootCoins : MonoBehaviour
     public int getCoins = 1;
 
     // Cached References
-    Player playerController;
+    GameManager gamemanager;
+    //Player playerController;
 
     private void Start()
     {
-        playerController = FindObjectOfType<Player>();
+        //playerController = FindObjectOfType<Player>();
+        gamemanager = FindObjectOfType<GameManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -22,8 +24,10 @@ public class LootCoins : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             //AudioSource.PlayClipAtPoint(heartSound, Camera.main.transform.position, heartSoundVolume);
-            playerController.AddCoin(getCoins);
+            // playerController.AddCoin(getCoins);
             Debug.Log("Coin collect.");
+            gamemanager.AddCoin(getCoins);
+            
             Destroy(gameObject);
         }
         else
