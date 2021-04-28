@@ -3001,13 +3001,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ab68475b3b313047bd12ba424dc9cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Score: {fileID: 0}
+  coins: 0
+  coinsText: {fileID: 0}
+  healpotions: 0
+  healpotionsText: {fileID: 0}
   Live: {fileID: 1520498167}
+  HealthText: {fileID: 0}
   score: 0
   Next_Stage: 
   PlayerHitpoints: 10
   PlayerMana: 10
-  IsUsingOldSystem: 1
 --- !u!4 &1086568636
 Transform:
   m_ObjectHideFlags: 0
@@ -3129,12 +3132,12 @@ PrefabInstance:
     - target: {fileID: 947327878273514336, guid: ae0101c4e4e002347b40ac79a741ee6b,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.8888889
       objectReference: {fileID: 0}
     - target: {fileID: 947327878273514336, guid: ae0101c4e4e002347b40ac79a741ee6b,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 947327879237028917, guid: ae0101c4e4e002347b40ac79a741ee6b,
         type: 3}
@@ -3195,6 +3198,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Geist (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 947327879237028921, guid: ae0101c4e4e002347b40ac79a741ee6b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae0101c4e4e002347b40ac79a741ee6b, type: 3}
@@ -3307,26 +3315,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
-  maxMana: 100
-  currentMana: 0
+  healpots: 0
   healthBar: {fileID: 1520498168}
-  manaBar: {fileID: 664241423}
   speed: 0
-  rb: {fileID: 5413781975651653309}
+  playerAnimator: {fileID: 0}
+  rb: {fileID: 0}
   animator: {fileID: 5413781975651653305}
   detonationTimer: 0
   Explosion: {fileID: 0}
-  FireballSpawns:
-  - {fileID: 0}
-  Fireball: {fileID: 0}
-  fireRateFireball: 1
-  nextFireFireBall: 1
   crossHair: {fileID: 0}
-  ArrowSpawns:
-  - {fileID: 1485473447}
-  Arrow: {fileID: 0}
-  fireRateArrow: 1
-  nextFireArrow: 1
+  knockbackPower: 25
+  knockbackDuration: 1
+  playerRecoveryTime: 1
+  healthRecover: 10
+  useHealpotions: 1
 --- !u!1 &1289175723
 GameObject:
   m_ObjectHideFlags: 0
@@ -3668,6 +3670,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Geist 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5956940161480451939, guid: 61d86296ee368564c8b7d801ec600469,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5956940161480451942, guid: 61d86296ee368564c8b7d801ec600469,
         type: 3}
       propertyPath: m_RootOrder
@@ -3726,12 +3733,12 @@ PrefabInstance:
     - target: {fileID: 5956940162296484546, guid: 61d86296ee368564c8b7d801ec600469,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 5956940162296484546, guid: 61d86296ee368564c8b7d801ec600469,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5956940163104512157, guid: 61d86296ee368564c8b7d801ec600469,
         type: 3}
@@ -4030,12 +4037,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ce89be1c0e0d8bf49969025d2077c8d6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d2ee17d18f632da4dacca5b176e9e4e4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.54, y: 6.68}
+  m_Size: {x: 15.68, y: 15.68}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -4050,7 +4057,7 @@ Transform:
   m_GameObject: {fileID: 1485473445}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.41000006, y: -0.028999995, z: 0}
-  m_LocalScale: {x: 0.16666667, y: 0.16666667, z: 0.16666667}
+  m_LocalScale: {x: -0.07, y: 0.07, z: 0.16666667}
   m_Children:
   - {fileID: 208550178}
   m_Father: {fileID: 231404817}
@@ -4075,7 +4082,6 @@ MonoBehaviour:
     type: 3}
   shoot: 323
   Cooldown: 0.75
-  dauer: 10
   shoot1: 1
   shoot2: 0
   shootanimation: 0
@@ -4091,12 +4097,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bbac67af61b3a94488ec7460e176aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: 0
-  projectile: {fileID: 0}
-  shotEffect: {fileID: 0}
-  shotPoint: {fileID: 0}
-  camAnim: {fileID: 0}
-  startTimeBtwShots: 0
 --- !u!1 &1486363437
 GameObject:
   m_ObjectHideFlags: 0
@@ -4708,7 +4708,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1521419837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4727,8 +4727,10 @@ MonoBehaviour:
   target: {fileID: 231404817}
   chaseRadius: 5
   attackRadius: 1
+  rb: {fileID: 0}
   detonationTimer: 0
   Explosion: {fileID: 0}
+  doorscript: {fileID: 0}
   Name: Mino
   baseAttack: 20
   moveSpeed: 3
@@ -4806,13 +4808,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3136f8ad48ec1f42bd2baa94f14d1cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: 5
-  Drops: 0
-  Hitpoints: 3
-  Damage: 3
-  gm: {fileID: 1086568635}
-  spawnPosition: {fileID: 0}
-  Drop: {fileID: 0}
 --- !u!212 &1521419842
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5033,6 +5028,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Geist Tim
       objectReference: {fileID: 0}
+    - target: {fileID: 5956940161480451939, guid: 61d86296ee368564c8b7d801ec600469,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5956940161480451942, guid: 61d86296ee368564c8b7d801ec600469,
         type: 3}
       propertyPath: m_RootOrder
@@ -5091,12 +5091,12 @@ PrefabInstance:
     - target: {fileID: 5956940162296484546, guid: 61d86296ee368564c8b7d801ec600469,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.8888889
       objectReference: {fileID: 0}
     - target: {fileID: 5956940162296484546, guid: 61d86296ee368564c8b7d801ec600469,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61d86296ee368564c8b7d801ec600469, type: 3}
@@ -5564,7 +5564,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.9, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6410,12 +6410,10 @@ GameObject:
   - component: {fileID: 5413781975651653308}
   - component: {fileID: 5413781975651653305}
   - component: {fileID: 5413781975651653311}
-  - component: {fileID: 5413781975651653310}
-  - component: {fileID: 5413781975651653309}
   - component: {fileID: 5413781975651653307}
-  - component: {fileID: 5413781975651653306}
   - component: {fileID: 1260274130}
   - component: {fileID: 5413781975651653304}
+  - component: {fileID: 5413781975651653309}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Player
@@ -6461,19 +6459,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5413781975651653306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5413781975651653303}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 792ff7d515decca43a32ed136076b9d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
 --- !u!61 &5413781975651653307
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6552,28 +6537,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &5413781975651653309
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5413781975651653303}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!114 &5413781975651653310
+--- !u!114 &5413781975651653309
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6582,7 +6546,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5413781975651653303}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5309eb08096e39f498c371fcd5ab742c, type: 3}
+  m_Script: {fileID: 11500000, guid: 9bbac67af61b3a94488ec7460e176aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &5413781975651653311
