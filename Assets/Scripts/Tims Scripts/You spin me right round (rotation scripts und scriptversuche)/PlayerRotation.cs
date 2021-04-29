@@ -4,17 +4,12 @@ using UnityEngine;
 
 public class PlayerRotation : MonoBehaviour
 {
-
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            SendMessage("TurnLeft", SendMessageOptions.DontRequireReceiver);
-        }
-        if (Input.GetKeyDown(KeyCode.X)) 
-        {
-            SendMessage("TurnRight", SendMessageOptions.DontRequireReceiver);
-        }
+    Vector3 position = Camera.current.WorldToScreenPoint(transform.position);
+    Vector3 direction = Input.mousePosition - position;
+    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+    transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        
     }
 }
