@@ -164,7 +164,7 @@ public class PlayerController : MonoBehaviour
         }
 
         healthBar.SetHealth(currentHealth);
-        gamemanager.UseHealpotions(useHealpotions);
+        gamemanager.UseHealpotions();
 
     }
 }

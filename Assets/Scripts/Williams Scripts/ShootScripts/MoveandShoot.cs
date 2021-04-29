@@ -131,7 +131,7 @@ public class MoveandShoot : MonoBehaviour
         }
 
         healthBar.SetHealth(currentHealth);
-        gamemanager.UseHealpotions(useHealpotions);
+        gamemanager.UseHealpotions();
 
     }
     /*

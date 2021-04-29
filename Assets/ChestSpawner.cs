@@ -5,25 +5,35 @@ using UnityEngine;
 public class ChestSpawner : MonoBehaviour
 {
     public bool startRoom;
+    public bool endRoom;
     public int enemyCounter;
 
     public GameObject[] chestList; // Array an verschiedenen Kisten
     private int random; // speichert kurz zufälligen Wert aus dem Array
     private bool chestSpawned; // sorgt dafür das Kisten nicht gleichzeitig spawnen
+    private float timer;
+    public float spawntime = 3;
 
     private void Update()
     {
+        if (timer >= spawntime) 
+        { 
         if (enemyCounter == 0 && startRoom == false)
         {
             SpawnChest();
         }
-        if (startRoom == true)
-        {
-            SpawnChest();
+            if (startRoom == true)
+            {
+                SpawnChest();
+            }
+            else if (enemyCounter > 0 && startRoom == false)
+            {
+                DeleteChest();
+            }
         }
-        else if (enemyCounter > 0 && startRoom == false)
+        else 
         {
-            DeleteChest();
+            timer += Time.deltaTime;
         }
     }
 

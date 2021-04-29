@@ -129,7 +129,7 @@ public class Hero : MonoBehaviour
         // Updaten des Healthbartextes im UI
         gamemanager.UpdateCurrentHealthText(currentHealth);
         // Updaten der HeiltrankAnzahl im UI
-        gamemanager.UseHealpotions(useHealpotions);
+        gamemanager.UseHealpotions();
         // Updaten der HeiltrankSlotsAnzahl im UI
         gamemanager.UpdateMaxHealpotionsSlots(maxHealpotionsSlots);
 

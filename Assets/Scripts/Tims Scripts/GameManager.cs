@@ -27,14 +27,7 @@ public class GameManager : MonoBehaviour {
     // Cached References
     Hero hero;
 
-    [Header("Tim´s Stuff:")]
-    public Slider Live;
-    public int score = 0;
-    public string Next_Stage = "";
-    public int PlayerHitpoints = 10;
-    public int PlayerMana = 10;
-    //public int required_kills = 100;
-    //public float reqired_time = 120;
+
 
     public void Start()
     {
@@ -61,7 +54,6 @@ public class GameManager : MonoBehaviour {
     public void UpdateCoinsText(int coins)
     {
         coinsText.text = "x" + coins.ToString();
-        Debug.Log("UpdateCoinsText wurde ausgeführt");
     }
 
     //********************************** Healpotions
@@ -73,11 +65,11 @@ public class GameManager : MonoBehaviour {
     public void UpdateHealpotionsText(int healpotions)
     {
         healpotionsText.text = "x" + healpotions.ToString();
-        Debug.Log("UpdateCoinsText wurde ausgeführt");
     }
-    public void UseHealpotions(int useHealpotions)
+   
+    public void UseHealpotions()
     {
-        healpotions -= useHealpotions; // benutzt - Wert um Healpotion zu nutzen
+        healpotions--; // benutzt - Wert um Healpotion zu nutzen
         UpdateHealpotionsText(healpotions);
     }
 
