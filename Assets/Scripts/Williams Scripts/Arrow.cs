@@ -9,7 +9,8 @@ public class Arrow : MonoBehaviour
 {
     public int damage = 20; // hier einstellen wie hoch der Schaden sein soll den Gegner bekommen
     public float destroyTimer = 1.5f; // hier einstellen nach wie vielen Sekunden der Pfeil verschwinden soll
-
+    public Rigidbody2D rb;
+    public float speed= 5f;
     bool hit = false;
     public float knockbackPower = 25;
     public float knockbackDuration = 1;
@@ -19,6 +20,7 @@ public class Arrow : MonoBehaviour
     {
         //rb = GetComponent<Rigidbody2D>(); // greift auf den Rigidbody des Gameobjekts zu
         Destroy(gameObject, destroyTimer); // zerstört Object nach ablauf der Zeit
+        rb = this.GetComponent<Rigidbody2D>();
     }
 
     // hier wird der Schadenswert übermittelt
@@ -57,5 +59,9 @@ public class Arrow : MonoBehaviour
                 // }
             }
         }
+    }
+    public void Setup(Vector3 direction)
+    {
+        transform.rotation = Quaternion.Euler(direction);
     }
 }

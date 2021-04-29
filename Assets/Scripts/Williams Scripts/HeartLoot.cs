@@ -7,7 +7,8 @@ public class HeartLoot : MonoBehaviour
 {
     public AudioClip heartSound;
     // [Range(0, 1)] float heartSoundVolume = 1f;
-    public int getHealpotions = 1;
+    int getHealpotions = 1;
+    int healpotionsSlots = 3; // hier noch automatiesieren
 
     // Cached References
     GameManager gamemanager;
@@ -20,13 +21,13 @@ public class HeartLoot : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && gamemanager.isHealpotionCollectable)
         {
-            //AudioSource.PlayClipAtPoint(heartSound, Camera.main.transform.position, heartSoundVolume);
-            //playerController.HealDamage(healthRecover);
-            ////////////////////////////////////////////////////gamemanager.HealDamage(healthRecover);*********************************** Heilfunktion einbauen und übertragen auf gamemanager
+         // AudioSource.PlayClipAtPoint(heartSound, Camera.main.transform.position, heartSoundVolume);
             gamemanager.AddHealpotions(getHealpotions);
+            gamemanager.UpdateMaxHealpotionsSlots(healpotionsSlots);
             Debug.Log("Heart collect.");
+
             Destroy(gameObject);
         }
         else

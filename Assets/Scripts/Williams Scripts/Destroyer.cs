@@ -16,3 +16,22 @@ public class Destroyer : MonoBehaviour
         }
     }
 }
+
+/*
+        if (other.gameObject.tag == "Player")
+        {
+
+        }
+        else if (other.gameObject.tag == "Rooms")
+        {
+
+        }
+        else if (other.gameObject.tag == "Enemy")
+        {
+
+        }
+        else
+        {
+            Destroy(other.gameObject);
+        }
+*/

@@ -11,11 +11,9 @@ public class LootCoins : MonoBehaviour
 
     // Cached References
     GameManager gamemanager;
-    //Player playerController;
 
     private void Start()
     {
-        //playerController = FindObjectOfType<Player>();
         gamemanager = FindObjectOfType<GameManager>();
     }
 
@@ -23,8 +21,7 @@ public class LootCoins : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            //AudioSource.PlayClipAtPoint(heartSound, Camera.main.transform.position, heartSoundVolume);
-            // playerController.AddCoin(getCoins);
+         // AudioSource.PlayClipAtPoint(heartSound, Camera.main.transform.position, heartSoundVolume);
             gamemanager.AddCoin(getCoins);
             Debug.Log("Coin collect.");
 

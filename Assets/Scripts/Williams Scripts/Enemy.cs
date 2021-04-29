@@ -101,7 +101,7 @@ public class Enemy : MonoBehaviour
 
             // Zerstöre Gegner
             Destroy(gameObject, detonationTimer);
-            doorscript.KillsRequired--;
+            //doorscript.KillsRequired--;
         }
     }
 
@@ -109,12 +109,12 @@ public class Enemy : MonoBehaviour
     {
         if (collision.CompareTag(Slime_Const.Tag_Player) && !arrowFrozen) // Slime_Const.Tag_Player = Tag Player wird immer geändert
         {
-            target.GetComponent<Player>().TakeDamage(baseAttack);
+            target.GetComponent<Hero>().TakeDamage(baseAttack);
             StartCoroutine(FreezeMovement());
         }
         else if (collision.CompareTag(Slime_Const.Tag_Player)) //  (collision.gameObject.CompareTag(Slime_Const.Tag_Player))
         {
-            target.GetComponent<Player>().TakeDamage(baseAttack);
+            target.GetComponent<Hero>().TakeDamage(baseAttack);
         }
         else if (collision.CompareTag("MyWeapon")) //  Knockback für den Gegner wird hier aktiviert **************************************************
         {
