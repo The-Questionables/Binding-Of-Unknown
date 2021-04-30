@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 7094700957828274366}
   - component: {fileID: 7094700957828274352}
   - component: {fileID: 7094700957828274355}
+  - component: {fileID: 215611764806166608}
   m_Layer: 0
   m_Name: Chest
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,6 +106,27 @@ MonoBehaviour:
   - {fileID: 5625333074446763618, guid: 4f9d247eae3b2ad4c96e73b9cf7cffe9, type: 3}
   - {fileID: 3310716787902768639, guid: fc2f3db8d192719419ed763b207371d0, type: 3}
   - {fileID: 4142850972197064908, guid: 12a071860b8b71544b6b5cd8e931c87a, type: 3}
+--- !u!50 &215611764806166608
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7094700957828274367}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &7094700959399120061
 GameObject:
   m_ObjectHideFlags: 0

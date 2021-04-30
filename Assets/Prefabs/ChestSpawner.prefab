@@ -71,7 +71,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startRoom: 0
-  isEnemyInside: 1
+  endRoom: 0
   enemyCounter: 0
   chestList:
   - {fileID: 7094700957828274367, guid: cfb3b404a23aab8488b5b9b89b7c39e9, type: 3}
+  - {fileID: 542567591913939100, guid: d09c578d53c78c04bbb802f457244285, type: 3}
+  - {fileID: 7094700957828274367, guid: 04f2580b278ef7f448d5a3a2b20d347d, type: 3}
+  spawntime: 3

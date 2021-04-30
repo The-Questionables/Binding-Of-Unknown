@@ -76,11 +76,12 @@ public class Hero : MonoBehaviour
             lastFire = Time.time;
         }
 
-
+        /*
         if (Input.GetKeyDown(KeyCode.Space))
         {
             TakeDamage(20);
         }
+        */
 
         if (Input.GetKeyDown(KeyCode.Q) && gamemanager.healpotions > 0 && currentHealth != maxHealth) // Gamemanager fragen wie viele heiltränke wir haben, wemm über 1 = true, wenn Leben Voll = false
         {
