@@ -23,7 +23,6 @@ public class LootCoins : MonoBehaviour
         {
          // AudioSource.PlayClipAtPoint(heartSound, Camera.main.transform.position, heartSoundVolume);
             gamemanager.AddCoin(getCoins);
-            Debug.Log("Coin collect.");
 
             Destroy(gameObject);
         }
