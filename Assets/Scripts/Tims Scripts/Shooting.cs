@@ -17,15 +17,19 @@ public class Shooting : MonoBehaviour
     }
     public void Update()
     {
+        fireratetimer -= Time.deltaTime;
         Shoot();
     }
 
     public void Shoot() 
     {
-        if (Input.GetKey(shoot))
+        if (fireratetimer <= 0)
         {
-            Debug.Log("Hat Funktioniert");
-            Instantiate(Arrow, Arrowspawnpoint.position, Arrowspawnpoint.rotation);
+            if (Input.GetKey(shoot))
+            {
+                Instantiate(Arrow, Arrowspawnpoint.position, Arrowspawnpoint.rotation);
+                fireratetimer = Firerate;
+            }
         }
     }
 
