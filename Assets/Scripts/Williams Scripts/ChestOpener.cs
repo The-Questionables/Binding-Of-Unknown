@@ -13,11 +13,9 @@ public class ChestOpener : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isPlayerInRange)
+        if (/*Input.GetKeyDown(KeyCode.Space) && */isPlayerInRange)
         {
-
             OpenChest();
-
         }
     }
 

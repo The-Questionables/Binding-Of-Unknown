@@ -66,6 +66,7 @@ public class BindingArrow : MonoBehaviour
             if (other.gameObject.CompareTag("Enemy"))
             {
                 other.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+                other.gameObject.GetComponent<RangeEnemy>().TakeDamage(damage);
                 Destroy(gameObject);
                 hit = true;
             }

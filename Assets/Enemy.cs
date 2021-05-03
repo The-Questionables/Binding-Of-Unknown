@@ -29,7 +29,6 @@ public class Enemy : MonoBehaviour
     public Rigidbody2D rb;
     public float detonationTimer = 0f;
     public GameObject Explosion;
-    public DoorScript doorscript;
 
     // public int health;
     public string Name;
@@ -110,6 +109,7 @@ public class Enemy : MonoBehaviour
         if (collision.CompareTag(Slime_Const.Tag_Player) && !arrowFrozen) // Slime_Const.Tag_Player = Tag Player wird immer geändert
         {
             target.GetComponent<Hero>().TakeDamage(baseAttack);
+            // hier Coroutine zum erneuten Schlag aktivieren oder Knockback für Spieler ausführen
             StartCoroutine(FreezeMovement());
         }
         else if (collision.CompareTag(Slime_Const.Tag_Player)) //  (collision.gameObject.CompareTag(Slime_Const.Tag_Player))
@@ -120,6 +120,10 @@ public class Enemy : MonoBehaviour
         {
             Vector2 difference = transform.position - collision.transform.position;
             transform.position = new Vector2(transform.position.x + difference.x, transform.position.y + difference.y);
+        }
+        else if (collision.CompareTag("EnemyWeapon"))
+        {
+            // nothing
         }
     }
 
