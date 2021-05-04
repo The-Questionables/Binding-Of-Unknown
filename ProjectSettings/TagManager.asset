@@ -14,6 +14,8 @@ TagManager:
   - Wall
   - EnemyWeapon
   - Obstacles
+  - RangeEnemy
+  - ClosedRoom
   layers:
   - Default
   - TransparentFX
@@ -54,14 +56,14 @@ TagManager:
   - name: Ground
     uniqueID: 4115087319
     locked: 0
-  - name: AllesAndere
-    uniqueID: 460306925
-    locked: 0
   - name: TopWall
     uniqueID: 1119637381
     locked: 0
   - name: TopDoors
     uniqueID: 306876191
+    locked: 0
+  - name: AllesAndere
+    uniqueID: 460306925
     locked: 0
   - name: Player
     uniqueID: 4277940455

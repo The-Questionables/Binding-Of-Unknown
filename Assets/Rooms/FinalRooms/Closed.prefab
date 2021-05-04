@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4268551849445190826}
   m_Layer: 0
   m_Name: Grid
-  m_TagString: Untagged
+  m_TagString: ClosedRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 4268551849822667031}
   m_Layer: 0
   m_Name: BotWall
-  m_TagString: Wall
+  m_TagString: ClosedRoom
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -465,7 +465,7 @@ GameObject:
   - component: {fileID: 4268551849950418582}
   m_Layer: 0
   m_Name: TopWall
-  m_TagString: Wall
+  m_TagString: ClosedRoom
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3242,7 +3242,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1119637381
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -3281,7 +3281,7 @@ GameObject:
   - component: {fileID: 4268551850294956371}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: ClosedRoom
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3448,7 +3448,7 @@ GameObject:
   - component: {fileID: 4268551851119566591}
   m_Layer: 0
   m_Name: Animation
-  m_TagString: Untagged
+  m_TagString: ClosedRoom
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3590,7 +3590,7 @@ GameObject:
   - component: {fileID: 8422155515198385262}
   m_Layer: 0
   m_Name: Closed
-  m_TagString: Untagged
+  m_TagString: ClosedRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3636,7 +3636,7 @@ GameObject:
   - component: {fileID: 8951820098145247378}
   m_Layer: 0
   m_Name: ClosedRoomDoorBlockWalls
-  m_TagString: Wall
+  m_TagString: ClosedRoom
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

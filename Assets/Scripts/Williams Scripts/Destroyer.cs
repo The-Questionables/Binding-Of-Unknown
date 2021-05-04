@@ -6,11 +6,7 @@ public class Destroyer : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
-        {
-
-        }
-        else
+        if (other.gameObject.tag == "ClosedRoom")
         {
             Destroy(other.gameObject);
         }
@@ -33,5 +29,14 @@ public class Destroyer : MonoBehaviour
         else
         {
             Destroy(other.gameObject);
+        }
+
+        if (other.gameObject.tag == "SpawnPoint")
+        {
+            Destroy(other.gameObject);
+        }
+        else
+        {
+           // Destroy(other.gameObject);
         }
 */

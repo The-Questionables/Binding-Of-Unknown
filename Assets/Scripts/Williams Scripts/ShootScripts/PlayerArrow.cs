@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BindingArrow : MonoBehaviour
+public class PlayerArrow : MonoBehaviour
 {
     public int damage = 20; // hier einstellen wie hoch der Schaden sein soll den Gegner bekommen
     public float destroyTimer = 1.5f; // hier einstellen nach wie vielen Sekunden der Pfeil verschwinden soll
     public Rigidbody2D rb;
     bool hit = false;
-    // bool hitButNotEnemy = false;
+
+    // Knockback test
+    //public float thrust = 1f;
+    //public float knockTime = 0.01f;
 
     void Start()
     {
@@ -65,10 +68,20 @@ public class BindingArrow : MonoBehaviour
         {
             if (other.gameObject.CompareTag("Enemy"))
             {
-                other.gameObject.GetComponent<Enemy>().TakeDamage(damage);
-                other.gameObject.GetComponent<RangeEnemy>().TakeDamage(damage);
+                other.gameObject.GetComponent<EnemyStandart>().TakeDamage(damage);
                 Destroy(gameObject);
                 hit = true;
+                /*
+                Rigidbody2D enemy = other.GetComponent<Rigidbody2D>();
+                if(enemy != null)
+                {
+                    //enemy.isKinematic = false;
+                    Vector2 difference = enemy.transform.position - transform.position;
+                    difference = difference.normalized * thrust;
+                    enemy.AddForce(difference, ForceMode2D.Impulse);
+                    StartCoroutine(KnockCo(enemy));
+                }
+                */
             }
 
             else if (other.gameObject.CompareTag("Wall"))
@@ -80,15 +93,19 @@ public class BindingArrow : MonoBehaviour
 
             else
             {
-                // hitButNotEnemy = true;
-                // GetComponent<Collider>().enabled = false;
-                // StartCoroutine(waitForSec(0.4f));
 
-                // if (GetComponent<Collider>() != null)
-                // {
-                //     Debug.Log("Collider wurde nicht gefunden");
-                // }
             }
         }
     }
+    /*
+    private IEnumerator KnockCo(Rigidbody2D enemy)
+    {
+        if(enemy != null)
+        {
+            yield return new WaitForSeconds(knockTime);
+            //enemy.velocity = Vector2.zero;
+            //enemy.isKinematic = true;
+        }
+    }
+    */
 }

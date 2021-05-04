@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7699017769781456698}
   - component: {fileID: 2275877565564710013}
   m_Layer: 0
-  m_Name: BindingArrow
+  m_Name: PlayerArrow
   m_TagString: MyWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 7555730686001559215}
   - component: {fileID: 33904238156901590}
   m_Layer: 0
-  m_Name: Arrow
+  m_Name: ArrowSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -166,7 +166,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 460306925
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 5e6f47d617211924798bac5200ab4602, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
