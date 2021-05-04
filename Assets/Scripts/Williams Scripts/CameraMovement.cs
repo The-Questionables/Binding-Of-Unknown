@@ -9,7 +9,11 @@ public class CameraMovement : MonoBehaviour
     public Vector2 maxPosition;
     public Vector2 minPosition;
 
-    // Update is called once per frame
+    private void Start()
+    {
+            target = GameObject.FindWithTag("Player").transform;
+    }
+
     void LateUpdate()
     {
         if(transform.position != target.position)
