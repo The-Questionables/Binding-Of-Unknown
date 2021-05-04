@@ -59,7 +59,7 @@ public class RoomSpawner : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) // wird aktiviert wenn der collider mit was zusammenstößt
     {
-        if(other.CompareTag("SpawnPoint")) // wenn der Spawn point mit was zusammenstößt und bereits ein Raum gespawnt ist
+        if (other.CompareTag("SpawnPoint")) // wenn der Spawn point mit was zusammenstößt und bereits ein Raum gespawnt ist
         {
             if (other.GetComponent<RoomSpawner>().spawned == false && spawned == false)
             {
@@ -68,6 +68,10 @@ public class RoomSpawner : MonoBehaviour
                 Destroy(gameObject); // zerstöre den Spawner damit nichts mehr nachspawnt
             }
             spawned = true; // verhindert weiteres nachspawnen
+        }
+        else
+        {
+            //Debug.Log("SpawnPoint nicht gefunden");
         }
     }
 }
