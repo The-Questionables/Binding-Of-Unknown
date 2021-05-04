@@ -6901,7 +6901,9 @@ MonoBehaviour:
   Arrow: {fileID: 1133762169987533107, guid: b5299a662be54854e983367e8ea07b21, type: 3}
   Arrowspawnpoint: {fileID: 527171334}
   shoot: 323
+  newMovespeed: 0
   Firerate: 0.75
+  George: {fileID: 5413781975651653304}
 --- !u!1 &1211707010
 GameObject:
   m_ObjectHideFlags: 0
@@ -7245,7 +7247,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5413781975651653303}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9eeecdcac1ed7da409a4243007a86bfc, type: 3}
   m_Name: 
@@ -11448,6 +11450,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 231404817}
+  - component: {fileID: 5413781975651653304}
   - component: {fileID: 1260274130}
   - component: {fileID: 5413781975651653310}
   - component: {fileID: 5413781975651653305}
@@ -11461,6 +11464,32 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5413781975651653304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5413781975651653303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f2b37bff53e424ab7fef133b264e56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  moveSpeed: 5
+  detonationTimer: 0
+  healthRecover: 10
+  useHealpotions: 1
+  maxHealpotionsSlots: 3
+  bulletPrefab: {fileID: 0}
+  bulletSpeed: 5
+  fireDelay: 0.5
+  animator: {fileID: 0}
+  healthBar: {fileID: 1520498168}
+  Explosion: {fileID: 0}
+  healpotionsInInventory: 0
 --- !u!95 &5413781975651653305
 Animator:
   serializedVersion: 3
@@ -18476,7 +18505,6 @@ MonoBehaviour:
   rb: {fileID: 0}
   detonationTimer: 0
   Explosion: {fileID: 0}
-  doorscript: {fileID: 7672739258806637655}
   Name: Mino
   baseAttack: 20
   moveSpeed: 3
