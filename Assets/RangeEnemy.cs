@@ -11,6 +11,7 @@ public class RangeEnemy : EnemyStandart
     bool canMove = true;
 
     [Header("Enemy Projectile")]
+    public GameObject projectileSpawner;
     public float cooldownTimer = 1f;
     private bool canShoot = true;
     public GameObject enemyProjectilePrefab;
@@ -117,7 +118,7 @@ public class RangeEnemy : EnemyStandart
         if (canMove)
         {
           //  AudioSource.PlayClipAtPoint(projectileSound, Camera.main.transform.position, projectileSoundVolume);
-            GameObject newProjectile = Instantiate(enemyProjectilePrefab, transform.position, Quaternion.identity) as GameObject;
+            GameObject newProjectile = Instantiate(enemyProjectilePrefab, projectileSpawner.transform.position, Quaternion.identity) as GameObject;
             cooldownTimer = cooldownDuration;
         }
     }
