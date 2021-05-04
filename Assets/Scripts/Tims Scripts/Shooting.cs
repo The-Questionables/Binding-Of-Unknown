@@ -7,12 +7,16 @@ public class Shooting : MonoBehaviour
     public GameObject Arrow;
     public Transform Arrowspawnpoint;
     public KeyCode shoot = KeyCode.Mouse0;
+    public float newMovespeed;
     public float Firerate = 0.75f;
-    private float counter;
+    public Hero George;
+    private float speed;
     private float fireratetimer;
 
     private void Start()
     {
+        George = FindObjectOfType<Hero>();
+        speed = George.moveSpeed;
         fireratetimer = Firerate;
     }
     public void Update()
@@ -27,8 +31,16 @@ public class Shooting : MonoBehaviour
         {
             if (Input.GetKey(shoot))
             {
+                George.moveSpeed = newMovespeed;
                 Instantiate(Arrow, Arrowspawnpoint.position, Arrowspawnpoint.rotation);
                 fireratetimer = Firerate;
+            }
+        }
+        else 
+        {
+            if (fireratetimer >= 0) 
+            {
+                George.moveSpeed = speed;
             }
         }
     }
