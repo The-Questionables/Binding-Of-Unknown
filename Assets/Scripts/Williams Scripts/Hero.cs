@@ -32,6 +32,16 @@ public class Hero : MonoBehaviour
     public int healpotionsInInventory;
     private Vector2 movement; // zwischenspeicherung von bewegungswerten
 
+    private enum State // Statemachine fürs Rollen
+    {
+        Normal,
+        Rolling,
+    }
+
+    private Vector3 rollDir; //********* new roll
+    private State state;
+    private float rollSpeed;
+
     void Start()
     {
         // Updaten der Stats im Gamemanager
@@ -47,51 +57,81 @@ public class Hero : MonoBehaviour
         gamemanager.UpdateMaxHealthText(maxHealth);
         gamemanager.UpdateCurrentHealthText(currentHealth);
         gamemanager.UpdateMaxHealpotionsSlots(maxHealpotionsSlots);
+
+        state = State.Normal; // fürs Rollen
     }
     
     // Update is called once per frame
     void Update()
     {
-        //Char Movement
-        movement.x = Input.GetAxis("Horizontal");
-        movement.y = Input.GetAxis("Vertical");
-        /////////*********************************************** Test Rotation
-        /*
-        Vector3 newPosition = new Vector3(movement.x, 0.0f, movement.y);
-        transform.LookAt(newPosition + transform.position);
-        transform.Translate(newPosition * moveSpeed * Time.deltaTime, Space.World);
-        */
-
-        // animator einfügen
-        // animator.SetFloat("Horizontal", movement.x);
-        //  animator.SetFloat("Vertical", movement.y);
-        // animator.SetFloat("Speed", movement.sqrMagnitude);
-
-        float shootHor = Input.GetAxis("ShootHorizontal");
-        // transform.forward = new Vector3(shootHor, 0, 0);
-        float shootVert = Input.GetAxis("ShootVertical");
-        if ((shootHor != 0 || shootVert != 0) && Time.time > lastFire + fireDelay)
+        switch (state)
         {
-            Shoot(shootHor, shootVert);
-            lastFire = Time.time;
-        }
+            case State.Normal:
 
-        /*
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(20);
-        }
-        */
+                //Char Movement
+                movement.x = Input.GetAxis("Horizontal");
+                movement.y = Input.GetAxis("Vertical");
+                /////////*********************************************** Test Rotation
+                /*
+                Vector3 newPosition = new Vector3(movement.x, 0.0f, movement.y);
+                transform.LookAt(newPosition + transform.position);
+                transform.Translate(newPosition * moveSpeed * Time.deltaTime, Space.World);
+                */
 
-        if (Input.GetKeyDown(KeyCode.Q) && gamemanager.healpotions > 0 && currentHealth != maxHealth) // Gamemanager fragen wie viele heiltränke wir haben, wemm über 1 = true, wenn Leben Voll = false
-        {
-            HealDamage(healthRecover);
+                // animator einfügen
+                // animator.SetFloat("Horizontal", movement.x);
+                //  animator.SetFloat("Vertical", movement.y);
+                // animator.SetFloat("Speed", movement.sqrMagnitude);
+
+                float shootHor = Input.GetAxis("ShootHorizontal");
+                // transform.forward = new Vector3(shootHor, 0, 0);
+                float shootVert = Input.GetAxis("ShootVertical");
+                if ((shootHor != 0 || shootVert != 0) && Time.time > lastFire + fireDelay)
+                {
+                    Shoot(shootHor, shootVert);
+                    lastFire = Time.time;
+                }
+
+                if (Input.GetKeyDown(KeyCode.Q) && gamemanager.healpotions > 0 && currentHealth != maxHealth) // Gamemanager fragen wie viele heiltränke wir haben, wemm über 1 = true, wenn Leben Voll = false
+                {
+                    HealDamage(healthRecover);
+                }
+
+                if (Input.GetKeyDown(KeyCode.Mouse1))
+                {
+                    //TakeDamage(20);
+                    rollDir = movement;
+                    rollSpeed = 55f;
+                    state = State.Rolling;
+                    // Play Roll Animation (rollDir)
+                }
+                break;
+                case State.Rolling:
+                float rollSpeedDropMultiplier = 5f;
+                rollSpeed -= rollSpeed * rollSpeedDropMultiplier * Time.deltaTime;
+
+                float rollSpeedMinimum = 50f;
+                    if (rollSpeed < rollSpeedMinimum)
+                    {
+                        state = State.Normal;
+                    }
+                break;
         }
     }
+    
 
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        switch (state)
+        {
+            case State.Normal:
+                rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+                break;
+            case State.Rolling:
+                rb.velocity = rollDir * rollSpeed;
+                break;
+        }
+        
     }
 
     public void TakeDamage(int damage)
