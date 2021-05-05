@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : EnemyStandart
+public class HellebardeEnemy : EnemyStandart
 {
 
     [Header("Enemy melee attack")]
