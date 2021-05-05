@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 [RequireComponent(typeof(Rigidbody2D))]
 public class EnemyArrow : MonoBehaviour
 {
@@ -11,16 +10,17 @@ public class EnemyArrow : MonoBehaviour
     public float destroyTimer = 0.5f; // hier einstellen nach wie vielen Sekunden der Pfeil verschwinden soll
     [Header("Projectile Speed")]
     public float speed = 4f;
-
+    private Rigidbody2D rb;
+    Hero target;
+    Vector2 moveDirection;
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+        target = GameObject.FindObjectOfType<Hero>();
+        moveDirection = (target.transform.position - transform.position).normalized * speed;
+        rb.velocity = new Vector2(moveDirection.x, moveDirection.y);
         Destroy(gameObject, destroyTimer); // zerstört Object nach ablauf der Zeit
     }
-    void Update()
-    {
-        transform.position += transform.up * Time.deltaTime * speed;// bewege Pfeil nach vorne
-    }
-
     void OnTriggerEnter2D(Collider2D other)     // hier wird der Schaden übermittelt und das projektil zerstört wenn es auf den player trifft.
     {
         if (other.gameObject.CompareTag("Player"))
