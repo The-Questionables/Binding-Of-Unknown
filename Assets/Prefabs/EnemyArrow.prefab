@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3018200967484303324}
+  - component: {fileID: -1018241244351139949}
   - component: {fileID: 7850784504404316239}
   - component: {fileID: 8306770106692954618}
   - component: {fileID: 7699017769781456698}
@@ -35,6 +36,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-1018241244351139949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2316289028120900429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e47142fc554998141ae74af19d219e42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7850784504404316239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50,8 +63,6 @@ MonoBehaviour:
   damage: 15
   destroyTimer: 1.5
   speed: 5
-  rb: {fileID: 0}
-  user: {fileID: 0}
 --- !u!50 &8306770106692954618
 Rigidbody2D:
   serializedVersion: 4
@@ -231,7 +242,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 21300000, guid: 5e6f47d617211924798bac5200ab4602, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 1
+  m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.05, y: 0.19}
   m_AdaptiveModeThreshold: 0.5
