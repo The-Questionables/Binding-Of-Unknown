@@ -5,26 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void StartButton()
+    public void PlayGame()
     {
-        SceneManager.LoadScene("Level 1 Williams Scene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);                                                                                          
     }
 
-    public void OptionsButton()
+    public void QuitGame()
     {
-        SceneManager.LoadScene("Options");
+        Debug.Log("QUIT!");
+        Application.Quit();
     }
 
-    public void CreditsButton()
+    public void Cedits()
     {
         SceneManager.LoadScene("Credits");
     }
 
-    public void QuitButton() 
+    public void Menu()
     {
-        Application.Quit();
-        Debug.Break();
+        SceneManager.LoadScene("Menu");
     }
 
-   
 }
