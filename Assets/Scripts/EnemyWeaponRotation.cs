@@ -14,6 +14,5 @@ public class EnemyWeaponRotation : MonoBehaviour
         Vector3 direction = target.transform.position - user.transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         this.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
     }
 }
