@@ -82,7 +82,6 @@ public class GameManager : MonoBehaviour {
     public void UpdateMaxHealpotionsSlots(int maxHealthpotions) // noch einbauen
     {
         MaxHealthpotionsSlotsText.text = "/" + maxHealthpotions.ToString();
-        Debug.Log("UpdateMaxHealthText wurde ausgeführt");
     }
 
     //********************************** ShowCurrentHealthText
@@ -94,7 +93,6 @@ public class GameManager : MonoBehaviour {
     public void UpdateCurrentHealthText(int currentHealth)
     {
         currentHealthText.text = currentHealth.ToString();
-        Debug.Log("UpdateCurrentHealthText wurde ausgeführt");
     }
     public void DecreaseCurrentHealthText(int getDamage) // noch einbauen
     {
