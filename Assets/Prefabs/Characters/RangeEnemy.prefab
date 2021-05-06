@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 978554266183098310}
   - component: {fileID: 8705332430988568434}
   m_Layer: 0
-  m_Name: Range Enemy
+  m_Name: RangeEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -744,6 +744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e47142fc554998141ae74af19d219e42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  user: {fileID: 978554266183098315}
 --- !u!1 &7051257176803355402
 GameObject:
   m_ObjectHideFlags: 0
