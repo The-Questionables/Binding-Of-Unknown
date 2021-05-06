@@ -41,19 +41,15 @@ public class RoomTemplates : MonoBehaviour
     {
         if(waitTime <= 0 && spawnedRangeEnemys == false)
         {
-                //  random = Random.Range(0, templates.rightRooms.Length); // Sucht zufälligen Längenwert des BottomRoom Arrays aus
-                //  Instantiate(templates.rightRooms[random], transform.position, Quaternion.identity); // Clonen eines Objektes und erstellen
-
-                // wählt einen zufälligen RaumZahlenWert zum Spawnen aus
                 // für jeden Gegner soll eine zufällige Position ausgesucht werden und gespawnt werden
-           
-                // Spawn der Gegner
                 for (int i = 0; i < rangeEnemyAmount; i++)
                 {
-                    random = Random.Range(0, rooms.Count);
-                    Instantiate(rangeEnemys, rooms[random].transform.position, Quaternion.identity); // Spawnt Enemy am zufällig ausgewählten Raum
-                    rangeEnemyAmountCounter++;
+                    // wählt einen zufälligen RaumZahlenWert zum Spawnen aus
+                     random = Random.Range(0, rooms.Count - 1); // -1 Damit Gegner nicht im Boss Raum gespawnt werden
 
+                    // Spawnt Enemys in der Mitte eines zufällig ausgewählten Raumes
+                    Instantiate(rangeEnemys, rooms[random].transform.position, Quaternion.identity); 
+                    rangeEnemyAmountCounter++;
                 }
 
             if (rangeEnemyAmountCounter == rangeEnemyAmount)
