@@ -8,7 +8,6 @@ public class EnemyWeaponRotation : MonoBehaviour
     //other.parent.GetComponent("RangeEnemy").variable = user;
     private GameObject target;
     void Start()
-
     {
         //user = GameObject.FindGameObjectWithTag("Enemy");
         user = transform.root.gameObject;

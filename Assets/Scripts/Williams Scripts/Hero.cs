@@ -79,9 +79,9 @@ public class Hero : MonoBehaviour
                 */
 
                 // animator einfügen
-                // animator.SetFloat("Horizontal", movement.x);
-                //  animator.SetFloat("Vertical", movement.y);
-                // animator.SetFloat("Speed", movement.sqrMagnitude);
+                 animator.SetFloat("Horizontal", movement.x);
+                 animator.SetFloat("Vertical", movement.y);
+                 animator.SetFloat("Speed", movement.sqrMagnitude);
 
                 float shootHor = Input.GetAxis("ShootHorizontal");
                 // transform.forward = new Vector3(shootHor, 0, 0);

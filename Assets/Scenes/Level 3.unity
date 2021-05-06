@@ -353,9 +353,10 @@ MonoBehaviour:
   rooms: []
   rangeEnemys: {fileID: 978554266183098313, guid: 474b67b126318604b973fadbedf31f57,
     type: 3}
-  rangeEnemyAmount: 40
-  hellebardeEnemys: {fileID: 0}
-  hellebardeEnemysAmount: 0
+  rangeEnemyAmount: 5
+  hellebardeEnemys: {fileID: 947327879237028921, guid: ae0101c4e4e002347b40ac79a741ee6b,
+    type: 3}
+  hellebardeEnemyAmount: 8
   waitTime: 5
   boss: {fileID: 7113214615014290047, guid: 2578f12c0dac65b4fad2546f1d92575d, type: 3}
 --- !u!4 &142750848
@@ -1719,7 +1720,7 @@ RectTransform:
   m_Children:
   - {fileID: 1957188140}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1745,14 +1746,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2346175232225414394, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
         type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1039438993}
+    - target: {fileID: 2346175232225414394, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
+        type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 239650638}
+    - target: {fileID: 2346175232225414394, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2346175232225414395, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ecaebcffa1805bd419347adf5ee08310, type: 2}
     - target: {fileID: 2346175232225414396, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
         type: 3}
       propertyPath: m_Size.y
       value: 0.59534657
       objectReference: {fileID: 0}
+    - target: {fileID: 2346175232225414396, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 7cf3458aa8a44f64ca7a1c91c76975ec, type: 2}
     - target: {fileID: 2346175232225414396, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
         type: 3}
       propertyPath: m_Offset.x
@@ -1820,6 +1841,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2dc5a57f60ad0ab4880bfa6607e254e1, type: 3}
+--- !u!95 &1039438993 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2346175232225414395, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 963270490}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1096839251
 GameObject:
   m_ObjectHideFlags: 0
@@ -3019,7 +3046,7 @@ RectTransform:
   m_Children:
   - {fileID: 902316670}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
