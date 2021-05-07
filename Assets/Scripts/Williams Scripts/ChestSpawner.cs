@@ -7,6 +7,7 @@ public class ChestSpawner : MonoBehaviour
     public bool startRoom;
     public bool endRoom;
     public int enemyCounter;
+    public int enemyScanner;
 
     public GameObject[] chestList; // Array an verschiedenen Kisten
     private int random; // speichert kurz zufälligen Wert aus dem Array
@@ -18,7 +19,7 @@ public class ChestSpawner : MonoBehaviour
     {
         if (timer >= spawntime) 
         { 
-        if (enemyCounter == 0 && startRoom == false)
+        if (enemyCounter == 0 && startRoom == false && enemyScanner > 0)
         {
             SpawnChest();
         }
@@ -59,7 +60,8 @@ public class ChestSpawner : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             enemyCounter++;
-            Debug.Log("Enemy detacted");
+            enemyScanner++;
+          // Debug.Log("Enemy detacted");
         }
     }
 

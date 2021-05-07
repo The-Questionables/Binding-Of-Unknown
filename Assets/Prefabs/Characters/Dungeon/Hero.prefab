@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   avoidScenes: []
-  p_mixer: {fileID: 0}
+  p_mixer: {fileID: 24100000, guid: 18df6c61d18cc6949b8917443a5aae2b, type: 2}
 --- !u!114 &2346175232225414394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
-  moveSpeed: 5
+  moveSpeed: 4
   detonationTimer: 0
   healthRecover: 10
   useHealpotions: 1
@@ -74,7 +74,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 0}
   bulletSpeed: 5
   fireDelay: 0.5
-  animator: {fileID: 0}
+  animator: {fileID: 2346175232225414395}
   healthBar: {fileID: 0}
   Explosion: {fileID: 0}
   healpotionsInInventory: 0
@@ -87,11 +87,11 @@ BoxCollider2D:
   m_GameObject: {fileID: 2346175232225414389}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 7cf3458aa8a44f64ca7a1c91c76975ec, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0072129816, y: -0.028985023}
+  m_Offset: {x: -0.0072129965, y: 0.04257816}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -102,7 +102,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6973307, y: 0.73847294}
+  m_Size: {x: 0.6973307, y: 0.59534657}
   m_EdgeRadius: 0
 --- !u!95 &2346175232225414395
 Animator:
@@ -114,7 +114,7 @@ Animator:
   m_GameObject: {fileID: 2346175232225414389}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ecaebcffa1805bd419347adf5ee08310, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
