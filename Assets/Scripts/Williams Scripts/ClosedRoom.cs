@@ -16,6 +16,7 @@ public class ClosedRoom : MonoBehaviour
 
     public bool StartRoom;
     public int KillsRequired;
+    private bool isEnemyInRoom = true;
 
     void Start()
     {
@@ -38,7 +39,7 @@ public class ClosedRoom : MonoBehaviour
             DoorOpener();
           //KillsRequired = 0;
         }
-        if (StartRoom == true)
+        if (StartRoom == true && isEnemyInRoom == false)
         {
             DoorOpener();
         }
@@ -58,6 +59,8 @@ public class ClosedRoom : MonoBehaviour
         */
         //Tilemap tilemap = GetComponent<Tilemap>();
         // tilemap.SetTile(new Vector3Int(0, 0, 0), null); // Remove tile at 0,0,0
+
+        // auf bestimmte Map zugreifen
         GetComponent<TilemapRenderer>().enabled = false;
         GetComponent<TilemapCollider2D>().enabled = false;
     }
@@ -96,6 +99,7 @@ public class ClosedRoom : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             KillsRequired--;
+            isEnemyInRoom = false;
         }
     }
 }
