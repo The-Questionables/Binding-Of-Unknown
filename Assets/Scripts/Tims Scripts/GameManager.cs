@@ -37,10 +37,15 @@ public class GameManager : MonoBehaviour {
             isHealpotionCollectable = false;
         }
 
-        if (Input.GetKeyDown(UseHealthpotion) && healthpotions > 0 && hp <= maxHp)
+        if (Input.GetKeyDown(UseHealthpotion) && healthpotions > 0 && hp < maxHp)
         {
             healthpotions--;
             hp += healthRecover;
+
+            if ((hp+healthpotions)>maxHp) 
+            {
+                hp = maxHp;
+            }
         }
 
 
