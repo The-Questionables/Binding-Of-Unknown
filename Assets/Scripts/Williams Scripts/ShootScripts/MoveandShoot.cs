@@ -71,7 +71,7 @@ public class MoveandShoot : MonoBehaviour
             TakeDamage(20);
         }
 
-        if (Input.GetKeyDown(KeyCode.Q) && gamemanager.healpotions > 0 && currentHealth != maxHealth) // Gamemanager fragen wie viele heiltränke wir haben, wemm über 1 = true, wenn Leben Voll = false
+        if (Input.GetKeyDown(KeyCode.Q) && gamemanager.healthpotions > 0 && currentHealth != maxHealth) // Gamemanager fragen wie viele heiltränke wir haben, wemm über 1 = true, wenn Leben Voll = false
         {
             HealDamage(healthRecover);
         }
@@ -131,7 +131,7 @@ public class MoveandShoot : MonoBehaviour
         }
 
         healthBar.SetHealth(currentHealth);
-        gamemanager.UseHealpotions();
+        gamemanager.healthpotions--;
 
     }
     /*
