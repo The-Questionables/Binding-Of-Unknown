@@ -23,8 +23,8 @@ public class HeartLoot : MonoBehaviour
         if (collision.CompareTag("Player") && gamemanager.isHealpotionCollectable)
         {
          // AudioSource.PlayClipAtPoint(heartSound, Camera.main.transform.position, heartSoundVolume);
-            gamemanager.healthpotions += getHealpotions;
-            gamemanager.maxHealthpotions = healpotionsSlots;
+            gamemanager.AddHealpotions(getHealpotions);
+            gamemanager.UpdateMaxHealpotionsSlots(healpotionsSlots);
             Debug.Log("Heart collect.");
 
             Destroy(gameObject);
