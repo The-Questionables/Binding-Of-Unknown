@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour {
         {
             isHealpotionCollectable = true;
         }
-        else if (healthpotions == maxHealthpotions)
+        else if (healthpotions >= maxHealthpotions)
         {
             isHealpotionCollectable = false;
         }

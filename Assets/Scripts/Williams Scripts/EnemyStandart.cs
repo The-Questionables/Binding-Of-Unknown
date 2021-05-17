@@ -39,6 +39,7 @@ public class EnemyStandart : MonoBehaviour
         this.rb = this.GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;          // verändet Wert der Healtbar
         healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetHealth(currentHealth);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

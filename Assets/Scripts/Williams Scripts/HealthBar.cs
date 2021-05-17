@@ -13,7 +13,6 @@ public class HealthBar : MonoBehaviour
     public void SetMaxHealth(int health) //Sliderlänge passt sich den maximalen Lebenswert an
     {
         slider.maxValue = health;
-        slider.value = health;
 
         fill.color = gradient.Evaluate(1f);
     }

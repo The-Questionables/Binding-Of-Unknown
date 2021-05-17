@@ -7,9 +7,6 @@ public class Hero : MonoBehaviour
     GameManager gamemanager; // Verknüpfung mit Gamemanager
 
     [Header("Georges attributes:")]
-    private int maxHealth = 100;
-    private int currentHealth;
-    private int maxHealpotionsSlots = 3; 
     public float moveSpeed = 5f;
     public int useHealpotions = 1;
 
@@ -48,19 +45,16 @@ public class Hero : MonoBehaviour
         rb.velocity = transform.right * moveSpeed * 10;
         transform.LookAt(transform.position, this.rb.velocity);
 
-        currentHealth = maxHealth;          // verändet Wert der Healtbar
-        healthBar.SetMaxHealth(maxHealth);
-        // Update UI CurrentHealth, MaxHealth
-        maxHealth= gamemanager.maxHp;
-        currentHealth = gamemanager.hp;
-        maxHealpotionsSlots = gamemanager.maxHealthpotions;
 
+        // Update UI CurrentHealth, MaxHealth
         state = State.Normal; // fürs Rollen
     }
 
     // Update is called once per frame
     void Update()
     {
+        healthBar.SetMaxHealth(gamemanager.maxHp);
+        healthBar.SetHealth(gamemanager.hp);
         switch (state)
         {
             case State.Normal:
@@ -128,11 +122,10 @@ public class Hero : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
+        gamemanager.hp -= damage;
+        healthBar.SetHealth(gamemanager.hp);
         // Updaten des Healthbartextes im UI
-        gamemanager.hp = currentHealth;
-        if (currentHealth <= 0)
+        if (gamemanager.hp <= 0)
         {
 
             // Spiele Sound ab passiert in der explosion
@@ -147,18 +140,6 @@ public class Hero : MonoBehaviour
             // Destroy(gameObject, detonationTimer);
             Debug.Log("Du bist gestorben");
         }
-    }
-
-    public void HealDamage(int healthRecover)
-    {
-        currentHealth += gamemanager.healthRecover;
-
-        if (currentHealth > maxHealth) // falls man mit einen Heiltrank mehr heilen sollte als man hat wird der Wert auf den Max wert gesetzt
-        {
-            currentHealth = maxHealth;
-        }
-
-        healthBar.SetHealth(currentHealth);
     }
 
     void Shoot(float x, float y) // Berechnen der Schussgeschwindigkeit und Spawn
