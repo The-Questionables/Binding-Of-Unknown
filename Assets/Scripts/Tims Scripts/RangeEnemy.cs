@@ -5,43 +5,55 @@ using UnityEngine;
 public class RangeEnemy : EnemyStandart
 {
     [Header("Enemy Movement")]
-    public float enemyMoveSpeed = 1f;
+    public float rangeEnemySpeed = 1f;
     public float safetyDistance = 1f;
     public float retreatDistance = 1f;
+    bool isPlayerInRange = false;
 
     [Header("Enemy Projectile")]
     public GameObject projectileSpawner;
     public float cooldownTimer = 1f;
-    private bool canShoot = true;
+    private bool canShoot = false;
     public GameObject enemyProjectilePrefab;
     float cooldownDuration = 1f;
 
     // Update is called once per frame
     void Update()
     {
+        CheckDistance();
+
         ControllEnemyMovementAndShooting();
 
         HandleShootingCooldownTime();
     }
+
+    void CheckDistance()
+    {
+        if (Vector2.Distance(target.position, transform.position) <= retreatDistance && Vector2.Distance(target.position, transform.position) > safetyDistance)
+        {
+            isPlayerInRange = true;
+        }
+    }
+
 
     private void ControllEnemyMovementAndShooting()
     {
 
         if (target)
         {
-
-            if (Vector3.Distance(target.position, transform.position) > retreatDistance && Vector3.Distance(target.position, transform.position) > safetyDistance)
+            //bewegen auf den Spieler
+            if (Vector2.Distance(target.position, transform.position) > retreatDistance && Vector2.Distance(target.position, transform.position) > safetyDistance)
             {
-                transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime); // attackRadius);
+                transform.position = Vector2.MoveTowards(transform.position, target.position, rangeEnemySpeed * Time.deltaTime); 
                 if (canShoot)
                 {
                     ShootProjectile();
                 }
             }
-
+            // ???
             else if (Vector2.Distance(transform.position, target.position) > safetyDistance)
             {
-                transform.position = Vector2.MoveTowards(transform.position, target.position, enemyMoveSpeed * Time.deltaTime);
+                //transform.position = Vector2.MoveTowards(transform.position, target.position, rangeEnemySpeed * Time.deltaTime);
             }
             else if (Vector2.Distance(transform.position, target.position) < safetyDistance && Vector2.Distance(transform.position, target.position) > retreatDistance)
             {
@@ -52,10 +64,10 @@ public class RangeEnemy : EnemyStandart
                     ShootProjectile();
                 }
             }
+            // wegbewegen vom Spieler
             else if (Vector2.Distance(transform.position, target.position) < retreatDistance)
             {
-                transform.position = Vector2.MoveTowards(transform.position, target.position, -enemyMoveSpeed * Time.deltaTime);
-
+                transform.position = Vector2.MoveTowards(transform.position, target.position, -rangeEnemySpeed * Time.deltaTime);
                 if (canShoot)
                 {
                     ShootProjectile();
@@ -63,7 +75,6 @@ public class RangeEnemy : EnemyStandart
             }
         }
     }
-
 
     private void HandleShootingCooldownTime()
     {
@@ -80,10 +91,12 @@ public class RangeEnemy : EnemyStandart
 
     private void ShootProjectile()
     {
-       
+       if (isPlayerInRange)
+       {
+           // rb.isKinematic = false;
           //  AudioSource.PlayClipAtPoint(projectileSound, Camera.main.transform.position, projectileSoundVolume);
             GameObject newProjectile = Instantiate(enemyProjectilePrefab, projectileSpawner.transform.position, Quaternion.identity) as GameObject;
             cooldownTimer = cooldownDuration;
-        
+       }
     }
 }
