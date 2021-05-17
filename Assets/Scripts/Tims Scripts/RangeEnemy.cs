@@ -8,7 +8,6 @@ public class RangeEnemy : EnemyStandart
     public float enemyMoveSpeed = 1f;
     public float safetyDistance = 1f;
     public float retreatDistance = 1f;
-    bool canMove = true;
 
     [Header("Enemy Projectile")]
     public GameObject projectileSpawner;
@@ -28,48 +27,18 @@ public class RangeEnemy : EnemyStandart
     private void ControllEnemyMovementAndShooting()
     {
 
-        if (target && canMove)
+        if (target)
         {
-            if (transform.position.y > 4.5)
-            {
-                Vector2 newPosition = new Vector2(transform.position.x, 4.5f);
-                transform.position = Vector2.MoveTowards(transform.position, newPosition, enemyMoveSpeed * Time.deltaTime);
 
+            if (Vector3.Distance(target.position, transform.position) > retreatDistance && Vector3.Distance(target.position, transform.position) > safetyDistance)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime); // attackRadius);
                 if (canShoot)
                 {
                     ShootProjectile();
                 }
             }
-            else if (transform.position.y < -4.5)
-            {
-                Vector2 newPosition = new Vector2(transform.position.x, -4.5f);
-                transform.position = Vector2.MoveTowards(transform.position, newPosition, enemyMoveSpeed * Time.deltaTime);
 
-                if (canShoot)
-                {
-                    ShootProjectile();
-                }
-            }
-            else if (transform.position.x > 8.5)
-            {
-                Vector2 newPosition = new Vector2(8.5f, transform.position.y);
-                transform.position = Vector2.MoveTowards(transform.position, newPosition, enemyMoveSpeed * Time.deltaTime);
-
-                if (canShoot)
-                {
-                    ShootProjectile();
-                }
-            }
-            else if (transform.position.x < -8.5)
-            {
-                Vector2 newPosition = new Vector2(-8.5f, transform.position.y);
-                transform.position = Vector2.MoveTowards(transform.position, newPosition, enemyMoveSpeed * Time.deltaTime);
-
-                if (canShoot)
-                {
-                    ShootProjectile();
-                }
-            }
             else if (Vector2.Distance(transform.position, target.position) > safetyDistance)
             {
                 transform.position = Vector2.MoveTowards(transform.position, target.position, enemyMoveSpeed * Time.deltaTime);
@@ -95,10 +64,6 @@ public class RangeEnemy : EnemyStandart
         }
     }
 
-    public bool CanEnemyMove()
-    {
-        return canMove;
-    }
 
     private void HandleShootingCooldownTime()
     {
@@ -115,11 +80,10 @@ public class RangeEnemy : EnemyStandart
 
     private void ShootProjectile()
     {
-        if (canMove)
-        {
+       
           //  AudioSource.PlayClipAtPoint(projectileSound, Camera.main.transform.position, projectileSoundVolume);
             GameObject newProjectile = Instantiate(enemyProjectilePrefab, projectileSpawner.transform.position, Quaternion.identity) as GameObject;
             cooldownTimer = cooldownDuration;
-        }
+        
     }
 }
