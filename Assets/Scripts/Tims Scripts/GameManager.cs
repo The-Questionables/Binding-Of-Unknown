@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour {
         coinsText = GameObject.FindGameObjectWithTag("Coin Text").GetComponent<Text>();
         healthpotionsText = GameObject.FindGameObjectWithTag("Healthpotion Text").GetComponent<Text>();
 
+        coinsText.text = "x" + coins.ToString();
         healthpotionsText.text = healthpotions.ToString() + "/" + maxHealthpotions.ToString();
         hpText.text = hp.ToString() + "/" + maxHp.ToString();
 
@@ -55,16 +56,6 @@ public class GameManager : MonoBehaviour {
 
 
 
-    }
-
-    public void AddCoin(int getCoins)
-    {
-        coins += getCoins;
-        UpdateCoinsText(coins);
-    }
-    public void UpdateCoinsText(int coins)
-    {
-        coinsText.text = "x" + coins.ToString();
     }
 
 }

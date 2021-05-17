@@ -22,7 +22,7 @@ public class LootCoins : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
          // AudioSource.PlayClipAtPoint(heartSound, Camera.main.transform.position, heartSoundVolume);
-            gamemanager.AddCoin(getCoins);
+            gamemanager.coins += getCoins;
 
             Destroy(gameObject);
         }
