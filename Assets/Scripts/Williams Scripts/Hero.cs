@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Hero : MonoBehaviour
@@ -137,7 +138,7 @@ public class Hero : MonoBehaviour
             }
 
             // Zerstöre Spieler, Teleportiere ihn zurück zur Stadt
-            // Destroy(gameObject, detonationTimer);
+            SceneManager.LoadScene("Upper World");
             Debug.Log("Du bist gestorben");
         }
     }
