@@ -8,11 +8,11 @@ public class GameManager : MonoBehaviour {
 
     [Header("Coins:")]
     public int coins;
-    public Text coinsText;
+    private Text coinsText;
 
     [Header("Healthpotions:")]
     public bool isHealpotionCollectable;
-    public Text healthpotionsText;
+    private Text healthpotionsText;
     public KeyCode UseHealthpotion = KeyCode.Q;
     public int maxHealthpotions;
     public int healthpotions;
@@ -21,10 +21,15 @@ public class GameManager : MonoBehaviour {
     [Header("Player Health:")]
     public int hp;
     public int maxHp;
-    public Text hpText;
+    private Text hpText;
+
 
     public void Update()
     {
+        hpText = GameObject.FindGameObjectWithTag("Hp Text").GetComponent<Text>();
+        coinsText = GameObject.FindGameObjectWithTag("Coin Text").GetComponent<Text>();
+        healthpotionsText = GameObject.FindGameObjectWithTag("Healthpotion Text").GetComponent<Text>();
+
         healthpotionsText.text = healthpotions.ToString() + "/" + maxHealthpotions.ToString();
         hpText.text = hp.ToString() + "/" + maxHp.ToString();
 
