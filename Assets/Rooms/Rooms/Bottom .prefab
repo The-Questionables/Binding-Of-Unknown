@@ -42,7 +42,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3149563814876325399}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1828da8744b8ec543a02daa8cb10d247, type: 3}
   m_Name: 
@@ -59,26 +59,6 @@ Tilemap:
   m_GameObject: {fileID: 3149563814876325399}
   m_Enabled: 1
   m_Tiles:
-  - first: {x: -1, y: -6, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 4
-      m_TileSpriteIndex: 4
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 0, y: -6, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 4
-      m_TileSpriteIndex: 4
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: -12, y: -2, z: 0}
     second:
       serializedVersion: 2
@@ -149,8 +129,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 8420b0504b8f61c40817dfc69d29d08d, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 835991ef932b35d49901ebf37d9a9351, type: 2}
-  - m_RefCount: 2
-    m_Data: {fileID: 11400000, guid: 48bf9eda10cbe6d4da1315abac83a1ee, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -163,10 +143,10 @@ Tilemap:
   - m_RefCount: 2
     m_Data: {fileID: 5456712094864281919, guid: 7b3b88ccddad2ac48b54b6d7355a5778,
       type: 3}
-  - m_RefCount: 2
-    m_Data: {fileID: 21300000, guid: 60590a99a621db94f8b915f46c8046ed, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
-  - m_RefCount: 8
+  - m_RefCount: 6
     m_Data:
       e00: 1
       e01: 0
@@ -185,7 +165,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 8
+  - m_RefCount: 6
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
