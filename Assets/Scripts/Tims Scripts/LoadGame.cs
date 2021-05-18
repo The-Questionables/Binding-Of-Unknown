@@ -25,8 +25,9 @@ public class LoadGame : MonoBehaviour
     public void Update()
     {
         if (searchforgamemaster==true)
-        {  
+        {
             gm = FindObjectOfType<GameManager>();
+            LoadOnEventOfYourChoice();
         }
     }
 
