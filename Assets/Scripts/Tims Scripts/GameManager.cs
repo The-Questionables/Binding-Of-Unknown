@@ -10,14 +10,14 @@ public class GameManager : MonoBehaviour {
     public int coins;
     private Text coinsText;
 
+    [HideInInspector] public string ActiveScene;
     [Header("Healthpotions:")]
     public bool isHealpotionCollectable;
     private Text healthpotionsText;
     public KeyCode UseHealthpotion = KeyCode.Q;
-    public int maxHealthpotions;
     public int healthpotions;
+    public int maxHealthpotions;
     public int healthRecover = 10;
-    public string ActiveScene;
 
     [Header("Player Health:")]
     public int hp;
@@ -57,14 +57,21 @@ public class GameManager : MonoBehaviour {
             }
         }
 
-
-
+        
+}
+    void OnLevelWasLoaded()
+    {
+            if(ActiveScene == "Upper World") 
+            {
+                SaveGame();
+            }
     }
 
-    public void SaveGame() 
+    public void SaveGame()
     {
         SaveGameSystem.SaveGame(this);
     }
+    /*
     public void LoadGame()
     {
         SaveGameData data = SaveGameSystem.LoadData();
@@ -75,7 +82,7 @@ public class GameManager : MonoBehaviour {
         maxHealthpotions = data.maxHealthpotions;
         ActiveScene = data.level;
     }
-
+    */
 }
 
 

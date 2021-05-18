@@ -25,7 +25,6 @@ public class Hero : MonoBehaviour
     public GameObject Explosion;
 
     [Header("Statistics:")]
-    public int healpotionsInInventory;
     private Vector2 movement; // zwischenspeicherung von bewegungswerten
 
     private enum State // Statemachine fürs Rollen
@@ -128,7 +127,7 @@ public class Hero : MonoBehaviour
         // Updaten des Healthbartextes im UI
         if (gamemanager.hp <= 0)
         {
-
+            gamemanager.hp = 0;
             // Spiele Sound ab passiert in der explosion
 
             // Spiele Effect ab

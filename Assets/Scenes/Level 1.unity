@@ -1230,12 +1230,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coins: 0
+  ActiveScene: 
   isHealpotionCollectable: 0
   UseHealthpotion: 113
-  maxHealthpotions: 3
   healthpotions: 0
+  maxHealthpotions: 3
   healthRecover: 10
-  ActiveScene: 
   hp: 100
   maxHp: 100
 --- !u!4 &806348015
@@ -1265,7 +1265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   avoidScenes:
-  - '"Main Menu"'
+  - '"MainMenu"'
 --- !u!1 &878750251
 GameObject:
   m_ObjectHideFlags: 0
@@ -1757,6 +1757,11 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 973872105}
+    - target: {fileID: 2346175232225414394, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
+        type: 3}
+      propertyPath: healpotionsInInventory
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2346175232225414395, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
         type: 3}
       propertyPath: m_Controller
