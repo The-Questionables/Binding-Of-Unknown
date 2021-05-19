@@ -43,11 +43,6 @@ public class ChestOpener : MonoBehaviour
             isPlayerInRange = true;
             isCheastReadyToOpen = true;
         }
-
-        if (other.CompareTag("Relict"))
-        {
-            Destroy(gameObject);
-        }
     }
     private void OnTriggerExit2D(Collider2D other)
     {

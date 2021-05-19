@@ -22,7 +22,6 @@ public class Hero : MonoBehaviour
     private Rigidbody2D rb;
     public Animator animator;
     public HealthBar healthBar;
-    public RelictChargeBar relictChargeBar; // new
     public GameObject Explosion;
 
     [Header("Statistics:")]
@@ -37,8 +36,6 @@ public class Hero : MonoBehaviour
     private Vector3 rollDir; //********* new roll
     private State state;
     private float rollSpeed;
-    public float rollCooldownTime = 5f;
-    public float nextRollTime = 0;
 
     void Start()
     {
@@ -58,17 +55,6 @@ public class Hero : MonoBehaviour
     {
         healthBar.SetMaxHealth(gamemanager.maxHp);
         healthBar.SetHealth(gamemanager.hp);
-
-        relictChargeBar.SetMaxRelictCharge(gamemanager.maxRelictCharge);
-        relictChargeBar.SetRelictCharge(gamemanager.relictCharge);
-
-        /*
-        if (Input.GetKeyDown("space"))
-        {
-            LoadRelictChargeBar(1);
-        }
-        */
-
         switch (state)
         {
             case State.Normal:
@@ -97,19 +83,15 @@ public class Hero : MonoBehaviour
                     lastFire = Time.time;
                 }
 
-             if (Time.time > nextRollTime)
-             { 
                 if (Input.GetKeyDown(KeyCode.Mouse1))
                 {
                     //TakeDamage(20);
                     rollDir = movement;
                     rollSpeed = 55f;
                     state = State.Rolling;
-                        // Play Roll Animation (rollDir)
-                    nextRollTime = Time.time + rollCooldownTime;
+                    // Play Roll Animation (rollDir)
                 }
-             }
-            break;
+                break;
             case State.Rolling:
                 float rollSpeedDropMultiplier = 5f;
                 rollSpeed -= rollSpeed * rollSpeedDropMultiplier * Time.deltaTime;
@@ -136,12 +118,6 @@ public class Hero : MonoBehaviour
                 break;
         }
 
-    }
-
-    public void LoadRelictChargeBar(int relictCharge)
-    {
-        gamemanager.relictCharge += relictCharge;
-        relictChargeBar.SetRelictCharge(gamemanager.relictCharge);
     }
 
     public void TakeDamage(int damage)

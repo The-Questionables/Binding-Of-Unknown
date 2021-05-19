@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class RoomTemplates : MonoBehaviour
 {
-    [Header("Rooms:")]
     // Erstellen von Arrays für die Räume
     public GameObject[] bottomRooms;
     public GameObject[] topRooms;
@@ -21,27 +20,17 @@ public class RoomTemplates : MonoBehaviour
 
     private int random; // speichert zufälligen Wert aus dem Array
 
-    [Header("Range Enemys:")]
-    public GameObject rangeEnemys; // Prefab FernkampfGegnern
+    public GameObject rangeEnemys; // Liste an FernkampfGegnern
     public int rangeEnemyAmount;
     private bool spawnedRangeEnemys;
     private int rangeEnemyAmountCounter = 0;
 
-    [Header("Melee Enemys:")]
-    public GameObject hellebardeEnemys; // Prefab NahkampfGegnern
+    public GameObject hellebardeEnemys; // Liste an NahkampfGegnern
     public int hellebardeEnemyAmount;
     private bool spawnedHellebardeEnemys;
     private int hellebardeEnemyAmountCounter = 0;
 
-    [Header("Relict Spawner:")]
-    public GameObject relictSpawner; // Prefab RelictSpawner
-    public int relictSpawnerAmount;
-    private bool spawnedRelictSpawnSpawner;
-    private int relictSpawnerAmountCounter = 0;
-
-    private float waitTime = 5f;
-
-    [Header("Boss oder Treppe Spawner:")]
+    public float waitTime = 5f;
     private bool spawnedBoss;
     public GameObject boss; // boss oder Treppe
 
@@ -51,7 +40,6 @@ public class RoomTemplates : MonoBehaviour
         SpawnBossOderTreppe();
         SpawnRangeEnemys();
         SpawnHellebardeEnemys();
-        RelictSpawnSpawner();
     }
 
     // für jeden Gegner soll eine zufällige Position ausgesucht werden und gespawnt werden
@@ -125,6 +113,7 @@ public class RoomTemplates : MonoBehaviour
         }
     }
 
+
     public void SpawnBossOderTreppe()
     {
         if (waitTime <= 0 && spawnedBoss == false)
@@ -146,28 +135,4 @@ public class RoomTemplates : MonoBehaviour
             waitTime -= Time.deltaTime;
         }
     }
-
-    public void RelictSpawnSpawner()
-    {
-        if (waitTime <= 0 && spawnedRelictSpawnSpawner == false)
-        {
-            // für jedes Relikt wird der for loop einmal ausgeführt
-            for (int i = 0; i < relictSpawnerAmount; i++)
-            {
-                // wählt einen zufälligen RaumZahlenWert zum Spawnen aus
-                random = Random.Range(0, rooms.Count - 1); // -1 Damit Gegner nicht im Boss Raum gespawnt werden
-                Instantiate(relictSpawner, rooms[random].transform.position, Quaternion.identity); // Spawnt Enemys in der Mitte eines zufällig ausgewählten Raumes
-                relictSpawnerAmountCounter++;
-            }
-            if (relictSpawnerAmountCounter == relictSpawnerAmount)
-            {
-                spawnedRelictSpawnSpawner = true;
-            }
-        }
-        else
-        {
-            waitTime -= Time.deltaTime;
-        }
-    }
-    
 }

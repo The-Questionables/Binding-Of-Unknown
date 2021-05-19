@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine;
 public class LootCoins : MonoBehaviour
 {
     public AudioClip coinSound;
-    // [Range(0, 1)] float relictSoundVolume = 1f;
+    // [Range(0, 1)] float heartSoundVolume = 1f;
     public int getCoins = 1;
 
     // Cached References
