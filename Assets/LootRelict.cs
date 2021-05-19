@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LootCoins : MonoBehaviour
+public class LootRelict : MonoBehaviour
 {
-    public AudioClip coinSound;
+    public AudioClip relictSound;
     // [Range(0, 1)] float relictSoundVolume = 1f;
-    public int getCoins = 1;
+
+    public int getTimeRewind = 1;
+    int relictSlots = 1; // hier noch automatiesieren
 
     // Cached References
     GameManager gamemanager;
@@ -18,10 +20,11 @@ public class LootCoins : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") )//&& gamemanager.isRelictCollectable)
         {
-         // AudioSource.PlayClipAtPoint(heartSound, Camera.main.transform.position, heartSoundVolume);
-            gamemanager.coins += getCoins;
+            // AudioSource.PlayClipAtPoint(heartSound, Camera.main.transform.position, heartSoundVolume);
+            gamemanager.timeRewind += getTimeRewind;
+            Debug.Log("Relict collected.");
 
             Destroy(gameObject);
         }
