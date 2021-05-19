@@ -1222,7 +1222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   avoidScenes:
-  - '"Main Menu"'
+  - Main Menu
 --- !u!114 &613291904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1236,12 +1236,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coins: 0
+  ActiveScene: 
   isHealpotionCollectable: 0
   UseHealthpotion: 113
-  maxHealthpotions: 3
   healthpotions: 0
+  maxHealthpotions: 3
   healthRecover: 10
-  ActiveScene: 
   hp: 100
   maxHp: 100
 --- !u!4 &613291905
