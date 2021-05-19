@@ -61,10 +61,14 @@ public class GameManager : MonoBehaviour {
 }
     void OnLevelWasLoaded()
     {
-            if(ActiveScene == "Upper World") 
-            {
-                SaveGame();
-            }
+        if (ActiveScene == "Upper World")
+        {
+            SaveGame();
+        }
+        else if (ActiveScene == "Main Menu")
+        {
+            Destroy(this);
+        }
     }
 
     public void SaveGame()
