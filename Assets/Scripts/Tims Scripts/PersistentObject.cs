@@ -34,7 +34,7 @@ public class PersistentObject : MonoBehaviour {
         {
             for (int i = 0; i < perObjs.Length; i++)
             {
-                Destroy(perObjs[i]);
+                Destroy(perObjs[i]); 
             }
         }
     }
