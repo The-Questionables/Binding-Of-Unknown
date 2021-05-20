@@ -10,8 +10,7 @@ public class GameManager : MonoBehaviour {
     public bool isRelictCollectable;
     public KeyCode UseRelict = KeyCode.E;
     // Fähigkeit Time Rewind
-    private Hero HeroScript;
-    public Image timeRewindImage;
+    //private Hero HeroScript;
     public int timeRewind = 0;
     public int timeRewindCooldown;
 
@@ -37,11 +36,6 @@ public class GameManager : MonoBehaviour {
     public int maxHp;
     private Text hpText;
 
-    public void Start()
-    {
-        timeRewindImage.enabled = false;
-    }
-
     public void Update()
     {
         hpText = GameObject.FindGameObjectWithTag("Hp Text").GetComponent<Text>();
@@ -49,33 +43,6 @@ public class GameManager : MonoBehaviour {
         healthpotionsText = GameObject.FindGameObjectWithTag("Healthpotion Text").GetComponent<Text>();
 
         ActiveScene = SceneManager.GetActiveScene().name.ToString();
-
-        // Relikte
-        if (timeRewind == 0) // begrenzen der einsammelbaren Relikte
-        {
-            isRelictCollectable = true;
-        }
-        else if (timeRewind == 1)
-        {
-            isRelictCollectable = false;
-            timeRewindImage.enabled = true;
-        }
-
-        if (Input.GetKeyDown(UseRelict) && timeRewind > 0 && relictCharge == 2)
-        {
-            GameObject character = GameObject.Find("Hero");
-            if (character != null)
-            {
-                HeroScript = character.GetComponent<Hero>();
-                HeroScript.nextRollTime = 0; // setze cooldown auf 0
-                relictCharge = 0;
-            }
-            else
-            {
-                Debug.Log("Player wurde nicht gefunden!");
-            }
-        }
-
 
         coinsText.text = "x" + coins.ToString();
         healthpotionsText.text = healthpotions.ToString() + "/" + maxHealthpotions.ToString();
@@ -99,10 +66,9 @@ public class GameManager : MonoBehaviour {
             {
                 hp = maxHp;
             }
-        }
+        }   
+    }
 
-        
-}
     void OnLevelWasLoaded()
     {
         if (ActiveScene == "Upper World")

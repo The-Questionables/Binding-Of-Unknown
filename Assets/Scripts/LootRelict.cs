@@ -12,6 +12,7 @@ public class LootRelict : MonoBehaviour
 
     // Cached References
     GameManager gamemanager;
+    //Hero hero;
 
     private void Start()
     {

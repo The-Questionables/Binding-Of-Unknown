@@ -343,7 +343,7 @@ MonoBehaviour:
   rooms: []
   rangeEnemys: {fileID: 978554266183098313, guid: 474b67b126318604b973fadbedf31f57,
     type: 3}
-  rangeEnemyAmount: 3
+  rangeEnemyAmount: 4
   hellebardeEnemys: {fileID: 947327879237028921, guid: ac136c3fc1999f3469cdaea8e6e34d44,
     type: 3}
   hellebardeEnemyAmount: 5
@@ -1069,7 +1069,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRelictCollectable: 0
   UseRelict: 101
-  timeRewindImage: {fileID: 1958252353}
   timeRewind: 0
   timeRewindCooldown: 0
   relictCharge: 0
@@ -1276,6 +1275,11 @@ PrefabInstance:
       propertyPath: relictChargeBar
       value: 
       objectReference: {fileID: 1704508751}
+    - target: {fileID: 2346175232225414394, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
+        type: 3}
+      propertyPath: timeRewindImage
+      value: 
+      objectReference: {fileID: 1958252353}
     - target: {fileID: 2346175232225414394, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
         type: 3}
       propertyPath: rollCooldownTime
