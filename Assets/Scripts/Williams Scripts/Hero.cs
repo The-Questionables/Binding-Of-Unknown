@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Hero : MonoBehaviour
 {
@@ -25,6 +26,9 @@ public class Hero : MonoBehaviour
     public RelictChargeBar relictChargeBar; // new
     public GameObject Explosion;
 
+    [Header("Relicts:")]
+    public Image timeRewindImage;
+
     [Header("Statistics:")]
     private Vector2 movement; // zwischenspeicherung von bewegungswerten
 
@@ -47,6 +51,7 @@ public class Hero : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * moveSpeed * 10;
         transform.LookAt(transform.position, this.rb.velocity);
+        timeRewindImage.enabled = false;
 
 
         // Update UI CurrentHealth, MaxHealth
@@ -61,6 +66,31 @@ public class Hero : MonoBehaviour
 
         relictChargeBar.SetMaxRelictCharge(gamemanager.maxRelictCharge);
         relictChargeBar.SetRelictCharge(gamemanager.relictCharge);
+
+        // Relikte
+        if (gamemanager.timeRewind == 0) // begrenzen der einsammelbaren Relikte
+        {
+            gamemanager.isRelictCollectable = true;
+        }
+        else if (gamemanager.timeRewind == 1)
+        {
+            gamemanager.isRelictCollectable = false;
+            timeRewindImage.enabled = true;
+        }
+
+        if (Input.GetKeyDown(gamemanager.UseRelict) && gamemanager.timeRewind > 0 && gamemanager.relictCharge == 2)
+        {
+            GameObject character = GameObject.Find("Hero");
+            if (character != null)
+            {
+                nextRollTime = 0; // setze cooldown auf 0
+                gamemanager.relictCharge = 0;
+            }
+            else
+            {
+                Debug.Log("Player wurde nicht gefunden!");
+            }
+        }
 
         /*
         if (Input.GetKeyDown("space"))
