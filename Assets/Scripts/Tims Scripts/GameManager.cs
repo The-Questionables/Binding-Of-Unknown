@@ -73,6 +73,7 @@ public class GameManager : MonoBehaviour {
     {
         if (ActiveScene == "Upper World")
         {
+            hp = maxHp;
             SaveGame();
         }
         else if (ActiveScene == "Main Menu")
