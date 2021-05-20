@@ -4,20 +4,10 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour     //Dialog Trigger
 {
-    private GameManager gm;
+    //private bool OptionsFromGameManager;
     public Dialog dialog;
-    public bool OptionsFromGameManager;
     public bool playerInRange;
-    [HideInInspector]
-    public int health;
-  
-
-
-    private void Start()
-    {
-        gm = FindObjectOfType<GameManager>();
-    }
-
+ 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && playerInRange)
