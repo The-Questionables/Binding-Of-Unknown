@@ -111,6 +111,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 8, y: -1, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 6
+      m_TileSpriteIndex: 6
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 9, y: -1, z: 0}
     second:
       serializedVersion: 2
@@ -655,7 +665,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 5
     m_Data: {fileID: 11400000, guid: f6b160b5fbff0094fb93312721e6dd08, type: 2}
-  - m_RefCount: 11
+  - m_RefCount: 12
     m_Data: {fileID: 11400000, guid: db561af3c7180c945bf52e1e1ccc84e4, type: 2}
   - m_RefCount: 6
     m_Data: {fileID: 11400000, guid: b6a2dd8daddc0474abb7b1a0c98b26fe, type: 2}
@@ -686,7 +696,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 5
     m_Data: {fileID: 21300000, guid: 85f318ac846781d498cb99ae6189b604, type: 3}
-  - m_RefCount: 11
+  - m_RefCount: 12
     m_Data: {fileID: 21300000, guid: 105ab0130c14eca4291fe572511b0727, type: 3}
   - m_RefCount: 6
     m_Data: {fileID: 21300000, guid: 7c30b371770d6df4d873b5b606beed2b, type: 3}
@@ -705,7 +715,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: b3db7e721716cc44f8caa9990c0b80b6, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 55
+  - m_RefCount: 56
     m_Data:
       e00: 1
       e01: 0
@@ -724,7 +734,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 55
+  - m_RefCount: 56
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -2255,8 +2265,8 @@ Tilemap:
   - first: {x: 8, y: -2, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 5
-      m_TileSpriteIndex: 5
+      m_TileIndex: 14
+      m_TileSpriteIndex: 14
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -2934,7 +2944,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 91c1e52d2ca2d094e822c5b8ac2d3807, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: fe57f6804be4f3b4c8923e42f47d69cb, type: 2}
-  - m_RefCount: 4
+  - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 754c42bf12b6a104383d827657f69e20, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: be18115ae5f7dfd48bbe09d4f11fd7d0, type: 2}
@@ -2952,7 +2962,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 8f449a76b53c60e48ae21997428cc564, type: 2}
   - m_RefCount: 6
     m_Data: {fileID: 11400000, guid: fe75ee87088fe424f9c81fb94f66c1d7, type: 2}
-  - m_RefCount: 3
+  - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: fe321962a7d172546809f0060a52be2e, type: 2}
   - m_RefCount: 6
     m_Data: {fileID: 11400000, guid: 2015a0d85d7c3b74eb176b7dd69e2cdf, type: 2}
@@ -2995,7 +3005,7 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: e26dfcefb372c9a43ab8260163250327, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 21300000, guid: 1256e493ac3951341a9ac0fbdf278da2, type: 3}
-  - m_RefCount: 4
+  - m_RefCount: 3
     m_Data: {fileID: 7482667652216324306, guid: b99703013a62870469eb9394fa0889c7,
       type: 3}
   - m_RefCount: 1
@@ -3014,7 +3024,7 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: effa01dfe460eb94cb1e191421ba31bb, type: 3}
   - m_RefCount: 6
     m_Data: {fileID: 21300000, guid: 97bff3f2ab2b2884f88bcef46f3bf8d3, type: 3}
-  - m_RefCount: 3
+  - m_RefCount: 4
     m_Data: {fileID: 21300000, guid: 06431939b60fa3741ade1a559e269ced, type: 3}
   - m_RefCount: 6
     m_Data: {fileID: 21300000, guid: 3b73b2169ae30b1479330285059bc11d, type: 3}
@@ -3566,7 +3576,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 8.836403, y: -0.99548185}
+  m_Offset: {x: 9.803923, y: -1.4895847}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3577,7 +3587,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.44354916, y: 2.004154}
+  m_Size: {x: 0.49515152, y: 1.0159483}
   m_EdgeRadius: 0
 --- !u!114 &2895616403091194090
 MonoBehaviour:
@@ -3591,7 +3601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b99b00a2247a74848b034248e76e1bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAdjust: {x: 4, y: 0}
+  playerAdjust: {x: 3, y: 0}
   cameraAdjust: {x: 20, y: 0}
 --- !u!1 &7981690684119006784
 GameObject:
