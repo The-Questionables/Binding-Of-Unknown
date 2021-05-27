@@ -1272,6 +1272,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 2346175232225414394, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
         type: 3}
+      propertyPath: imageCooldown
+      value: 
+      objectReference: {fileID: 1590340901}
+    - target: {fileID: 2346175232225414394, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
+        type: 3}
       propertyPath: relictChargeBar
       value: 
       objectReference: {fileID: 1704508751}
@@ -1753,6 +1758,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1549912419}
   m_CullTransparentMesh: 0
+--- !u!114 &1590340901 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2875230136347549619, guid: 53f42bf35f3f81143bd64f8066d8a903,
+    type: 3}
+  m_PrefabInstance: {fileID: 1526248894499985351}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1704508751 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1526248892932926088, guid: 53f42bf35f3f81143bd64f8066d8a903,

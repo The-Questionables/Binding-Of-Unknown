@@ -21,7 +21,7 @@ public class LootRelict : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") )//&& gamemanager.isRelictCollectable)
+        if (collision.CompareTag("Player") && gamemanager.timeRewind == 0)//&& gamemanager.isRelictCollectable)
         {
             // AudioSource.PlayClipAtPoint(heartSound, Camera.main.transform.position, heartSoundVolume);
             gamemanager.timeRewind += getTimeRewind;

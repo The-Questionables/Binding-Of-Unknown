@@ -90,27 +90,22 @@ public class Hero : MonoBehaviour
             timeRewindImage.enabled = true;
         }
 
-        if (Input.GetKeyDown(gamemanager.UseRelict) && gamemanager.timeRewind > 0 && gamemanager.relictCharge == 2)
-        {
-            GameObject character = GameObject.Find("Hero");
-            if (character != null)
+            if (Input.GetKeyDown(gamemanager.UseRelict) && gamemanager.timeRewind > 0 && gamemanager.relictCharge == 2)
             {
-                nextRollTime = 0; // setze cooldown auf 0
-                gamemanager.relictCharge = 0;
+                GameObject character = GameObject.Find("Hero");
+                if (character != null)
+                {
+                    nextRollTime = 0; // setze cooldown auf 0
+                    gamemanager.relictCharge = 0;
+                    // Update Dash UI
+                    imageCooldownTimer = 0;
+                }
+                else
+                {
+                    Debug.Log("Player wurde nicht gefunden!");
+                }
             }
-            else
-            {
-                Debug.Log("Player wurde nicht gefunden!");
-            }
-        }
-
-        /*
-        if (Input.GetKeyDown("space"))
-        {
-            LoadRelictChargeBar(1);
-        }
-        */
-
+        
         switch (state)
         {
             case State.Normal:
@@ -196,7 +191,6 @@ public class Hero : MonoBehaviour
                 rb.velocity = rollDir * rollSpeed;
                 break;
         }
-
     }
 
     public void LoadRelictChargeBar(int relictCharge)
