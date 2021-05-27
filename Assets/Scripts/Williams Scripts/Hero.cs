@@ -24,6 +24,11 @@ public class Hero : MonoBehaviour
     public Animator animator;
     public HealthBar healthBar;
     public RelictChargeBar relictChargeBar; // new
+
+    public Image imageCooldown; //////////////////////
+    private float imageCooldownTime = 5f;
+    private float imageCooldownTimer = 0.0f;
+
     public GameObject Explosion;
 
     [Header("Relicts:")]
@@ -41,11 +46,13 @@ public class Hero : MonoBehaviour
     private Vector3 rollDir; //********* new roll
     private State state;
     private float rollSpeed;
-    public float rollCooldownTime = 5f;
-    public float nextRollTime = 0;
+    private bool isCooldown = false;
+    public float rollCooldownTime = 5f; //////////////////////////
+    public float nextRollTime = 0; //////////////////////////
 
     void Start()
     {
+        imageCooldown.fillAmount = 0.0f; ///////// für UI
         // Updaten der Stats im Gamemanager
         gamemanager = FindObjectOfType<GameManager>();
         rb = GetComponent<Rigidbody2D>();
@@ -61,6 +68,11 @@ public class Hero : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isCooldown)
+        {
+            ApplyCooldown();
+        }
+
         healthBar.SetMaxHealth(gamemanager.maxHp);
         healthBar.SetHealth(gamemanager.hp);
 
@@ -137,12 +149,18 @@ public class Hero : MonoBehaviour
                     state = State.Rolling;
                         // Play Roll Animation (rollDir)
                     nextRollTime = Time.time + rollCooldownTime;
+                    //imageCooldown.fillAmount = 0.0f; //´passt das hier?
+                    isCooldown = true;
                 }
              }
             break;
             case State.Rolling:
                 float rollSpeedDropMultiplier = 5f;
                 rollSpeed -= rollSpeed * rollSpeedDropMultiplier * Time.deltaTime;
+
+                // UI Update
+                imageCooldownTimer = imageCooldownTime;
+                //ApplyCooldown();
 
                 float rollSpeedMinimum = 50f;
                 if (rollSpeed < rollSpeedMinimum)
@@ -153,6 +171,19 @@ public class Hero : MonoBehaviour
         }
     }
 
+    void ApplyCooldown()
+    {
+        imageCooldownTimer -= Time.deltaTime;
+
+        if(imageCooldownTimer < 0.0f)
+        {
+            imageCooldown.fillAmount = 0.0f;
+        }
+        else
+        {
+            imageCooldown.fillAmount = imageCooldownTimer / imageCooldownTime;
+        }
+    }
 
     void FixedUpdate()
     {
