@@ -24,7 +24,10 @@ public class RelictSpawner : MonoBehaviour
                random = Random.Range(0, RelictList.Length); // Sucht einen neuen zufälligen Längenwert des Arrays aus
             }
             Instantiate(RelictList[random], transform.position, Quaternion.identity); // Clonen eines Objektes und erstellen
-            (RelictList[random]) = null; // löscht das Gameobject aus dem Array
+
+            (RelictList[random]) = null; // löscht das Gameobject aus dem Array aber nur in dieser Scene
+            //colliderList.RemoveAll(item => item == null);
+            // https://answers.unity.com/questions/854625/remove-object-from-list-after-gameobject-was-destr.html
         }
         lootSpawned = true; // setzt bool auf true damit keine weiteren Items spawnen
     }
