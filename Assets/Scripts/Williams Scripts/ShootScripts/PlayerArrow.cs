@@ -22,45 +22,15 @@ public class PlayerArrow : MonoBehaviour
         Destroy(gameObject, destroyTimer); // zerstört Object nach ablauf der Zeit
         rb = this.GetComponent<Rigidbody2D>(); // greift auf den Rigidbody des Gameobjekts zu
 
-        if (Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.DownArrow))
-        {
-            transform.eulerAngles = new Vector3(0f, 0f, 0);
-        }
-        else if (Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.eulerAngles = new Vector3(0f, 0f, 45);
-        }
-        else if (Input.GetKey(KeyCode.DownArrow) && !Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.eulerAngles = new Vector3(0f, 0f, 90);
-        }
-        else if (Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.eulerAngles = new Vector3(0f, 0f, 135);
-        }
-        else if (Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.DownArrow))
-        {
-            transform.eulerAngles = new Vector3(0f, 0f, 180);
-        }
-        else if (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.eulerAngles = new Vector3(0f, 0f, -45);
-        }
-        else if (Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.DownArrow))
-        {
-            transform.eulerAngles = new Vector3(0f, 0f, -90);
-        }
-        else if (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.eulerAngles = new Vector3(0f, 0f, -135);
-        }
+
     }
 
-    // hier wird der Schadenswert übermittelt
+ /*   // hier wird der Schadenswert übermittelt
     public void SetDamage(int amount)
     {
         damage = amount;
     }
+*/ //nope wird er nicht
 
     void OnTriggerEnter2D(Collider2D other)
     {

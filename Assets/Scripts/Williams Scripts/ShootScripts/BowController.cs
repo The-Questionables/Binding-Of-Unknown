@@ -24,8 +24,10 @@ public class BowController : MonoBehaviour
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
         // Bow Rotation around the player's pivot point.
-      //  Vector3 playerToMouseDir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - player.position;
+        //  Vector3 playerToMouseDir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - player.position;
         //playerToMouseDir.z = 0;
-       // transform.position = player.position + (offset * playerToMouseDir.normalized);
+        // transform.position = player.position + (offset * playerToMouseDir.normalized);
     }
+
+
 }
