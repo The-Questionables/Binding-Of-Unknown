@@ -23,7 +23,7 @@ public class NPC : MonoBehaviour     //Dialog Trigger
         }
     }
 
-    public void TriggerDialogue ()
+    public void TriggerDialogue()
     {
         FindObjectOfType<DialogManager>().StartDialog(dialog);
        // playerInRange = false;

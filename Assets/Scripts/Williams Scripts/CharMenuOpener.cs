@@ -5,16 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class CharMenuOpener : MonoBehaviour
 {
-
     public static bool GameIsPaused = false;
 
     public GameObject CharMenu;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
