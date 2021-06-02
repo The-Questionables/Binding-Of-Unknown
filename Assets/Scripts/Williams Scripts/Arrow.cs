@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    public int damage = 20; // hier einstellen wie hoch der Schaden sein soll den Gegner bekommen
+
     public float destroyTimer = 1.5f; // hier einstellen nach wie vielen Sekunden der Pfeil verschwinden soll
     public Rigidbody2D rb;
     public float speed= 5f;
@@ -27,10 +27,7 @@ public class Arrow : MonoBehaviour
     }
 
     // hier wird der Schadenswert übermittelt
-    public void SetDamage(int amount)
-    {
-        damage = amount;
-    }
+ 
 
     void OnTriggerEnter2D(Collider2D other)
     {
