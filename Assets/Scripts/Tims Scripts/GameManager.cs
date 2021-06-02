@@ -9,10 +9,14 @@ public class GameManager : MonoBehaviour {
     [Header("Relicts:")]
     public bool isRelictCollectable;
     public KeyCode UseRelict = KeyCode.E;
+
     // Fähigkeit Time Rewind
-    //private Hero HeroScript;
     public int timeRewind = 0;
     public int timeRewindCooldown;
+
+    // Fähikeit Totem
+    public int totem = 0;
+    public int totemboost = 2;
 
     [Header("RelictBar:")]
     public int relictCharge;
@@ -29,7 +33,7 @@ public class GameManager : MonoBehaviour {
     public KeyCode UseHealthpotion = KeyCode.Q;
     public int healthpotions;
     public int maxHealthpotions;
-    public int healthRecover = 10;
+    public int healthRecover = 15;
 
     [Header("Player Health:")]
     public int hp;
@@ -59,9 +63,16 @@ public class GameManager : MonoBehaviour {
 
         if (Input.GetKeyDown(UseHealthpotion) && healthpotions > 0 && hp < maxHp)
         {
-            healthpotions--;
-            hp += healthRecover;
-
+            if (totem >= 1)
+            {
+                healthpotions--;
+                hp += healthRecover * totemboost;
+            }
+            else
+            {
+                healthpotions--;
+                hp += healthRecover;
+            }
             if ((hp + healthpotions) > maxHp)
             {
                 hp = maxHp;

@@ -33,6 +33,7 @@ public class Hero : MonoBehaviour
 
     [Header("Relicts:")]
     public Image timeRewindImage;
+    public Image totemImage;
 
     [Header("Statistics:")]
     private Vector2 movement; // zwischenspeicherung von bewegungswerten
@@ -59,6 +60,7 @@ public class Hero : MonoBehaviour
         rb.velocity = transform.right * moveSpeed * 10;
         transform.LookAt(transform.position, this.rb.velocity);
         timeRewindImage.enabled = false;
+        totemImage.enabled = false;
 
 
         // Update UI CurrentHealth, MaxHealth
@@ -83,6 +85,7 @@ public class Hero : MonoBehaviour
         if (gamemanager.timeRewind == 0) // begrenzen der einsammelbaren Relikte
         {
             gamemanager.isRelictCollectable = true;
+            timeRewindImage.enabled = false;
         }
         else if (gamemanager.timeRewind == 1)
         {
@@ -90,7 +93,18 @@ public class Hero : MonoBehaviour
             timeRewindImage.enabled = true;
         }
 
-            if (Input.GetKeyDown(gamemanager.UseRelict) && gamemanager.timeRewind > 0 && gamemanager.relictCharge == 2)
+        if (gamemanager.totem == 0) // begrenzen der einsammelbaren Relikte
+        {
+            gamemanager.isRelictCollectable = true;
+            totemImage.enabled = false;
+        }
+        else if (gamemanager.totem == 1)
+        {
+            gamemanager.isRelictCollectable = false;
+            totemImage.enabled = true;
+        }
+
+        if (Input.GetKeyDown(gamemanager.UseRelict) && gamemanager.timeRewind > 0 && gamemanager.relictCharge == 2)
             {
                 GameObject character = GameObject.Find("Hero");
                 if (character != null)
