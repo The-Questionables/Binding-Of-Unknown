@@ -206,7 +206,8 @@ public class Hero : MonoBehaviour
         // Updaten des Healthbartextes im UI
         if (gamemanager.hp <= 0)
         {
-            gamemanager.hp = 0;
+            gamemanager.hp = gamemanager.maxHp/2;
+            gamemanager.coins = 0; //setzt die coins auf null wenn du stirbst
             // Spiele Sound ab passiert in der explosion
 
             // Spiele Effect ab
