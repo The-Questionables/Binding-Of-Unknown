@@ -40,6 +40,10 @@ public class GameManager : MonoBehaviour {
     public int maxHp;
     private Text hpText;
 
+    [Header("Attack Damage:")]
+    public int swordDamage = 10;
+    public int bowDamage = 20;
+
     public void Update()
     {
         hpText = GameObject.FindGameObjectWithTag("Hp Text").GetComponent<Text>();

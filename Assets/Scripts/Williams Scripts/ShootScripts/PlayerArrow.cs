@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerArrow : MonoBehaviour
 {
-    public int damage = 20; // hier einstellen wie hoch der Schaden sein soll den Gegner bekommen
     public float destroyTimer = 1.5f; // hier einstellen nach wie vielen Sekunden der Pfeil verschwinden soll
     public Rigidbody2D rb;
     bool hit = false;
@@ -12,16 +11,12 @@ public class PlayerArrow : MonoBehaviour
     // Knockback test
     //public float thrust = 1f;
     //public float knockTime = 0.01f;
-
+    private GameManager gm;
     void Start()
     {
-        // GetMouseButton
-        // else if (Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.LeftArrow))
-        // rb = GetComponent<Rigidbody2D>(); // greift auf den Rigidbody des Gameobjekts zu
-        // if (Input.GetKeyDown(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.DownArrow))
         Destroy(gameObject, destroyTimer); // zerstört Object nach ablauf der Zeit
         rb = this.GetComponent<Rigidbody2D>(); // greift auf den Rigidbody des Gameobjekts zu
-
+        gm = FindObjectOfType<GameManager>();
 
     }
 
@@ -38,7 +33,7 @@ public class PlayerArrow : MonoBehaviour
         {
             if (other.gameObject.CompareTag("Enemy"))
             {
-                other.gameObject.GetComponent<EnemyStandart>().TakeDamage(damage);
+                other.gameObject.GetComponent<EnemyStandart>().TakeDamage(gm.bowDamage);
                 Destroy(gameObject);
                 hit = true;
                 /*
