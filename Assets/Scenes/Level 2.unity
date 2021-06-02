@@ -1002,6 +1002,8 @@ MonoBehaviour:
   UseRelict: 101
   timeRewind: 0
   timeRewindCooldown: 0
+  totem: 0
+  totemboost: 2
   relictCharge: 0
   maxRelictCharge: 2
   coins: 0
@@ -1264,6 +1266,11 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 973872105}
+    - target: {fileID: 2346175232225414394, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
+        type: 3}
+      propertyPath: totemImage
+      value: 
+      objectReference: {fileID: 1526248894499985352}
     - target: {fileID: 2346175232225414394, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
         type: 3}
       propertyPath: bulletPrefab
@@ -2291,3 +2298,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53f42bf35f3f81143bd64f8066d8a903, type: 3}
+--- !u!114 &1526248894499985352 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4507931656742775768, guid: 53f42bf35f3f81143bd64f8066d8a903,
+    type: 3}
+  m_PrefabInstance: {fileID: 1526248894499985351}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

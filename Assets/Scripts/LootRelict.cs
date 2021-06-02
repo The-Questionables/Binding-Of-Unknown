@@ -16,13 +16,9 @@ public class LootRelict : MonoBehaviour
     // Relikte
     public GameObject timeRewind;
     public GameObject totem;
-    // Slot
-    //int relictSlots = 1; // hier noch automatiesieren
-
 
     // Cached References
     GameManager gamemanager;
-    //Hero hero;
 
     private void Start()
     {
@@ -31,26 +27,38 @@ public class LootRelict : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && gamemanager.timeRewind == 0 && gamemanager.isRelictCollectable)
+        if (collision.CompareTag("Player") && gamemanager.timeRewind == 0 && gamemanager.totem == 0)
         {
             // AudioSource.PlayClipAtPoint(heartSound, Camera.main.transform.position, heartSoundVolume);
             gamemanager.timeRewind += getTimeRewind;
-            Debug.Log("Relict collected.");
-
-            Destroy(gameObject);
-        }
-        if (collision.CompareTag("Player") && gamemanager.totem == 0 && gamemanager.isRelictCollectable)
-        {
-            // AudioSource.PlayClipAtPoint(heartSound, Camera.main.transform.position, heartSoundVolume);
             gamemanager.totem += getTotem;
             Debug.Log("Relict collected.");
 
             Destroy(gameObject);
-            if (gamemanager.timeRewind == 1)
-            {
-                //Instantiate(chestLootList[random], SpawnPoint.position, Quaternion.identity); // Clonen eines Objektes und erstellen
-            }
         }
+        
+        // buggy *****************************************************************************************
+        if (collision.CompareTag("Player") && gamemanager.totem == 1 && gamemanager.timeRewind == 0)
+        {
+            Destroy(gameObject);
+
+            Instantiate(totem, transform.position, Quaternion.identity); // Clonen eines Objektes und erstellen
+            gamemanager.totem--;
+        }
+        else if (collision.CompareTag("Player") && gamemanager.totem == 0 && gamemanager.timeRewind == 1)
+        {
+            Destroy(gameObject);
+
+            Instantiate(timeRewind, transform.position, Quaternion.identity); // Clonen eines Objektes und erstellen
+            gamemanager.timeRewind--;           
+        }
+        
+
+
+
+
+
+
         else
         {
             return;
