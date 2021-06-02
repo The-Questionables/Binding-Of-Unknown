@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7429283045882470768}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -74,6 +74,9 @@ MonoBehaviour:
   relictSound: {fileID: 0}
   getTimeRewind: 0
   getTotem: 1
+  timeRewind: {fileID: 8329354450417958329, guid: 9642312e70df9624c88086e907b3da08,
+    type: 3}
+  totem: {fileID: 7429283045882470768}
 --- !u!212 &7429283045882470772
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -20,6 +20,7 @@ public class RoomTemplates : MonoBehaviour
     private Vector3 randomSpawnPosition;
 
     private int random; // speichert zufälligen Wert aus dem Array
+    private int maxSpawn = 3;
 
     [Header("Range Enemys:")]
     public GameObject rangeEnemys; // Prefab FernkampfGegnern
@@ -64,6 +65,25 @@ public class RoomTemplates : MonoBehaviour
               {
                 // wählt einen zufälligen RaumZahlenWert zum Spawnen aus
                 random = Random.Range(0, rooms.Count - 1); // -1 Damit Gegner nicht im Boss Raum gespawnt werden
+
+                //************************************************************************************************
+                //Enemy Counter per room
+                /*
+                 random = possibleRooms[Random.Range(0, rooms.Count - 1); // -1 Damit Gegner nicht im Boss Raum gespawnt werden
+                if (rangeEnemyAmountCounter < maxSpawn)
+                {
+                    Change Room spawn rooms.Count
+                   /enemy.SetActive(false);
+                    if (currentRoom.gameObject.tag == "Up")
+                    {
+                        possibleRooms = GameObject.FindGameObjectsWithTag("Up")
+                                            nextRoom = possibleRooms[Random.Range(0, possibleRooms.length)];
+                    }
+                }
+                */
+
+
+
 
                 // Spawnt Enemys in der Mitte eines zufällig ausgewählten Raumes
                 // Instantiate(rangeEnemys, rooms[random].transform.position, Quaternion.identity); 
