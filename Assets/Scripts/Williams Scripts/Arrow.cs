@@ -16,8 +16,11 @@ public class Arrow : MonoBehaviour
     public float knockbackDuration = 1;
     // bool hitButNotEnemy = false;
 
+    private GameManager gm;
+
     void Start()
     {
+        gm = FindObjectOfType<GameManager>();
         //rb = GetComponent<Rigidbody2D>(); // greift auf den Rigidbody des Gameobjekts zu
         Destroy(gameObject, destroyTimer); // zerstört Object nach ablauf der Zeit
         rb = this.GetComponent<Rigidbody2D>();
@@ -35,7 +38,7 @@ public class Arrow : MonoBehaviour
         {
             if (other.gameObject.CompareTag("Enemy"))
             {
-                other.gameObject.GetComponent<EnemyStandart>().TakeDamage(damage);
+                other.gameObject.GetComponent<EnemyStandart>().TakeDamage(gm.bowDamage);
                 Destroy(gameObject);
                 hit = true;
             }
