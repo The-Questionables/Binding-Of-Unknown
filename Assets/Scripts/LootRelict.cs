@@ -8,14 +8,16 @@ public class LootRelict : MonoBehaviour
     // [Range(0, 1)] float relictSoundVolume = 1f;
 
     // Time Rewind Relict
-    public int getTimeRewind = 1;
-
+    public int getTimeRewind = 0;
     // Totem
-    public int getTotem = 1;
+    public int getTotem = 0;
+    // Heavy Armor
+    public int getHeavyArmor = 0;
 
     // Relikte
     public GameObject timeRewind;
     public GameObject totem;
+    public GameObject heavyArmor;
 
     // Cached References
     GameManager gamemanager;
@@ -27,7 +29,7 @@ public class LootRelict : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && gamemanager.timeRewind == 0 && gamemanager.totem == 0)
+        if (collision.CompareTag("Player") && gamemanager.timeRewind == 0 && gamemanager.totem == 0) // && heavy Armor ***************************** == Gain 50% damage Reduction but deal 50% less Damage to Enemies.
         {
             // AudioSource.PlayClipAtPoint(heartSound, Camera.main.transform.position, heartSoundVolume);
             gamemanager.timeRewind += getTimeRewind;
