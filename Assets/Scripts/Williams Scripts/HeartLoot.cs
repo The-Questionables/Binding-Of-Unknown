@@ -6,8 +6,7 @@ public class HeartLoot : MonoBehaviour
 {
     public AudioClip heartSound;
     // [Range(0, 1)] float heartSoundVolume = 1f;
-    int getHealpotions = 1;
-    int healpotionsSlots = 3; // hier noch automatiesieren
+    int getHealpotions = 1; // hier noch automatiesieren
 
     // Cached References
     GameManager gamemanager;
@@ -24,7 +23,6 @@ public class HeartLoot : MonoBehaviour
         {
          // AudioSource.PlayClipAtPoint(heartSound, Camera.main.transform.position, heartSoundVolume);
             gamemanager.healthpotions += getHealpotions;
-            gamemanager.maxHealthpotions = healpotionsSlots;
             Debug.Log("Heart collect.");
 
             Destroy(gameObject);
