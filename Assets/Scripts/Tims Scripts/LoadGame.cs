@@ -44,6 +44,7 @@ public class LoadGame : MonoBehaviour
         {
             gm.coins = data.coins;
             gm.hp = data.health;
+            gm.maxHp = data.maxHealth;
             gm.healthpotions = data.healthpotions;
             gm.maxHealthpotions = data.maxHealthpotions;
             Destroy(this.gameObject);

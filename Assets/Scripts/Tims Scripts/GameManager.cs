@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour {
 
     void OnLevelWasLoaded()
     {
-        if (ActiveScene == "Upper World")
+        if (ActiveScene == "Upper World 1")
         {
             hp = maxHp;
             SaveGame();

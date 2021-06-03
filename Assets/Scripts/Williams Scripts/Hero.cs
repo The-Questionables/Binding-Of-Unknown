@@ -220,7 +220,7 @@ public class Hero : MonoBehaviour
         // Updaten des Healthbartextes im UI
         if (gamemanager.hp <= 0)
         {
-            gamemanager.hp = gamemanager.maxHp/2;
+            gamemanager.hp = 0;
             gamemanager.coins = 0; //setzt die coins auf null wenn du stirbst
             // Spiele Sound ab passiert in der explosion
 
@@ -231,7 +231,7 @@ public class Hero : MonoBehaviour
             }
 
             // Zerstöre Spieler, Teleportiere ihn zurück zur Stadt
-            SceneManager.LoadScene("Upper World");
+            SceneManager.LoadScene("Upper World 1");
             Debug.Log("Du bist gestorben");
         }
     }
