@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyStandart : MonoBehaviour
 {
+    GameManager gamemanager; // Verknüpfung mit Gamemanager
+
     public float knockbackForce = 0.1f;
 
     public string Name;
@@ -34,6 +36,7 @@ public class EnemyStandart : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gamemanager = FindObjectOfType<GameManager>();
         target = GameObject.FindGameObjectWithTag(Slime_Const.Tag_Player).transform;
         randomLoot = GetComponent<RandomLoot>();
         this.rb = this.GetComponent<Rigidbody2D>();
@@ -94,6 +97,8 @@ public class EnemyStandart : MonoBehaviour
             Destroy(gameObject, detonationTimer);
 
             // Quest Kill Counter++
+            gamemanager.Killcounter();
+            //Debug.Log("Kill Bestätigt"); // bis hier hin funktioniert es
         }
     }
 }

@@ -6,6 +6,15 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
+    // Infos für Quests
+    QuestMenuOpener questMenuOpener;
+    private Scene scene;
+
+    // Quest verweise
+    public Quest1 quest1; 
+    public Quest2 quest2;
+    public Quest3 quest3;
+
     [Header("Relicts:")]
     public bool isRelictCollectable;
     public KeyCode UseRelict = KeyCode.E;
@@ -46,9 +55,17 @@ public class GameManager : MonoBehaviour {
 
     public void Update()
     {
+        // Quests
+        scene = SceneManager.GetActiveScene();
+        if (scene.name == "Upper World 1")
+        {            
+            questMenuOpener = GameObject.FindGameObjectWithTag("QuestSystem").GetComponent<QuestMenuOpener>();
+        }
+
         hpText = GameObject.FindGameObjectWithTag("Hp Text").GetComponent<Text>();
         coinsText = GameObject.FindGameObjectWithTag("Coin Text").GetComponent<Text>();
         healthpotionsText = GameObject.FindGameObjectWithTag("Healthpotion Text").GetComponent<Text>();
+
 
         ActiveScene = SceneManager.GetActiveScene().name.ToString();
 
@@ -101,18 +118,37 @@ public class GameManager : MonoBehaviour {
     {
         SaveGameSystem.SaveGame(this);
     }
-    /*
-    public void LoadGame()
-    {
-        SaveGameData data = SaveGameSystem.LoadData();
 
-        coins = data.coins;
-        hp = data.health;
-        healthpotions = data.healthpotions;
-        maxHealthpotions = data.maxHealthpotions;
-        ActiveScene = data.level;
+    public void Killcounter()
+    {
+        if (quest1.isActive) 
+        {
+            quest1.goal.EnemyKilled();
+            
+            if (quest1.goal.IsReached())
+            {
+                coins += quest1.goldReward;
+                quest1.CompleteQuest1();
+
+                questMenuOpener.ResetQuests();
+                Debug.Log("Quests Resetet");
+            }
+        }
+
+        if (quest2.isActive)
+        {
+            quest2.goal.EnemyKilled();
+
+            if (quest2.goal.IsReached())
+            {
+                coins += quest2.goldReward;
+                quest2.CompleteQuest2();
+
+                questMenuOpener.ResetQuests();
+                Debug.Log("Quests Resetet");
+            }
+        }
     }
-    */
 }
 
 

@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class QuestGiver : MonoBehaviour
 {
-    public Quest quest;
+  //  public Quest quest;
 
-    public Hero hero;
+  //  public Hero hero;
     /*
     public GameObject Quest;
     public Text titleText;
