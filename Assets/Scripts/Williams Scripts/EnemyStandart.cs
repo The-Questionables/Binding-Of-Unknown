@@ -92,6 +92,8 @@ public class EnemyStandart : MonoBehaviour
 
             // Zerstöre Gegner
             Destroy(gameObject, detonationTimer);
+
+            // Quest Kill Counter++
         }
     }
 }

@@ -40,6 +40,7 @@ public class LootRelict : MonoBehaviour
         }
         
         // buggy *****************************************************************************************
+        /*
         if (collision.CompareTag("Player") && gamemanager.totem == 1 && gamemanager.timeRewind == 0)
         {
             Destroy(gameObject);
@@ -54,7 +55,7 @@ public class LootRelict : MonoBehaviour
             Instantiate(timeRewind, transform.position, Quaternion.identity); // Clonen eines Objektes und erstellen
             gamemanager.timeRewind--;           
         }
-        
+        */
 
 
 

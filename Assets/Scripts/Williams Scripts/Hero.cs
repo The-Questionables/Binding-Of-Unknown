@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class Hero : MonoBehaviour
 {
+    public Quest quest; // Quest annehmen hier einbauen
+
     GameManager gamemanager; // Verknüpfung mit Gamemanager
 
     [Header("Georges attributes:")]
