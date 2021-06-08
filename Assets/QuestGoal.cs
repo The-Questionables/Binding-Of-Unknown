@@ -20,6 +20,12 @@ public class QuestGoal
         if(goalType == GoalType.Kill)
         currentAmount++;
     }
+
+    public void HeroHeal()
+    {
+        if(goalType == GoalType.RestoreHP)
+        currentAmount++;
+    }
 }
 
 public enum GoalType

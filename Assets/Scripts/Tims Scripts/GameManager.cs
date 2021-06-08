@@ -84,6 +84,7 @@ public class GameManager : MonoBehaviour {
 
         if (Input.GetKeyDown(UseHealthpotion) && healthpotions > 0 && hp < maxHp)
         {
+            Healcounter(); // Healing Quest ////////////////////////////////////////////////////
             if (totem >= 1)
             {
                 healthpotions--;
@@ -119,6 +120,22 @@ public class GameManager : MonoBehaviour {
         SaveGameSystem.SaveGame(this);
     }
 
+    public void Healcounter()
+    {
+        if(quest3.isActive)
+        {
+            quest3.goal.HeroHeal();
+
+            if (quest3.goal.IsReached())
+            {
+                coins += quest3.goldReward;
+                quest3.CompleteQuest3();
+
+                questMenuOpener.ResetQuests();
+                Debug.Log("Quests Resetet");
+            }
+        }
+    }
     public void Killcounter()
     {
         if (quest1.isActive) 
