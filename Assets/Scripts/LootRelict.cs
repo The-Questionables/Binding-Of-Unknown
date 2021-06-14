@@ -29,11 +29,16 @@ public class LootRelict : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && gamemanager.timeRewind == 0 && gamemanager.totem == 0) // && heavy Armor ***************************** == Gain 50% damage Reduction but deal 50% less Damage to Enemies.
+        if (collision.CompareTag("Player") /* && gamemanager.timeRewind == 0 && gamemanager.totem == 0 && gamemanager.heavyArmor == 0 */) // && heavy Armor ***************************** == Gain 50% damage Reduction but deal 50% less Damage to Enemies.
         {
+            gamemanager.timeRewind = 0;
+            gamemanager.totem = 0;
+            gamemanager.heavyArmor = 0;
+
             // AudioSource.PlayClipAtPoint(heartSound, Camera.main.transform.position, heartSoundVolume);
             gamemanager.timeRewind += getTimeRewind;
             gamemanager.totem += getTotem;
+            gamemanager.heavyArmor += getHeavyArmor;
             Debug.Log("Relict collected.");
 
             Destroy(gameObject);

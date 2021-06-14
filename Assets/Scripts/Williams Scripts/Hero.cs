@@ -34,6 +34,7 @@ public class Hero : MonoBehaviour
     [Header("Relicts:")]
     public Image timeRewindImage;
     public Image totemImage;
+    public Image heavyArmorImage;
 
     [Header("Statistics:")]
     private Vector2 movement; // zwischenspeicherung von bewegungswerten
@@ -61,6 +62,7 @@ public class Hero : MonoBehaviour
         transform.LookAt(transform.position, this.rb.velocity);
         timeRewindImage.enabled = false;
         totemImage.enabled = false;
+        heavyArmorImage.enabled = false;
 
 
         // Update UI CurrentHealth, MaxHealth
@@ -102,6 +104,17 @@ public class Hero : MonoBehaviour
         {
             gamemanager.isRelictCollectable = false;
             totemImage.enabled = true;
+        }
+
+        if (gamemanager.heavyArmor == 0) // begrenzen der einsammelbaren Relikte
+        {
+            gamemanager.isRelictCollectable = true;
+            heavyArmorImage.enabled = false;
+        }
+        else if (gamemanager.heavyArmor == 1)
+        {
+            gamemanager.isRelictCollectable = false;
+            heavyArmorImage.enabled = true;
         }
 
         if (Input.GetKeyDown(gamemanager.UseRelict) && gamemanager.timeRewind > 0 && gamemanager.relictCharge == 2)
@@ -215,9 +228,18 @@ public class Hero : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        gamemanager.hp -= damage;
-        healthBar.SetHealth(gamemanager.hp);
+        if(gamemanager.heavyArmor == 1) // hier Rüstung einbauen
+        {
+            gamemanager.hp -= (damage - 7);
+            // Leben : 100 * x
+            // (damage / 100 * gamemanager.heavyArmorDamageReduction);
+        }
+        else
+        {
+            gamemanager.hp -= damage;
+        }
         // Updaten des Healthbartextes im UI
+        healthBar.SetHealth(gamemanager.hp);
         if (gamemanager.hp <= 0)
         {
             gamemanager.hp = 0;

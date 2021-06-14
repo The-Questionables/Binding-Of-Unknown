@@ -2466,6 +2466,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 584585169}
   m_CullTransparentMesh: 0
+--- !u!114 &590997983 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4535140483976898637, guid: 53f42bf35f3f81143bd64f8066d8a903,
+    type: 3}
+  m_PrefabInstance: {fileID: 6847534418138080352}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &625077269
 GameObject:
   m_ObjectHideFlags: 0
@@ -3459,12 +3471,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ab68475b3b313047bd12ba424dc9cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quest1:
+    isActive: 0
+    title: 
+    description: 
+    goldReward: 0
+    goal:
+      goalType: 0
+      requiredAmount: 0
+      currentAmount: 0
+  quest2:
+    isActive: 0
+    title: 
+    description: 
+    goldReward: 0
+    goal:
+      goalType: 0
+      requiredAmount: 0
+      currentAmount: 0
+  quest3:
+    isActive: 0
+    goldReward: 0
+    goal:
+      goalType: 0
+      requiredAmount: 0
+      currentAmount: 0
   isRelictCollectable: 0
   UseRelict: 101
   timeRewind: 0
   timeRewindCooldown: 0
   totem: 0
   totemboost: 2
+  heavyArmor: 0
+  heavyArmorDamageReduction: 0
   relictCharge: 0
   maxRelictCharge: 2
   coins: 0
@@ -3476,6 +3515,8 @@ MonoBehaviour:
   healthRecover: 15
   hp: 100
   maxHp: 100
+  swordDamage: 10
+  bowDamage: 20
 --- !u!4 &806348015
 Transform:
   m_ObjectHideFlags: 0
@@ -4560,6 +4601,11 @@ PrefabInstance:
       propertyPath: imageCooldown
       value: 
       objectReference: {fileID: 2009663396}
+    - target: {fileID: 2346175232225414394, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
+        type: 3}
+      propertyPath: heavyArmorImage
+      value: 
+      objectReference: {fileID: 590997983}
     - target: {fileID: 2346175232225414394, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
         type: 3}
       propertyPath: relictChargeBar
@@ -7081,6 +7127,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1526248892932926103, guid: 53f42bf35f3f81143bd64f8066d8a903,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 1526248893768121835, guid: 53f42bf35f3f81143bd64f8066d8a903,
         type: 3}
       propertyPath: m_Pivot.x
@@ -7193,6 +7244,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2875230136161228058, guid: 53f42bf35f3f81143bd64f8066d8a903,
         type: 3}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 2875230136161228058, guid: 53f42bf35f3f81143bd64f8066d8a903,
+        type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
       objectReference: {fileID: 0}
@@ -7220,6 +7276,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 34.800003
+      objectReference: {fileID: 0}
+    - target: {fileID: 2875230136293315858, guid: 53f42bf35f3f81143bd64f8066d8a903,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2875230136689817693, guid: 53f42bf35f3f81143bd64f8066d8a903,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3343237347936999759, guid: 53f42bf35f3f81143bd64f8066d8a903,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6847534418852562865, guid: 53f42bf35f3f81143bd64f8066d8a903,
         type: 3}

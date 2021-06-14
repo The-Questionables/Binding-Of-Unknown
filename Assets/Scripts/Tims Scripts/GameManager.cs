@@ -27,6 +27,10 @@ public class GameManager : MonoBehaviour {
     public int totem = 0;
     public int totemboost = 2;
 
+    // Fähigkeit Heavy Armor
+    public int heavyArmor = 0;
+    //public int heavyArmorDamageReduction = 50%;
+
     [Header("RelictBar:")]
     public int relictCharge;
     public int maxRelictCharge;

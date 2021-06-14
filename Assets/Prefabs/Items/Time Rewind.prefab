@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8329354450417958329}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.18, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -74,8 +74,11 @@ MonoBehaviour:
   relictSound: {fileID: 0}
   getTimeRewind: 1
   getTotem: 0
+  getHeavyArmor: 0
   timeRewind: {fileID: 8329354450417958329}
   totem: {fileID: 7429283045882470768, guid: 62917a647385c974abf518a239e76bdc, type: 3}
+  heavyArmor: {fileID: 7188743931761921872, guid: 202b554163f05dd4b9d3dfd8d7654111,
+    type: 3}
 --- !u!212 &8329354450417958333
 SpriteRenderer:
   m_ObjectHideFlags: 0

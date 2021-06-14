@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7188743931761921872}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -50,7 +50,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.5, y: 2.09}
+    oldSize: {x: 0.953125, y: 0.53125}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -75,7 +75,8 @@ MonoBehaviour:
   getTimeRewind: 0
   getTotem: 0
   getHeavyArmor: 1
-  timeRewind: {fileID: 7188743931761921872}
+  timeRewind: {fileID: 8329354450417958329, guid: 9642312e70df9624c88086e907b3da08,
+    type: 3}
   totem: {fileID: 7429283045882470768, guid: 62917a647385c974abf518a239e76bdc, type: 3}
   heavyArmor: {fileID: 7188743931761921872}
 --- !u!212 &7188743931761921876
@@ -119,7 +120,8 @@ SpriteRenderer:
   m_SortingLayerID: 460306925
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 746edd9b93b706041ae173b179492222, type: 3}
+  m_Sprite: {fileID: 1194993056102558968, guid: 2ae06e92973ac014d8210fd0f4de36c9,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
