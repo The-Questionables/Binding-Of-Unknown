@@ -22,6 +22,18 @@ public class RoomTemplates : MonoBehaviour
     private int random; // speichert zufälligen Wert aus dem Array
     private int maxSpawn = 3;
 
+    [Header("Spiders:")]
+    public GameObject spider; // Prefab Spider
+    public int spiderAmount;
+    private bool spawnedSpiders;
+    private int spiderAmountCounter = 0;
+
+    [Header("Magic Enemys:")]
+    public GameObject magicEnemy; // Prefab MagicEnemy
+    public int magicEnemyAmount;
+    private bool spawnedMagicEnemys;
+    private int magicEnemyAmountCounter = 0;
+
     [Header("Range Enemys:")]
     public GameObject rangeEnemys; // Prefab FernkampfGegnern
     public int rangeEnemyAmount;
@@ -52,10 +64,75 @@ public class RoomTemplates : MonoBehaviour
         SpawnBossOderTreppe();
         SpawnRangeEnemys();
         SpawnHellebardeEnemys();
+        SpawnSpiders();
+        SpawnMagicEnemys();
         RelictSpawnSpawner();
     }
 
     // für jeden Gegner soll eine zufällige Position ausgesucht werden und gespawnt werden
+
+    public void SpawnMagicEnemys()
+    {
+        if (waitTime <= 0 && spawnedMagicEnemys == false)
+        {
+            // für jeden Gegner wird for loop einmal ausgeführt
+            for (int i = 0; i < magicEnemyAmount; i++)
+            {
+                // wählt einen zufälligen RaumZahlenWert zum Spawnen aus
+                random = Random.Range(0, rooms.Count - 1); // -1 Damit Gegner nicht im Boss Raum gespawnt werden
+
+                // Zufälliger Ort in einen Raum
+                randomXposition = Random.Range(-6f, 6f);
+                randomYposition = Random.Range(-3f, 2f);
+                randomSpawnPosition = new Vector3(randomXposition, randomYposition, 0f);
+
+                // Zufälliger Ort in einen zufälligen Raum
+                Instantiate(magicEnemy, randomSpawnPosition + rooms[random].transform.position, Quaternion.identity);
+                magicEnemyAmountCounter++;
+            }
+
+            if (magicEnemyAmountCounter == magicEnemyAmount)
+            {
+                spawnedMagicEnemys = true;
+            }
+        }
+        else
+        {
+            waitTime -= Time.deltaTime;
+        }
+    }
+
+    public void SpawnSpiders()
+    {
+        if (waitTime <= 0 && spawnedSpiders == false)
+        {
+            // für jeden Gegner wird for loop einmal ausgeführt
+            for (int i = 0; i < spiderAmount; i++)
+            {
+                // wählt einen zufälligen RaumZahlenWert zum Spawnen aus
+                random = Random.Range(0, rooms.Count - 1); // -1 Damit Gegner nicht im Boss Raum gespawnt werden
+
+                // Zufälliger Ort in einen Raum
+                randomXposition = Random.Range(-6f, 6f);
+                randomYposition = Random.Range(-3f, 2f);
+                randomSpawnPosition = new Vector3(randomXposition, randomYposition, 0f);
+
+                // Zufälliger Ort in einen zufälligen Raum
+                Instantiate(spider, randomSpawnPosition + rooms[random].transform.position, Quaternion.identity);
+                spiderAmountCounter++;
+            }
+
+            if (spiderAmountCounter == spiderAmount)
+            {
+                spawnedSpiders = true;
+            }
+        }
+        else
+        {
+            waitTime -= Time.deltaTime;
+        }
+    }
+
     public void SpawnRangeEnemys()
     {
         if(waitTime <= 0 && spawnedRangeEnemys == false)

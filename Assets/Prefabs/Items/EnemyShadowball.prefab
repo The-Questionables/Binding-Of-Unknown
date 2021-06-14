@@ -149,11 +149,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6724470768478336874}
-  - component: {fileID: 391436838265306917}
-  - component: {fileID: 1748317676648481017}
+  - component: {fileID: 5847602336007365539}
   - component: {fileID: 573998009705445708}
   - component: {fileID: 2191199811447570316}
-  - component: {fileID: 5847602336007365539}
   m_Layer: 0
   m_Name: EnemyShadowball
   m_TagString: EnemyWeapon
@@ -177,33 +175,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &391436838265306917
+--- !u!114 &5847602336007365539
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6095006205393347579}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e47142fc554998141ae74af19d219e42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1748317676648481017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6095006205393347579}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fafd4f9fd93a39a44bf50ec4a6712131, type: 3}
+  m_Script: {fileID: 11500000, guid: 41e2bec25414db5459d75a8ddb67adfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 15
-  destroyTimer: 1.5
-  speed: 5
+  destroyTimer: 1.8
+  speed: 1.6
+  rb: {fileID: 0}
 --- !u!50 &573998009705445708
 Rigidbody2D:
   serializedVersion: 4
@@ -251,19 +238,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17087579, y: 0.117522076}
   m_EdgeRadius: 0
---- !u!114 &5847602336007365539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6095006205393347579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41e2bec25414db5459d75a8ddb67adfa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 20
-  destroyTimer: 0.5
-  speed: 4
-  rb: {fileID: 0}

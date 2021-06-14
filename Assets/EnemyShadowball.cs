@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-//[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Rigidbody2D))]
 
 public class EnemyShadowball : MonoBehaviour
 {
@@ -43,18 +43,13 @@ public class EnemyShadowball : MonoBehaviour
 
     private void FollowTargetPlayer()
     {
-
-        // projectileDirection = new Vector2(targetPosition.transform.position.x - transform.position, targetPosition.transform.position.y - transform.position) speed * Time.deltaTime;
-
         targetPosition = GameObject.FindGameObjectWithTag("Player").transform;
         projectileDirection = new Vector2(targetPosition.position.x, targetPosition.position.y);
-        //transform.position = Vector2.MoveTowards(transform.position, projectileDirection, speed * Time.deltaTime); // altes Bewegungsmuster
+        transform.position = Vector2.MoveTowards(transform.position, projectileDirection, speed * Time.deltaTime);
 
         transform.eulerAngles = new Vector3(0, 0, -transform.eulerAngles.z);
         transform.LookAt(targetPosition.position, transform.up);
         transform.Rotate(new Vector3(0, 90, 0), Space.Self);
-
-        timerStarted = false;
     }
 
     // hier wird der Schadenswert übermittelt
