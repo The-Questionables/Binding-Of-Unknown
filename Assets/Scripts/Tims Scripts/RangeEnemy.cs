@@ -47,14 +47,20 @@ public class RangeEnemy : EnemyStandart
                 transform.position = Vector2.MoveTowards(transform.position, target.position, rangeEnemySpeed * Time.deltaTime); 
                 if (canShoot)
                 {
-                    ShootProjectile();
+
                 }
+                
             }
             // ???
             else if (Vector2.Distance(transform.position, target.position) > safetyDistance)
             {
+                if (canShoot)
+                {
+                    ShootProjectile();
+                }
                 // transform.position = Vector2.MoveTowards(transform.position, target.position, rangeEnemySpeed * Time.deltaTime); // Zittern
             }
+
             else if (Vector2.Distance(transform.position, target.position) < safetyDistance && Vector2.Distance(transform.position, target.position) > retreatDistance)
             {
                 transform.position = this.transform.position;
