@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour {
 
     // Fähigkeit Heavy Armor
     public int heavyArmor = 0;
-    //public int heavyArmorDamageReduction = 50%;
+    public float heavyArmorDamageReduction = 50;
 
     [Header("RelictBar:")]
     public int relictCharge;

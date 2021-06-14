@@ -230,7 +230,7 @@ public class Hero : MonoBehaviour
     {
         if(gamemanager.heavyArmor == 1) // hier Rüstung einbauen
         {
-            gamemanager.hp -= (damage - 7);
+            gamemanager.hp -= (int)((float)damage / 100.0f * gamemanager.heavyArmorDamageReduction);
             // Leben : 100 * x
             // (damage / 100 * gamemanager.heavyArmorDamageReduction);
         }
