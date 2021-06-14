@@ -53,7 +53,7 @@ public class RangeEnemy : EnemyStandart
             // ???
             else if (Vector2.Distance(transform.position, target.position) > safetyDistance)
             {
-                //transform.position = Vector2.MoveTowards(transform.position, target.position, rangeEnemySpeed * Time.deltaTime);
+                // transform.position = Vector2.MoveTowards(transform.position, target.position, rangeEnemySpeed * Time.deltaTime); // Zittern
             }
             else if (Vector2.Distance(transform.position, target.position) < safetyDistance && Vector2.Distance(transform.position, target.position) > retreatDistance)
             {

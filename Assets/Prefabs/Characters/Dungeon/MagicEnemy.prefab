@@ -483,6 +483,7 @@ GameObject:
   - component: {fileID: 2507862731394236091}
   - component: {fileID: 2507862731394236090}
   - component: {fileID: 6311442550716237326}
+  - component: {fileID: -6833071580302025442}
   m_Layer: 0
   m_Name: MagicEnemy
   m_TagString: Enemy
@@ -498,7 +499,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2507862731394236085}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.06, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2507862730800019248}
@@ -602,6 +603,18 @@ MonoBehaviour:
   - {fileID: 542567591913939100, guid: d09c578d53c78c04bbb802f457244285, type: 3}
   - {fileID: 542567591913939100, guid: d09c578d53c78c04bbb802f457244285, type: 3}
   - {fileID: 4142850972197064908, guid: 12a071860b8b71544b6b5cd8e931c87a, type: 3}
+--- !u!114 &-6833071580302025442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2507862731394236085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2251454eca917643b6388492430061b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3888433316991874291
 GameObject:
   m_ObjectHideFlags: 0
