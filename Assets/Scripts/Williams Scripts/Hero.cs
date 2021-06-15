@@ -19,7 +19,6 @@ public class Hero : MonoBehaviour
     private float lastFire;
 
     [Header("References:")]
-    //public Animator playerAnimator;
     private Rigidbody2D rb;
     public Animator animator;
     public HealthBar healthBar;

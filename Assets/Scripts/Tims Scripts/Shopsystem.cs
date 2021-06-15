@@ -27,7 +27,7 @@ public class Shopsystem : MonoBehaviour
         if(gm.coins >=MaxHealthpotionUpgradeCost)
         {
             gm.maxHealthpotions += MaxHealthpotionUpgrade;
-            gm.Coins -= MaxHealthpotionUpgradeCost;
+            gm.coins -= MaxHealthpotionUpgradeCost;
         }
     }
 

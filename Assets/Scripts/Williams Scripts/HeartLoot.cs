@@ -6,7 +6,7 @@ public class HeartLoot : MonoBehaviour
 {
     public AudioClip heartSound;
     // [Range(0, 1)] float heartSoundVolume = 1f;
-    int getHealpotions = 1; // hier noch automatiesieren
+    int getHealpotions = 1; 
 
     // Cached References
     GameManager gamemanager;
