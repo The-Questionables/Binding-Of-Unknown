@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RangeEnemy : EnemyStandart
 {
+    public Animator animator;
+
     [Header("Enemy Movement")]
     public float rangeEnemySpeed = 1f;
     public float safetyDistance = 1f;
