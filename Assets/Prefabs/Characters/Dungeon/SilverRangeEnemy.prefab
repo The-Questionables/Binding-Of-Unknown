@@ -237,11 +237,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockbackForce: 5
   Name: RangeEnemy
-  maxHealth: 100
-  currentHealth: 0
+  maxHealth: 75
+  currentHealth: 75
   healthBar: {fileID: 3202293502859333249}
-  moveSpeed: 3
-  baseAttack: 20
+  moveSpeed: 2.2
+  baseAttack: 10
   detonationTimer: 0
   Explosion: {fileID: 0}
   target: {fileID: 0}
@@ -314,8 +314,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LootList:
   - {fileID: 1401520544450006102, guid: 02c09595c38303740928ed89878f24fa, type: 3}
-  - {fileID: 1401520544450006102, guid: 02c09595c38303740928ed89878f24fa, type: 3}
-  - {fileID: 542567591913939100, guid: d09c578d53c78c04bbb802f457244285, type: 3}
+  - {fileID: 5625333074446763618, guid: 4f9d247eae3b2ad4c96e73b9cf7cffe9, type: 3}
+  - {fileID: 5625333074446763618, guid: 4f9d247eae3b2ad4c96e73b9cf7cffe9, type: 3}
   - {fileID: 542567591913939100, guid: d09c578d53c78c04bbb802f457244285, type: 3}
   - {fileID: 4142850972197064908, guid: 12a071860b8b71544b6b5cd8e931c87a, type: 3}
 --- !u!1 &3202293502187097359

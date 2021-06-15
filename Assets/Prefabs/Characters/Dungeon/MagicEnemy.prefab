@@ -252,7 +252,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4, y: 4}
+    oldSize: {x: 5.12, y: 5.12}
     newSize: {x: 7.2, y: 4.9}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -446,11 +446,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockbackForce: 5
   Name: MagicEnemy
-  maxHealth: 100
-  currentHealth: 0
+  maxHealth: 50
+  currentHealth: 50
   healthBar: {fileID: 2092272408625869930}
-  moveSpeed: 3
-  baseAttack: 20
+  moveSpeed: 2.2
+  baseAttack: 7
   detonationTimer: 0
   Explosion: {fileID: 0}
   target: {fileID: 0}
@@ -523,8 +523,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LootList:
   - {fileID: 1401520544450006102, guid: 02c09595c38303740928ed89878f24fa, type: 3}
-  - {fileID: 1401520544450006102, guid: 02c09595c38303740928ed89878f24fa, type: 3}
-  - {fileID: 542567591913939100, guid: d09c578d53c78c04bbb802f457244285, type: 3}
+  - {fileID: 5625333074446763618, guid: 4f9d247eae3b2ad4c96e73b9cf7cffe9, type: 3}
+  - {fileID: 3310716787902768639, guid: fc2f3db8d192719419ed763b207371d0, type: 3}
   - {fileID: 542567591913939100, guid: d09c578d53c78c04bbb802f457244285, type: 3}
   - {fileID: 4142850972197064908, guid: 12a071860b8b71544b6b5cd8e931c87a, type: 3}
 --- !u!1 &2092272408818239570
