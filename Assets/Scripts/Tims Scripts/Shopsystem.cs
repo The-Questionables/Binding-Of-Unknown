@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class Shopsystem : MonoBehaviour
 {
+    [Header("Upgrade Values:")]
     public int MaxHealthpotionUpgrade;
     public int MaxHealthUpgrade;
     public int SwordUpgrade;
     public int BowUpgrade;
+
+    [Header("Costs:")]
+    public int MaxHealthpotionUpgradeCost;
+    public int MaxHealthUpgradeCost;
+    public int SwordUpgradeCost;
+    public int BowUpgradeCost;
 
     private GameManager gm;
     private void Start()
@@ -17,18 +24,37 @@ public class Shopsystem : MonoBehaviour
 
     public void BuyPotionbelt()
     {
-        gm.maxHealthpotions += MaxHealthpotionUpgrade;
+        if(gm.coins >=MaxHealthpotionUpgradeCost)
+        {
+            gm.maxHealthpotions += MaxHealthpotionUpgrade;
+            gm.Coins -= MaxHealthpotionUpgradeCost;
+        }
     }
+
     public void BuyMaxHealthUpgrade()
     {
-        gm.maxHp += MaxHealthUpgrade;
+        if (gm.coins >= MaxHealthUpgradeCost)
+        {
+            gm.maxHp += MaxHealthUpgrade;
+            gm.coins -= MaxHealthUpgradeCost;
+        }
     }
+
     public void BuySwordUpgrade()
     {
-        gm.swordDamage += SwordUpgrade;
+        if (gm.coins >= SwordUpgradeCost)
+        {
+            gm.swordDamage += SwordUpgrade;
+            gm.coins -= SwordUpgradeCost;
+        }
     }
+
     public void BuyBowUpgrade()
     {
-        gm.bowDamage += SwordUpgrade;
+        if (gm.coins >= BowUpgradeCost)
+        {
+            gm.bowDamage += BowUpgrade;
+            gm.coins -= BowUpgradeCost;
+        }
     }
 }
