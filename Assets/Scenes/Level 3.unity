@@ -1047,7 +1047,7 @@ MonoBehaviour:
   healthRecover: 20
   hp: 100
   maxHp: 100
-  swordDamage: 10
+  swordDamage: 5
   bowDamage: 15
 --- !u!4 &806348015
 Transform:
@@ -2343,6 +2343,32 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Entry(High4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6728074929087871226, guid: 27987f7696bd31f4d812ad295fe73ecb,
+        type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[16].m_Data
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6728074929087871226, guid: 27987f7696bd31f4d812ad295fe73ecb,
+        type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[20].m_Data
+      value: 
+      objectReference: {fileID: 21300000, guid: e09a288c0b47e8c468b859c3fa73501a,
+        type: 3}
+    - target: {fileID: 6728074929087871226, guid: 27987f7696bd31f4d812ad295fe73ecb,
+        type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[16].m_RefCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6728074929087871226, guid: 27987f7696bd31f4d812ad295fe73ecb,
+        type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[20].m_RefCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6728074929087871226, guid: 27987f7696bd31f4d812ad295fe73ecb,
+        type: 3}
+      propertyPath: m_Tiles.Array.data[33].second.m_TileSpriteIndex
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27987f7696bd31f4d812ad295fe73ecb, type: 3}
