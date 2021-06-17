@@ -10,7 +10,7 @@ public class ShootArrows : MonoBehaviour
     public KeyCode shoot = KeyCode.Mouse0;
     public float newMovespeed = 2f;
     public float Firerate = 0.75f;
-    public float slowdowntimer = 5f;
+    public float slowdowntimer = 2f;
     private float speed = 4f;
     private float fireratetimer;
     private float delay;
@@ -41,7 +41,7 @@ public class ShootArrows : MonoBehaviour
         {
             if (Input.GetKey(shoot))
             {
-                hero.moveSpeed /= newMovespeed;
+                hero.moveSpeed = newMovespeed;
                 Instantiate(Arrow, Arrowspawnpoint.position, Arrowspawnpoint.rotation);
                 isSlowed = true;
             }
