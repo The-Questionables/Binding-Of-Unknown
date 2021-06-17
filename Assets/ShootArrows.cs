@@ -10,10 +10,11 @@ public class ShootArrows : MonoBehaviour
     public KeyCode shoot = KeyCode.Mouse0;
     public float newMovespeed = 2f;
     public float Firerate = 0.75f;
-    public float delay = 5f;
+    public float slowdowntimer = 5f;
     private float speed = 4f;
     private float fireratetimer;
-    private float delay2;
+    private float delay;
+    private bool isSlowed = false;
     // Verweis
     private Hero hero;
 
@@ -22,12 +23,15 @@ public class ShootArrows : MonoBehaviour
         hero = FindObjectOfType<Hero>();
         speed = hero.moveSpeed;
         fireratetimer = Firerate;
-        delay2 = delay;
+        delay = slowdowntimer;
     }
     public void Update()
     {
+        if (isSlowed == true) 
+        {
+            delay -= Time.deltaTime;
+        }
         fireratetimer -= Time.deltaTime;
-        delay2 -= Time.deltaTime;
         Shoot();
     }
 
@@ -39,18 +43,14 @@ public class ShootArrows : MonoBehaviour
             {
                 hero.moveSpeed /= newMovespeed;
                 Instantiate(Arrow, Arrowspawnpoint.position, Arrowspawnpoint.rotation);
-                if (delay2 <= 0) 
-                {
-                    fireratetimer = Firerate;
-                    delay2 = delay;
-                }
+                isSlowed = true;
             }
-        }
-        else
-        {
-            if (fireratetimer >= 0)
+            if (delay <= 0 && isSlowed==true)
             {
+                fireratetimer = Firerate;
+                delay = slowdowntimer;
                 hero.moveSpeed = speed;
+                isSlowed = false;
             }
         }
     }
