@@ -42,11 +42,11 @@ public class ShootArrows : MonoBehaviour
             if (Input.GetKey(shoot))
             {
                 hero.moveSpeed = newMovespeed;
-                Instantiate(Arrow, Arrowspawnpoint.position, Arrowspawnpoint.rotation);
                 isSlowed = true;
             }
             if (delay <= 0 && isSlowed==true)
             {
+                Instantiate(Arrow, Arrowspawnpoint.position, Arrowspawnpoint.rotation);
                 fireratetimer = Firerate;
                 delay = slowdowntimer;
                 hero.moveSpeed = speed;
