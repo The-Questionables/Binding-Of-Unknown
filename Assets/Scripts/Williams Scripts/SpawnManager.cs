@@ -5,6 +5,9 @@ using System;
 
 public class SpawnManager : MonoBehaviour
 {
+    public bool isPlayerInRoom = false;
+    public bool isSpawnComplete = false;
+
     [Header("Intervals")] //Fügt Überschrift ein
     public float enemySpawnInterval; //Zeitraum zwischen den spawn der Gegner
     public float waveSpawnInterval; // Zeitraum zwischen den Wellen
@@ -40,7 +43,16 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         //Warten bevor starten des Spawnens beginnt
-        Invoke("StartSpawn", 3f); //Wartet 3 Sekunden
+        //Invoke("StartSpawn", 1f); //Wartet 1 Sekunde
+    }
+
+    private void Update()
+    {
+        if (isPlayerInRoom && !isSpawnComplete)
+        {
+            Invoke("StartSpawn", 0.1f); //Wartet 1 Sekunde
+            isSpawnComplete = true;
+        }
     }
 
     IEnumerator SpawnWaves() // erstellen eine routine
@@ -147,6 +159,14 @@ public class SpawnManager : MonoBehaviour
        }
      }
      */
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            isPlayerInRoom = true;
+        }
     }
     /*
     void ReportToGameManager()
