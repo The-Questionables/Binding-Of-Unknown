@@ -8,7 +8,7 @@ public class ShootArrows : MonoBehaviour
     public GameObject Arrow;
     public Transform Arrowspawnpoint;
     public KeyCode shoot = KeyCode.Mouse0;
-    public float newMovespeed = 2f;
+    public float newMovespeed;
     public float Firerate = 0.75f;
     public float slowdowntimer = 2f;
     private float speed = 4f;
