@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weaponswitch : MonoBehaviour
-{   
+{
+    ShootArrows shootArrows;
     public GameObject[] Weapons;
     public KeyCode SwitchWeaponKey = KeyCode.Mouse2;
     private int activeweapon;
@@ -12,6 +13,7 @@ public class Weaponswitch : MonoBehaviour
 
     private void Start()
     {
+        shootArrows = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<ShootArrows>();
         activeweapon = 0;
     }
     void Update()
@@ -23,6 +25,7 @@ public class Weaponswitch : MonoBehaviour
                 Weapons[Weapons.Length - 1].SetActive(false);
                 activeweapon = 0;
                 Weapons[activeweapon].SetActive(true);
+                shootArrows.enabled = true;
             }
             else 
             {
@@ -31,6 +34,7 @@ public class Weaponswitch : MonoBehaviour
                  Weapons[activeweapon].SetActive(false);
                  activeweapon++;
                  Weapons[activeweapon].SetActive(true);
+                 shootArrows.enabled = false;
                 }
             }
             

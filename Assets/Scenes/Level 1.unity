@@ -305,6 +305,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &82609059 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7759376654342290354, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1064732672}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &82609062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 82609059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d8aa4132f2ce034b8707fc3623bdcd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Arrow: {fileID: 1133762169987533107, guid: b5299a662be54854e983367e8ea07b21, type: 3}
+  Arrowspawnpoint: {fileID: 365197731}
+  shoot: 323
+  newMovespeed: -2
+  Firerate: 0.75
 --- !u!1 &116696440
 GameObject:
   m_ObjectHideFlags: 0
@@ -1587,6 +1610,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 349357257}
   m_CullTransparentMesh: 0
+--- !u!4 &365197731 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7759376653407970628, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1064732672}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &385263390
 GameObject:
   m_ObjectHideFlags: 0
@@ -4700,7 +4729,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7759376654342290353, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7759376654342290353, guid: 2dc5a57f60ad0ab4880bfa6607e254e1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2dc5a57f60ad0ab4880bfa6607e254e1, type: 3}
 --- !u!1 &1085529878
 GameObject:

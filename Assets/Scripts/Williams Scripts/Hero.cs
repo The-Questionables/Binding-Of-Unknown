@@ -12,11 +12,14 @@ public class Hero : MonoBehaviour
     public float moveSpeed = 5f;
     public int useHealpotions = 1;
 
+    /*
+     * Altes Shoot Script
     [Header("Arrows:")]
     public GameObject bulletPrefab;
     public float bulletSpeed = 5.0f;
     public float fireDelay = 0.5f;
     private float lastFire;
+    */
 
     [Header("References:")]
     private Rigidbody2D rb;
@@ -151,14 +154,17 @@ public class Hero : MonoBehaviour
                 animator.SetFloat("Vertical", movement.y);
                 animator.SetFloat("Speed", movement.sqrMagnitude);
 
+                // altes ShootScript
+                /*
                 float shootHor = Input.GetAxis("ShootHorizontal");
-                // transform.forward = new Vector3(shootHor, 0, 0);
+                transform.forward = new Vector3(shootHor, 0, 0);
                 float shootVert = Input.GetAxis("ShootVertical");
                 if ((shootHor != 0 || shootVert != 0) && Time.time > lastFire + fireDelay)
                 {
-                    Shoot(shootHor, shootVert);
+                    //Shoot(shootHor, shootVert);
                     lastFire = Time.time;
                 }
+                */
 
              if (Time.time > nextRollTime)
              { 
@@ -256,7 +262,11 @@ public class Hero : MonoBehaviour
             Debug.Log("Du bist gestorben");
         }
     }
+}
 
+
+    /*
+     * Altes Shoot Script mit Pfeiltasten
     void Shoot(float x, float y) // Berechnen der Schussgeschwindigkeit und Spawn
     {
         GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
@@ -266,7 +276,8 @@ public class Hero : MonoBehaviour
         (y < 0) ? Mathf.Floor(y) * bulletSpeed : Mathf.Ceil(y) * bulletSpeed,
         0);
     }
-}
+    */
+
 
 
 
