@@ -51,9 +51,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   useHealpotions: 1
-  bulletPrefab: {fileID: 0}
-  bulletSpeed: 5
-  fireDelay: 0.5
   animator: {fileID: 2346175232225414395}
   healthBar: {fileID: 0}
   relictChargeBar: {fileID: 0}
@@ -318,8 +315,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7759376654342290355}
   - component: {fileID: 7759376654342290352}
-  - component: {fileID: 7759376654342290353}
   - component: {fileID: 355377786258715274}
+  - component: {fileID: 82609062}
   m_Layer: 0
   m_Name: oberobject
   m_TagString: Untagged
@@ -357,24 +354,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sword: 0
   SwordKey: 0
---- !u!114 &7759376654342290353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7759376654342290354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99302489bd8a28e44b00ce6e9c877b73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Arrow: {fileID: 1133762169987533107, guid: b5299a662be54854e983367e8ea07b21, type: 3}
-  Arrowspawnpoint: {fileID: 7759376653407970628}
-  shoot: 323
-  newMovespeed: 0
-  Firerate: 0.75
-  George: {fileID: 2346175232225414394}
 --- !u!114 &355377786258715274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391,6 +370,24 @@ MonoBehaviour:
   - {fileID: 7759376654427620870}
   - {fileID: 4194411587800258019}
   SwitchWeaponKey: 325
+--- !u!114 &82609062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7759376654342290354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d8aa4132f2ce034b8707fc3623bdcd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Arrow: {fileID: 1133762169987533107, guid: b5299a662be54854e983367e8ea07b21, type: 3}
+  Arrowspawnpoint: {fileID: 7759376653407970628}
+  shoot: 323
+  newMovespeed: 2
+  Firerate: 0.25
+  slowdowntimer: 0.75
 --- !u!1 &7759376654427620870
 GameObject:
   m_ObjectHideFlags: 0
