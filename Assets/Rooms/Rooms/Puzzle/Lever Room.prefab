@@ -4334,26 +4334,20 @@ MonoBehaviour:
   pressurePlate2Active: {fileID: 5616118077884789944}
   pressurePlate3Active: {fileID: 1863809245630411077}
   pressurePlate4Active: {fileID: 9103757104908649217}
-  enemySpawner: {fileID: 0}
   isPressurePlate1Pressd: 0
   isPressurePlate2Pressd: 0
   isPressurePlate3Pressd: 0
   isPressurePlate4Pressd: 0
-  isCorrectPressurePlate1Pressd: 0
-  isCorrectPressurePlate2Pressd: 0
-  isCorrectPressurePlate3Pressd: 0
-  isCorrectPressurePlate4Pressd: 0
   isCorrectOrder: 0
   isRiddleComplete: 0
   isResetComplete: 0
-  SpawnPoint: {fileID: 9028795101898690614}
-  enemySpawnInterval: 1
-  waveSpawnInterval: 1
-  Gegner1Prefab: {fileID: 978554266183098313, guid: 474b67b126318604b973fadbedf31f57,
-    type: 3}
+  spawnPoint: {fileID: 9028795101898690614}
+  enemyList:
+  - {fileID: 8300766436411783851, guid: a503fddd240cd9e4cb4909c4acbfa200, type: 3}
+  - {fileID: 978554266183098313, guid: 474b67b126318604b973fadbedf31f57, type: 3}
+  - {fileID: 947327879237028921, guid: ac136c3fc1999f3469cdaea8e6e34d44, type: 3}
+  - {fileID: 947327879237028921, guid: ac136c3fc1999f3469cdaea8e6e34d44, type: 3}
   isSpawnComplete: 0
-  waveList: []
-  spawnedEnemies: []
 --- !u!1839735485 &8727184831118954671
 Tilemap:
   m_ObjectHideFlags: 0

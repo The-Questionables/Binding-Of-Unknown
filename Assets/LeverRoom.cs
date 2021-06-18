@@ -17,93 +17,22 @@ public class LeverRoom : MonoBehaviour
     public GameObject pressurePlate3Active;
     public GameObject pressurePlate4Active;
 
-    public GameObject enemySpawner;
-
     public bool isPressurePlate1Pressd = false;
     public bool isPressurePlate2Pressd = false;
     public bool isPressurePlate3Pressd = false;
     public bool isPressurePlate4Pressd = false;
-
-    public bool isCorrectPressurePlate1Pressd = false;
-    public bool isCorrectPressurePlate2Pressd = false;
-    public bool isCorrectPressurePlate3Pressd = false;
-    public bool isCorrectPressurePlate4Pressd = false;
 
     public bool isCorrectOrder = false;
     public bool isRiddleComplete = false;
     public bool isResetComplete = false;
 
     // Spawner
-    // Spawnpoint
-    public Transform SpawnPoint;
-
-    [Header("Intervals")] //Fügt Überschrift ein
-    public float enemySpawnInterval; //Zeitraum zwischen den spawn der Gegner
-    public float waveSpawnInterval; // Zeitraum zwischen den Wellen
-    int currentWave; // Zeit wird hochgezählt während der Welle läuft
-
-    int Gegner1ID = 0;
-
-    [Header("Prefabs")]
-    public GameObject Gegner1Prefab; //hier Einheit einsetzten
+    public Transform spawnPoint;
+    public GameObject[] enemyList; // Array an Items
     public bool isSpawnComplete = false;
+    private int random; // speichert kurz zufälligen Wert aus dem Array
 
 
-    [System.Serializable]
-    public class Wave
-    {
-        public int Gegner1Amount; //Anzahl der Gegner die in der Welle Spawnen
-    }
-
-    [Header("Waves")]
-    public List<Wave> waveList = new List<Wave>(); //Liste der Gegner
-
-    [HideInInspector]
-    public List<GameObject> spawnedEnemies = new List<GameObject>();
-
-    bool spawnComplete;
-
-    IEnumerator SpawnWaves() // erstellen eine routine
-    {
-        while (currentWave < waveList.Count) //Prüfung wie viele Wellen noch bevorsthenen und bei welcher wir gerade sind
-        {
-
-            yield return new WaitForSeconds(enemySpawnInterval);
-            // Spawn der Gegner
-            for (int i = 0; i < waveList[currentWave].Gegner1Amount; i++)
-            {
-                GameObject newGegner1 = Instantiate(Gegner1Prefab, SpawnPoint.position, Quaternion.identity) as GameObject; //erstellen des neues Gameobjekt und rotation
-                                                                                                                          
-                Gegner1ID++;
-                spawnedEnemies.Add(newGegner1);
-
-                //Warten auf nächstes Spawn (interval)
-                yield return new WaitForSeconds(enemySpawnInterval);
-            }
-
-            yield return new WaitForSeconds(waveSpawnInterval);
-            currentWave++; //Startet nächste Welle
-
-        }
-    }
-
-    void StartSpawn()
-    {
-        StartCoroutine(SpawnWaves());
-        CancelInvoke("StartSpawn");
-    }
-
-    void OnValidate()
-    {
-        int GegnerAnzahl = 0;
-        for (int i = 0; i < waveList.Count; i++)
-        {
-            GegnerAnzahl += waveList[i].Gegner1Amount;
-        }
-    }
-
-
-    // Riddle
     private void Start()
     {
         pressurePlate1.GetComponent<BoxCollider2D>();
@@ -126,114 +55,122 @@ public class LeverRoom : MonoBehaviour
         }
     }
 
-    public void CorrectOrderCheck()
-    {
-        if (isCorrectPressurePlate1Pressd == true)
-        {
-            isResetComplete = false;
-            isCorrectOrder = true;
-            if (isCorrectPressurePlate2Pressd == true)
-            {
-                isCorrectOrder = true;
-                if (isCorrectPressurePlate3Pressd == true)
-                {
-                    isCorrectOrder = true;
-                    if (isCorrectPressurePlate4Pressd == true)
-                    {
-                        isCorrectOrder = true;
-                        isRiddleComplete = true;
-                    }
-                    else if (!isResetComplete)
-                    {
-                        ResetPressurePlate();
-                        isResetComplete = true;
-                    }
-                }
-                else if (!isResetComplete)
-                {
-                    ResetPressurePlate();
-                    isResetComplete = true;
-                }
-            }
-            else if (!isResetComplete)
-            {
-                ResetPressurePlate();
-                isResetComplete = true;
-            }
-        }
-        else if (!isResetComplete)
-        {
-            ResetPressurePlate();
-            isResetComplete = true;
-        }
-
-
-    }
-
     public void PressurePlateCheck()
     {
-        if(isPressurePlate1Pressd || isPressurePlate2Pressd || isPressurePlate3Pressd || isPressurePlate4Pressd)
-        {
-            CorrectOrderCheck();
-        }
-
-        if (isPressurePlate1Pressd == true && isCorrectOrder == true) // Richtige Reihnfolge wurde 1 platte richtig gedrückt )
+        if (isPressurePlate1Pressd) // Richtige Reihnfolge wurde 1 platte richtig gedrückt )
         {
             pressurePlate1.SetActive(false);
             pressurePlate1Active.SetActive(true);
+            isCorrectOrder = true;
+            isSpawnComplete = false;
         }
 
-        if (isPressurePlate2Pressd == true && isCorrectOrder == true)
+        if (isPressurePlate1Pressd && isPressurePlate2Pressd && isCorrectOrder)
         {
             pressurePlate2.SetActive(false);
             pressurePlate2Active.SetActive(true);
+            isCorrectOrder = true;
         }
 
-        if (isPressurePlate3Pressd == true && isCorrectOrder == true)
+        if (isPressurePlate1Pressd && isPressurePlate2Pressd && isPressurePlate3Pressd && isCorrectOrder)
         {
             pressurePlate3.SetActive(false);
             pressurePlate3Active.SetActive(true);
+            isCorrectOrder = true;
         }
 
-        if (isPressurePlate4Pressd == true && isCorrectOrder == true) //isCorrectPressurePlate4Pressd == true)
+        if (isPressurePlate1Pressd && isPressurePlate2Pressd && isPressurePlate3Pressd && isPressurePlate4Pressd && isCorrectOrder)
         {
             pressurePlate4.SetActive(false);
             pressurePlate4Active.SetActive(true);
+            isRiddleComplete = true;
+        }
+
+        // Reset
+        if (isPressurePlate1Pressd && isPressurePlate3Pressd && !isPressurePlate2Pressd)
+        {
+            isCorrectOrder = false;
+            isPressurePlate1Pressd = false;
+            pressurePlate1.SetActive(true);
+            pressurePlate1Active.SetActive(false);
+            isPressurePlate3Pressd = false;
+            pressurePlate3.SetActive(true);
+            pressurePlate3Active.SetActive(false);
+            // Spawn Enemys
+            SpawnEnemys();
+        }
+
+        if (isPressurePlate1Pressd && isPressurePlate4Pressd && !isPressurePlate2Pressd)
+        {
+            isCorrectOrder = false;
+            isPressurePlate1Pressd = false;
+            pressurePlate1.SetActive(true);
+            pressurePlate1Active.SetActive(false);
+            isPressurePlate4Pressd = false;
+            pressurePlate4.SetActive(true);
+            pressurePlate4Active.SetActive(false);
+            // Spawn Enemys
+            SpawnEnemys();
+        }
+
+        if (!isPressurePlate1Pressd && isPressurePlate2Pressd)
+        {
+            isCorrectOrder = false;
+            isPressurePlate2Pressd = false;
+            pressurePlate2.SetActive(true);
+            pressurePlate2Active.SetActive(false);
+            // Spawn Enemys
+            SpawnEnemys();
+        }
+
+        if (!isPressurePlate1Pressd && !isPressurePlate2Pressd && isPressurePlate3Pressd && !isPressurePlate4Pressd)
+        {
+            isCorrectOrder = false;
+            isPressurePlate3Pressd = false;
+            pressurePlate3.SetActive(true);
+            pressurePlate3Active.SetActive(false);
+            // Spawn Enemys
+            SpawnEnemys();
+        }
+
+        if (!isPressurePlate1Pressd && !isPressurePlate2Pressd && !isPressurePlate3Pressd && isPressurePlate4Pressd)
+        {
+            isCorrectOrder = false;
+            isPressurePlate4Pressd = false;
+            pressurePlate4.SetActive(true);
+            pressurePlate4Active.SetActive(false);
+            // Spawn Enemys
+            SpawnEnemys();
+        }
+
+        if (isPressurePlate1Pressd && isPressurePlate2Pressd && !isPressurePlate3Pressd && isPressurePlate4Pressd)
+        {
+            isCorrectOrder = false;
+            isPressurePlate1Pressd = false;
+            pressurePlate1.SetActive(true);
+            pressurePlate1Active.SetActive(false);
+            isPressurePlate2Pressd = false;
+            pressurePlate2.SetActive(true);
+            pressurePlate2Active.SetActive(false);
+            isPressurePlate4Pressd = false;
+            pressurePlate4.SetActive(true);
+            pressurePlate4Active.SetActive(false);
+            // Spawn Enemys
+            SpawnEnemys();
         }
     }
 
-    public void ResetPressurePlate()
+    public void SpawnEnemys()
     {
-        isCorrectOrder = false;
-        pressurePlate1.SetActive(true);
-        pressurePlate1Active.SetActive(false);
-      //isPressurePlate1Pressd = false;
-      //  isCorrectPressurePlate1Pressd = false;
-
-        pressurePlate2.SetActive(true);
-        pressurePlate2Active.SetActive(false);
-      //isPressurePlate2Pressd = false;
-       // isCorrectPressurePlate2Pressd = false;
-
-        pressurePlate3.SetActive(true);
-        pressurePlate3Active.SetActive(false);
-        //isPressurePlate3Pressd = false;
-       //isCorrectPressurePlate3Pressd = false;
-
-        pressurePlate4.SetActive(true);
-        pressurePlate4Active.SetActive(false);
-        //isPressurePlate4Pressd = false;
-        //isCorrectPressurePlate4Pressd = false;
-
-
-
-        // Spawm Enemys
         if (!isSpawnComplete)
         {
-            Invoke("StartSpawn", 0.1f); //Wartet 1 Sekunde
+            //Invoke("StartSpawn", 0.1f); //Wartet 1 Sekunde
+            random = Random.Range(0, enemyList.Length); // Sucht zufälligen Längenwert dem Arrays aus
+            Instantiate(enemyList[random], spawnPoint.position, Quaternion.identity);
             isSpawnComplete = true;
         }
     }
+
     private void DoorOpener()
     {
         GetComponent<TilemapRenderer>().enabled = false;
