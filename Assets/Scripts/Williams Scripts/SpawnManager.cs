@@ -76,12 +76,7 @@ public class SpawnManager : MonoBehaviour
 
                 Gegner1ID++;
 
-
-
                 spawnedEnemies.Add(newGegner1);
-
-                //weitergeben an Game Manager
-               // GameManager.instance.AddEnemy();
 
                 //Warten auf nächstes Spawn (interval)
                 yield return new WaitForSeconds(enemySpawnInterval);
@@ -97,16 +92,11 @@ public class SpawnManager : MonoBehaviour
 
                 spawnedEnemies.Add(newGegner2);
 
-                //weitergeben an Game Manager
-                //GameManager.instance.AddEnemy();
-
                 //Warten auf nächstes Spawn (interval)
                 yield return new WaitForSeconds(enemySpawnInterval);
             }
-            // for (int i = 0; i < waveList[currentWave].Enemy2Amount; i++) ----------------- Weiß nicht mehr wozu das war
 
-
-            // Spawn der Boss Schiffe
+            // Spawn der nächsten Gegner
             for (int i = 0; i < waveList[currentWave].Gegner3Amount; i++)
             {
                 GameObject newGegner3 = Instantiate(Gegner3Prefab, transform.position, Quaternion.identity) as GameObject; //erstellen des neues Gameobjekt und rotation
@@ -123,8 +113,6 @@ public class SpawnManager : MonoBehaviour
             }
 
 
-
-
             yield return new WaitForSeconds(waveSpawnInterval);
             currentWave++; //Startet nächste Welle
 
@@ -136,10 +124,8 @@ public class SpawnManager : MonoBehaviour
         StartCoroutine(SpawnWaves());
         CancelInvoke("StartSpawn"); //fürs debuggen
     }
-    //------------------------------------
 
     void OnValidate() //wird aktiviert wann immer eine nummer im Inspector verändert wird
-                      // zählt alle Virus-Schiffe im Spiel zusammen
     {
         int GegnerAnzahl = 0;
         for (int i = 0; i < waveList.Count; i++)
@@ -148,17 +134,6 @@ public class SpawnManager : MonoBehaviour
             GegnerAnzahl += waveList[i].Gegner2Amount;
             GegnerAnzahl += waveList[i].Gegner3Amount;
         }
-        /*
-         if (curVirusAmount > 35)                                 //wenn mehr als 35 Feinde im Spiel sind entsteht Fehlermeldung
-         {
-             Debug.LogError("<color=red>Error!!</color> Your Virus amount is to high!" + curVirusAmount + "/ 35");
-         }
-       else
-       { 
-         Debug.Log("Current Total Virus: " + curVirusAmount);
-       }
-     }
-     */
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -168,22 +143,4 @@ public class SpawnManager : MonoBehaviour
             isPlayerInRoom = true;
         }
     }
-    /*
-    void ReportToGameManager()
-    {
-           if(spawnedEnemies.Count == 0 && spawnComplete)
-       // if (spawnComplete)
-        {
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            GameManager.instance.WinCondition();
-        }
-    }
-
-    public void UpdateSpawnedEnemies(GameObject enemy)
-    {
-        spawnedEnemies.Remove(enemy);
-
-        ReportToGameManager();
-    }
-    */
 }
