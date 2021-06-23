@@ -74,6 +74,8 @@ public class EnemySpawner : MonoBehaviour
                 randomSpawnPosition = new Vector3(randomXposition, randomYposition, 0f);
 
             // Spawnt gegner
+            random = Random.Range(0, enemyList.Length); // Sucht zufälligen Längenwert dem Arrays aus
+
             if (enemyList[random] == null)
             {
                 random = Random.Range(0, enemyList.Length); // Sucht zufälligen Längenwert dem Arrays aus
