@@ -32,16 +32,21 @@ public class EnemySpawner : MonoBehaviour
             enemyAmountForThisRoom = 1;
 
             // Remove Element 4,5,6
-            Destroy(enemyList[4]);
-            Destroy(enemyList[5]);
-            Destroy(enemyList[6]);
+            //Destroy(enemyList[4]);
+            //Destroy(enemyList[5]);
+            //Destroy(enemyList[6]);
+            (enemyList[4]) = null;
+            (enemyList[5]) = null;
+            (enemyList[6]) = null;
         }
         if (scene.name == "Level 2")
         {
             enemyAmountForThisRoom = 2;
             // Remove Element 5,6
-            Destroy(enemyList[5]);
-            Destroy(enemyList[6]);
+            //Destroy(enemyList[5]);
+            //Destroy(enemyList[6]);
+            (enemyList[5]) = null;
+            (enemyList[6]) = null;
         }
         if (scene.name == "Level 3")
         {
@@ -68,8 +73,11 @@ public class EnemySpawner : MonoBehaviour
                 randomYposition = Random.Range(-3f, 2f);
                 randomSpawnPosition = new Vector3(randomXposition, randomYposition, 0f);
 
-                // Spawnt gegner
+            // Spawnt gegner
+            if (enemyList[random] == null)
+            {
                 random = Random.Range(0, enemyList.Length); // Sucht zufälligen Längenwert dem Arrays aus
+            }
                 Instantiate(enemyList[random], randomSpawnPosition + spawnArea.transform.position, Quaternion.identity);
 
                //Warten auf nächstes Spawn (interval)
