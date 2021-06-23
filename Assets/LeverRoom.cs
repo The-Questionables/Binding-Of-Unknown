@@ -28,7 +28,7 @@ public class LeverRoom : MonoBehaviour
 
     // Spawner
     public Transform spawnPoint;
-    public GameObject[] enemyList; // Array an Items
+    public GameObject[] enemyList; // Array an Gegnern
     public bool isSpawnComplete = false;
     private int random; // speichert kurz zufälligen Wert aus dem Array
 

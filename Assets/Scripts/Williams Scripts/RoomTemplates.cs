@@ -62,10 +62,10 @@ public class RoomTemplates : MonoBehaviour
     void Update()
     {
         SpawnBossOderTreppe();
-        SpawnRangeEnemys();
-        SpawnHellebardeEnemys();
-        SpawnSpiders();
-        SpawnMagicEnemys();
+        //SpawnRangeEnemys();
+        //SpawnHellebardeEnemys();
+        //SpawnSpiders();
+        //SpawnMagicEnemys();
         RelictSpawnSpawner();
     }
 
