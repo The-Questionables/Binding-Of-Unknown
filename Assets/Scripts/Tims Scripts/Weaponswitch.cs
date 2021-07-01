@@ -9,10 +9,13 @@ public class Weaponswitch : MonoBehaviour
     public KeyCode SwitchWeaponKey = KeyCode.Mouse2;
     private int activeweapon;
     private int i;
+    private float speed;
+    private Hero hero;
 
-
-    private void Start()
+        private void Start()
     {
+        hero = FindObjectOfType<Hero>();
+        speed = hero.moveSpeed;
         shootArrows = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<ShootArrows>();
         activeweapon = 0;
     }
@@ -20,6 +23,7 @@ public class Weaponswitch : MonoBehaviour
     {
         if (Input.GetKeyDown(SwitchWeaponKey)&&Weapons.Length > 1) 
         {
+            hero.moveSpeed = speed;
             if (activeweapon >= Weapons.Length-1)
             {
                 Weapons[Weapons.Length - 1].SetActive(false);
