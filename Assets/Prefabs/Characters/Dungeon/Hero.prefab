@@ -367,8 +367,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Weapons:
-  - {fileID: 7759376654427620870}
   - {fileID: 4194411587800258019}
+  - {fileID: 7759376654427620870}
   SwitchWeaponKey: 325
 --- !u!114 &82609062
 MonoBehaviour:
@@ -404,7 +404,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7759376654427620871
 Transform:
   m_ObjectHideFlags: 0
@@ -557,8 +557,13 @@ PrefabInstance:
     - target: {fileID: 3699229325718771879, guid: 0d4bf3b1362f8544aad9b15aa1d8f9c6,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5844827998320634189, guid: 0d4bf3b1362f8544aad9b15aa1d8f9c6,
+        type: 3}
+      propertyPath: Oberobjekt
+      value: 
+      objectReference: {fileID: 7759376654342290354}
     - target: {fileID: 6599853234066268237, guid: 0d4bf3b1362f8544aad9b15aa1d8f9c6,
         type: 3}
       propertyPath: m_IsTrigger

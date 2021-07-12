@@ -16,10 +16,12 @@ public class ShootArrows : MonoBehaviour
     private float delay;
     private bool isSlowed = false;
     // Verweis
+    private GameManager gamemanager;
     private Hero hero;
 
     private void Start()
     {
+        gamemanager = FindObjectOfType<GameManager>();
         hero = FindObjectOfType<Hero>();
         speed = hero.moveSpeed;
         fireratetimer = Firerate;
@@ -27,12 +29,15 @@ public class ShootArrows : MonoBehaviour
     }
     public void Update()
     {
-        if (isSlowed == true) 
+        if (gamemanager.bow_bought==true) 
         {
-            delay -= Time.deltaTime;
+            if (isSlowed == true)
+            {
+                delay -= Time.deltaTime;
+            }
+            fireratetimer -= Time.deltaTime;
+            Shoot();
         }
-        fireratetimer -= Time.deltaTime;
-        Shoot();
     }
 
     public void Shoot()

@@ -41,12 +41,12 @@ public class GameManager : MonoBehaviour {
 
     [HideInInspector] public string ActiveScene;
     [Header("Healthpotions:")]
-    public bool isHealpotionCollectable;
-    private Text healthpotionsText;
     public KeyCode UseHealthpotion = KeyCode.Q;
+    public bool isHealpotionCollectable;
     public int healthpotions;
     public int maxHealthpotions;
     public int healthRecover = 15;
+    private Text healthpotionsText;
 
     [Header("Player Health:")]
     public int hp;
@@ -56,6 +56,8 @@ public class GameManager : MonoBehaviour {
     [Header("Attack Damage:")]
     public int swordDamage = 10;
     public int bowDamage = 20;
+
+    [HideInInspector] public bool bow_bought;
 
     public void Update()
     {

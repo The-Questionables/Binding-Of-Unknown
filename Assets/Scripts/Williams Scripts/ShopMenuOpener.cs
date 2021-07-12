@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class ShopMenuOpener : MonoBehaviour
 {
-    public bool isPlayerInRange;
     public GameObject ShopMenu;
     public GameManager gamemanager;
 
     public int getHealpotions = 1;
     public int healthRecoverBonus = 5;
 
+    public bool isPlayerInRange;
     public bool isHealportUp;
 
     public GameObject buyItemt1Button;
@@ -99,10 +99,10 @@ public class ShopMenuOpener : MonoBehaviour
 
     public void UnlockBow()
     {
-        if (gamemanager.coins >= 100)
+        if (gamemanager.coins >= 100 && gamemanager.bow_bought != true)
         {
             gamemanager.coins -= (100);
-            // Unlock Bow here
+            gamemanager.bow_bought = true;
         }
     }
 }
