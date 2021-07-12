@@ -6,6 +6,11 @@ public class EnemyStandart : MonoBehaviour
 {
     GameManager gamemanager; // Verknüpfung mit Gamemanager
 
+    [Header("Enemy Color")]
+    private Color nativeColor;
+    private Color damageColor;
+    private float changeEnemyColor = 0.2f;
+
     public float knockbackForce = 0.1f;
 
     public string Name;
@@ -36,6 +41,10 @@ public class EnemyStandart : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Color
+        nativeColor = GetComponent<SpriteRenderer>().color;
+        damageColor = Color.red;
+
         gamemanager = FindObjectOfType<GameManager>();
         target = GameObject.FindGameObjectWithTag(Slime_Const.Tag_Player).transform;
         randomLoot = GetComponent<RandomLoot>();
@@ -79,6 +88,10 @@ public class EnemyStandart : MonoBehaviour
         currentHealth -= amount;
         healthBar.SetHealth(currentHealth);
 
+        // Color
+        StartCoroutine(ChangeEnemyColorByHit());
+
+
         if (currentHealth <= 0)
         {
 
@@ -100,5 +113,21 @@ public class EnemyStandart : MonoBehaviour
             gamemanager.Killcounter();
             //Debug.Log("Kill Bestätigt"); // bis hier hin funktioniert es
         }
+    }
+
+    IEnumerator ChangeEnemyColorByHit()
+    {
+        if (GetComponent<Animator>())
+        {
+            GetComponent<Animator>().enabled = false;
+        }
+        GetComponent<SpriteRenderer>().color = damageColor;
+
+        yield return new WaitForSeconds(changeEnemyColor);
+        if (GetComponent<Animator>())
+        {
+            GetComponent<Animator>().enabled = true;
+        }
+        GetComponent<SpriteRenderer>().color = nativeColor;
     }
 }

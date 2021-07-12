@@ -8,6 +8,11 @@ public class Hero : MonoBehaviour
 {
     GameManager gamemanager; // Verknüpfung mit Gamemanager
 
+    [Header("Player Color")]
+    private Color nativeColor;
+    private Color damageColor;
+    private float changePlayerColor = 0.2f;
+
     [Header("Georges attributes:")]
     public float moveSpeed = 5f;
     public int useHealpotions = 1;
@@ -56,6 +61,10 @@ public class Hero : MonoBehaviour
 
     void Start()
     {
+        // Color
+        nativeColor = GetComponent<SpriteRenderer>().color;
+        damageColor = Color.red;
+
         imageCooldown.fillAmount = 0.0f; ///////// für UI
         // Updaten der Stats im Gamemanager
         gamemanager = FindObjectOfType<GameManager>();
@@ -245,6 +254,10 @@ public class Hero : MonoBehaviour
         }
         // Updaten des Healthbartextes im UI
         healthBar.SetHealth(gamemanager.hp);
+
+        // Color
+        StartCoroutine(ChangePlayerColorByHit());
+
         if (gamemanager.hp <= 0)
         {
             gamemanager.hp = 0;
@@ -262,6 +275,23 @@ public class Hero : MonoBehaviour
             Debug.Log("Du bist gestorben");
         }
     }
+
+    IEnumerator ChangePlayerColorByHit()
+    {
+        if (GetComponent<Animator>())
+        {
+            GetComponent<Animator>().enabled = false;
+        }
+        GetComponent<SpriteRenderer>().color = damageColor;
+
+        yield return new WaitForSeconds(changePlayerColor);
+        if (GetComponent<Animator>())
+        {
+            GetComponent<Animator>().enabled = true;
+        }
+        GetComponent<SpriteRenderer>().color = nativeColor;
+    }
+
 }
 
 

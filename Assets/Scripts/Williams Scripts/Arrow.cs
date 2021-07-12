@@ -47,6 +47,22 @@ public class Arrow : MonoBehaviour
                 // hitButNotEnemy = true;
             }
 
+            else if (other.gameObject.CompareTag("Barrel"))
+            {
+                other.gameObject.GetComponent<Barrel>().TakeDamage(gm.bowDamage);
+                Destroy(gameObject);
+                hit = true;
+                // hitButNotEnemy = true;
+            }
+
+            else if (other.gameObject.CompareTag("Vase"))
+            {
+                other.gameObject.GetComponent<Vase>().TakeDamage(gm.bowDamage);
+                Destroy(gameObject);
+                hit = true;
+                // hitButNotEnemy = true;
+            }
+
             else
             {
                 // hitButNotEnemy = true;
