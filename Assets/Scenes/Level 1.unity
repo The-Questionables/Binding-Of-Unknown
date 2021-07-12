@@ -3529,8 +3529,8 @@ MonoBehaviour:
   maxRelictCharge: 2
   coins: 0
   ActiveScene: 
-  isHealpotionCollectable: 0
   UseHealthpotion: 113
+  isHealpotionCollectable: 0
   healthpotions: 0
   maxHealthpotions: 3
   healthRecover: 15
@@ -3538,6 +3538,7 @@ MonoBehaviour:
   maxHp: 100
   swordDamage: 5
   bowDamage: 15
+  bow_bought: 0
 --- !u!4 &806348015
 Transform:
   m_ObjectHideFlags: 0
