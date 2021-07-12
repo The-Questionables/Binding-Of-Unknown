@@ -10,7 +10,6 @@ public class Vase : MonoBehaviour
     public int currentHealth;
 
     [Header("Enemy death")]
-    public float detonationTimer = 1f;
     public Animator Explosion;
 
     [Header("Enemy sounds")]
@@ -53,11 +52,15 @@ public class Vase : MonoBehaviour
             //randomLoot.LootSpawn(); // Führt LootSpawn Methode vom RandomLoot Script aus
 
             // Zerstöre Gegner
-            Destroy(gameObject, detonationTimer);
+
 
             // Quest Kill Counter++
             //gamemanager.Killcounter();
             //Debug.Log("Kill Bestätigt"); // bis hier hin funktioniert es
         }
+    }
+    public void DIE()
+    {
+        Destroy(gameObject);
     }
 }
