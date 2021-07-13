@@ -13,4 +13,6 @@ public class Slime_Const
 
     public const string Scene_Main = "Main Menu";
     public const string Scene_Options = "Options Menu";
+
+    public const string Overworld_Name = "Oberwelt";
 }

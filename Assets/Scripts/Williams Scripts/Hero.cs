@@ -262,6 +262,7 @@ public class Hero : MonoBehaviour
         {
             gamemanager.hp = 0;
             gamemanager.coins = 0; //setzt die coins auf null wenn du stirbst
+            gamemanager.healthpotions = 0; //setzt die healthpotions auf null wenn du stirbst
             // Spiele Sound ab passiert in der explosion
 
             // Spiele Effect ab

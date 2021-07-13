@@ -29,5 +29,10 @@ public class Sword : MonoBehaviour
             other.gameObject.GetComponent<EnemyStandart>().TakeDamage(gm.swordDamage);
 
         }
+        if (other.gameObject.CompareTag("Barrel"))
+        {
+            other.gameObject.GetComponent<Barrel>().TakeDamage(gm.swordDamage);
+
+        }
     }
 }

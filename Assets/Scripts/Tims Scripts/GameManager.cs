@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
+    private bool autosave = false;
+
     // Infos für Quests
     QuestMenuOpener questMenuOpener;
     private Scene scene;
@@ -61,9 +63,16 @@ public class GameManager : MonoBehaviour {
 
     public void Update()
     {
+        if (ActiveScene == Slime_Const.Overworld_Name && autosave == true)
+        {
+            hp = maxHp;
+            SaveGame();
+            autosave = false;
+        }
+
         // Quests
         scene = SceneManager.GetActiveScene();
-        if (scene.name == "Upper World 1")
+        if (scene.name == Slime_Const.Overworld_Name)
         {            
             questMenuOpener = GameObject.FindGameObjectWithTag("QuestSystem").GetComponent<QuestMenuOpener>();
         }
@@ -110,7 +119,8 @@ public class GameManager : MonoBehaviour {
 
     void OnLevelWasLoaded()
     {
-        if (ActiveScene == "Upper World 1")
+        autosave = true;
+        if (ActiveScene == Slime_Const.Overworld_Name)
         {
             hp = maxHp;
             SaveGame();
