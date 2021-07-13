@@ -39,7 +39,6 @@ public class Barrel : MonoBehaviour
         if (currentHealth <= 0)
         {
 
-            // Spiele Sound ab passiert in der explosion
 
             // Spiele Effect ab
             if (Explosion != null)
@@ -47,15 +46,12 @@ public class Barrel : MonoBehaviour
                 Instantiate(Explosion, transform.position, Quaternion.identity);
             }
 
-            // Dropt loot
-            //randomLoot.LootSpawn(); // Führt LootSpawn Methode vom RandomLoot Script aus
+
 
             // Zerstöre Gegner
             Destroy(gameObject, detonationTimer);
 
-            // Quest Kill Counter++
-            //gamemanager.Killcounter();
-            //Debug.Log("Kill Bestätigt"); // bis hier hin funktioniert es
+
         }
     }
 }
