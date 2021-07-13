@@ -89,19 +89,19 @@ public class ShopMenuOpener : MonoBehaviour
 
     public void PotionRecipeUpgrade()
     {
-        if (!isHealportUp && gamemanager.coins >= 100)
+        if (!isHealportUp && gamemanager.coins >= 50)
         {
             gamemanager.healthRecover += healthRecoverBonus;
-            gamemanager.coins -= (100);
+            gamemanager.coins -= (50);
             isHealportUp = true;
         }
     }
 
     public void UnlockBow()
     {
-        if (gamemanager.coins >= 100 && gamemanager.bow_bought != true)
+        if (gamemanager.coins >= 75 && gamemanager.bow_bought != true)
         {
-            gamemanager.coins -= (100);
+            gamemanager.coins -= (75);
             gamemanager.bow_bought = true;
         }
     }

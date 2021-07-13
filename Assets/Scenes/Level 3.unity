@@ -951,19 +951,16 @@ MonoBehaviour:
       requiredAmount: 0
       currentAmount: 0
   isRelictCollectable: 0
-  UseRelict: 101
   timeRewind: 0
   timeRewindCooldown: 0
   totem: 0
   totemboost: 2
   heavyArmor: 0
   heavyArmorDamageReduction: 50
-  relictCharge: 0
-  maxRelictCharge: 2
   coins: 0
   ActiveScene: 
-  isHealpotionCollectable: 0
   UseHealthpotion: 113
+  isHealpotionCollectable: 0
   healthpotions: 0
   maxHealthpotions: 3
   healthRecover: 20
@@ -971,6 +968,7 @@ MonoBehaviour:
   maxHp: 100
   swordDamage: 5
   bowDamage: 15
+  bow_bought: 0
 --- !u!4 &806348015
 Transform:
   m_ObjectHideFlags: 0
@@ -2102,6 +2100,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1526248892932926089, guid: 53f42bf35f3f81143bd64f8066d8a903,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1526248893768121835, guid: 53f42bf35f3f81143bd64f8066d8a903,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2256,6 +2259,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 34.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6847534418852562865, guid: 53f42bf35f3f81143bd64f8066d8a903,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6847534418852562865, guid: 53f42bf35f3f81143bd64f8066d8a903,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8437069159409146390, guid: 53f42bf35f3f81143bd64f8066d8a903,
         type: 3}

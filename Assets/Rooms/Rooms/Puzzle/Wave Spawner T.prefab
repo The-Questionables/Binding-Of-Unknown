@@ -667,7 +667,7 @@ SpriteRenderer:
   m_Size: {x: 3, y: 3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &1390300278
@@ -2729,6 +2729,7 @@ GameObject:
   - component: {fileID: 8826218682947787029}
   - component: {fileID: 2803632848413691552}
   - component: {fileID: 4073181291834991289}
+  - component: {fileID: 5471316360187903728}
   m_Layer: 0
   m_Name: TopDoor
   m_TagString: Untagged
@@ -2757,7 +2758,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4609090398655526800}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1828da8744b8ec543a02daa8cb10d247, type: 3}
   m_Name: 
@@ -2954,6 +2955,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 17.976532, y: 9.971719}
   m_EdgeRadius: 0
+--- !u!114 &5471316360187903728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4609090398655526800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d67d097b396f04886b65e7bb3de313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  map: {fileID: 6359274246355545978}
+  KillsRequired: 4
+  chestList:
+  - {fileID: 7094700957828274367, guid: cfb3b404a23aab8488b5b9b89b7c39e9, type: 3}
 --- !u!1 &4919873370057770551
 GameObject:
   m_ObjectHideFlags: 0
@@ -3169,7 +3186,7 @@ SpriteRenderer:
   m_Size: {x: 3, y: 3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &5825451168195258910
@@ -5471,6 +5488,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ItemSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943757855538734069, guid: 5fb10d2fd614ee74fb89b2d796242c5e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1943757855538734074, guid: 5fb10d2fd614ee74fb89b2d796242c5e,
         type: 3}

@@ -3518,15 +3518,12 @@ MonoBehaviour:
       requiredAmount: 0
       currentAmount: 0
   isRelictCollectable: 0
-  UseRelict: 101
   timeRewind: 0
   timeRewindCooldown: 0
   totem: 0
   totemboost: 2
   heavyArmor: 0
   heavyArmorDamageReduction: 50
-  relictCharge: 0
-  maxRelictCharge: 2
   coins: 0
   ActiveScene: 
   UseHealthpotion: 113
@@ -4621,6 +4618,11 @@ PrefabInstance:
       propertyPath: timeRewindImage
       value: 
       objectReference: {fileID: 3659330669857652881}
+    - target: {fileID: 2346175232225414399, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7759376653166735187, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
         type: 3}
       propertyPath: m_RootOrder
@@ -6915,6 +6917,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1526248892932926089, guid: 53f42bf35f3f81143bd64f8066d8a903,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1526248893768121835, guid: 53f42bf35f3f81143bd64f8066d8a903,
         type: 3}
       propertyPath: m_Pivot.x
@@ -7028,12 +7035,12 @@ PrefabInstance:
     - target: {fileID: 6847534418852562865, guid: 53f42bf35f3f81143bd64f8066d8a903,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6847534418852562865, guid: 53f42bf35f3f81143bd64f8066d8a903,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8437069159409146390, guid: 53f42bf35f3f81143bd64f8066d8a903,
         type: 3}

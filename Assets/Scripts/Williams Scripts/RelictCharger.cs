@@ -29,7 +29,7 @@ public class RelictCharger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             //healthBar.SetMaxHealth(hero.maxHp);
-            hero.LoadRelictChargeBar(1);
+            //hero.LoadRelictChargeBar(1);
             DestroyTrigger();
         }
     }

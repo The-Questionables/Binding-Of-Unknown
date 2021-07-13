@@ -2537,8 +2537,8 @@ MonoBehaviour:
   - {fileID: 3264693193493512973, guid: a94134ee55425f24ea2b299ed3fac59f, type: 3}
   - {fileID: 5110936192461467510, guid: e5bb31d8dd17dbe4bbcb71f72249058d, type: 3}
   topRooms:
-  - {fileID: 7695410646028972990, guid: 7c007262f821d084b8243a7befe08eed, type: 3}
-  - {fileID: 5279747777620491664, guid: bfbf0094c3074bd418c9e51e250d06de, type: 3}
+  - {fileID: 5430049382797972474, guid: c92416479fbf79642a7b35cb57ade55d, type: 3}
+  - {fileID: 5430049382797972474, guid: c92416479fbf79642a7b35cb57ade55d, type: 3}
   leftRooms:
   - {fileID: 1408092121339672676, guid: dead14f7283d8db4ca3697f7caab7990, type: 3}
   - {fileID: 1306833170236551975, guid: a212ca30f4220fd42914f78f4d8ed32e, type: 3}
@@ -3612,19 +3612,16 @@ MonoBehaviour:
       requiredAmount: 0
       currentAmount: 0
   isRelictCollectable: 0
-  UseRelict: 101
   timeRewind: 0
   timeRewindCooldown: 0
   totem: 0
   totemboost: 2
   heavyArmor: 0
   heavyArmorDamageReduction: 50
-  relictCharge: 0
-  maxRelictCharge: 2
   coins: 0
   ActiveScene: 
-  isHealpotionCollectable: 0
   UseHealthpotion: 113
+  isHealpotionCollectable: 0
   healthpotions: 0
   maxHealthpotions: 3
   healthRecover: 15
@@ -3632,6 +3629,7 @@ MonoBehaviour:
   maxHp: 100
   swordDamage: 5
   bowDamage: 15
+  bow_bought: 0
 --- !u!4 &806348015
 Transform:
   m_ObjectHideFlags: 0

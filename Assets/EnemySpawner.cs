@@ -29,7 +29,9 @@ public class EnemySpawner : MonoBehaviour
         scene = SceneManager.GetActiveScene();
         if (scene.name == "Level 1")
         {
-            enemyAmountForThisRoom = 1;
+            //enemyAmountForThisRoom = 1;
+            // Randomizen 0-1 Gegner
+            enemyAmountForThisRoom = Random.Range(1, 2);
 
             // Remove Element 4,5,6
             //Destroy(enemyList[4]);
@@ -41,16 +43,22 @@ public class EnemySpawner : MonoBehaviour
         }
         if (scene.name == "Level 2")
         {
-            enemyAmountForThisRoom = 2;
-            // Remove Element 5,6
-            //Destroy(enemyList[5]);
-            //Destroy(enemyList[6]);
-            (enemyList[5]) = null;
+            //enemyAmountForThisRoom = 2;
+
+            // Randomizen 0-2 Gegner
+            enemyAmountForThisRoom = Random.Range(1, 3);
+
+        // Remove Element 5,6
+        //Destroy(enemyList[5]);
+        //Destroy(enemyList[6]);
+        (enemyList[5]) = null;
             (enemyList[6]) = null;
         }
         if (scene.name == "Level 3")
         {
-            enemyAmountForThisRoom = 3;
+            //enemyAmountForThisRoom = 3;
+            // Randomizen 0-3 Gegner
+            enemyAmountForThisRoom = Random.Range(1, 4);
         }
     }
 

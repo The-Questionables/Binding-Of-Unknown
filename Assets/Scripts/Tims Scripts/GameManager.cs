@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour {
 
     [Header("Relicts:")]
     public bool isRelictCollectable;
-    public KeyCode UseRelict = KeyCode.E;
+    //public KeyCode UseRelict = KeyCode.E;
 
     // Fähigkeit Time Rewind
     public int timeRewind = 0;
@@ -33,9 +33,9 @@ public class GameManager : MonoBehaviour {
     public int heavyArmor = 0;
     public float heavyArmorDamageReduction = 50;
 
-    [Header("RelictBar:")]
-    public int relictCharge;
-    public int maxRelictCharge;
+    //[Header("RelictBar:")]
+    //public int relictCharge;
+    //public int maxRelictCharge;
 
     [Header("Coins:")]
     public int coins;
