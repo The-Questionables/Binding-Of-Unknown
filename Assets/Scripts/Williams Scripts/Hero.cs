@@ -52,12 +52,12 @@ public class Hero : MonoBehaviour
         Rolling,
     }
 
-    private Vector3 rollDir; 
+    private Vector3 rollDir; //********* new roll
     private State state;
     private float rollSpeed;
     private bool isCooldown = false;
-    public float rollCooldownTime = 5f; 
-    public float nextRollTime = 0;
+    public float rollCooldownTime = 5f; //////////////////////////
+    public float nextRollTime = 0; //////////////////////////
 
     void Start()
     {
@@ -91,8 +91,8 @@ public class Hero : MonoBehaviour
         healthBar.SetMaxHealth(gamemanager.maxHp);
         healthBar.SetHealth(gamemanager.hp);
 
-        //relictChargeBar.SetMaxRelictCharge(gamemanager.maxRelictCharge);
-        //relictChargeBar.SetRelictCharge(gamemanager.relictCharge);
+        relictChargeBar.SetMaxRelictCharge(gamemanager.maxRelictCharge);
+        relictChargeBar.SetRelictCharge(gamemanager.relictCharge);
 
         // Relikte
         if (gamemanager.timeRewind == 0) // begrenzen der einsammelbaren Relikte
@@ -128,20 +128,15 @@ public class Hero : MonoBehaviour
             heavyArmorImage.enabled = true;
         }
 
-        //if (Input.GetKeyDown(gamemanager.UseRelict) && gamemanager.timeRewind > 0 && gamemanager.relictCharge == 2)
-        if (gamemanager.timeRewind == 1)
-        {
+        if (Input.GetKeyDown(gamemanager.UseRelict) && gamemanager.timeRewind > 0 && gamemanager.relictCharge == 2)
+            {
                 GameObject character = GameObject.Find("Hero");
                 if (character != null)
                 {
-                    // Alte Version
-                    //nextRollTime = 0; // setze cooldown auf 0
-                    //gamemanager.relictCharge = 0;
+                    nextRollTime = 0; // setze cooldown auf 0
+                    gamemanager.relictCharge = 0;
                     // Update Dash UI
-                    //imageCooldownTimer = 0;
-                   
-                     rollCooldownTime = 2.5f;
-                     imageCooldownTime = 2.5f;
+                    imageCooldownTimer = 0;
                 }
                 else
                 {
@@ -181,8 +176,8 @@ public class Hero : MonoBehaviour
                 */
 
              if (Time.time > nextRollTime)
-             {
-                    if (Input.GetKeyDown(KeyCode.Mouse1) && movement.magnitude > 0.001f) //movement > 0) //movement.x == true || movement.y == true)
+             { 
+                if (Input.GetKeyDown(KeyCode.Mouse1))
                 {
                     //TakeDamage(20);
                     rollDir = movement;
@@ -239,11 +234,11 @@ public class Hero : MonoBehaviour
         }
     }
 
-    //public void LoadRelictChargeBar(int relictCharge)
-    //{
-    //    gamemanager.relictCharge += relictCharge;
-    //    relictChargeBar.SetRelictCharge(gamemanager.relictCharge);
-    //}
+    public void LoadRelictChargeBar(int relictCharge)
+    {
+        gamemanager.relictCharge += relictCharge;
+        relictChargeBar.SetRelictCharge(gamemanager.relictCharge);
+    }
 
     public void TakeDamage(int damage)
     {
@@ -277,7 +272,7 @@ public class Hero : MonoBehaviour
             }
 
             // Zerstöre Spieler, Teleportiere ihn zurück zur Stadt
-            SceneManager.LoadScene("Upper World 1");
+            SceneManager.LoadScene(Slime_Const.Overworld_Name); 
             Debug.Log("Du bist gestorben");
         }
     }
