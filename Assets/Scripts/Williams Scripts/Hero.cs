@@ -277,7 +277,7 @@ public class Hero : MonoBehaviour
             }
 
             // Zerstöre Spieler, Teleportiere ihn zurück zur Stadt
-            SceneManager.LoadScene("Upper World 1");
+            SceneManager.LoadScene(Slime_Const.Overworld_Name);
             Debug.Log("Du bist gestorben");
         }
     }
