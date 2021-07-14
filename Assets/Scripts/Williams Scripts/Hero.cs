@@ -30,7 +30,7 @@ public class Hero : MonoBehaviour
     private Rigidbody2D rb;
     public Animator animator;
     public HealthBar healthBar;
-    public RelictChargeBar relictChargeBar; // new
+    //public RelictChargeBar relictChargeBar; // new
 
     public Image imageCooldown; //////////////////////
     private float imageCooldownTime = 5f;
@@ -52,12 +52,12 @@ public class Hero : MonoBehaviour
         Rolling,
     }
 
-    private Vector3 rollDir; //********* new roll
+    private Vector3 rollDir;
     private State state;
     private float rollSpeed;
     private bool isCooldown = false;
-    public float rollCooldownTime = 5f; //////////////////////////
-    public float nextRollTime = 0; //////////////////////////
+    public float rollCooldownTime = 5f;
+    public float nextRollTime = 0;
 
     void Start()
     {
@@ -91,8 +91,8 @@ public class Hero : MonoBehaviour
         healthBar.SetMaxHealth(gamemanager.maxHp);
         healthBar.SetHealth(gamemanager.hp);
 
-        relictChargeBar.SetMaxRelictCharge(gamemanager.maxRelictCharge);
-        relictChargeBar.SetRelictCharge(gamemanager.relictCharge);
+        //relictChargeBar.SetMaxRelictCharge(gamemanager.maxRelictCharge);
+        //relictChargeBar.SetRelictCharge(gamemanager.relictCharge);
 
         // Relikte
         if (gamemanager.timeRewind == 0) // begrenzen der einsammelbaren Relikte
@@ -128,22 +128,27 @@ public class Hero : MonoBehaviour
             heavyArmorImage.enabled = true;
         }
 
-        if (Input.GetKeyDown(gamemanager.UseRelict) && gamemanager.timeRewind > 0 && gamemanager.relictCharge == 2)
+        //if (Input.GetKeyDown(gamemanager.UseRelict) && gamemanager.timeRewind > 0 && gamemanager.relictCharge == 2)
+        if (gamemanager.timeRewind == 1)
+        {
+            GameObject character = GameObject.Find("Hero");
+            if (character != null)
             {
-                GameObject character = GameObject.Find("Hero");
-                if (character != null)
-                {
-                    nextRollTime = 0; // setze cooldown auf 0
-                    gamemanager.relictCharge = 0;
-                    // Update Dash UI
-                    imageCooldownTimer = 0;
-                }
-                else
-                {
-                    Debug.Log("Player wurde nicht gefunden!");
-                }
+                // Alte Version
+                //nextRollTime = 0; // setze cooldown auf 0
+                //gamemanager.relictCharge = 0;
+                // Update Dash UI
+                //imageCooldownTimer = 0;
+
+                rollCooldownTime = 2.5f;
+                imageCooldownTime = 2.5f;
             }
-        
+            else
+            {
+                Debug.Log("Player wurde nicht gefunden!");
+            }
+        }
+
         switch (state)
         {
             case State.Normal:
@@ -175,21 +180,21 @@ public class Hero : MonoBehaviour
                 }
                 */
 
-             if (Time.time > nextRollTime)
-             { 
-                if (Input.GetKeyDown(KeyCode.Mouse1))
+                if (Time.time > nextRollTime)
                 {
-                    //TakeDamage(20);
-                    rollDir = movement;
-                    rollSpeed = 55f;
-                    state = State.Rolling;
+                    if (Input.GetKeyDown(KeyCode.Mouse1) && movement.magnitude > 0.001f) //movement > 0) //movement.x == true || movement.y == true)
+                    {
+                        //TakeDamage(20);
+                        rollDir = movement;
+                        rollSpeed = 55f;
+                        state = State.Rolling;
                         // Play Roll Animation (rollDir)
-                    nextRollTime = Time.time + rollCooldownTime;
-                    //imageCooldown.fillAmount = 0.0f; //´passt das hier?
-                    isCooldown = true;
+                        nextRollTime = Time.time + rollCooldownTime;
+                        //imageCooldown.fillAmount = 0.0f; //´passt das hier?
+                        isCooldown = true;
+                    }
                 }
-             }
-            break;
+                break;
             case State.Rolling:
                 float rollSpeedDropMultiplier = 5f;
                 rollSpeed -= rollSpeed * rollSpeedDropMultiplier * Time.deltaTime;
@@ -211,7 +216,7 @@ public class Hero : MonoBehaviour
     {
         imageCooldownTimer -= Time.deltaTime;
 
-        if(imageCooldownTimer < 0.0f)
+        if (imageCooldownTimer < 0.0f)
         {
             imageCooldown.fillAmount = 0.0f;
         }
@@ -234,15 +239,15 @@ public class Hero : MonoBehaviour
         }
     }
 
-    public void LoadRelictChargeBar(int relictCharge)
-    {
-        gamemanager.relictCharge += relictCharge;
-        relictChargeBar.SetRelictCharge(gamemanager.relictCharge);
-    }
+    //public void LoadRelictChargeBar(int relictCharge)
+    //{
+    //    gamemanager.relictCharge += relictCharge;
+    //    relictChargeBar.SetRelictCharge(gamemanager.relictCharge);
+    //}
 
     public void TakeDamage(int damage)
     {
-        if(gamemanager.heavyArmor == 1) // hier Rüstung einbauen
+        if (gamemanager.heavyArmor == 1) // hier Rüstung einbauen
         {
             gamemanager.hp -= (int)((float)damage / 100.0f * gamemanager.heavyArmorDamageReduction);
             // Leben : 100 * x
@@ -272,7 +277,7 @@ public class Hero : MonoBehaviour
             }
 
             // Zerstöre Spieler, Teleportiere ihn zurück zur Stadt
-            SceneManager.LoadScene(Slime_Const.Overworld_Name); 
+            SceneManager.LoadScene("Upper World 1");
             Debug.Log("Du bist gestorben");
         }
     }
@@ -296,18 +301,18 @@ public class Hero : MonoBehaviour
 }
 
 
-    /*
-     * Altes Shoot Script mit Pfeiltasten
-    void Shoot(float x, float y) // Berechnen der Schussgeschwindigkeit und Spawn
-    {
-        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
-        // bullet.AddComponent<Rigidbody2D>().gravityScale = 0; // fügt dem Schuss einen Rigidbody hinzu, und setzt gravity auf 0
-        bullet.GetComponent<Rigidbody2D>().velocity = new Vector3
-        ((x < 0) ? Mathf.Floor(x) * bulletSpeed : Mathf.Ceil(x) * bulletSpeed, // if statement in einer zeile, prüfung ob x kleiner ist als 0, falls ja setzte den Wert auf - und führe die Rechnung aus
-        (y < 0) ? Mathf.Floor(y) * bulletSpeed : Mathf.Ceil(y) * bulletSpeed,
-        0);
-    }
-    */
+/*
+ * Altes Shoot Script mit Pfeiltasten
+void Shoot(float x, float y) // Berechnen der Schussgeschwindigkeit und Spawn
+{
+    GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
+    // bullet.AddComponent<Rigidbody2D>().gravityScale = 0; // fügt dem Schuss einen Rigidbody hinzu, und setzt gravity auf 0
+    bullet.GetComponent<Rigidbody2D>().velocity = new Vector3
+    ((x < 0) ? Mathf.Floor(x) * bulletSpeed : Mathf.Ceil(x) * bulletSpeed, // if statement in einer zeile, prüfung ob x kleiner ist als 0, falls ja setzte den Wert auf - und führe die Rechnung aus
+    (y < 0) ? Mathf.Floor(y) * bulletSpeed : Mathf.Ceil(y) * bulletSpeed,
+    0);
+}
+*/
 
 
 
@@ -392,7 +397,7 @@ public class Hero : MonoBehaviour
 
 //        state = State.Normal; // fürs Rollen
 //    }
-    
+
 //    // Update is called once per frame
 //    void Update()
 //    {
@@ -450,7 +455,7 @@ public class Hero : MonoBehaviour
 //                break;
 //        }
 //    }
-    
+
 
 //    void FixedUpdate()
 //    {
@@ -463,7 +468,7 @@ public class Hero : MonoBehaviour
 //                rb.velocity = rollDir * rollSpeed;
 //                break;
 //        }
-        
+
 //    }
 
 //    public void TakeDamage(int damage)
