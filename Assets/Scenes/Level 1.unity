@@ -4632,6 +4632,11 @@ PrefabInstance:
       objectReference: {fileID: 1875692670}
     - target: {fileID: 2346175232225414394, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
         type: 3}
+      propertyPath: infoText
+      value: 
+      objectReference: {fileID: 6847534418138080355}
+    - target: {fileID: 2346175232225414394, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
+        type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 973872105}
@@ -4645,6 +4650,11 @@ PrefabInstance:
       propertyPath: imageCooldown
       value: 
       objectReference: {fileID: 2009663396}
+    - target: {fileID: 2346175232225414394, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
+        type: 3}
+      propertyPath: YourGameObject
+      value: 
+      objectReference: {fileID: 1294693032}
     - target: {fileID: 2346175232225414394, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
         type: 3}
       propertyPath: heavyArmorImage
@@ -5198,6 +5208,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.29441166, y: 1.9429169}
   m_EdgeRadius: 0
+--- !u!1 &1294693032 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4108918461689192961, guid: 53f42bf35f3f81143bd64f8066d8a903,
+    type: 3}
+  m_PrefabInstance: {fileID: 6847534418138080352}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1455531443
 GameObject:
   m_ObjectHideFlags: 0
@@ -7120,6 +7136,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 6847534418138080352}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6847534418138080355 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3677704004769506116, guid: 53f42bf35f3f81143bd64f8066d8a903,
+    type: 3}
+  m_PrefabInstance: {fileID: 6847534418138080352}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294693032}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
