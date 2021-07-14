@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5627932920079399315}
   - component: {fileID: 8418795500586608354}
   m_Layer: 0
-  m_Name: Lantern
+  m_Name: BlueLantern
   m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 4792858324363074459}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 460306925
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -516460527750398044, guid: 391a7a8dd355575459ffeeb7277eadde,
+  m_Sprite: {fileID: -1440649929665311854, guid: 3e2b79793bd484b458b8268768630f55,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -98,16 +98,16 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0048315525, y: 0.02442129}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.62, y: 2.62}
+    oldSize: {x: 0.625, y: 0.78125}
     newSize: {x: 0.23, y: 0.23}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.33, y: 0.41}
+  m_Size: {x: 0.4556204, y: 0.81959856}
   m_EdgeRadius: 0
