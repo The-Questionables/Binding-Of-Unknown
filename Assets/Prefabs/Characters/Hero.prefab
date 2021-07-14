@@ -53,12 +53,15 @@ MonoBehaviour:
   useHealpotions: 1
   animator: {fileID: 2346175232225414395}
   healthBar: {fileID: 0}
-  relictChargeBar: {fileID: 0}
   imageCooldown: {fileID: 0}
   Explosion: {fileID: 0}
   timeRewindImage: {fileID: 0}
   totemImage: {fileID: 0}
   heavyArmorImage: {fileID: 0}
+  infoText: {fileID: 0}
+  infoTextTime1: 5
+  infoTextTime2: 5
+  infoTextTime3: 5
   rollCooldownTime: 5
   nextRollTime: 0
 --- !u!61 &2346175232225414396
@@ -177,7 +180,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!82 &2346175232225414397
 AudioSource:
@@ -370,6 +373,10 @@ MonoBehaviour:
   - {fileID: 4194411587800258019}
   - {fileID: 7759376654427620870}
   SwitchWeaponKey: 325
+  sword: {fileID: 0}
+  bow: {fileID: 0}
+  switchWeaponMouse: {fileID: 0}
+  switchWeaponText: {fileID: 0}
 --- !u!114 &82609062
 MonoBehaviour:
   m_ObjectHideFlags: 0

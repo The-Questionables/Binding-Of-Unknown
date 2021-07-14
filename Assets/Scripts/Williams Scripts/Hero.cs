@@ -43,8 +43,11 @@ public class Hero : MonoBehaviour
     public Image totemImage;
     public Image heavyArmorImage;
     public Text infoText;
-    public float infoTextTime = 5; //Seconds to read the text
-
+    public float infoTextTime1 = 5; //Seconds to read the text
+    public float infoTextTime2 = 5; //Seconds to read the text
+    public float infoTextTime3 = 5; //Seconds to read the text
+    public GameObject TextObject;
+    public float counterTime = 5;
 
     [Header("Statistics:")]
     private Vector2 movement; // zwischenspeicherung von bewegungswerten
@@ -61,7 +64,6 @@ public class Hero : MonoBehaviour
     private bool isCooldown = false;
     public float rollCooldownTime = 5f;
     public float nextRollTime = 0;
-    public GameObject YourGameObject;
 
     void Start()
     {
@@ -112,10 +114,12 @@ public class Hero : MonoBehaviour
             timeRewindImage.enabled = true;
 
             infoText.enabled = true;
-            infoText.text = "Time Rewind: Reduces the cooldown of the dash by half the time";          
-            if (infoText.enabled && (Time.time >= infoTextTime))
+            infoText.text = "Time Rewind: Reduces the cooldown of the dash by half the time";
+            counterTime = counterTime - Time.deltaTime;
+            if (counterTime <= infoTextTime1)
             {
-                infoText.enabled = false;
+                  infoText.enabled = false;
+                //infoText.text = "";
             }
         }
 
@@ -131,9 +135,11 @@ public class Hero : MonoBehaviour
 
             infoText.enabled = true;
             infoText.text = "Totem: Potions Heal the double amount of HP";
-            if (infoText.enabled && (Time.time >= infoTextTime))
+            if (infoText.enabled )//&& (Time.time >= infoTextTime2))
             {
-                infoText.enabled = false;
+                //infoText.enabled = false;
+                //infoText.text = "";
+                Destroy(TextObject, infoTextTime2);
             }
         }
 
@@ -149,9 +155,11 @@ public class Hero : MonoBehaviour
 
             infoText.enabled = true;
             infoText.text = "Heavy Armor: Gain 50% damage Reduction but deal 50% less Damage to Enemies.";
-            if (infoText.enabled && (Time.time >= infoTextTime))
+            if (infoText.enabled )//&& (Time.time >= infoTextTime3))
             {
-                infoText.enabled = false;
+                //infoText.enabled = false;
+                //infoText.text = "";
+                Destroy(TextObject, infoTextTime3);
             }
         }
 
