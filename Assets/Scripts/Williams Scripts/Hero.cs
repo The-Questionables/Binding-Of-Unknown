@@ -32,7 +32,7 @@ public class Hero : MonoBehaviour
     public HealthBar healthBar;
     //public RelictChargeBar relictChargeBar; // new
 
-    public Image imageCooldown; //////////////////////
+    public Image imageCooldown; 
     private float imageCooldownTime = 5f;
     private float imageCooldownTimer = 0.0f;
 
@@ -42,6 +42,7 @@ public class Hero : MonoBehaviour
     public Image timeRewindImage;
     public Image totemImage;
     public Image heavyArmorImage;
+
 
     [Header("Statistics:")]
     private Vector2 movement; // zwischenspeicherung von bewegungswerten

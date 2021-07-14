@@ -3163,6 +3163,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &763149774 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1526248892826031537, guid: 53f42bf35f3f81143bd64f8066d8a903,
+    type: 3}
+  m_PrefabInstance: {fileID: 6847534418138080352}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &766935381
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4583,11 +4595,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 355377786258715274, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
+        type: 3}
+      propertyPath: bow
+      value: 
+      objectReference: {fileID: 763149774}
+    - target: {fileID: 355377786258715274, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
+        type: 3}
+      propertyPath: sword
+      value: 
+      objectReference: {fileID: 1875692670}
+    - target: {fileID: 355377786258715274, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
+        type: 3}
+      propertyPath: switchWeaponText
+      value: 
+      objectReference: {fileID: 6847534418138080354}
+    - target: {fileID: 355377786258715274, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
+        type: 3}
+      propertyPath: switchWeaponMouse
+      value: 
+      objectReference: {fileID: 6847534418138080353}
     - target: {fileID: 2346175232225414389, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
         type: 3}
       propertyPath: m_Name
       value: Hero
       objectReference: {fileID: 0}
+    - target: {fileID: 2346175232225414394, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
+        type: 3}
+      propertyPath: Bow
+      value: 
+      objectReference: {fileID: 763149774}
+    - target: {fileID: 2346175232225414394, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
+        type: 3}
+      propertyPath: sword
+      value: 
+      objectReference: {fileID: 1875692670}
     - target: {fileID: 2346175232225414394, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
         type: 3}
       propertyPath: healthBar
@@ -6185,6 +6227,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1875692670 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7646093462052746920, guid: 53f42bf35f3f81143bd64f8066d8a903,
+    type: 3}
+  m_PrefabInstance: {fileID: 6847534418138080352}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1957188137
 GameObject:
   m_ObjectHideFlags: 0
@@ -7020,6 +7074,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas UI Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2285588022804830032, guid: 53f42bf35f3f81143bd64f8066d8a903,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6847534418852562865, guid: 53f42bf35f3f81143bd64f8066d8a903,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -7042,6 +7101,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53f42bf35f3f81143bd64f8066d8a903, type: 3}
+--- !u!114 &6847534418138080353 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3251270934690034732, guid: 53f42bf35f3f81143bd64f8066d8a903,
+    type: 3}
+  m_PrefabInstance: {fileID: 6847534418138080352}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6847534418138080354 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1526248894466326931, guid: 53f42bf35f3f81143bd64f8066d8a903,
+    type: 3}
+  m_PrefabInstance: {fileID: 6847534418138080352}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &7672739258004352216
 BoxCollider2D:
   m_ObjectHideFlags: 0
