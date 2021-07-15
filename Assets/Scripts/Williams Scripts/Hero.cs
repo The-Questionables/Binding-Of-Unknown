@@ -43,14 +43,7 @@ public class Hero : MonoBehaviour
     public Image totemImage;
     public Image heavyArmorImage;
     public Text infoText;
-    //public float infoTextTime1 = 5; //Seconds to read the text
-    //public float infoTextTime2 = 5; //Seconds to read the text
-    //public float infoTextTime3 = 5; //Seconds to read the text
-    //public GameObject TextObject;
-    //public float counterTime = 5;
-    private float timeRewindCounter;
-    private float totemCounter;
-    private float armorCounter;
+    public GameObject infoImage;
 
     [Header("Statistics:")]
     private Vector2 movement; // zwischenspeicherung von bewegungswerten
@@ -85,6 +78,7 @@ public class Hero : MonoBehaviour
         heavyArmorImage.enabled = false;
         //infoText.enabled = false;
         infoText.text = "";
+        infoImage.SetActive(false);
 
 
         // Update UI CurrentHealth, MaxHealth
@@ -120,12 +114,12 @@ public class Hero : MonoBehaviour
             //infoText.text = "Time Rewind: Reduces the cooldown of the dash by half the time";
             //counterTime = counterTime - Time.deltaTime;
             //if (counterTime <= infoTextTime1)
-            if(timeRewindCounter == 0)
+            if(gamemanager.isTimeRewindActive == false)
             {
                 // infoText.enabled = false;
                 //infoText.text = "";
                 ShowInfoText("Time Rewind: Reduces the cooldown of the dash by half the time");
-                timeRewindCounter++;
+                gamemanager.isTimeRewindActive = true;
             }
         }
 
@@ -139,10 +133,10 @@ public class Hero : MonoBehaviour
             gamemanager.isRelictCollectable = false;
             totemImage.enabled = true;
 
-            if (totemCounter == 0)
+            if (gamemanager.isTotemActive == false)
             {
                 ShowInfoText("Totem: Potions Heal the double amount of HP");
-                totemCounter++;
+                gamemanager.isTotemActive = true;
             }
         }
 
@@ -156,10 +150,10 @@ public class Hero : MonoBehaviour
             gamemanager.isRelictCollectable = false;
             heavyArmorImage.enabled = true;
 
-            if (armorCounter == 0)
+            if (gamemanager.isArmorActive == false)
             {
                 ShowInfoText("Heavy Armor: Gain 50 % damage Reduction but deal 50 % less Damage to Enemies");
-                armorCounter++;
+                gamemanager.isArmorActive = true;
             }
         }
 
@@ -336,6 +330,7 @@ public class Hero : MonoBehaviour
     void ShowInfoText(string text)
     {
         infoText.gameObject.SetActive(true);
+        infoImage.SetActive(true);
         infoText.text = "" + text;
 
         Invoke("DeactivateStagetext", 6f);
@@ -344,7 +339,8 @@ public class Hero : MonoBehaviour
      void DeactivateStagetext()
      {
          infoText.gameObject.SetActive(false);
-         CancelInvoke("DeactivateStagetext");
+        infoImage.SetActive(false);
+        CancelInvoke("DeactivateStagetext");
      }
 }
 

@@ -963,6 +963,9 @@ MonoBehaviour:
       requiredAmount: 0
       currentAmount: 0
   isRelictCollectable: 0
+  isTimeRewindActive: 0
+  isTotemActive: 0
+  isArmorActive: 0
   timeRewind: 0
   timeRewindCooldown: 0
   totem: 0
@@ -1294,6 +1297,11 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 973872105}
+    - target: {fileID: 2346175232225414394, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
+        type: 3}
+      propertyPath: infoImage
+      value: 
+      objectReference: {fileID: 1526248894499985358}
     - target: {fileID: 2346175232225414394, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
         type: 3}
       propertyPath: totemImage
@@ -2384,6 +2392,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1526248894499985358 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8253239464165810306, guid: 53f42bf35f3f81143bd64f8066d8a903,
+    type: 3}
+  m_PrefabInstance: {fileID: 1526248894499985351}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1764521548321646468
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -21,6 +21,11 @@ public class GameManager : MonoBehaviour {
     public bool isRelictCollectable;
     //public KeyCode UseRelict = KeyCode.E;
 
+    // UI
+    public bool isTimeRewindActive;
+    public bool isTotemActive;
+    public bool isArmorActive;
+
     // Fähigkeit Time Rewind
     public int timeRewind = 0;
     public int timeRewindCooldown;
