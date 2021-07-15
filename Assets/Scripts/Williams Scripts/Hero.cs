@@ -43,11 +43,14 @@ public class Hero : MonoBehaviour
     public Image totemImage;
     public Image heavyArmorImage;
     public Text infoText;
-    public float infoTextTime1 = 5; //Seconds to read the text
-    public float infoTextTime2 = 5; //Seconds to read the text
-    public float infoTextTime3 = 5; //Seconds to read the text
-    public GameObject TextObject;
-    public float counterTime = 5;
+    //public float infoTextTime1 = 5; //Seconds to read the text
+    //public float infoTextTime2 = 5; //Seconds to read the text
+    //public float infoTextTime3 = 5; //Seconds to read the text
+    //public GameObject TextObject;
+    //public float counterTime = 5;
+    private float timeRewindCounter;
+    private float totemCounter;
+    private float armorCounter;
 
     [Header("Statistics:")]
     private Vector2 movement; // zwischenspeicherung von bewegungswerten
@@ -113,13 +116,16 @@ public class Hero : MonoBehaviour
             gamemanager.isRelictCollectable = false;
             timeRewindImage.enabled = true;
 
-            infoText.enabled = true;
-            infoText.text = "Time Rewind: Reduces the cooldown of the dash by half the time";
-            counterTime = counterTime - Time.deltaTime;
-            if (counterTime <= infoTextTime1)
+            //infoText.enabled = true;
+            //infoText.text = "Time Rewind: Reduces the cooldown of the dash by half the time";
+            //counterTime = counterTime - Time.deltaTime;
+            //if (counterTime <= infoTextTime1)
+            if(timeRewindCounter == 0)
             {
-                  infoText.enabled = false;
+                // infoText.enabled = false;
                 //infoText.text = "";
+                ShowInfoText("Time Rewind: Reduces the cooldown of the dash by half the time");
+                timeRewindCounter++;
             }
         }
 
@@ -133,13 +139,10 @@ public class Hero : MonoBehaviour
             gamemanager.isRelictCollectable = false;
             totemImage.enabled = true;
 
-            infoText.enabled = true;
-            infoText.text = "Totem: Potions Heal the double amount of HP";
-            if (infoText.enabled )//&& (Time.time >= infoTextTime2))
+            if (totemCounter == 0)
             {
-                //infoText.enabled = false;
-                //infoText.text = "";
-                Destroy(TextObject, infoTextTime2);
+                ShowInfoText("Totem: Potions Heal the double amount of HP");
+                totemCounter++;
             }
         }
 
@@ -153,13 +156,10 @@ public class Hero : MonoBehaviour
             gamemanager.isRelictCollectable = false;
             heavyArmorImage.enabled = true;
 
-            infoText.enabled = true;
-            infoText.text = "Heavy Armor: Gain 50% damage Reduction but deal 50% less Damage to Enemies.";
-            if (infoText.enabled )//&& (Time.time >= infoTextTime3))
+            if (armorCounter == 0)
             {
-                //infoText.enabled = false;
-                //infoText.text = "";
-                Destroy(TextObject, infoTextTime3);
+                ShowInfoText("Heavy Armor: Gain 50 % damage Reduction but deal 50 % less Damage to Enemies");
+                armorCounter++;
             }
         }
 
@@ -332,6 +332,20 @@ public class Hero : MonoBehaviour
         }
         GetComponent<SpriteRenderer>().color = nativeColor;
     }
+
+    void ShowInfoText(string text)
+    {
+        infoText.gameObject.SetActive(true);
+        infoText.text = "" + text;
+
+        Invoke("DeactivateStagetext", 6f);
+    }
+
+     void DeactivateStagetext()
+     {
+         infoText.gameObject.SetActive(false);
+         CancelInvoke("DeactivateStagetext");
+     }
 }
 
 
