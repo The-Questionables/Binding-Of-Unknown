@@ -338,7 +338,7 @@ public class Hero : MonoBehaviour
 
      void DeactivateStagetext()
      {
-         infoText.gameObject.SetActive(false);
+        infoText.gameObject.SetActive(false);
         infoImage.SetActive(false);
         CancelInvoke("DeactivateStagetext");
      }

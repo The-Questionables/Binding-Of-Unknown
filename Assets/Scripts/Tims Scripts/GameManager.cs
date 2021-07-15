@@ -17,11 +17,17 @@ public class GameManager : MonoBehaviour {
     public Quest2 quest2;
     public Quest3 quest3;
 
+    // UI Relikte
+    public Text questInfoText;
+    public GameObject questInfoImage;
+    public Image background;
+    public GameObject questUI;
+
     [Header("Relicts:")]
     public bool isRelictCollectable;
     //public KeyCode UseRelict = KeyCode.E;
 
-    // UI
+    // UI Relikte
     public bool isTimeRewindActive;
     public bool isTotemActive;
     public bool isArmorActive;
@@ -82,10 +88,43 @@ public class GameManager : MonoBehaviour {
             questMenuOpener = GameObject.FindGameObjectWithTag("QuestSystem").GetComponent<QuestMenuOpener>();
         }
 
+        
+        if (scene.name == "Level 1" || scene.name == "Level 2" || scene.name == "Level 3" || scene.name == Slime_Const.Overworld_Name)
+        {
+                questInfoText = GameObject.FindGameObjectWithTag("QuestInfoText").GetComponent<Text>();
+                questInfoImage = GameObject.FindGameObjectWithTag("questInfoImage");
+
+               if (questInfoImage != null)
+               {
+                   background = questInfoImage.GetComponent<Image>();
+               }
+
+            questUI = GameObject.FindGameObjectWithTag("questInfoImage");
+
+            if (quest1.isActive)
+            {
+                ShowQuestText("Kill 30 Monsters");
+            }
+            if (quest2.isActive)
+            {
+                ShowQuestText("Kill 15 Monsters");
+            }
+            if (quest3.isActive)
+            {
+                ShowQuestText("Restore 50 HP");
+            }
+            else
+            {
+                // Hintergrund austellen, Text nicht anzeigen.
+                background.enabled = false;
+                questInfoText.text = "";
+            }  
+        }
+        
+
         hpText = GameObject.FindGameObjectWithTag("Hp Text").GetComponent<Text>();
         coinsText = GameObject.FindGameObjectWithTag("Coin Text").GetComponent<Text>();
         healthpotionsText = GameObject.FindGameObjectWithTag("Healthpotion Text").GetComponent<Text>();
-
 
         ActiveScene = SceneManager.GetActiveScene().name.ToString();
 
@@ -149,6 +188,9 @@ public class GameManager : MonoBehaviour {
 
             if (quest3.goal.IsReached())
             {
+                DeactivateQuestText();
+
+                // Quest Abgeben um Belohnung abzuholen
                 coins += quest3.goldReward;
                 quest3.CompleteQuest3();
 
@@ -161,10 +203,15 @@ public class GameManager : MonoBehaviour {
     {
         if (quest1.isActive) 
         {
+            ShowQuestText("Kill 30 Monsters");
+
             quest1.goal.EnemyKilled();
             
             if (quest1.goal.IsReached())
             {
+                DeactivateQuestText();
+
+
                 coins += quest1.goldReward;
                 quest1.CompleteQuest1();
 
@@ -175,10 +222,15 @@ public class GameManager : MonoBehaviour {
 
         if (quest2.isActive)
         {
+            ShowQuestText("Kill 15 Monsters");
+
             quest2.goal.EnemyKilled();
 
             if (quest2.goal.IsReached())
             {
+                DeactivateQuestText();
+
+
                 coins += quest2.goldReward;
                 quest2.CompleteQuest2();
 
@@ -186,6 +238,19 @@ public class GameManager : MonoBehaviour {
                 Debug.Log("Quests Resetet");
             }
         }
+    }
+    void ShowQuestText(string text)
+    {
+        background.enabled = true;
+        questInfoText.text = "" + text;
+        //Invoke("DeactivateStagetext", 6f);
+    }
+
+    void DeactivateQuestText()
+    {
+        questInfoText.text = "Complete";
+
+        CancelInvoke("DeactivateStagetext");
     }
 }
 
