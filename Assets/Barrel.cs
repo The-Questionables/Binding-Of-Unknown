@@ -38,20 +38,14 @@ public class Barrel : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-
-
             // Spiele Effect ab
             if (Explosion != null)
             {
                 Instantiate(Explosion, transform.position, Quaternion.identity);
             }
 
-
-
-            // Zerstöre Gegner
+            randomLoot.LootSpawn();
             Destroy(gameObject, detonationTimer);
-
-
         }
     }
 }
