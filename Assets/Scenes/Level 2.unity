@@ -962,6 +962,10 @@ MonoBehaviour:
       goalType: 0
       requiredAmount: 0
       currentAmount: 0
+  questInfoText: {fileID: 0}
+  questInfoImage: {fileID: 0}
+  background: {fileID: 0}
+  questUI: {fileID: 0}
   isRelictCollectable: 0
   isTimeRewindActive: 0
   isTotemActive: 0
@@ -1288,6 +1292,11 @@ PrefabInstance:
       objectReference: {fileID: 1590340901}
     - target: {fileID: 2346175232225414394, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
         type: 3}
+      propertyPath: relictInfoText
+      value: 
+      objectReference: {fileID: 1526248894499985357}
+    - target: {fileID: 2346175232225414394, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
+        type: 3}
       propertyPath: heavyArmorImage
       value: 
       objectReference: {fileID: 366227859}
@@ -1296,6 +1305,11 @@ PrefabInstance:
       propertyPath: relictChargeBar
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2346175232225414394, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
+        type: 3}
+      propertyPath: relictInfoImage
+      value: 
+      objectReference: {fileID: 1526248894499985358}
     - target: {fileID: 2346175232225414394, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
         type: 3}
       propertyPath: timeRewindImage

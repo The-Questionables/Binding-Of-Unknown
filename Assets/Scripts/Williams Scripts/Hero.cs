@@ -42,8 +42,8 @@ public class Hero : MonoBehaviour
     public Image timeRewindImage;
     public Image totemImage;
     public Image heavyArmorImage;
-    public Text infoText;
-    public GameObject infoImage;
+    public Text relictInfoText;
+    public GameObject relictInfoImage;
 
     [Header("Statistics:")]
     private Vector2 movement; // zwischenspeicherung von bewegungswerten
@@ -77,8 +77,8 @@ public class Hero : MonoBehaviour
         totemImage.enabled = false;
         heavyArmorImage.enabled = false;
         //infoText.enabled = false;
-        infoText.text = "";
-        infoImage.SetActive(false);
+        relictInfoText.text = "";
+        relictInfoImage.SetActive(false);
 
 
         // Update UI CurrentHealth, MaxHealth
@@ -329,17 +329,17 @@ public class Hero : MonoBehaviour
 
     void ShowInfoText(string text)
     {
-        infoText.gameObject.SetActive(true);
-        infoImage.SetActive(true);
-        infoText.text = "" + text;
+        relictInfoText.gameObject.SetActive(true);
+        relictInfoImage.SetActive(true);
+        relictInfoText.text = "" + text;
 
         Invoke("DeactivateStagetext", 6f);
     }
 
      void DeactivateStagetext()
      {
-        infoText.gameObject.SetActive(false);
-        infoImage.SetActive(false);
+        relictInfoText.gameObject.SetActive(false);
+        relictInfoImage.SetActive(false);
         CancelInvoke("DeactivateStagetext");
      }
 }
