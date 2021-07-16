@@ -46,19 +46,19 @@ public class EnemySpawner : MonoBehaviour
             //enemyAmountForThisRoom = 2;
 
             // Randomizen 0-2 Gegner
-            enemyAmountForThisRoom = Random.Range(1, 3);
+            enemyAmountForThisRoom = Random.Range(2, 3);
 
-        // Remove Element 5,6
-        //Destroy(enemyList[5]);
-        //Destroy(enemyList[6]);
-        (enemyList[5]) = null;
+            // Remove Element 5,6
+            // Destroy(enemyList[5]);
+            // Destroy(enemyList[6]);
+            (enemyList[5]) = null;
             (enemyList[6]) = null;
         }
         if (scene.name == "Level 3")
         {
             //enemyAmountForThisRoom = 3;
             // Randomizen 0-3 Gegner
-            enemyAmountForThisRoom = Random.Range(1, 4);
+            enemyAmountForThisRoom = Random.Range(2, 4);
         }
     }
 

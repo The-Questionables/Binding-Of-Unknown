@@ -1778,6 +1778,7 @@ GameObject:
   - component: {fileID: 5454621079190121557}
   - component: {fileID: 8362429770868285301}
   - component: {fileID: 6448683495383603628}
+  - component: {fileID: 2341707038330992651}
   m_Layer: 0
   m_Name: ClosedRoomDoorBlockWalls
   m_TagString: ClosedRoom
@@ -2262,7 +2263,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 12
-      m_TileSpriteIndex: 46
+      m_TileSpriteIndex: 50
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3511,16 +3512,16 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: 5da6b614d83124848ad2373efb8f4f79, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 70068ea61f7536248a4e6f664d3bda0e, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: 5da6b614d83124848ad2373efb8f4f79, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 900907636e44a1345808da7da9299a75, type: 3}
   - m_RefCount: 1
@@ -3578,7 +3579,7 @@ TilemapRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5559911737856276470}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -3636,6 +3637,20 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!114 &2341707038330992651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5559911737856276470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d81fcae1863eba4da65816129633b85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 8362429770868285301}
+  timeRemaining: 10
 --- !u!1 &8842723865833162652
 GameObject:
   m_ObjectHideFlags: 0
