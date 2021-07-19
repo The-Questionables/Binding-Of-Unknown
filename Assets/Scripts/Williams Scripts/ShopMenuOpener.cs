@@ -11,7 +11,6 @@ public class ShopMenuOpener : MonoBehaviour
     public int healthRecoverBonus = 5;
 
     public bool isPlayerInRange;
-    public bool isHealportUp;
 
     public GameObject buyItemt1Button;
     public GameObject takenItemt1Button;
@@ -19,8 +18,8 @@ public class ShopMenuOpener : MonoBehaviour
     public GameObject buyItemt2Button;
     public GameObject takenItem2Button;
 
-    public GameObject buyItemt3Button;
-    public GameObject takenItemt3Button;
+    public GameObject buyItem3Button;
+    public GameObject takenItem3Button;
 
     // Update is called once per frame
     void Update()
@@ -45,7 +44,7 @@ public class ShopMenuOpener : MonoBehaviour
             takenItemt1Button.SetActive(false);
         }
 
-        if (isHealportUp)
+        if (gamemanager.isHealportUp)
         {
             buyItemt2Button.SetActive(false);
             takenItem2Button.SetActive(true);
@@ -54,6 +53,17 @@ public class ShopMenuOpener : MonoBehaviour
         {
             buyItemt2Button.SetActive(true);
             takenItem2Button.SetActive(false);
+        }
+
+        if (gamemanager.bow_bought == true)
+        {
+            buyItem3Button.SetActive(false);
+            takenItem3Button.SetActive(true);
+        }
+        else
+        {
+            buyItem3Button.SetActive(true);
+            takenItem3Button.SetActive(false);
         }
     }
 
@@ -89,11 +99,11 @@ public class ShopMenuOpener : MonoBehaviour
 
     public void PotionRecipeUpgrade()
     {
-        if (!isHealportUp && gamemanager.coins >= 50)
+        if (!gamemanager.isHealportUp && gamemanager.coins >= 50)
         {
             gamemanager.healthRecover += healthRecoverBonus;
             gamemanager.coins -= (50);
-            isHealportUp = true;
+            gamemanager.isHealportUp = true;
         }
     }
 

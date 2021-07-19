@@ -71,6 +71,7 @@ public class GameManager : MonoBehaviour {
     public int bowDamage = 20;
 
     [HideInInspector] public bool bow_bought;
+    [HideInInspector] public bool isHealportUp;
 
     public void Update()
     {
@@ -108,6 +109,7 @@ public class GameManager : MonoBehaviour {
             if (quest2.isActive)
             {
                 ShowQuestText("Kill 15 Monsters");
+                Debug.Log("Quest2 wurde angenommen");
             }
             if (quest3.isActive)
             {
@@ -203,8 +205,6 @@ public class GameManager : MonoBehaviour {
     {
         if (quest1.isActive) 
         {
-            ShowQuestText("Kill 30 Monsters");
-
             quest1.goal.EnemyKilled();
             
             if (quest1.goal.IsReached())
@@ -222,8 +222,6 @@ public class GameManager : MonoBehaviour {
 
         if (quest2.isActive)
         {
-            ShowQuestText("Kill 15 Monsters");
-
             quest2.goal.EnemyKilled();
 
             if (quest2.goal.IsReached())
@@ -241,7 +239,7 @@ public class GameManager : MonoBehaviour {
     }
     void ShowQuestText(string text)
     {
-        background.enabled = true;
+        background.enabled = true; // Schaltet Background ein
         questInfoText.text = "" + text;
         //Invoke("DeactivateStagetext", 6f);
     }

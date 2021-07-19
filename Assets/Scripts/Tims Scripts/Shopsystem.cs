@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UpgradeMenu : MonoBehaviour
+public class Shopsystem : MonoBehaviour
 {
+    public GameObject bowButton;
+
     [Header("Upgrade Values:")]
     public int MaxHealthpotionUpgrade;
     public int MaxHealthUpgrade;
@@ -41,6 +43,17 @@ public class UpgradeMenu : MonoBehaviour
 
     public void Update()
     {
+
+            if (gm.bow_bought == false)
+            {
+                bowButton.SetActive(false);
+            }
+            else
+            {
+                bowButton.SetActive(true);
+            }
+        
+
         if (isMaxHealthUp)
         {
             buyButton1.SetActive(false);
