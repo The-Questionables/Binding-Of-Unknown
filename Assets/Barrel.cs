@@ -18,13 +18,15 @@ public class Barrel : MonoBehaviour
     [Range(0, 1)] float damageSoundVolume = 1f;
 
     [Header("References")]
-    RandomLoot randomLoot;
+    RandomLoot[] randomLoot;
+    private int lengh_counter;
 
     // Start is called before the first frame update
     void Start()
     {
-        randomLoot = GetComponent<RandomLoot>();
+        randomLoot = GetComponents<RandomLoot>();
         currentHealth = maxHealth;          // verändet Wert der Healtbar
+        lengh_counter = randomLoot.Length;
     }
 
     public void TakeDamage(int amount)
@@ -44,7 +46,19 @@ public class Barrel : MonoBehaviour
                 Instantiate(Explosion, transform.position, Quaternion.identity);
             }
 
-            randomLoot.LootSpawn();
+            if (randomLoot.Length <= 1) 
+            { 
+                randomLoot[0].LootSpawn();
+            }
+            else if(lengh_counter > 1)
+            {
+                while (lengh_counter >= 1)
+                { 
+                    randomLoot[lengh_counter - 1].LootSpawn();
+                    lengh_counter--;
+                }
+            }
+
             Destroy(gameObject, detonationTimer);
         }
     }
