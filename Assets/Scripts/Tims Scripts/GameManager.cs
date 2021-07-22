@@ -10,12 +10,17 @@ public class GameManager : MonoBehaviour {
 
     // Infos für Quests
     QuestMenuOpener questMenuOpener;
+    QuestGoal questGoal;
+
     private Scene scene;
 
     // Quest verweise
     public Quest1 quest1; 
     public Quest2 quest2;
     public Quest3 quest3;
+    public bool isQuestComlete;
+    public float enemyCounter;
+    public float healCounter;
 
     // UI Relikte
     public Text questInfoText;
@@ -104,22 +109,30 @@ public class GameManager : MonoBehaviour {
 
             if (quest1.isActive)
             {
-                ShowQuestText("Kill 30 Monsters");
+                background.enabled = true;
+                //ShowQuestText("Kill 30 Monsters " + "0/30");
+                ShowQuestText("Kill 30 Monsters " + enemyCounter + "/ 30");
+                isQuestComlete = true;
             }
             if (quest2.isActive)
             {
-                ShowQuestText("Kill 15 Monsters");
+                background.enabled = true;
+                ShowQuestText("Kill 15 Monsters " + enemyCounter + "/ 15");
+                isQuestComlete = true;
                 Debug.Log("Quest2 wurde angenommen");
             }
             if (quest3.isActive)
             {
-                ShowQuestText("Restore 50 HP");
+                background.enabled = true;
+                ShowQuestText("Use 3 Healpotions " + healCounter + "/3");
+                isQuestComlete = true;
             }
-            else
+            else if (isQuestComlete == false)
             {
-                // Hintergrund austellen, Text nicht anzeigen.
-                background.enabled = false;
-                questInfoText.text = "";
+                 //Hintergrund austellen, Text nicht anzeigen, Problem = wird jede Sekunde ausgeführt
+                 background.enabled = false;
+                 questInfoText.text = "";
+                 //isQuestTaken = false;
             }  
         }
         
@@ -187,17 +200,22 @@ public class GameManager : MonoBehaviour {
         if(quest3.isActive)
         {
             quest3.goal.HeroHeal();
+            healCounter++;
+            ShowQuestText("Use 3 Healpotions " + healCounter + "/ 3");
 
             if (quest3.goal.IsReached())
             {
-                DeactivateQuestText();
+                DeactivateQuestText(); // Show Quest Complete
+                // if(scene.name == Slime_Const.Overworld_Name) //if (questMenuOpener.isPlayerInRange == true)
+               // {
+                    // Quest Abgeben um Belohnung abzuholen einbauen
+                    coins += quest3.goldReward;
+                    quest3.CompleteQuest3();
 
-                // Quest Abgeben um Belohnung abzuholen
-                coins += quest3.goldReward;
-                quest3.CompleteQuest3();
-
-                questMenuOpener.ResetQuests();
-                Debug.Log("Quests Resetet");
+                    questMenuOpener.ResetQuests();
+                    healCounter = 0;
+                    Debug.Log("Quests Resetet");
+                //}
             }
         }
     }
@@ -206,7 +224,9 @@ public class GameManager : MonoBehaviour {
         if (quest1.isActive) 
         {
             quest1.goal.EnemyKilled();
-            
+            enemyCounter++;
+            ShowQuestText("Kill 30 Monsters " + enemyCounter + "/ 30");
+
             if (quest1.goal.IsReached())
             {
                 DeactivateQuestText();
@@ -216,6 +236,7 @@ public class GameManager : MonoBehaviour {
                 quest1.CompleteQuest1();
 
                 questMenuOpener.ResetQuests();
+                enemyCounter = 0;
                 Debug.Log("Quests Resetet");
             }
         }
@@ -223,6 +244,8 @@ public class GameManager : MonoBehaviour {
         if (quest2.isActive)
         {
             quest2.goal.EnemyKilled();
+            enemyCounter++;
+            ShowQuestText("Kill 30 Monsters " + enemyCounter + "/ 30");
 
             if (quest2.goal.IsReached())
             {
@@ -233,6 +256,7 @@ public class GameManager : MonoBehaviour {
                 quest2.CompleteQuest2();
 
                 questMenuOpener.ResetQuests();
+                enemyCounter = 0;
                 Debug.Log("Quests Resetet");
             }
         }
@@ -246,9 +270,9 @@ public class GameManager : MonoBehaviour {
 
     void DeactivateQuestText()
     {
-        questInfoText.text = "Complete";
+        questInfoText.text = "Quest Complete";
 
-        CancelInvoke("DeactivateStagetext");
+        //CancelInvoke("DeactivateStagetext");
     }
 }
 

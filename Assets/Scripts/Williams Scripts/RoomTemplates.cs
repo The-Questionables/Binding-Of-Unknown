@@ -20,7 +20,7 @@ public class RoomTemplates : MonoBehaviour
     private Vector3 randomSpawnPosition;
 
     private int random; // speichert zufälligen Wert aus dem Array
-    private int maxSpawn = 3;
+    //private int maxSpawn = 3;
 
     [Header("Spiders:")]
     public GameObject spider; // Prefab Spider

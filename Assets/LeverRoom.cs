@@ -32,9 +32,13 @@ public class LeverRoom : MonoBehaviour
     public bool isSpawnComplete = false;
     private int random; // speichert kurz zufälligen Wert aus dem Array
 
+    public int random1; // speichert kurz zufälligen Wert
 
     private void Start()
     {
+        random1 = Random.Range(0, 3); // Sucht zufälligen Wert aus
+        Debug.Log(random1);
+
         pressurePlate1.GetComponent<BoxCollider2D>();
         pressurePlate2.GetComponent<BoxCollider2D>();
         pressurePlate3.GetComponent<BoxCollider2D>();
@@ -57,106 +61,423 @@ public class LeverRoom : MonoBehaviour
 
     public void PressurePlateCheck()
     {
-        if (isPressurePlate1Pressd) // Richtige Reihnfolge wurde 1 platte richtig gedrückt )
+        /*
+        if(random1 == 0)
         {
-            pressurePlate1.SetActive(false);
-            pressurePlate1Active.SetActive(true);
-            isCorrectOrder = true;
-            isSpawnComplete = false;
-        }
+          if (isPressurePlate1Pressd) // Richtige Reihnfolge wurde 1 platte richtig gedrückt )
+          {
+              pressurePlate1.SetActive(false);
+              pressurePlate1Active.SetActive(true);
+              isCorrectOrder = true;
+              isSpawnComplete = false;
+          }
 
-        if (isPressurePlate1Pressd && isPressurePlate2Pressd && isCorrectOrder)
-        {
-            pressurePlate2.SetActive(false);
-            pressurePlate2Active.SetActive(true);
-            isCorrectOrder = true;
-        }
+          if (isPressurePlate1Pressd && isPressurePlate2Pressd && isCorrectOrder)
+          {
+              pressurePlate2.SetActive(false);
+              pressurePlate2Active.SetActive(true);
+              isCorrectOrder = true;
+          }
 
-        if (isPressurePlate1Pressd && isPressurePlate2Pressd && isPressurePlate3Pressd && isCorrectOrder)
-        {
-            pressurePlate3.SetActive(false);
-            pressurePlate3Active.SetActive(true);
-            isCorrectOrder = true;
-        }
+          if (isPressurePlate1Pressd && isPressurePlate2Pressd && isPressurePlate3Pressd && isCorrectOrder)
+          {
+              pressurePlate3.SetActive(false);
+              pressurePlate3Active.SetActive(true);
+              isCorrectOrder = true;
+          }
 
-        if (isPressurePlate1Pressd && isPressurePlate2Pressd && isPressurePlate3Pressd && isPressurePlate4Pressd && isCorrectOrder)
-        {
-            pressurePlate4.SetActive(false);
-            pressurePlate4Active.SetActive(true);
-            isRiddleComplete = true;
-        }
+          if (isPressurePlate1Pressd && isPressurePlate2Pressd && isPressurePlate3Pressd && isPressurePlate4Pressd && isCorrectOrder)
+          {
+              pressurePlate4.SetActive(false);
+              pressurePlate4Active.SetActive(true);
+              isRiddleComplete = true;
+          }
 
-        // Reset
-        if (isPressurePlate1Pressd && isPressurePlate3Pressd && !isPressurePlate2Pressd)
-        {
-            isCorrectOrder = false;
-            isPressurePlate1Pressd = false;
-            pressurePlate1.SetActive(true);
-            pressurePlate1Active.SetActive(false);
-            isPressurePlate3Pressd = false;
-            pressurePlate3.SetActive(true);
-            pressurePlate3Active.SetActive(false);
-            // Spawn Enemys
-            SpawnEnemys();
-        }
+          // Reset
+          if (isPressurePlate1Pressd && isPressurePlate3Pressd && !isPressurePlate2Pressd)
+          {
+              isCorrectOrder = false;
+              isPressurePlate1Pressd = false;
+              pressurePlate1.SetActive(true);
+              pressurePlate1Active.SetActive(false);
+              isPressurePlate3Pressd = false;
+              pressurePlate3.SetActive(true);
+              pressurePlate3Active.SetActive(false);
+              // Spawn Enemys
+              SpawnEnemys();
+          }
 
-        if (isPressurePlate1Pressd && isPressurePlate4Pressd && !isPressurePlate2Pressd)
-        {
-            isCorrectOrder = false;
-            isPressurePlate1Pressd = false;
-            pressurePlate1.SetActive(true);
-            pressurePlate1Active.SetActive(false);
-            isPressurePlate4Pressd = false;
-            pressurePlate4.SetActive(true);
-            pressurePlate4Active.SetActive(false);
-            // Spawn Enemys
-            SpawnEnemys();
-        }
+          if (isPressurePlate1Pressd && isPressurePlate4Pressd && !isPressurePlate2Pressd)
+          {
+              isCorrectOrder = false;
+              isPressurePlate1Pressd = false;
+              pressurePlate1.SetActive(true);
+              pressurePlate1Active.SetActive(false);
+              isPressurePlate4Pressd = false;
+              pressurePlate4.SetActive(true);
+              pressurePlate4Active.SetActive(false);
+              // Spawn Enemys
+              SpawnEnemys();
+          }
 
-        if (!isPressurePlate1Pressd && isPressurePlate2Pressd)
-        {
-            isCorrectOrder = false;
-            isPressurePlate2Pressd = false;
-            pressurePlate2.SetActive(true);
-            pressurePlate2Active.SetActive(false);
-            // Spawn Enemys
-            SpawnEnemys();
-        }
+          if (!isPressurePlate1Pressd && isPressurePlate2Pressd)
+          {
+              isCorrectOrder = false;
+              isPressurePlate2Pressd = false;
+              pressurePlate2.SetActive(true);
+              pressurePlate2Active.SetActive(false);
+              // Spawn Enemys
+              SpawnEnemys();
+          }
 
-        if (!isPressurePlate1Pressd && !isPressurePlate2Pressd && isPressurePlate3Pressd && !isPressurePlate4Pressd)
-        {
-            isCorrectOrder = false;
-            isPressurePlate3Pressd = false;
-            pressurePlate3.SetActive(true);
-            pressurePlate3Active.SetActive(false);
-            // Spawn Enemys
-            SpawnEnemys();
-        }
+          if (!isPressurePlate1Pressd && !isPressurePlate2Pressd && isPressurePlate3Pressd && !isPressurePlate4Pressd)
+          {
+              isCorrectOrder = false;
+              isPressurePlate3Pressd = false;
+              pressurePlate3.SetActive(true);
+              pressurePlate3Active.SetActive(false);
+              // Spawn Enemys
+              SpawnEnemys();
+          }
 
-        if (!isPressurePlate1Pressd && !isPressurePlate2Pressd && !isPressurePlate3Pressd && isPressurePlate4Pressd)
-        {
-            isCorrectOrder = false;
-            isPressurePlate4Pressd = false;
-            pressurePlate4.SetActive(true);
-            pressurePlate4Active.SetActive(false);
-            // Spawn Enemys
-            SpawnEnemys();
-        }
+          if (!isPressurePlate1Pressd && !isPressurePlate2Pressd && !isPressurePlate3Pressd && isPressurePlate4Pressd)
+          {
+              isCorrectOrder = false;
+              isPressurePlate4Pressd = false;
+              pressurePlate4.SetActive(true);
+              pressurePlate4Active.SetActive(false);
+              // Spawn Enemys
+              SpawnEnemys();
+          }
 
-        if (isPressurePlate1Pressd && isPressurePlate2Pressd && !isPressurePlate3Pressd && isPressurePlate4Pressd)
+          if (isPressurePlate1Pressd && isPressurePlate2Pressd && !isPressurePlate3Pressd && isPressurePlate4Pressd)
+          {
+              isCorrectOrder = false;
+              isPressurePlate1Pressd = false;
+              pressurePlate1.SetActive(true);
+              pressurePlate1Active.SetActive(false);
+              isPressurePlate2Pressd = false;
+              pressurePlate2.SetActive(true);
+              pressurePlate2Active.SetActive(false);
+              isPressurePlate4Pressd = false;
+              pressurePlate4.SetActive(true);
+              pressurePlate4Active.SetActive(false);
+              // Spawn Enemys
+              SpawnEnemys();
+          }
+      }
+          */
+        if (random1 == 0)
         {
-            isCorrectOrder = false;
-            isPressurePlate1Pressd = false;
-            pressurePlate1.SetActive(true);
-            pressurePlate1Active.SetActive(false);
-            isPressurePlate2Pressd = false;
-            pressurePlate2.SetActive(true);
-            pressurePlate2Active.SetActive(false);
-            isPressurePlate4Pressd = false;
-            pressurePlate4.SetActive(true);
-            pressurePlate4Active.SetActive(false);
-            // Spawn Enemys
-            SpawnEnemys();
+            if (isPressurePlate1Pressd) // Richtige Reihnfolge wurde 1 platte richtig gedrückt )
+            {
+                pressurePlate1.SetActive(false);
+                pressurePlate1Active.SetActive(true);
+                isCorrectOrder = true;
+                isSpawnComplete = false;
+            }
+
+            if (isPressurePlate1Pressd && isPressurePlate4Pressd && isCorrectOrder)
+            {
+                pressurePlate4.SetActive(false);
+                pressurePlate4Active.SetActive(true);
+                isCorrectOrder = true;
+            }
+
+            if (isPressurePlate1Pressd && isPressurePlate4Pressd && isPressurePlate3Pressd && isCorrectOrder)
+            {
+                pressurePlate3.SetActive(false);
+                pressurePlate3Active.SetActive(true);
+                isCorrectOrder = true;
+            }
+
+            if (isPressurePlate1Pressd && isPressurePlate4Pressd && isPressurePlate3Pressd && isPressurePlate2Pressd && isCorrectOrder)
+            {
+                pressurePlate2.SetActive(false);
+                pressurePlate2Active.SetActive(true);
+                isRiddleComplete = true;
+            }
+
+            // Reset
+            if (isPressurePlate1Pressd && isPressurePlate3Pressd && !isPressurePlate4Pressd)
+            {
+                isCorrectOrder = false;
+                isPressurePlate1Pressd = false;
+                pressurePlate1.SetActive(true);
+                pressurePlate1Active.SetActive(false);
+                isPressurePlate3Pressd = false;
+                pressurePlate3.SetActive(true);
+                pressurePlate3Active.SetActive(false);
+                // Spawn Enemys
+                SpawnEnemys();
+            }
+
+            if (isPressurePlate1Pressd && isPressurePlate2Pressd && !isPressurePlate4Pressd)
+            {
+                isCorrectOrder = false;
+                isPressurePlate1Pressd = false;
+                pressurePlate1.SetActive(true);
+                pressurePlate1Active.SetActive(false);
+                isPressurePlate2Pressd = false;
+                pressurePlate2.SetActive(true);
+                pressurePlate2Active.SetActive(false);
+                // Spawn Enemys
+                SpawnEnemys();
+            }
+
+            if (!isPressurePlate1Pressd && isPressurePlate4Pressd)
+            {
+                isCorrectOrder = false;
+                isPressurePlate4Pressd = false;
+                pressurePlate4.SetActive(true);
+                pressurePlate4Active.SetActive(false);
+                // Spawn Enemys
+                SpawnEnemys();
+            }
+
+            if (!isPressurePlate1Pressd && !isPressurePlate4Pressd && isPressurePlate3Pressd && !isPressurePlate2Pressd)
+            {
+                isCorrectOrder = false;
+                isPressurePlate3Pressd = false;
+                pressurePlate3.SetActive(true);
+                pressurePlate3Active.SetActive(false);
+                // Spawn Enemys
+                SpawnEnemys();
+            }
+
+            if (!isPressurePlate1Pressd && !isPressurePlate4Pressd && !isPressurePlate3Pressd && isPressurePlate2Pressd)
+            {
+                isCorrectOrder = false;
+                isPressurePlate2Pressd = false;
+                pressurePlate2.SetActive(true);
+                pressurePlate2Active.SetActive(false);
+                // Spawn Enemys
+                SpawnEnemys();
+            }
+
+            if (isPressurePlate1Pressd && isPressurePlate4Pressd && !isPressurePlate3Pressd && isPressurePlate2Pressd)
+            {
+                isCorrectOrder = false;
+                isPressurePlate1Pressd = false;
+                pressurePlate1.SetActive(true);
+                pressurePlate1Active.SetActive(false);
+                isPressurePlate4Pressd = false;
+                pressurePlate4.SetActive(true);
+                pressurePlate4Active.SetActive(false);
+                isPressurePlate2Pressd = false;
+                pressurePlate2.SetActive(true);
+                pressurePlate2Active.SetActive(false);
+                // Spawn Enemys
+                SpawnEnemys();
+            }
+        }
+        if (random1 == 1)
+        {
+            if (isPressurePlate3Pressd) // Richtige Reihnfolge wurde 1 platte richtig gedrückt )
+            {
+                pressurePlate3.SetActive(false);
+                pressurePlate3Active.SetActive(true);
+                isCorrectOrder = true;
+                isSpawnComplete = false;
+            }
+
+            if (isPressurePlate3Pressd && isPressurePlate2Pressd && isCorrectOrder)
+            {
+                pressurePlate2.SetActive(false);
+                pressurePlate2Active.SetActive(true);
+                isCorrectOrder = true;
+            }
+
+            if (isPressurePlate3Pressd && isPressurePlate2Pressd && isPressurePlate1Pressd && isCorrectOrder)
+            {
+                pressurePlate1.SetActive(false);
+                pressurePlate1Active.SetActive(true);
+                isCorrectOrder = true;
+            }
+
+            if (isPressurePlate3Pressd && isPressurePlate2Pressd && isPressurePlate1Pressd && isPressurePlate4Pressd && isCorrectOrder)
+            {
+                pressurePlate4.SetActive(false);
+                pressurePlate4Active.SetActive(true);
+                isRiddleComplete = true;
+            }
+
+            // Reset
+            if (isPressurePlate1Pressd && isPressurePlate3Pressd && !isPressurePlate2Pressd)
+            {
+                isCorrectOrder = false;
+                isPressurePlate1Pressd = false;
+                pressurePlate1.SetActive(true);
+                pressurePlate1Active.SetActive(false);
+                isPressurePlate3Pressd = false;
+                pressurePlate3.SetActive(true);
+                pressurePlate3Active.SetActive(false);
+                // Spawn Enemys
+                SpawnEnemys();
+            }
+
+            if (isPressurePlate3Pressd && isPressurePlate4Pressd && !isPressurePlate2Pressd)
+            {
+                isCorrectOrder = false;
+                isPressurePlate3Pressd = false;
+                pressurePlate3.SetActive(true);
+                pressurePlate3Active.SetActive(false);
+                isPressurePlate4Pressd = false;
+                pressurePlate4.SetActive(true);
+                pressurePlate4Active.SetActive(false);
+                // Spawn Enemys
+                SpawnEnemys();
+            }
+
+            if (!isPressurePlate3Pressd && isPressurePlate2Pressd)
+            {
+                isCorrectOrder = false;
+                isPressurePlate2Pressd = false;
+                pressurePlate2.SetActive(true);
+                pressurePlate2Active.SetActive(false);
+                // Spawn Enemys
+                SpawnEnemys();
+            }
+
+            if (!isPressurePlate3Pressd && !isPressurePlate2Pressd && isPressurePlate1Pressd && !isPressurePlate4Pressd)
+            {
+                isCorrectOrder = false;
+                isPressurePlate1Pressd = false;
+                pressurePlate1.SetActive(true);
+                pressurePlate1Active.SetActive(false);
+                // Spawn Enemys
+                SpawnEnemys();
+            }
+
+            if (!isPressurePlate3Pressd && !isPressurePlate2Pressd && !isPressurePlate1Pressd && isPressurePlate4Pressd)
+            {
+                isCorrectOrder = false;
+                isPressurePlate4Pressd = false;
+                pressurePlate4.SetActive(true);
+                pressurePlate4Active.SetActive(false);
+                // Spawn Enemys
+                SpawnEnemys();
+            }
+
+            if (isPressurePlate3Pressd && isPressurePlate2Pressd && !isPressurePlate1Pressd && isPressurePlate4Pressd)
+            {
+                isCorrectOrder = false;
+                isPressurePlate3Pressd = false;
+                pressurePlate3.SetActive(true);
+                pressurePlate3Active.SetActive(false);
+                isPressurePlate2Pressd = false;
+                pressurePlate2.SetActive(true);
+                pressurePlate2Active.SetActive(false);
+                isPressurePlate4Pressd = false;
+                pressurePlate4.SetActive(true);
+                pressurePlate4Active.SetActive(false);
+                // Spawn Enemys
+                SpawnEnemys();
+            }
+        }
+        if (random1 == 2)
+        {
+            if (isPressurePlate4Pressd) // Richtige Reihnfolge wurde 1 platte richtig gedrückt )
+            {
+                pressurePlate4.SetActive(false);
+                pressurePlate4Active.SetActive(true);
+                isCorrectOrder = true;
+                isSpawnComplete = false;
+            }
+
+            if (isPressurePlate4Pressd && isPressurePlate2Pressd && isCorrectOrder)
+            {
+                pressurePlate2.SetActive(false);
+                pressurePlate2Active.SetActive(true);
+                isCorrectOrder = true;
+            }
+
+            if (isPressurePlate4Pressd && isPressurePlate2Pressd && isPressurePlate3Pressd && isCorrectOrder)
+            {
+                pressurePlate3.SetActive(false);
+                pressurePlate3Active.SetActive(true);
+                isCorrectOrder = true;
+            }
+
+            if (isPressurePlate4Pressd && isPressurePlate2Pressd && isPressurePlate3Pressd && isPressurePlate1Pressd && isCorrectOrder)
+            {
+                pressurePlate1.SetActive(false);
+                pressurePlate1Active.SetActive(true);
+                isRiddleComplete = true;
+            }
+
+            // Reset
+            if (isPressurePlate4Pressd && isPressurePlate3Pressd && !isPressurePlate2Pressd)
+            {
+                isCorrectOrder = false;
+                isPressurePlate4Pressd = false;
+                pressurePlate4.SetActive(true);
+                pressurePlate4Active.SetActive(false);
+                isPressurePlate3Pressd = false;
+                pressurePlate3.SetActive(true);
+                pressurePlate3Active.SetActive(false);
+                // Spawn Enemys
+                SpawnEnemys();
+            }
+
+            if (isPressurePlate4Pressd && isPressurePlate1Pressd && !isPressurePlate2Pressd)
+            {
+                isCorrectOrder = false;
+                isPressurePlate4Pressd = false;
+                pressurePlate4.SetActive(true);
+                pressurePlate4Active.SetActive(false);
+                isPressurePlate1Pressd = false;
+                pressurePlate1.SetActive(true);
+                pressurePlate1Active.SetActive(false);
+                // Spawn Enemys
+                SpawnEnemys();
+            }
+
+            if (!isPressurePlate4Pressd && isPressurePlate2Pressd)
+            {
+                isCorrectOrder = false;
+                isPressurePlate2Pressd = false;
+                pressurePlate2.SetActive(true);
+                pressurePlate2Active.SetActive(false);
+                // Spawn Enemys
+                SpawnEnemys();
+            }
+
+            if (!isPressurePlate4Pressd && !isPressurePlate2Pressd && isPressurePlate3Pressd && !isPressurePlate1Pressd)
+            {
+                isCorrectOrder = false;
+                isPressurePlate3Pressd = false;
+                pressurePlate3.SetActive(true);
+                pressurePlate3Active.SetActive(false);
+                // Spawn Enemys
+                SpawnEnemys();
+            }
+
+            if (!isPressurePlate4Pressd && !isPressurePlate2Pressd && !isPressurePlate3Pressd && isPressurePlate1Pressd)
+            {
+                isCorrectOrder = false;
+                isPressurePlate4Pressd = false;
+                pressurePlate1.SetActive(true);
+                pressurePlate1Active.SetActive(false);
+                // Spawn Enemys
+                SpawnEnemys();
+            }
+
+            if (isPressurePlate4Pressd && isPressurePlate2Pressd && !isPressurePlate3Pressd && isPressurePlate1Pressd)
+            {
+                isCorrectOrder = false;
+                isPressurePlate4Pressd = false;
+                pressurePlate4.SetActive(true);
+                pressurePlate4Active.SetActive(false);
+                isPressurePlate2Pressd = false;
+                pressurePlate2.SetActive(true);
+                pressurePlate2Active.SetActive(false);
+                isPressurePlate1Pressd = false;
+                pressurePlate1.SetActive(true);
+                pressurePlate1Active.SetActive(false);
+                // Spawn Enemys
+                SpawnEnemys();
+            }
         }
     }
 

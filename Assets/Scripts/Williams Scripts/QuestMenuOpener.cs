@@ -34,16 +34,16 @@ public class QuestMenuOpener : MonoBehaviour
 
         // Update is called once per frame
         void Update()
-    {
-        if (isPlayerInRange == true)
         {
+             if (isPlayerInRange == true)
+             {
             QuestMenu.SetActive(true);
-        }
-        if (isPlayerInRange == false)
-        {
+             }
+            if (isPlayerInRange == false)
+            {
             QuestMenu.SetActive(false);
+            }
         }
-    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {

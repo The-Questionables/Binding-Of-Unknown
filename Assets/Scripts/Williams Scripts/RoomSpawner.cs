@@ -64,7 +64,7 @@ public class RoomSpawner : MonoBehaviour
             if (other.GetComponent<RoomSpawner>().spawned == false && spawned == false)
             {
                 // spawn walls blocking off any openings!
-                Instantiate(templates.closedRoom, transform.position, Quaternion.identity);
+                //Instantiate(templates.closedRoom, transform.position, Quaternion.identity);
                 Destroy(gameObject); // zerstöre den Spawner damit nichts mehr nachspawnt
             }
             spawned = true; // verhindert weiteres nachspawnen
