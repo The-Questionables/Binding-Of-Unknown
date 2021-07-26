@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8029967829311597515}
   - component: {fileID: 875255492}
   - component: {fileID: 2116373603539469524}
+  - component: {fileID: 4212413763388707997}
   m_Layer: 0
   m_Name: Barrel
   m_TagString: Barrel
@@ -142,14 +143,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79520cd4a4413fb42a138c04031f36e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ChanceForNothing: 4
   LootList:
   - {fileID: 1401520544450006102, guid: 02c09595c38303740928ed89878f24fa, type: 3}
   - {fileID: 1401520544450006102, guid: 02c09595c38303740928ed89878f24fa, type: 3}
   - {fileID: 1401520544450006102, guid: 02c09595c38303740928ed89878f24fa, type: 3}
   - {fileID: 5625333074446763618, guid: 4f9d247eae3b2ad4c96e73b9cf7cffe9, type: 3}
+<<<<<<< Updated upstream
   - {fileID: 542567591913939100, guid: d09c578d53c78c04bbb802f457244285, type: 3}
   - {fileID: 542567591913939100, guid: d09c578d53c78c04bbb802f457244285, type: 3}
   - {fileID: 542567591913939100, guid: d09c578d53c78c04bbb802f457244285, type: 3}
   - {fileID: 542567591913939100, guid: d09c578d53c78c04bbb802f457244285, type: 3}
   Drop_Multiple: 0
   amount: 0
+=======
+  Drop_Multiple: 0
+  amount: 0
+--- !u!114 &4212413763388707997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6423852247882323634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79520cd4a4413fb42a138c04031f36e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ChanceForNothing: 0
+  LootList:
+  - {fileID: 4283200545537385870, guid: fe3908cb26af6af40bc9054f8994d00b, type: 3}
+  - {fileID: 8504231485904118312, guid: c877e4c7e975aa14385162a524d92799, type: 3}
+  - {fileID: 8647056274647485617, guid: 66ae6312c4ac3f44d8b56fc5672ee9a0, type: 3}
+  - {fileID: 2254166983371225339, guid: f594dad5d3437d84fa058da3515773de, type: 3}
+  - {fileID: 629179195656221107, guid: ea719c81639db7847b7af586c48a310b, type: 3}
+  - {fileID: 4099723513196730161, guid: fb3e07ec3da6adc4d975135a42cd8387, type: 3}
+  - {fileID: 7701500520621178132, guid: b61f5211d20c6d64f850f5963d9ea494, type: 3}
+  - {fileID: 1527158881175333964, guid: 142780a102961c34fb94042a72793380, type: 3}
+  Drop_Multiple: 1
+  amount: 8
+>>>>>>> Stashed changes
