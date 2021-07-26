@@ -2999,6 +2999,9 @@ MonoBehaviour:
       goalType: 0
       requiredAmount: 0
       currentAmount: 0
+  isQuestComlete: 0
+  enemyCounter: 0
+  healCounter: 0
   questInfoText: {fileID: 0}
   questInfoImage: {fileID: 0}
   background: {fileID: 0}
@@ -4368,7 +4371,7 @@ PrefabInstance:
     - target: {fileID: 7759376653166735187, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7759376653166735187, guid: 2dc5a57f60ad0ab4880bfa6607e254e1,
         type: 3}
@@ -6927,7 +6930,7 @@ RectTransform:
   - {fileID: 7980460361539681646}
   - {fileID: 7566850567294766242}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -15844,7 +15847,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1119637381
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
