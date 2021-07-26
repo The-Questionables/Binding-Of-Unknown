@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 460306925
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 501c50907d5b8ff4988788918d0c47d4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -142,15 +142,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79520cd4a4413fb42a138c04031f36e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ChanceForNothing: 4
   LootList:
   - {fileID: 1401520544450006102, guid: 02c09595c38303740928ed89878f24fa, type: 3}
   - {fileID: 1401520544450006102, guid: 02c09595c38303740928ed89878f24fa, type: 3}
   - {fileID: 1401520544450006102, guid: 02c09595c38303740928ed89878f24fa, type: 3}
   - {fileID: 5625333074446763618, guid: 4f9d247eae3b2ad4c96e73b9cf7cffe9, type: 3}
-  - {fileID: 542567591913939100, guid: d09c578d53c78c04bbb802f457244285, type: 3}
-  - {fileID: 542567591913939100, guid: d09c578d53c78c04bbb802f457244285, type: 3}
-  - {fileID: 542567591913939100, guid: d09c578d53c78c04bbb802f457244285, type: 3}
-  - {fileID: 542567591913939100, guid: d09c578d53c78c04bbb802f457244285, type: 3}
   Drop_Multiple: 0
   amount: 1
 --- !u!114 &1963935879966921956
@@ -165,6 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79520cd4a4413fb42a138c04031f36e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ChanceForNothing: 0
   LootList:
   - {fileID: 4283200545537385870, guid: fe3908cb26af6af40bc9054f8994d00b, type: 3}
   - {fileID: 8504231485904118312, guid: c877e4c7e975aa14385162a524d92799, type: 3}
