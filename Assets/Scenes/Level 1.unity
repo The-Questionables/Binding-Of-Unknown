@@ -843,12 +843,12 @@ PrefabInstance:
     - target: {fileID: 448665510425728427, guid: 87f38d3600746554db44774be5b61ba8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 448665510425728427, guid: 87f38d3600746554db44774be5b61ba8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.22
       objectReference: {fileID: 0}
     - target: {fileID: 448665510425728427, guid: 87f38d3600746554db44774be5b61ba8,
         type: 3}
@@ -899,6 +899,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BlueTorch
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070478317252730435, guid: 87f38d3600746554db44774be5b61ba8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87f38d3600746554db44774be5b61ba8, type: 3}
@@ -2021,12 +2026,12 @@ PrefabInstance:
     - target: {fileID: 688830054075837062, guid: 6cb31230869e7b24aaa62a57962cbe1c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 688830054075837062, guid: 6cb31230869e7b24aaa62a57962cbe1c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.22
       objectReference: {fileID: 0}
     - target: {fileID: 688830054075837062, guid: 6cb31230869e7b24aaa62a57962cbe1c,
         type: 3}
@@ -2077,6 +2082,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RedTorch
+      objectReference: {fileID: 0}
+    - target: {fileID: 9202776992137601390, guid: 6cb31230869e7b24aaa62a57962cbe1c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cb31230869e7b24aaa62a57962cbe1c, type: 3}
@@ -3735,7 +3745,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5790,15 +5800,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreenTorch
       objectReference: {fileID: 0}
+    - target: {fileID: 644678164893732959, guid: 2ee867f700e77244689130dd15c30dfa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9136599415438662583, guid: 2ee867f700e77244689130dd15c30dfa,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 9136599415438662583, guid: 2ee867f700e77244689130dd15c30dfa,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.22
       objectReference: {fileID: 0}
     - target: {fileID: 9136599415438662583, guid: 2ee867f700e77244689130dd15c30dfa,
         type: 3}

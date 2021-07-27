@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Barrel : MonoBehaviour
 {
+    public bool isAnimated;
     public string Name;
     [Header("Enemy health")]
     public int maxHealth = 100;
@@ -60,7 +61,10 @@ public class Barrel : MonoBehaviour
                 }
             }
 
-            //Destroy(gameObject, detonationTimer);
+            if (isAnimated == false)
+            {
+                Destroy(gameObject);
+            }
         }
     }
     public void DIE()

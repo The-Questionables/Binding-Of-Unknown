@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2116373603539469524}
   - component: {fileID: -6493677876219713915}
   m_Layer: 0
-  m_Name: Barrel
+  m_Name: NewBarrel
   m_TagString: Barrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8167c2ac29a5484c8e512fd51cd444f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAnimated: 1
   Name: Fass
   maxHealth: 20
   currentHealth: 20
