@@ -23,7 +23,14 @@ public class LoadNextScene : MonoBehaviour
         {
             // AudioSource.PlayClipAtPoint(NextLevelSound, Camera.main.transform.position, heartSoundVolume);
             // SceneManager.LoadScene("Upper World");
-             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            if (SceneManager.GetActiveScene().buildIndex == SceneManager.sceneCount - 1)
+            {
+                SceneManager.LoadScene(0);
+            }
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
         }
         else
         {
