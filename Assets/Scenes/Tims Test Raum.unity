@@ -5148,6 +5148,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f49d3c931cb1ea43ae3135fe7f936b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1481423726 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7646093462052746920, guid: 53f42bf35f3f81143bd64f8066d8a903,
+    type: 3}
+  m_PrefabInstance: {fileID: 1481423717}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1481423727 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1526248892826031537, guid: 53f42bf35f3f81143bd64f8066d8a903,
+    type: 3}
+  m_PrefabInstance: {fileID: 1481423717}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1481423728 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3251270934690034732, guid: 53f42bf35f3f81143bd64f8066d8a903,
+    type: 3}
+  m_PrefabInstance: {fileID: 1481423717}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1481423729 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1526248894466326931, guid: 53f42bf35f3f81143bd64f8066d8a903,
+    type: 3}
+  m_PrefabInstance: {fileID: 1481423717}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1547980168 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6810306280435648703, guid: 142b60372f9ff2642b9615c55c920869,
@@ -6220,6 +6268,32 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1909600657034950673, guid: 21972197a7c98124d847c7f35f0c65b9,
+        type: 3}
+      propertyPath: Arrow
+      value: 
+      objectReference: {fileID: 1133762169987533107, guid: 1eb463cd381decb468b55b209e999962,
+        type: 3}
+    - target: {fileID: 2192916124155562301, guid: 21972197a7c98124d847c7f35f0c65b9,
+        type: 3}
+      propertyPath: bow
+      value: 
+      objectReference: {fileID: 1481423727}
+    - target: {fileID: 2192916124155562301, guid: 21972197a7c98124d847c7f35f0c65b9,
+        type: 3}
+      propertyPath: sword
+      value: 
+      objectReference: {fileID: 1481423726}
+    - target: {fileID: 2192916124155562301, guid: 21972197a7c98124d847c7f35f0c65b9,
+        type: 3}
+      propertyPath: switchWeaponText
+      value: 
+      objectReference: {fileID: 1481423729}
+    - target: {fileID: 2192916124155562301, guid: 21972197a7c98124d847c7f35f0c65b9,
+        type: 3}
+      propertyPath: switchWeaponMouse
+      value: 
+      objectReference: {fileID: 1481423728}
     - target: {fileID: 2357010653825920598, guid: 21972197a7c98124d847c7f35f0c65b9,
         type: 3}
       propertyPath: m_Sprite
