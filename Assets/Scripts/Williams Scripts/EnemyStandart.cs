@@ -11,7 +11,7 @@ public class EnemyStandart : MonoBehaviour
     private Color damageColor;
     private float changeEnemyColor = 0.2f;
 
-    public float knockbackForce = 0.1f;
+    //public float knockbackForce = 0.5f;
 
     public string Name;
     [Header("Enemy health")]
@@ -64,13 +64,18 @@ public class EnemyStandart : MonoBehaviour
         }
         else if (collision.CompareTag("MyWeapon")) //  Knockback für den Gegner wird hier aktiviert **************************************************
         {
+            // Funktioniert nicht
             //Vector2 difference = transform.position - collision.transform.position;
             //transform.position = new Vector2(transform.position.x + difference.x, transform.position.y + difference.y);
-            // rigidbody.Addforce(new Vector2("x axis", "y axis"))
+            // rigidbody.Addforce(new Vector2("x axis", "y axis")) // Verbuggt
 
-            // Vector2 difference = (transform.position - collision.transform.position).normalized;
-            // Vector2 force = difference * knockbackForce;
-            // rb.AddForce(force, ForceMode2D.Impulse); //if you don't want to take into consideration enemy's mass then use ForceMode.VelocityChange
+            // Funktioniert nicht
+            //Vector2 difference = (transform.position - collision.transform.position).normalized;
+            //Vector2 force = difference * knockbackForce;
+            //rb.AddForce(force, ForceMode2D.Impulse); //if you don't want to take into consideration enemy's mass then use ForceMode.VelocityChange
+
+            Vector2 difference = transform.position - collision.transform.position;
+            transform.position = new Vector2(transform.position.x + difference.x /4, transform.position.y + difference.y /4);
         }
         else if (collision.CompareTag("EnemyWeapon"))
         {

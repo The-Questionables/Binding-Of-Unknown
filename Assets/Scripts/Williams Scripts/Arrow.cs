@@ -12,8 +12,8 @@ public class Arrow : MonoBehaviour
     public Rigidbody2D rb;
     public float speed= 5f;
     bool hit = false;
-    public float knockbackPower = 25;
-    public float knockbackDuration = 1;
+    //public float knockbackPower = 25;
+    //public float knockbackDuration = 1;
     // bool hitButNotEnemy = false;
 
     private GameManager gm;
