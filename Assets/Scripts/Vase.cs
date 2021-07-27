@@ -26,7 +26,7 @@ public class Vase : MonoBehaviour
         currentHealth = maxHealth;          // verändet Wert der Healtbar
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(int amount) // Kann nicht ausgeführt werden
     {
         if (damageSound != null)
         {

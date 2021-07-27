@@ -21,7 +21,10 @@ public class Melee : MonoBehaviour
         if (other.gameObject.CompareTag("Barrel"))
         {
             other.gameObject.GetComponent<Barrel>().TakeDamage(gm.swordDamage);
-
+        }
+        else if (other.gameObject.CompareTag("Vase"))
+        {
+            other.gameObject.GetComponent<Vase>().TakeDamage(gm.swordDamage);
         }
     }
 }

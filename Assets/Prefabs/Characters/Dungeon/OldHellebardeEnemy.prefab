@@ -407,12 +407,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 706bcacd80ea83f4d8318b7c1e71beaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knockbackForce: 5
   Name: Mino
   maxHealth: 50
   currentHealth: 50
   healthBar: {fileID: 947327878112655461}
   moveSpeed: 2.2
-  baseAttack: 2
+  baseAttack: 4
   detonationTimer: 0
   Explosion: {fileID: 0}
   target: {fileID: 0}
@@ -433,7 +434,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0104340315, y: -0.0022654831}
+  m_Offset: {x: -0.0056011677, y: 0.0068974346}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -444,7 +445,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.75726295, y: 0.97890013}
+  m_Size: {x: 0.6610522, y: 0.89643383}
   m_EdgeRadius: 0
 --- !u!50 &947327879237028918
 Rigidbody2D:
@@ -479,7 +480,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79520cd4a4413fb42a138c04031f36e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChanceForNothing: 0
   LootList:
   - {fileID: 1401520544450006102, guid: 02c09595c38303740928ed89878f24fa, type: 3}
   - {fileID: 1401520544450006102, guid: 02c09595c38303740928ed89878f24fa, type: 3}

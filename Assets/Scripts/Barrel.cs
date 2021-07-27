@@ -10,8 +10,8 @@ public class Barrel : MonoBehaviour
     public int currentHealth;
 
     [Header("Enemy death")]
-    public float detonationTimer = 0f;
-    public GameObject Explosion;
+    //public float detonationTimer = 0f;
+    public Animator Explosion;
 
     [Header("Enemy sounds")]
     AudioClip damageSound;
@@ -43,7 +43,8 @@ public class Barrel : MonoBehaviour
             // Spiele Effect ab
             if (Explosion != null)
             {
-                Instantiate(Explosion, transform.position, Quaternion.identity);
+                Explosion.SetTrigger("die");
+                // Instantiate(Explosion, transform.position, Quaternion.identity);
             }
 
             if (randomLoot.Length <= 1) 
@@ -59,7 +60,11 @@ public class Barrel : MonoBehaviour
                 }
             }
 
-            Destroy(gameObject, detonationTimer);
+            //Destroy(gameObject, detonationTimer);
         }
+    }
+    public void DIE()
+    {
+        Destroy(gameObject);
     }
 }
