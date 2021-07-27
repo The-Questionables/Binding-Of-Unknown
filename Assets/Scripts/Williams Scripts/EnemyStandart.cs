@@ -26,8 +26,9 @@ public class EnemyStandart : MonoBehaviour
     public int baseAttack;
 
     [Header("Enemy death")]
-    public float detonationTimer = 0f;
-    public GameObject Explosion;
+    // public float detonationTimer = 0f;
+    public bool isAnimated;
+    public Animator Explosion;
 
     [Header("Enemy sounds")]
     AudioClip damageSound;
@@ -105,14 +106,21 @@ public class EnemyStandart : MonoBehaviour
             // Spiele Effect ab
             if (Explosion != null)
             {
-                Instantiate(Explosion, transform.position, Quaternion.identity);
+                Explosion.SetTrigger("die");
+                // Bewegung ausschalten
+                moveSpeed = 0;
+                // Instantiate(Explosion, transform.position, Quaternion.identity);
             }
 
             // Dropt loot
             randomLoot.LootSpawn(); // Führt LootSpawn Methode vom RandomLoot Script aus
 
             // Zerstöre Gegner
-            Destroy(gameObject, detonationTimer);
+
+            if (isAnimated == false)
+            {
+                Destroy(gameObject);
+            }
 
             // Quest Kill Counter++
             gamemanager.Killcounter();
@@ -134,5 +142,10 @@ public class EnemyStandart : MonoBehaviour
             GetComponent<Animator>().enabled = true;
         }
         GetComponent<SpriteRenderer>().color = nativeColor;
+    }
+
+    public void DIE()
+    {
+        Destroy(gameObject);
     }
 }

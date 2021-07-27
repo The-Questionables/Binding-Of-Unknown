@@ -260,8 +260,8 @@ MonoBehaviour:
   healthBar: {fileID: 5531069764452230051}
   moveSpeed: 2.2
   baseAttack: 4
-  detonationTimer: 0
-  Explosion: {fileID: 0}
+  isAnimated: 1
+  Explosion: {fileID: 1735688530768852899}
   target: {fileID: 0}
   rb: {fileID: 0}
   animator: {fileID: 0}
@@ -284,8 +284,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.52734375, y: 0.73828125}
-    newSize: {x: 1.35, y: 1.89}
+    oldSize: {x: 0.52734375, y: 0.71875}
+    newSize: {x: 0.52734375, y: 0.73828125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -310,8 +310,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.52734375, y: 0.73828125}
-    newSize: {x: 1.35, y: 1.89}
+    oldSize: {x: 0.52734375, y: 0.71875}
+    newSize: {x: 0.52734375, y: 0.73828125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
