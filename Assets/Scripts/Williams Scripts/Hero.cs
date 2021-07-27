@@ -273,6 +273,9 @@ public class Hero : MonoBehaviour
     //    gamemanager.relictCharge += relictCharge;
     //    relictChargeBar.SetRelictCharge(gamemanager.relictCharge);
     //}
+
+    // Enemy Knockback Player
+    /*
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy")) //  Knockback für den Gegner wird hier aktiviert **************************************************
@@ -286,6 +289,7 @@ public class Hero : MonoBehaviour
             transform.position = new Vector2(transform.position.x + difference.x / 4, transform.position.y + difference.y / 4);
         }
     }
+    */
 
     public void TakeDamage(int damage)
     {
