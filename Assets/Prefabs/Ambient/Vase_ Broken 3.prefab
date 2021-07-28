@@ -72,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 460306925
-  m_SortingLayer: 4
+  m_SortingLayerID: -17026841
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 1164298870095690978, guid: 8be54b3ac2a4f7544902f4d55a6aadc5,
     type: 3}
@@ -125,10 +125,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8167c2ac29a5484c8e512fd51cd444f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAnimated: 0
   Name: Fass
   maxHealth: 20
   currentHealth: 20
-  detonationTimer: 0
   Explosion: {fileID: 0}
 --- !u!114 &7191586784247360691
 MonoBehaviour:
@@ -142,6 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79520cd4a4413fb42a138c04031f36e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ChanceForNothing: 0
   LootList:
   - {fileID: 1401520544450006102, guid: 02c09595c38303740928ed89878f24fa, type: 3}
   - {fileID: 1401520544450006102, guid: 02c09595c38303740928ed89878f24fa, type: 3}
