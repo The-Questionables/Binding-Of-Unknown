@@ -27,6 +27,11 @@ public class RangeEnemy : EnemyStandart
         ControllEnemyMovementAndShooting();
 
         HandleShootingCooldownTime();
+
+        if (isEnemyDeath == true)
+        {
+            rangeEnemySpeed = 0;
+        }
     }
 
     void CheckDistance()

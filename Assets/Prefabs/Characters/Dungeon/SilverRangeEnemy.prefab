@@ -283,7 +283,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 460306925
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -308,15 +308,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5ebd030551dac947aea5180ca7b6d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackForce: 5
   Name: RangeEnemy
   maxHealth: 75
   currentHealth: 75
   healthBar: {fileID: 3202293502859333249}
   moveSpeed: 2.2
   baseAttack: 10
-  detonationTimer: 0
-  Explosion: {fileID: 0}
+  isAnimated: 1
+  Explosion: {fileID: 2476469517090458324}
   target: {fileID: 0}
   rb: {fileID: 3202293501836212946}
   animator: {fileID: 0}
@@ -386,12 +385,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79520cd4a4413fb42a138c04031f36e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ChanceForNothing: 0
   LootList:
   - {fileID: 1401520544450006102, guid: 02c09595c38303740928ed89878f24fa, type: 3}
   - {fileID: 5625333074446763618, guid: 4f9d247eae3b2ad4c96e73b9cf7cffe9, type: 3}
   - {fileID: 5625333074446763618, guid: 4f9d247eae3b2ad4c96e73b9cf7cffe9, type: 3}
   - {fileID: 542567591913939100, guid: d09c578d53c78c04bbb802f457244285, type: 3}
   - {fileID: 4142850972197064908, guid: 12a071860b8b71544b6b5cd8e931c87a, type: 3}
+  Drop_Multiple: 0
+  amount: 0
 --- !u!1 &3202293502187097359
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,7 +792,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1119637381
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d2ee17d18f632da4dacca5b176e9e4e4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -335,13 +335,11 @@ MonoBehaviour:
   healthBar: {fileID: 8300766437502013175}
   moveSpeed: 2.8
   baseAttack: 1
-  detonationTimer: 0
-  Explosion: {fileID: 0}
+  isAnimated: 1
+  Explosion: {fileID: 8511710961886365515}
   target: {fileID: 0}
   rb: {fileID: 0}
   animator: {fileID: 8511710961886365515}
-  chaseRadius: 10
-  attackRadius: 1.5
 --- !u!61 &8300766436411783845
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -480,7 +478,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.078125, y: 0.765625}
+  m_Size: {x: 0.5859375, y: 0.5859375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0

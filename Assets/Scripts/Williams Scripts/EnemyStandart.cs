@@ -28,6 +28,7 @@ public class EnemyStandart : MonoBehaviour
     [Header("Enemy death")]
     // public float detonationTimer = 0f;
     public bool isAnimated;
+    public bool isEnemyDeath;
     public Animator Explosion;
 
     [Header("Enemy sounds")]
@@ -100,6 +101,9 @@ public class EnemyStandart : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            isEnemyDeath = true;
+            // Bewegung ausschalten
+            moveSpeed = 0;
 
             // Spiele Sound ab passiert in der explosion
 
@@ -107,13 +111,11 @@ public class EnemyStandart : MonoBehaviour
             if (Explosion != null)
             {
                 Explosion.SetTrigger("die");
-                // Bewegung ausschalten
-                moveSpeed = 0;
                 // Instantiate(Explosion, transform.position, Quaternion.identity);
             }
 
             // Dropt loot
-            randomLoot.LootSpawn(); // Führt LootSpawn Methode vom RandomLoot Script aus
+            //randomLoot.LootSpawn(); // Führt LootSpawn Methode vom RandomLoot Script aus
 
             // Zerstöre Gegner
 
@@ -147,5 +149,6 @@ public class EnemyStandart : MonoBehaviour
     public void DIE()
     {
         Destroy(gameObject);
+        randomLoot.LootSpawn(); // Führt LootSpawn Methode vom RandomLoot Script aus
     }
 }

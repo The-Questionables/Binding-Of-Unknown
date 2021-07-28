@@ -7,14 +7,12 @@ public class HellebardeEnemy : EnemyStandart
     public Animator animator;
 
     [Header("Enemy melee attack")]
-    public float chaseRadius;
-    public float attackRadius;
+    //public float chaseRadius;
+    //public float attackRadius;
     private bool isPlayerInRange;
 
-    private float rangeEnemySpeed = 2.8f;
     private float attackDistance = 0.6f;
     private float retreatDistance = 0.8f;
-
 
     void Update()
     {
@@ -50,12 +48,12 @@ public class HellebardeEnemy : EnemyStandart
             //bewegen auf den Spieler
             if (Vector2.Distance(target.position, transform.position) > retreatDistance && Vector2.Distance(target.position, transform.position) > attackDistance)
             {
-                transform.position = Vector2.MoveTowards(transform.position, target.position, rangeEnemySpeed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
             }
             // ???
             else if (Vector2.Distance(transform.position, target.position) == attackDistance)
             {
-                transform.position = Vector2.MoveTowards(transform.position, target.position, -rangeEnemySpeed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, target.position, -moveSpeed * Time.deltaTime);
                 // transform.position = Vector2.MoveTowards(transform.position, target.position, rangeEnemySpeed * Time.deltaTime); // Zittern
             }
 
@@ -66,7 +64,7 @@ public class HellebardeEnemy : EnemyStandart
             // wegbewegen vom Spieler
             else if (Vector2.Distance(transform.position, target.position) < retreatDistance)
             {
-                transform.position = Vector2.MoveTowards(transform.position, target.position, -rangeEnemySpeed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, target.position, -moveSpeed * Time.deltaTime);
             }
         }
     }
