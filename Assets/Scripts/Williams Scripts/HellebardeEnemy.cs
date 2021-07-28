@@ -9,13 +9,21 @@ public class HellebardeEnemy : EnemyStandart
     [Header("Enemy melee attack")]
     public float chaseRadius;
     public float attackRadius;
+    private bool isPlayerInRange;
+
+    private float rangeEnemySpeed = 2.8f;
+    private float attackDistance = 0.6f;
+    private float retreatDistance = 0.8f;
 
 
     void Update()
     {
         CheckDistance();
+
+        ControllEnemyMovementAndAttacking();
     }
 
+    /*
     void CheckDistance()
     {
         if (Vector3.Distance(target.position, transform.position) <= chaseRadius && Vector3.Distance(target.position, transform.position) > attackRadius -0.7456)
@@ -25,7 +33,41 @@ public class HellebardeEnemy : EnemyStandart
         }
     }
 }
+    */
+    void CheckDistance()
+    {
+        if (Vector2.Distance(target.position, transform.position) <= retreatDistance && Vector2.Distance(target.position, transform.position) > attackDistance)
+        {
+            isPlayerInRange = true;
+        }
+    }
 
-// animator.SetFloat("Horizontal", movement.x);
-// animator.SetFloat("Vertical", movement.y);
-// animator.SetFloat("Speed", movement.sqrMagnitude);
+    private void ControllEnemyMovementAndAttacking()
+    {
+
+        if (target)
+        {
+            //bewegen auf den Spieler
+            if (Vector2.Distance(target.position, transform.position) > retreatDistance && Vector2.Distance(target.position, transform.position) > attackDistance)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, target.position, rangeEnemySpeed * Time.deltaTime);
+            }
+            // ???
+            else if (Vector2.Distance(transform.position, target.position) == attackDistance)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, target.position, -rangeEnemySpeed * Time.deltaTime);
+                // transform.position = Vector2.MoveTowards(transform.position, target.position, rangeEnemySpeed * Time.deltaTime); // Zittern
+            }
+
+            else if (Vector2.Distance(transform.position, target.position) < attackDistance && Vector2.Distance(transform.position, target.position) > retreatDistance)
+            {
+                transform.position = this.transform.position;
+            }
+            // wegbewegen vom Spieler
+            else if (Vector2.Distance(transform.position, target.position) < retreatDistance)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, target.position, -rangeEnemySpeed * Time.deltaTime);
+            }
+        }
+    }
+}

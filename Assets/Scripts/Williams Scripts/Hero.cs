@@ -160,7 +160,7 @@ public class Hero : MonoBehaviour
         //if (Input.GetKeyDown(gamemanager.UseRelict) && gamemanager.timeRewind > 0 && gamemanager.relictCharge == 2)
         if (gamemanager.timeRewind == 1)
         {
-            GameObject character = GameObject.Find("Hero");
+            GameObject character = GameObject.Find("Hero new");
             if (character != null)
             {
                 // Alte Version

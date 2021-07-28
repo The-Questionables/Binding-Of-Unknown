@@ -124,7 +124,7 @@ public class GameManager : MonoBehaviour {
             if (quest3.isActive)
             {
                 background.enabled = true;
-                ShowQuestText("Use 3 Healpotions " + healCounter + "/3");
+                ShowQuestText("Use 3 Heal Potions " + healCounter + "/3");
                 isQuestComlete = true;
             }
             else if (isQuestComlete == false)
