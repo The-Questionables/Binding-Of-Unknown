@@ -39,6 +39,8 @@ public class EnemyStandart : MonoBehaviour
     RandomLoot randomLoot;
     public Transform target;
     public Rigidbody2D rb;
+    //public BoxCollider2D box1;
+    //public BoxCollider2D box2;
 
     // Start is called before the first frame update
     void Start()
@@ -104,6 +106,9 @@ public class EnemyStandart : MonoBehaviour
             isEnemyDeath = true;
             // Bewegung ausschalten
             moveSpeed = 0;
+            //box1.GetComponent<BoxCollider2D>().enabled = false;
+            //box2.GetComponent<BoxCollider2D>().enabled = false;
+
 
             // Spiele Sound ab passiert in der explosion
 
