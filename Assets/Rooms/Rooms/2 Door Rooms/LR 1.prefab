@@ -3899,7 +3899,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6191994572836381775}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2419174, y: 2.3542542, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3539875493097797190}
@@ -4000,10 +4000,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAdjust: {x: -3, y: 0}
   cameraAdjust: {x: -20, y: 0}
-  mapRoom: {fileID: 0}
-  iconRb: {fileID: 0}
-  mapRb: {fileID: 0}
-  roomRb: {fileID: 0}
 --- !u!1 &7362679237352363704
 GameObject:
   m_ObjectHideFlags: 0
@@ -4335,10 +4331,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAdjust: {x: 3, y: 0}
   cameraAdjust: {x: 20, y: 0}
-  mapRoom: {fileID: 0}
-  iconRb: {fileID: 0}
-  mapRb: {fileID: 0}
-  roomRb: {fileID: 0}
 --- !u!1 &7562275630424552463
 GameObject:
   m_ObjectHideFlags: 0
