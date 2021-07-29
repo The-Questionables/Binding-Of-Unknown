@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 978554265989437004}
   - component: {fileID: 978554265989437003}
-  - component: {fileID: 978554265989437007}
+  - component: {fileID: 1358126097}
   m_Layer: 0
   m_Name: SkeletonSprite
   m_TagString: Untagged
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &978554265989437007
+--- !u!61 &1358126097
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -326,6 +326,7 @@ MonoBehaviour:
   cooldownTimer: 0
   enemyProjectilePrefab: {fileID: 2316289028120900429, guid: 6fbd82d6543fdd84dabab07b78f42ece,
     type: 3}
+  box1: {fileID: 978554266183098311}
 --- !u!61 &978554266183098311
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -9,10 +9,12 @@ public class RoomTransfer : MonoBehaviour
     public Vector2 playerAdjust;
     public Vector2 cameraAdjust;
 
+    /*
     public GameObject mapRoom;
     public Rigidbody2D iconRb;
     public Rigidbody2D mapRb;
     public Rigidbody2D roomRb;
+    */
 
     void Start()
     {

@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 public class ClosedWall : MonoBehaviour
 {
     public Renderer tilemap;
-    public float timeRemaining = 3;
+    private float timeRemaining = 3;
 
     // Start is called before the first frame update
     void Start()

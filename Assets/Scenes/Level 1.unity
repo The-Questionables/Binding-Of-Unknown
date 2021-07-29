@@ -169,10 +169,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAdjust: {x: -1.5, y: 0}
   cameraAdjust: {x: -20, y: 0}
-  mapRoom: {fileID: 0}
-  iconRb: {fileID: 0}
-  mapRb: {fileID: 0}
-  roomRb: {fileID: 0}
 --- !u!61 &6768717
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1282,6 +1278,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &358573011 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5745473409969657198, guid: 7c00a753da4c6af4682025705ebbb2dc,
+    type: 3}
+  m_PrefabInstance: {fileID: 188571181}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &399471520
 GameObject:
   m_ObjectHideFlags: 0
@@ -1802,10 +1804,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAdjust: {x: 0, y: 1.5}
   cameraAdjust: {x: 0, y: 10}
-  mapRoom: {fileID: 0}
-  iconRb: {fileID: 0}
-  mapRb: {fileID: 0}
-  roomRb: {fileID: 0}
 --- !u!61 &499721856
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1988,10 +1986,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAdjust: {x: 1.5, y: 0}
   cameraAdjust: {x: 20, y: 0}
-  mapRoom: {fileID: 0}
-  iconRb: {fileID: 0}
-  mapRb: {fileID: 0}
-  roomRb: {fileID: 0}
 --- !u!61 &625077272
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2290,10 +2284,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAdjust: {x: 0, y: -1.5}
   cameraAdjust: {x: 0, y: -10}
-  mapRoom: {fileID: 0}
-  iconRb: {fileID: 0}
-  mapRb: {fileID: 0}
-  roomRb: {fileID: 0}
 --- !u!61 &727635468
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4296,10 +4286,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAdjust: {x: 0, y: 1.5}
   cameraAdjust: {x: 0, y: 10}
-  mapRoom: {fileID: 0}
-  iconRb: {fileID: 0}
-  mapRb: {fileID: 0}
-  roomRb: {fileID: 0}
 --- !u!61 &1085529881
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4465,10 +4451,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAdjust: {x: 1.5, y: 0}
   cameraAdjust: {x: 20, y: 0}
-  mapRoom: {fileID: 0}
-  iconRb: {fileID: 0}
-  mapRb: {fileID: 0}
-  roomRb: {fileID: 0}
 --- !u!61 &1152410373
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4527,10 +4509,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAdjust: {x: 0, y: -1.5}
   cameraAdjust: {x: 0, y: -10}
-  mapRoom: {fileID: 0}
-  iconRb: {fileID: 0}
-  mapRb: {fileID: 0}
-  roomRb: {fileID: 0}
 --- !u!61 &1174580743
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4617,10 +4595,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAdjust: {x: -1.5, y: 0}
   cameraAdjust: {x: -20, y: 0}
-  mapRoom: {fileID: 0}
-  iconRb: {fileID: 0}
-  mapRb: {fileID: 0}
-  roomRb: {fileID: 0}
 --- !u!61 &1183038752
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5040,6 +5014,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas UI Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1526248893768121847, guid: 53f42bf35f3f81143bd64f8066d8a903,
+        type: 3}
+      propertyPath: PauseMenuUI
+      value: 
+      objectReference: {fileID: 358573011}
     - target: {fileID: 1526248893917042623, guid: 53f42bf35f3f81143bd64f8066d8a903,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -5060,7 +5039,8 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1526248893768121847, guid: 53f42bf35f3f81143bd64f8066d8a903, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 53f42bf35f3f81143bd64f8066d8a903, type: 3}
 --- !u!1 &1481423718 stripped
 GameObject:

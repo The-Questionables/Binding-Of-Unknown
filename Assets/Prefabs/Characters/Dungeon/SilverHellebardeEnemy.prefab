@@ -261,10 +261,13 @@ MonoBehaviour:
   moveSpeed: 2.2
   baseAttack: 2
   isAnimated: 1
+  isEnemyDeath: 0
   Explosion: {fileID: 1735688530768852899}
   target: {fileID: 0}
   rb: {fileID: 0}
   animator: {fileID: 0}
+  box1: {fileID: 5531069763361560561}
+  box2: {fileID: 7203647360825534230}
 --- !u!61 &5531069763361560561
 BoxCollider2D:
   m_ObjectHideFlags: 0
