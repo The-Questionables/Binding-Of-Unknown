@@ -302,14 +302,20 @@ public class Hero : MonoBehaviour
         if (gamemanager.heavyArmor == 1) // hier Rüstung einbauen
         {
             gamemanager.hp -= (int)((float)damage / 100.0f * gamemanager.heavyArmorDamageReduction);
-            StartCoroutine(screen_Shaker.CameraShake(lengh / 2, intensity/2));
+            if (gamemanager.Screenshake == false) //screenshake true hat zu bugs geführt
+            { 
+                StartCoroutine(screen_Shaker.CameraShake(lengh / 2, intensity/2));
+            }
             // Leben : 100 * x
             // (damage / 100 * gamemanager.heavyArmorDamageReduction);
         }
         else
         {
             gamemanager.hp -= damage;
-            StartCoroutine(screen_Shaker.CameraShake(lengh, intensity));
+            if (gamemanager.Screenshake == false)
+            {
+                StartCoroutine(screen_Shaker.CameraShake(lengh, intensity));
+            }
         }
         // Updaten des Healthbartextes im UI
         healthBar.SetHealth(gamemanager.hp);

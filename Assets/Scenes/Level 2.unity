@@ -246,7 +246,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &183603743
 PrefabInstance:
@@ -337,7 +337,7 @@ PrefabInstance:
     - target: {fileID: 5745473409969657195, guid: 7c00a753da4c6af4682025705ebbb2dc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5745473409969657195, guid: 7c00a753da4c6af4682025705ebbb2dc,
         type: 3}
@@ -433,6 +433,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas PauseMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745473409969657198, guid: 7c00a753da4c6af4682025705ebbb2dc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745473410677948367, guid: 7c00a753da4c6af4682025705ebbb2dc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c00a753da4c6af4682025705ebbb2dc, type: 3}
@@ -582,7 +592,7 @@ PrefabInstance:
     - target: {fileID: 1526248893768121835, guid: 53f42bf35f3f81143bd64f8066d8a903,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1526248893768121835, guid: 53f42bf35f3f81143bd64f8066d8a903,
         type: 3}
@@ -1295,6 +1305,7 @@ MonoBehaviour:
   bow_bought: 0
   isHealportUp: 0
   chest_of_everlasting_wealth: 0
+  Screenshake: 0
 --- !u!4 &806348015
 Transform:
   m_ObjectHideFlags: 0
@@ -1599,7 +1610,7 @@ RectTransform:
   m_Children:
   - {fileID: 1957188140}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1694,7 +1705,7 @@ PrefabInstance:
     - target: {fileID: 4183573983802341197, guid: 21972197a7c98124d847c7f35f0c65b9,
         type: 3}
       propertyPath: intensity
-      value: 0.05
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4183573983802341197, guid: 21972197a7c98124d847c7f35f0c65b9,
         type: 3}
@@ -2056,7 +2067,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1101093228
 GameObject:
@@ -2261,7 +2272,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1196643828 stripped
 MonoBehaviour:

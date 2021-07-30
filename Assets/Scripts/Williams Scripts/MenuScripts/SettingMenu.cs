@@ -7,14 +7,15 @@ using UnityEngine.UI;
 public class SettingMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
-
+    public GameManager gm;
 
     Resolution[] resolutions;
     public Dropdown ResolutionDropdown;
-
+    bool ScreenshakeActive;
 
     void Start()
     {
+        gm = FindObjectOfType<GameManager>();
 
 
         int CurrentResolutionIndex = 0;
@@ -51,8 +52,21 @@ public class SettingMenu : MonoBehaviour
 
 
 
+    public void SetScreenshake()
+    {
 
+        if (ScreenshakeActive == true)
+        {
+            ScreenshakeActive = false;
+            gm.Screenshake = false;
+        }
+        else if (ScreenshakeActive == false)
+        {
+            ScreenshakeActive = true;
+            gm.Screenshake = true;
+        }
 
+    }
 
 
 

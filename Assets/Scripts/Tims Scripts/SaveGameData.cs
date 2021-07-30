@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class SaveGameData
 {
+    public bool screen_shake_active;
     public bool chestLooted;
     public int coins;
     public int health;
@@ -16,6 +17,7 @@ public class SaveGameData
 
     public SaveGameData(GameManager gm)
     {
+        screen_shake_active = gm.Screenshake;
         level = gm.ActiveScene;
         coins = gm.coins;
         health = gm.hp;

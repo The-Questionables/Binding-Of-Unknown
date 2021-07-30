@@ -865,6 +865,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1154745620239490624, guid: 7c00a753da4c6af4682025705ebbb2dc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5745473409969657195, guid: 7c00a753da4c6af4682025705ebbb2dc,
         type: 3}
       propertyPath: m_Pivot.x
@@ -974,6 +979,51 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas PauseMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745473409969657198, guid: 7c00a753da4c6af4682025705ebbb2dc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745473410233925026, guid: 7c00a753da4c6af4682025705ebbb2dc,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745473410233925026, guid: 7c00a753da4c6af4682025705ebbb2dc,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745473410233925026, guid: 7c00a753da4c6af4682025705ebbb2dc,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745473410677948367, guid: 7c00a753da4c6af4682025705ebbb2dc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745473410780629048, guid: 7c00a753da4c6af4682025705ebbb2dc,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745473410780629048, guid: 7c00a753da4c6af4682025705ebbb2dc,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745473411517393620, guid: 7c00a753da4c6af4682025705ebbb2dc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7238299316741548592, guid: 7c00a753da4c6af4682025705ebbb2dc,
+        type: 3}
+      propertyPath: m_IsOn
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c00a753da4c6af4682025705ebbb2dc, type: 3}
@@ -2939,6 +2989,7 @@ MonoBehaviour:
   bow_bought: 0
   isHealportUp: 0
   chest_of_everlasting_wealth: 0
+  Screenshake: 0
 --- !u!4 &806348015
 Transform:
   m_ObjectHideFlags: 0
@@ -4704,6 +4755,11 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1481423725}
+    - target: {fileID: 4183573983802341197, guid: 21972197a7c98124d847c7f35f0c65b9,
+        type: 3}
+      propertyPath: intensity
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4183573983802341197, guid: 21972197a7c98124d847c7f35f0c65b9,
         type: 3}
       propertyPath: totemImage

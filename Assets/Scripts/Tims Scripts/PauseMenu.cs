@@ -10,7 +10,7 @@ public class PauseMenu : MonoBehaviour
     //ziehe bei PauseMenuUI das Menü/Panel hinein
 
     public static bool GameIsPaused = false;    //setze den Wert ob das Spiel pausiert auf falsch
-
+    public GameManager gm;
     public GameObject PauseMenuUI;
     //erstelle ein öffentliches Game-Object mit dem Namen Pause
 
@@ -57,6 +57,11 @@ public class PauseMenu : MonoBehaviour
     }
     public void LoadMainMenu()
     {
+        gm = FindObjectOfType<GameManager>();
+        if (gm != null) 
+        {
+            gm.SaveGame();
+        }
         SceneManager.LoadScene("Main Menu");
         Time.timeScale = 1f;
         GameIsPaused = false;
