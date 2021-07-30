@@ -5,7 +5,7 @@ using UnityEngine;
 public class Screen_Shaker : MonoBehaviour
 {
     
-        public IEnumerator Shake (float duration, float magnitude)
+        public IEnumerator CameraShake(float duration, float magnitude)
         {
             Vector3 originalPos = transform.localPosition;
 
@@ -16,7 +16,7 @@ public class Screen_Shaker : MonoBehaviour
                 float x = Random.Range(-0.15f, 0.15f) * magnitude;
                 float y = Random.Range(-0.15f, 0.15f) * magnitude;
 
-                transform.localPosition = new Vector3(x, originalPos.y, originalPos.z);
+                transform.localPosition = new Vector3(x+originalPos.x, y + originalPos.y, originalPos.z);
 
                 elapsed += Time.deltaTime;
 
