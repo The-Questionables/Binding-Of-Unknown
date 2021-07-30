@@ -37,7 +37,6 @@ public class LeverRoom : MonoBehaviour
     private void Start()
     {
         random1 = Random.Range(0, 3); // Sucht zufälligen Wert aus
-        Debug.Log(random1);
 
         pressurePlate1.GetComponent<BoxCollider2D>();
         pressurePlate2.GetComponent<BoxCollider2D>();

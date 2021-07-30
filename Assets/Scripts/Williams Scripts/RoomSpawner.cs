@@ -59,12 +59,29 @@ public class RoomSpawner : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) // wird aktiviert wenn der collider mit was zusammenstößt
     {
+        // New Try erzeugt Fehlermeldungen
+        try
+        {
+            if (!other.GetComponent<RoomSpawner>().spawned && !spawned)
+            {
+                Instantiate(templates.closedRoom, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+            }
+        }
+        catch (System.Exception e)
+        {
+            Destroy(gameObject);
+        }
+        
+
+        // Old
+        /*
         if (other.CompareTag("SpawnPoint")) // wenn der Spawn point mit was zusammenstößt und bereits ein Raum gespawnt ist
         {
             if (other.GetComponent<RoomSpawner>().spawned == false && spawned == false)
             {
                 // spawn walls blocking off any openings!
-                //Instantiate(templates.closedRoom, transform.position, Quaternion.identity);
+                Instantiate(templates.closedRoom, transform.position, Quaternion.identity); // Bewirkt spawnen der closed Rooms
                 Destroy(gameObject); // zerstöre den Spawner damit nichts mehr nachspawnt
             }
             spawned = true; // verhindert weiteres nachspawnen
@@ -73,5 +90,6 @@ public class RoomSpawner : MonoBehaviour
         {
             //Debug.Log("SpawnPoint nicht gefunden");
         }
+        */
     }
 }

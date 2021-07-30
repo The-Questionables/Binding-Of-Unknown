@@ -11,10 +11,6 @@ public class DeleteObstaclesInLastRoom : MonoBehaviour
             Debug.Log("Obstacles destroyt!");
             Destroy(other.gameObject);
         }
-        else
-        {
-
-        }
     }
 }
 
