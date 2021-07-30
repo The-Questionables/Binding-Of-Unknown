@@ -465,10 +465,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: MagicEnemy
-  maxHealth: 50
-  currentHealth: 50
+  maxHealth: 35
+  currentHealth: 35
   healthBar: {fileID: 2092272408625869930}
-  moveSpeed: 2.2
+  moveSpeed: 2
   baseAttack: 6
   isAnimated: 1
   isEnemyDeath: 0
@@ -476,7 +476,7 @@ MonoBehaviour:
   target: {fileID: 0}
   rb: {fileID: 2092272408693985391}
   animator: {fileID: 2280985272400070249}
-  rangeEnemySpeed: 1
+  rangeEnemySpeed: 1.3
   safetyDistance: 5
   retreatDistance: 6
   projectileSpawner: {fileID: 2092272409334107016}
