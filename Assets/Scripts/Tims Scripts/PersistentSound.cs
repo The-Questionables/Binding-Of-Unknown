@@ -1,4 +1,4 @@
-﻿/*using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,7 +13,7 @@ public class PersistentSound : MonoBehaviour {
 
     // Use this for initialization
     void Awake () {
-        musicObjs = GameObject.FindGameObjectsWithTag("Music");
+        musicObjs = GameObject.FindGameObjectsWithTag("Music And Sond");
 
         if (musicObjs != null && musicObjs.Length > 1)
         {
@@ -66,4 +66,3 @@ public class PersistentSound : MonoBehaviour {
         }
     }
 }
-*/
