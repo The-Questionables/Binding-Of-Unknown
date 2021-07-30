@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8846379656700324270}
   - component: {fileID: 1564027113279362209}
   - component: {fileID: 642419128191682225}
+  - component: {fileID: 7008674990175743105}
   m_Layer: 0
   m_Name: Vase_ Broken 4
   m_TagString: Barrel
@@ -100,7 +101,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.06339924, y: 0.018288225}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -111,7 +112,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.33, y: 0.41}
+  m_Size: {x: 0.27879292, y: 0.37342352}
   m_EdgeRadius: 0
 --- !u!114 &1564027113279362209
 MonoBehaviour:
@@ -154,3 +155,29 @@ MonoBehaviour:
   - {fileID: 542567591913939100, guid: d09c578d53c78c04bbb802f457244285, type: 3}
   Drop_Multiple: 0
   amount: 0
+--- !u!61 &7008674990175743105
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5517632793786258647}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.19568422, y: -0.110339075}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.58, y: 0.49}
+    newSize: {x: 0.53, y: 0.36}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.16784412, y: 0.08203086}
+  m_EdgeRadius: 0

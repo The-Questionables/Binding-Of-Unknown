@@ -4095,10 +4095,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAdjust: {x: 0, y: 4}
   cameraAdjust: {x: 0, y: 12}
-  mapRoom: {fileID: 0}
-  iconRb: {fileID: 0}
-  mapRb: {fileID: 0}
-  roomRb: {fileID: 0}
 --- !u!1 &7695410646028972990
 GameObject:
   m_ObjectHideFlags: 0
@@ -4145,11 +4141,11 @@ Transform:
   - {fileID: 8706643359674925013}
   - {fileID: 1033078009493672183}
   - {fileID: 3833981554628481909}
-  - {fileID: 1825697060920989430}
   - {fileID: 6095572841073002904}
   - {fileID: 8705805692781639577}
   - {fileID: 293781533999878324}
   - {fileID: 5143856630249523933}
+  - {fileID: 1961967057582896893}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4620,6 +4616,81 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3603077911318192895}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3907752233675266834
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7695410646028972989}
+    m_Modifications:
+    - target: {fileID: 3242962641161498095, guid: dbda0c9e8c4a63847956a01a061c4ee8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242962641161498095, guid: dbda0c9e8c4a63847956a01a061c4ee8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.9263689
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242962641161498095, guid: dbda0c9e8c4a63847956a01a061c4ee8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3450476
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242962641161498095, guid: dbda0c9e8c4a63847956a01a061c4ee8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.39796555
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242962641161498095, guid: dbda0c9e8c4a63847956a01a061c4ee8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242962641161498095, guid: dbda0c9e8c4a63847956a01a061c4ee8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242962641161498095, guid: dbda0c9e8c4a63847956a01a061c4ee8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242962641161498095, guid: dbda0c9e8c4a63847956a01a061c4ee8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242962641161498095, guid: dbda0c9e8c4a63847956a01a061c4ee8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242962641161498095, guid: dbda0c9e8c4a63847956a01a061c4ee8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242962641161498095, guid: dbda0c9e8c4a63847956a01a061c4ee8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637044899004870318, guid: dbda0c9e8c4a63847956a01a061c4ee8,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall Torch Door
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dbda0c9e8c4a63847956a01a061c4ee8, type: 3}
+--- !u!4 &1961967057582896893 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3242962641161498095, guid: dbda0c9e8c4a63847956a01a061c4ee8,
+    type: 3}
+  m_PrefabInstance: {fileID: 3907752233675266834}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4299224298603852062
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4710,7 +4781,7 @@ PrefabInstance:
     - target: {fileID: 4089215804187698778, guid: 3f40fdeb50c5c384e8af499c14a9da82,
         type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4089215804187698778, guid: 3f40fdeb50c5c384e8af499c14a9da82,
         type: 3}
@@ -5010,7 +5081,7 @@ PrefabInstance:
     - target: {fileID: 3833010467053150302, guid: 082d9b9ccfd55ef4dabcdaa7b47f70f0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 3833010467053150302, guid: 082d9b9ccfd55ef4dabcdaa7b47f70f0,
         type: 3}
@@ -5069,81 +5140,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3833010467053150302, guid: 082d9b9ccfd55ef4dabcdaa7b47f70f0,
     type: 3}
   m_PrefabInstance: {fileID: 5611672674726844359}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &6387376594949916350
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 7695410646028972989}
-    m_Modifications:
-    - target: {fileID: 452220916072472572, guid: 8f394bf948281a948a1950c62133d596,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall Torches door
-      objectReference: {fileID: 0}
-    - target: {fileID: 4752046262944649288, guid: 8f394bf948281a948a1950c62133d596,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 4752046262944649288, guid: 8f394bf948281a948a1950c62133d596,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.36850184
-      objectReference: {fileID: 0}
-    - target: {fileID: 4752046262944649288, guid: 8f394bf948281a948a1950c62133d596,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.89883846
-      objectReference: {fileID: 0}
-    - target: {fileID: 4752046262944649288, guid: 8f394bf948281a948a1950c62133d596,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.4240615
-      objectReference: {fileID: 0}
-    - target: {fileID: 4752046262944649288, guid: 8f394bf948281a948a1950c62133d596,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4752046262944649288, guid: 8f394bf948281a948a1950c62133d596,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4752046262944649288, guid: 8f394bf948281a948a1950c62133d596,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4752046262944649288, guid: 8f394bf948281a948a1950c62133d596,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4752046262944649288, guid: 8f394bf948281a948a1950c62133d596,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4752046262944649288, guid: 8f394bf948281a948a1950c62133d596,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4752046262944649288, guid: 8f394bf948281a948a1950c62133d596,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8f394bf948281a948a1950c62133d596, type: 3}
---- !u!4 &1825697060920989430 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4752046262944649288, guid: 8f394bf948281a948a1950c62133d596,
-    type: 3}
-  m_PrefabInstance: {fileID: 6387376594949916350}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6390942243054943382
 PrefabInstance:
@@ -5460,7 +5456,7 @@ PrefabInstance:
     - target: {fileID: 2464988333840139949, guid: c4f308f3f7f880041b977dc22e61d691,
         type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 2464988333840139949, guid: c4f308f3f7f880041b977dc22e61d691,
         type: 3}
@@ -5695,7 +5691,7 @@ PrefabInstance:
     - target: {fileID: 4089215804187698778, guid: 3f40fdeb50c5c384e8af499c14a9da82,
         type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 4089215804187698778, guid: 3f40fdeb50c5c384e8af499c14a9da82,
         type: 3}

@@ -2092,10 +2092,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAdjust: {x: 0, y: -4}
   cameraAdjust: {x: 0, y: -12}
-  mapRoom: {fileID: 0}
-  iconRb: {fileID: 0}
-  mapRb: {fileID: 0}
-  roomRb: {fileID: 0}
 --- !u!1 &3470405518915131052
 GameObject:
   m_ObjectHideFlags: 0
@@ -4678,7 +4674,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6280281940635636977}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.059999943, y: 0, z: 0}
+  m_LocalPosition: {x: 0.06007, y: 0.00251, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9211128167779407565}
@@ -7216,12 +7212,12 @@ PrefabInstance:
     - target: {fileID: 4491575855536051358, guid: ac2a3befa92f82a488b46023bc7a733c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.1
+      value: -1.89
       objectReference: {fileID: 0}
     - target: {fileID: 4491575855536051358, guid: ac2a3befa92f82a488b46023bc7a733c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.41
+      value: -3.42
       objectReference: {fileID: 0}
     - target: {fileID: 4491575855536051358, guid: ac2a3befa92f82a488b46023bc7a733c,
         type: 3}
@@ -7291,12 +7287,12 @@ PrefabInstance:
     - target: {fileID: 4491575855536051358, guid: ac2a3befa92f82a488b46023bc7a733c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.11
+      value: 2.05
       objectReference: {fileID: 0}
     - target: {fileID: 4491575855536051358, guid: ac2a3befa92f82a488b46023bc7a733c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.41
+      value: -3.39
       objectReference: {fileID: 0}
     - target: {fileID: 4491575855536051358, guid: ac2a3befa92f82a488b46023bc7a733c,
         type: 3}
