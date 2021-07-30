@@ -17,7 +17,7 @@ public class RangeEnemy : EnemyStandart
     public float cooldownTimer = 1f;
     private bool canShoot = false;
     public GameObject enemyProjectilePrefab;
-    float cooldownDuration = 1f;
+    public float cooldownDuration = 1f;
 
     public BoxCollider2D box1;
 
