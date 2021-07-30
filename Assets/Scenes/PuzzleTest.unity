@@ -169,10 +169,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAdjust: {x: -1.5, y: 0}
   cameraAdjust: {x: -20, y: 0}
-  mapRoom: {fileID: 0}
-  iconRb: {fileID: 0}
-  mapRb: {fileID: 0}
-  roomRb: {fileID: 0}
 --- !u!61 &6768717
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2239,10 +2235,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAdjust: {x: 0, y: 1.5}
   cameraAdjust: {x: 0, y: 10}
-  mapRoom: {fileID: 0}
-  iconRb: {fileID: 0}
-  mapRb: {fileID: 0}
-  roomRb: {fileID: 0}
 --- !u!61 &499721856
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2542,14 +2534,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bottomRooms:
-  - {fileID: 6777120553170696599, guid: cb6bc256e16f6dd48bb0d8cd594fb97b, type: 3}
+  - {fileID: 5430049382797972474, guid: c92416479fbf79642a7b35cb57ade55d, type: 3}
   topRooms:
-  - {fileID: 6777120553170696599, guid: cb6bc256e16f6dd48bb0d8cd594fb97b, type: 3}
+  - {fileID: 5430049382797972474, guid: c92416479fbf79642a7b35cb57ade55d, type: 3}
   leftRooms:
-  - {fileID: 4147996403394385674, guid: 27987f7696bd31f4d812ad295fe73ecb, type: 3}
-  - {fileID: 6777120553170696599, guid: cb6bc256e16f6dd48bb0d8cd594fb97b, type: 3}
+  - {fileID: 5430049382797972474, guid: c92416479fbf79642a7b35cb57ade55d, type: 3}
+  - {fileID: 5430049382797972474, guid: c92416479fbf79642a7b35cb57ade55d, type: 3}
   rightRooms:
-  - {fileID: 6777120553170696599, guid: cb6bc256e16f6dd48bb0d8cd594fb97b, type: 3}
+  - {fileID: 5430049382797972474, guid: c92416479fbf79642a7b35cb57ade55d, type: 3}
   closedRoom: {fileID: 8842723865833162652, guid: 45e63c477f52bf345b62b6f801f4f8b3,
     type: 3}
   rooms: []
@@ -2723,10 +2715,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAdjust: {x: 1.5, y: 0}
   cameraAdjust: {x: 20, y: 0}
-  mapRoom: {fileID: 0}
-  iconRb: {fileID: 0}
-  mapRb: {fileID: 0}
-  roomRb: {fileID: 0}
 --- !u!61 &625077272
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3025,10 +3013,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAdjust: {x: 0, y: -1.5}
   cameraAdjust: {x: 0, y: -10}
-  mapRoom: {fileID: 0}
-  iconRb: {fileID: 0}
-  mapRb: {fileID: 0}
-  roomRb: {fileID: 0}
 --- !u!61 &727635468
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4872,10 +4856,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAdjust: {x: 0, y: 1.5}
   cameraAdjust: {x: 0, y: 10}
-  mapRoom: {fileID: 0}
-  iconRb: {fileID: 0}
-  mapRb: {fileID: 0}
-  roomRb: {fileID: 0}
 --- !u!61 &1085529881
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5136,10 +5116,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAdjust: {x: 1.5, y: 0}
   cameraAdjust: {x: 20, y: 0}
-  mapRoom: {fileID: 0}
-  iconRb: {fileID: 0}
-  mapRb: {fileID: 0}
-  roomRb: {fileID: 0}
 --- !u!61 &1152410373
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5198,10 +5174,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAdjust: {x: 0, y: -1.5}
   cameraAdjust: {x: 0, y: -10}
-  mapRoom: {fileID: 0}
-  iconRb: {fileID: 0}
-  mapRb: {fileID: 0}
-  roomRb: {fileID: 0}
 --- !u!61 &1174580743
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5288,10 +5260,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAdjust: {x: -1.5, y: 0}
   cameraAdjust: {x: -20, y: 0}
-  mapRoom: {fileID: 0}
-  iconRb: {fileID: 0}
-  mapRb: {fileID: 0}
-  roomRb: {fileID: 0}
 --- !u!61 &1183038752
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13407,7 +13375,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1119637381
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}

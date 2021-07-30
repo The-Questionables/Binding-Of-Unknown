@@ -77,6 +77,7 @@ public class GameManager : MonoBehaviour {
 
     [HideInInspector] public bool bow_bought;
     [HideInInspector] public bool isHealportUp;
+    [HideInInspector] public bool chest_of_everlasting_wealth = false;
 
     public void Update()
     {

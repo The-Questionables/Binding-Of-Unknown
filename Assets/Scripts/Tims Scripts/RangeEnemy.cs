@@ -19,18 +19,24 @@ public class RangeEnemy : EnemyStandart
     public GameObject enemyProjectilePrefab;
     float cooldownDuration = 1f;
 
+    public BoxCollider2D box1;
+
     // Update is called once per frame
     void Update()
     {
-        CheckDistance();
-
-        ControllEnemyMovementAndShooting();
-
-        HandleShootingCooldownTime();
-
-        if (isEnemyDeath == true)
+        if (isEnemyDeath == false)
         {
+            CheckDistance();
+
+            ControllEnemyMovementAndShooting();
+
+            HandleShootingCooldownTime();
+        }
+        else
+        {
+            box1.enabled = false;
             rangeEnemySpeed = 0;
+            rb = null;
         }
     }
 

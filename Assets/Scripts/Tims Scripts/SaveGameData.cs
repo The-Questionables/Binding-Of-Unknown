@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class SaveGameData
 {
+    public bool chestLooted;
     public int coins;
     public int health;
     public int healthpotions;
@@ -21,5 +22,6 @@ public class SaveGameData
         healthpotions = gm.healthpotions;
         maxHealth = gm.maxHp;
         maxHealthpotions = gm.maxHealthpotions;
+        chestLooted = gm.chest_of_everlasting_wealth;
     }
 }

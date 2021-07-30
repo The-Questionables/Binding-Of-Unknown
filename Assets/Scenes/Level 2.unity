@@ -1143,6 +1143,7 @@ MonoBehaviour:
   bowDamage: 15
   bow_bought: 0
   isHealportUp: 0
+  chest_of_everlasting_wealth: 0
 --- !u!4 &806348015
 Transform:
   m_ObjectHideFlags: 0
@@ -1384,6 +1385,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1909600657034950673, guid: 21972197a7c98124d847c7f35f0c65b9,
+        type: 3}
+      propertyPath: Arrow
+      value: 
+      objectReference: {fileID: 1133762169987533107, guid: 1eb463cd381decb468b55b209e999962,
+        type: 3}
+    - target: {fileID: 1909600657034950673, guid: 21972197a7c98124d847c7f35f0c65b9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2192916124155562301, guid: 21972197a7c98124d847c7f35f0c65b9,
         type: 3}
       propertyPath: bow

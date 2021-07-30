@@ -47,6 +47,7 @@ public class LoadGame : MonoBehaviour
             gm.maxHp = data.maxHealth;
             gm.healthpotions = data.healthpotions;
             gm.maxHealthpotions = data.maxHealthpotions;
+            gm.chest_of_everlasting_wealth = data.chestLooted;
             Destroy(this.gameObject);
         }
     }

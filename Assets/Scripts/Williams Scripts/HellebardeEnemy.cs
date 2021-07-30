@@ -14,11 +14,23 @@ public class HellebardeEnemy : EnemyStandart
     private float attackDistance = 0.6f;
     private float retreatDistance = 0.8f;
 
+    public BoxCollider2D box1;
+    public BoxCollider2D box2;
+
     void Update()
     {
-        CheckDistance();
+        if (isEnemyDeath == false)
+        {
+            CheckDistance();
 
-        ControllEnemyMovementAndAttacking();
+            ControllEnemyMovementAndAttacking();
+        }
+        else
+        {
+            box1.enabled = false;
+            box2.enabled = false;
+            rb = null;
+        }
     }
 
     /*

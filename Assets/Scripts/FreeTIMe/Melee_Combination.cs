@@ -6,11 +6,12 @@ public class Melee_Combination : MonoBehaviour
 {
     public KeyCode Attack = KeyCode.Mouse0;
     public Animator animator;
-    public bool attack;
+    private bool attack = false;
+
 
     private void Update()
     {
-        //crosshair
+        
         if (Input.GetKeyDown(Attack))
         {
             if (attack == false)
