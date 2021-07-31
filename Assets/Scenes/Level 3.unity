@@ -353,6 +353,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas PauseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 5745473409969657198, guid: 7c00a753da4c6af4682025705ebbb2dc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745473410677948367, guid: 7c00a753da4c6af4682025705ebbb2dc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c00a753da4c6af4682025705ebbb2dc, type: 3}
 --- !u!114 &217865243 stripped
@@ -2958,7 +2968,8 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1526248893768121847, guid: 53f42bf35f3f81143bd64f8066d8a903, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 53f42bf35f3f81143bd64f8066d8a903, type: 3}
 --- !u!1001 &1715688195
 PrefabInstance:
