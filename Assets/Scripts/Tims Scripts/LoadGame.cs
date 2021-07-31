@@ -44,6 +44,7 @@ public class LoadGame : MonoBehaviour
         {
             gm.Screenshake = data.screen_shake_active;
             gm.coins = data.coins;
+            gm.bow_bought = data.bow;
             gm.hp = data.health;
             gm.maxHp = data.maxHealth;
             gm.healthpotions = data.healthpotions;
