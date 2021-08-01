@@ -352,6 +352,7 @@ GameObject:
   - component: {fileID: 4183573983802341192}
   - component: {fileID: 4183573983802341194}
   - component: {fileID: 626695605172412662}
+  - component: {fileID: 5300227635207313542}
   m_Layer: 0
   m_Name: Hero new
   m_TagString: Player
@@ -527,12 +528,12 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4183573983802341186}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 18df6c61d18cc6949b8917443a5aae2b,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 2b7040a87bf731848a49ad2307008bc5, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -624,15 +625,15 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4183573983802341186}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 18df6c61d18cc6949b8917443a5aae2b,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: eace6ed1349ef4f4b95be5ccea2989aa, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -714,6 +715,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5300227635207313542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4183573983802341186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac6cd3d829a35f640870d141c44be33b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Step1: {fileID: 626695605172412662}
+  Step2: {fileID: 4183573983802341194}
 --- !u!1 &6913184254924269626
 GameObject:
   m_ObjectHideFlags: 0
