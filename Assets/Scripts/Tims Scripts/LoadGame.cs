@@ -42,6 +42,14 @@ public class LoadGame : MonoBehaviour
         }
         else
         {
+            //
+            gm.quest1 = data.quest1;
+            gm.quest2 = data.quest2;
+            gm.quest3 = data.quest3;
+            //
+            gm.healCounter = data.healCounter;
+            gm.enemyCounter = data.enemyCounter;
+            //
             gm.Screenshake = data.screen_shake_active;
             gm.coins = data.coins;
             gm.bow_bought = data.bow;
