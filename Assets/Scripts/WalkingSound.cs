@@ -8,6 +8,11 @@ public class WalkingSound : MonoBehaviour
     public AudioSource Step2;
     private float pitch;
 
+    [HideInInspector]
+    public AudioSource[] Steps;
+    [HideInInspector]
+    public int ChosenStep;
+
     public void FirstStep()
     {
         pitch = Random.Range(0.8f, 1.2f);
@@ -20,5 +25,13 @@ public class WalkingSound : MonoBehaviour
         Step2.pitch = pitch;
         Step2.Play();
     }
+
+    public void NewStep()
+    {
+        pitch = Random.Range(0.8f, 1.2f);
+        Steps[ChosenStep].pitch = pitch;
+        Steps[ChosenStep].Play();
+    }
+
 
 }
